@@ -1,0 +1,11 @@
+{
+  "defaultLanguage": "Chinese",
+  "initLanguage": "Chinese",
+  "languages": [
+    "English",
+    "Chinese",
+    "Russian",
+    "French",
+    "Japanese"
+  ]
+}

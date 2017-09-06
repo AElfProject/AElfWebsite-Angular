@@ -1,0 +1,34 @@
+select#languages
+{
+  width                    : 6em;
+  height                   : 2em;
+  padding                  : 0.2em 0.4em 0.2em 0.4em;
+  vertical-align           : middle;
+  border                   : 0;
+  -moz-border-radius       : 0.2em;
+  -webkit-border-radius    : 0.2em;
+  border-radius            : 0.2em;
+  -webkit-appearance       : none;
+  -moz-appearance          : none;
+  appearance               : none;
+
+  background               : transparent;
+  font-family              : TimesNewRomanItalic,SimSun,sans-serif,arial,"STHeiti Light";
+  font-size                : 1.1em;
+  color                    : #FFFFFF;
+  cursor                   : pointer;
+}
+select#languages  option
+{
+  border                   : 0;
+  font-size                : 1.1em;
+  background-color         : rgb(15, 156, 255);
+}
+select#languages  option[selected] {
+  border                   : 0;
+  -webkit-appearance       : none;
+  -moz-appearance          : none;
+  appearance               : none;
+  font-weight: bold;
+  background-color         : rgb(15, 156, 255);
+}

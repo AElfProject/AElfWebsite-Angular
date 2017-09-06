@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CenturyGothicBold';
+    src: url('fonts/CenturyGothicBold.eot');
+    src: url('fonts/CenturyGothicBold.eot') format('embedded-opentype'),
+         url('fonts/CenturyGothicBold.woff2') format('woff2'),
+         url('fonts/CenturyGothicBold.woff') format('woff'),
+         url('fonts/CenturyGothicBold.ttf') format('truetype'),
+         url('fonts/CenturyGothicBold.svg#CenturyGothicBold') format('svg');
+}

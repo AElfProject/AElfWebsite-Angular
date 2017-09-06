@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'centurygothic';
+    src: url('fonts/centurygothic.eot');
+    src: url('fonts/centurygothic.eot') format('embedded-opentype'),
+         url('fonts/centurygothic.woff2') format('woff2'),
+         url('fonts/centurygothic.woff') format('woff'),
+         url('fonts/centurygothic.ttf') format('truetype'),
+         url('fonts/centurygothic.svg#centurygothic') format('svg');
+}

@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'TimesNewRomanItalic';
+    src: url('TimesNewRomanItalic/TimesNewRomanItalic.eot');
+    src: url('TimesNewRomanItalic/TimesNewRomanItalic.eot') format('embedded-opentype'),
+    url('TimesNewRomanItalic/TimesNewRomanItalic.woff2') format('woff2'),
+    url('TimesNewRomanItalic/TimesNewRomanItalic.woff') format('woff'),
+    url('TimesNewRomanItalic/TimesNewRomanItalic.ttf') format('truetype'),
+    url('TimesNewRomanItalic/TimesNewRomanItalic.svg#TimesNewRomanItalic') format('svg');
+}
+@font-face {
+    font-family: 'CenturyGothicBold';
+    src: url('CenturyGothicBold/CenturyGothicBold.eot');
+    src: url('CenturyGothicBold/CenturyGothicBold.eot') format('embedded-opentype'),
+    url('CenturyGothicBold/CenturyGothicBold.woff2') format('woff2'),
+    url('CenturyGothicBold/CenturyGothicBold.woff') format('woff'),
+    url('CenturyGothicBold/CenturyGothicBold.ttf') format('truetype'),
+    url('CenturyGothicBold/CenturyGothicBold.svg#CenturyGothicBold') format('svg');
+}
+@font-face {
+    font-family: 'centurygothic';
+    src: url('centurygothic/centurygothic.eot');
+    src: url('centurygothic/centurygothic.eot') format('embedded-opentype'),
+    url('centurygothic/centurygothic.woff2') format('woff2'),
+    url('centurygothic/centurygothic.woff') format('woff'),
+    url('centurygothic/centurygothic.ttf') format('truetype'),
+    url('centurygothic/centurygothic.svg#centurygothic') format('svg');
+}
+@font-face {
+    font-family: 'HelveticaNeueLTProLt';
+    src: url('HelveticaNeueLTProLt/HelveticaNeueLTProLt.eot');
+    src: url('HelveticaNeueLTProLt/HelveticaNeueLTProLt.eot') format('embedded-opentype'),
+    url('HelveticaNeueLTProLt/HelveticaNeueLTProLt.woff2') format('woff2'),
+    url('HelveticaNeueLTProLt/HelveticaNeueLTProLt.woff') format('woff'),
+    url('HelveticaNeueLTProLt/HelveticaNeueLTProLt.ttf') format('truetype'),
+    url('HelveticaNeueLTProLt/HelveticaNeueLTProLt.svg#HelveticaNeueLTProLt') format('svg');
+}
+
+
+@font-face {
+    font-family: 'DevilBreezeBold';
+    src: url('DevilBreezeBold/DevilBreezeBold.eot');
+    src: url('DevilBreezeBold/DevilBreezeBold.woff2') format('woff2'),
+    url('DevilBreezeBold/DevilBreezeBold.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DevilBreezeBold';
+    src: url('DevilBreezeBold/DevilBreezeBold.woff') format('woff'),
+    url('DevilBreezeBold/DevilBreezeBold.ttf') format('truetype'),
+    url('DevilBreezeBold/DevilBreezeBold.svg#DevilBreezeBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

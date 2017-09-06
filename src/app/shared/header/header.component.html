@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="wrapper clearfix">
+    <h1 class="logo"><a href=""><img src="assets/images/logo.png" alt=""></a></h1>
+
+    <div class="menu-btn clearfix">
+      <span class="menu-name fs-14 ff-tnri color-white">{{ 'menu' | translate }}</span>
+      <span class="menu-icon">
+                <span>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+      </span>
+      <select id="languages" #languageSelection (change)="OnChange(languageSelection.value)" >
+        <option value="Chinese">Chinese</option>
+        <option value="English">English</option>
+        <option value="Russian">Russian</option>
+        <option value="French">French</option>
+        <option value="Japanese">Japanese</option>
+      </select>
+
+    </div>
+
+  </div>
+</header>
