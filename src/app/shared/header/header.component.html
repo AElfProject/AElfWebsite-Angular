@@ -12,11 +12,7 @@
                 </span>
       </span>
       <select id="languages" #languageSelection (change)="OnChange(languageSelection.value)" >
-        <option value="Chinese">Chinese</option>
-        <option value="English">English</option>
-        <option value="Russian">Russian</option>
-        <option value="French">French</option>
-        <option value="Japanese">Japanese</option>
+        <option *ngFor="let item of languageList" [selected]="item === currentLanguage">{{item}}</option>
       </select>
 
     </div>

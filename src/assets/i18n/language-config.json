@@ -1,7 +1,28 @@
 {
-  "defaultLanguage": "Chinese",
-  "initLanguage": "Chinese",
+  "defaultLanguage": "zh-CN",
+  "initLanguage": "en-US",
+  "languagesDic": {
+    "English": "en-US",
+    "Chinese": "zh-CN",
+    "Russian": "Russian",
+    "French": "French",
+    "Japanese": "Japanese"
+  },
+  "languagesDic2": {
+    "en-US": "English",
+    "zh-CN": "Chinese",
+    "Russian": "Russian",
+    "French": "French",
+    "Japanese": "Japanese"
+  },
   "languages": [
+    "en-US",
+    "zh-CN",
+    "Russian",
+    "French",
+    "Japanese"
+  ],
+  "languageOptions": [
     "English",
     "Chinese",
     "Russian",

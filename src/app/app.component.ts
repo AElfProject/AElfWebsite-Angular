@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import {CookieService} from 'ngx-cookie';
 
 
 @Component({
@@ -8,6 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor( tranlate: TranslateService) {
+  constructor( private tranlate: TranslateService, private _cookieService: CookieService ) {
   }
 }

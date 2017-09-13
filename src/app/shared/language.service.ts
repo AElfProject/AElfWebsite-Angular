@@ -1,14 +1,26 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { TranslateService } from '@ngx-translate/core';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {TranslateService} from '@ngx-translate/core';
+import {Observable} from 'rxjs/Observable';
+import {CookieService} from 'ngx-cookie';
 
 @Injectable()
 export class LanguageService {
-  constructor(private http: HttpClient, private translate: TranslateService) {
+
+  constructor(private http: HttpClient, private translate: TranslateService, private _cookieService: CookieService) {
     this.http.get('assets/i18n/language-config.json').subscribe(data => {
+        const browserCultureLang = this.getBrowserCultureLanguage();
         translate.addLangs(data['languages']);
         translate.setDefaultLang(data['defaultLanguage']);
-        translate.use(data['initLanguage']);
+        if (browserCultureLang === undefined) {
+          translate.use(data['initLanguage']);
+        } else {
+          translate.use(browserCultureLang);
+        }
+        if (this._cookieService.get('SelectedLanguage') !== undefined) {
+          translate.use(this._cookieService.get('SelectedLanguage'));
+          // console.log('---------Language Service----------' + this._cookieService.get('SelectedLanguage') + '--------------------------');
+        }
       },
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {
@@ -20,6 +32,14 @@ export class LanguageService {
           console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
         }
       });
+  }
+
+  getLanguageConfig(): Observable<any> {
+    return this.http.get('assets/i18n/language-config.json');
+  }
+
+  getBrowserCultureLanguage(): string {
+    return this.translate.getBrowserCultureLang();
   }
 
   switchLanguage(language: string) {
