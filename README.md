@@ -1,2 +1,2 @@
-# GridWebsite-Angular
-GridWebsite-Angular
+# Grid Foundation-Angular
+Grid Foundation-Angular
