@@ -27,7 +27,11 @@
         "./assets/theme-and-page.min.css",
         "./assets/responsive.min.css"
       ],
-      "scripts": ["./assets/jquery-1.10.2.min.js"],
+      "scripts": [
+        "./assets/jquery-1.10.2.min.js",
+        "./assets/all.min.js",
+        "./assets/three.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
