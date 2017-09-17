@@ -16,6 +16,7 @@ export class HeaderComponent implements AfterViewChecked, OnInit {
   }
 
   OnChange(languageSelection: string) {
+    console.log('---------switch language----------' + languageSelection);
     this.language.switchLanguage(this.languagesDic[languageSelection]);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
   }

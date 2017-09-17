@@ -1,9 +1,10 @@
 <header class="header">
   <div class="wrapper clearfix">
     <h1 class="logo"><a href=""><img src="assets/images/logo.png" alt=""></a></h1>
+	<h1 class="logo3"><a href=""><img src="assets/images/logo3.png" alt=""></a></h1>
 
     <div class="menu-btn clearfix">
-      <span class="menu-name fs-14 ff-tnri color-white">{{ 'menu' | translate }}</span>
+      <span class="menu-name fs-14 ff-tnri color-white" style="font-size: 1.2em">{{ 'menu' | translate }}</span>
       <span class="menu-icon">
                 <span>
                     <i></i>
@@ -11,12 +12,13 @@
                     <i></i>
                 </span>
       </span>
-      <select id="languages" #languageSelection (change)="OnChange(languageSelection.value)" >
-        <option *ngFor="let item of languageList" [selected]="item === currentLanguage">{{item}}</option>
+      <select class="menu-name fs-14 ff-tnri color-white" id="languages" #languageSelection (change)="OnChange(languageSelection.value)" >
+        <option class="menu-name fs-14 ff-tnri color-white" *ngFor="let item of languageList" [selected]="item === currentLanguage">{{item}}</option>
       </select>
 
     </div>
 
   </div>
-  
+
 </header>
+

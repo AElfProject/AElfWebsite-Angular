@@ -13,15 +13,11 @@ select#languages
   appearance               : none;
 
   background               : transparent;
-  font-family              : TimesNewRomanItalic,SimSun,sans-serif,arial,"STHeiti Light";
-  font-size                : 1.1em;
-  color                    : #FFFFFF;
   cursor                   : pointer;
 }
 select#languages  option
 {
   border                   : 0;
-  font-size                : 1.1em;
   background-color         : rgb(15, 156, 255);
 }
 select#languages  option[selected] {
