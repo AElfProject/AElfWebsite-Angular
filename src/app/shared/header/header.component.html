@@ -12,7 +12,7 @@
                     <i></i>
                 </span>
       </span>
-      <select class="menu-name fs-14 ff-tnri color-white" id="languages" #languageSelection (change)="OnChange(languageSelection.value)" >
+      <select class="menu-name fs-14 ff-tnri color-white" id="languages" #languageSelection (change)="OnChange(languageSelection.value)">
         <option class="menu-name fs-14 ff-tnri color-white" *ngFor="let item of languageList" [selected]="item === currentLanguage">{{item}}</option>
       </select>
 

@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (onLanguageChange)="changeLanguage($event)"></app-header>
 <div class="container" id="skrollr-body">
   <section class="section section-1">
     <div class="lines lines-1">
@@ -436,7 +436,8 @@
             </div>
             <div class="gcol-md-2 gcol-tn-8 no-pl no-pr ta-c" data-bottom="transform:translate(0%, 200%); opacity:0;"
                  data-center="transform:translate(0%, 0%); opacity:1;">
-              <p><img src="assets/images/section-5-img-3.png" alt=""></p>
+              <p *ngIf="currentLanguage==='Chinese'" ><img src="assets/images/section-5-img-3.png" alt=""></p>
+              <p *ngIf="currentLanguage==='English'" ><img src="assets/images/section-5-img-3-en.png" alt=""></p>
             </div>
           </div>
           <div class="grow clearfix">

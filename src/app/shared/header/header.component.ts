@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import {AfterViewChecked, Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { LanguageService } from '../language.service';
 import * as $ from 'jquery';
 import {CookieService} from 'ngx-cookie';
@@ -12,12 +12,14 @@ export class HeaderComponent implements AfterViewChecked, OnInit {
   currentLanguage = '';
   languagesDic: any;
   languageList = [];
+  @Output() onLanguageChange = new EventEmitter<string>();
   constructor( private language: LanguageService, private _cookieService: CookieService) {
   }
 
   OnChange(languageSelection: string) {
     console.log('---------switch language----------' + languageSelection);
     this.language.switchLanguage(this.languagesDic[languageSelection]);
+    this.onLanguageChange.emit(languageSelection);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
   }
   ngOnInit() {
