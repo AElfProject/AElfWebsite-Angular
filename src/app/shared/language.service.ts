@@ -19,7 +19,6 @@ export class LanguageService {
         }
         if (this._cookieService.get('SelectedLanguage') !== undefined) {
           translate.use(this._cookieService.get('SelectedLanguage'));
-          // console.log('---------Language Service----------' + this._cookieService.get('SelectedLanguage') + '--------------------------');
         }
       },
       (err: HttpErrorResponse) => {

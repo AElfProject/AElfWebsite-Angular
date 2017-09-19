@@ -25,7 +25,9 @@
         "./assets/plugin.min.css",
         "./assets/layout.min.css",
         "./assets/theme-and-page.min.css",
-        "./assets/responsive.min.css"
+        "./assets/responsive.min.css",
+        "./assets/font-en.min.css",
+        "./assets/font-zh.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
