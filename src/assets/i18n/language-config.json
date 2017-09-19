@@ -3,30 +3,18 @@
   "initLanguage": "en-US",
   "languagesDic": {
     "English": "en-US",
-    "Chinese": "zh-CN",
-    "Russian": "Russian",
-    "French": "French",
-    "Japanese": "Japanese"
+    "Chinese": "zh-CN"
   },
   "languagesDic2": {
     "en-US": "English",
-    "zh-CN": "Chinese",
-    "Russian": "Russian",
-    "French": "French",
-    "Japanese": "Japanese"
+    "zh-CN": "Chinese"
   },
   "languages": [
     "en-US",
-    "zh-CN",
-    "Russian",
-    "French",
-    "Japanese"
+    "zh-CN"
   ],
   "languageOptions": [
     "English",
-    "Chinese",
-    "Russian",
-    "French",
-    "Japanese"
+    "Chinese"
   ]
 }
