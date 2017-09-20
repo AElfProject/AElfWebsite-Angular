@@ -1,4 +1,73 @@
-<app-header (onLanguageChange)="changeLanguage($event)"></app-header>
+<header class="header">
+  <div class="wrapper clearfix">
+    <h1 class="logo"><a href=""><img src="assets/images/logo.png" alt=""></a></h1>
+    <h1 class="logo3"><a href=""><img src="assets/images/logo3.png" alt=""></a></h1>
+    <div class="lang ff-my color-white">
+      <span class="fs-12"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
+      <ul class="fs-12 clearfix">
+        <li *ngFor="let item of languageList" (click)="OnChange(item)">{{item}}</li>
+      </ul>
+    </div>
+    <div class="menu-btn clearfix">
+      <span class="menu-icon">
+        <span>
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+      </span>
+    </div>
+  </div>
+
+</header>
+<section class="menu-list2">
+  <div class="lines lines-3">
+    <div class="grow clearfix">
+      <div class="gcol-2 gcol-sm-2 gcol-tn-1"></div>
+      <div class="gcol-2 gcol-sm-2 gcol-tn-1"></div>
+      <div class="gcol-2 gcol-sm-2 gcol-tn-1"></div>
+      <div class="gcol-2 gcol-sm-2 gcol-tn-1"></div>
+    </div>
+  </div>
+  <div class="menu-list2-bd grow clearfix ta-c">
+    <a href="" class="mlb-item gcol-sm-2 hp100">
+      <div class="mlb-txt">
+        <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
+        <div class="name-en fs-48 ff-arial"><b>Transition</b></div>
+        <div class="name-cn fs-24">转折</div>
+      </div>
+    </a>
+    <a href="" class="mlb-item gcol-sm-2 hp100">
+      <div class="mlb-txt">
+        <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
+        <div class="name-en fs-48 ff-arial"><b>Features</b></div>
+        <div class="name-cn fs-24">特性</div>
+      </div>
+    </a>
+    <a href="" class="mlb-item gcol-sm-2 hp100">
+      <div class="mlb-txt">
+        <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
+        <div class="name-en fs-48 ff-arial"><b>Advantage</b></div>
+        <div class="name-cn fs-24">优势</div>
+      </div>
+    </a>
+    <div class="mlb-item gcol-sm-2 hp100">
+      <div class="mlb-txt2">
+        <div class="tn-hidden logo-img mb30"><img src="assets/images/logo.png" alt=""></div>
+        <div class="tn-hidden line m-auto mb35 w1 h30 bg-color-CBCBCB"></div>
+        <div class="name-en fs-60 ff-arial mb45"><b>Grid Foundation</b></div>
+        <div class="w180 btns m-auto">
+          <a href="" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14 mb15">{{'Grid商业计划' | translate}}</a>
+          <a href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/grid_1.0.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14">{{'项目白皮书' | translate}}</a>
+        </div>
+      </div>
+      <div class="tn-hidden mlb-txt3">
+        <p class="fs-12 ff-arial color-white">Copyright © 2017 GRID Tokens</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="container" id="skrollr-body">
   <section class="section section-1">
     <div class="lines lines-1">
@@ -693,4 +762,9 @@
     </div>
   </section>
 </div>
-<app-footer></app-footer>
+<footer class="footer pt65 pb65 ta-c">
+  <div class="wrapper clearfix">
+    <p class="mb65"><img src="assets/images/logo2.png" alt=""></p>
+    <p class="fs-12 lh-20em color-999999">{{ 'Copyright © 2017 GRID Foundation' | translate }}</p>
+  </div>
+</footer>

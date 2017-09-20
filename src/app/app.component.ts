@@ -1,5 +1,4 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import {CookieService} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 
@@ -11,13 +10,24 @@ import {LanguageService} from './shared/language.service';
 })
 export class AppComponent implements OnInit {
 
-  public currentLanguage = 'English';
+  currentLanguage = '';
   languagesDic: any;
-  constructor( private language: LanguageService, private _cookieService: CookieService ) {
+  languageList = [];
+  @Output() onLanguageChange = new EventEmitter<string>();
+  constructor( private language: LanguageService, private _cookieService: CookieService) {
+  }
+
+  OnChange(languageSelection: string) {
+    console.log('---------switch language----------' + languageSelection);
+    this.language.switchLanguage(this.languagesDic[languageSelection]);
+    this.currentLanguage = languageSelection;
+    this.onLanguageChange.emit(languageSelection);
+    this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
   }
   ngOnInit() {
     this.language.getLanguageConfig().subscribe(data => {
       this.languagesDic = data['languagesDic'];
+      this.languageList = data['languageOptions'];
       this.currentLanguage = data['languagesDic2'][this.language.getBrowserCultureLanguage()];
       if (this._cookieService.get('SelectedLanguage') !== undefined) {
         this.currentLanguage = data['languagesDic2'][this._cookieService.get('SelectedLanguage')];
@@ -25,9 +35,5 @@ export class AppComponent implements OnInit {
         // this.language.switchLanguage(this._cookieService.get('SelectedLanguage'));
       }
     });
-  }
-  changeLanguage(language: string) {
-    console.log('---------Header Component----------' + this.language);
-    this.currentLanguage = language;
   }
 }

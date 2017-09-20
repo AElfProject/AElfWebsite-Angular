@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { SharedModule } from './shared/shared.module';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import {CookieModule} from 'ngx-cookie';
+import {LanguageService} from './shared/language.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -18,7 +18,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
-    SharedModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -29,7 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     CookieModule.forRoot()
   ],
-  providers: [],
+  providers: [LanguageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
