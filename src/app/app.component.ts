@@ -1,26 +1,46 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CookieService} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
+import {FontFamliyService} from './shared/font-famliy.service';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
 
+  languageFontDic = {
+    'English': 'font-en',
+    'Chinese': 'font-zh'
+  };
   currentLanguage = '';
   languagesDic: any;
   languageList = [];
-  
-  constructor( private language: LanguageService, private _cookieService: CookieService) {
+  ffArial = '';
+  ffCg = '';
+  ffCgb = '';
+  ffDbb = '';
+  ffHnlt = '';
+  ffMy = '';
+  ffSs = '';
+  ffTnri = '';
+  constructor( private language: LanguageService, private _cookieService: CookieService, private _fontFamlily: FontFamliyService) {
   }
 
   OnChange(languageSelection: string) {
     console.log('---------switch language----------' + languageSelection);
     this.language.switchLanguage(this.languagesDic[languageSelection]);
     this.currentLanguage = languageSelection;
+    this.ffArial = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-arial');
+    this.ffCg = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cg');
+    this.ffCgb = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cgb');
+    this.ffDbb = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-dbb');
+    this.ffHnlt = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-hnlt');
+    this.ffMy = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-my');
+    this.ffSs = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-ss');
+    this.ffTnri = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-tnri');
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
   }
   ngOnInit() {
@@ -33,6 +53,14 @@ export class AppComponent implements OnInit {
         // console.log('---------Header Component----------' + data['languagesDic2'][this._cookieService.get('SelectedLanguage')]);
         // this.language.switchLanguage(this._cookieService.get('SelectedLanguage'));
       }
+      this.ffArial = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-arial');
+      this.ffCg = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cg');
+      this.ffCgb = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cgb');
+      this.ffDbb = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-dbb');
+      this.ffHnlt = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-hnlt');
+      this.ffMy = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-my');
+      this.ffSs = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-ss');
+      this.ffTnri = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-tnri');
     });
   }
 }
