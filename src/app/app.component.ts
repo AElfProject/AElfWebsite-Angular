@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   currentLanguage = '';
   languagesDic: any;
   languageList = [];
-  @Output() onLanguageChange = new EventEmitter<string>();
+  
   constructor( private language: LanguageService, private _cookieService: CookieService) {
   }
 
@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
     console.log('---------switch language----------' + languageSelection);
     this.language.switchLanguage(this.languagesDic[languageSelection]);
     this.currentLanguage = languageSelection;
-    this.onLanguageChange.emit(languageSelection);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
   }
   ngOnInit() {
