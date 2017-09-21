@@ -9,17 +9,20 @@ export class LanguageService {
 
   constructor(private http: HttpClient, private translate: TranslateService, private _cookieService: CookieService) {
     this.http.get('assets/i18n/language-config.json').subscribe(data => {
+        this.translate.addLangs(data['languages']);
+        this.translate.setDefaultLang(data['defaultLanguage']);
+        let pendingLanguage = '';
         const browserCultureLang = this.getBrowserCultureLanguage();
-        translate.addLangs(data['languages']);
-        translate.setDefaultLang(data['defaultLanguage']);
-        if (browserCultureLang === undefined) {
-          translate.use(data['initLanguage']);
+        const initLanguage = data['initLanguage'];
+        const cookieLanguage = this._cookieService.get('SelectedLanguage');
+        if (cookieLanguage !== undefined) {
+          pendingLanguage = cookieLanguage;
+        } else if (browserCultureLang !== undefined) {
+          pendingLanguage = browserCultureLang;
         } else {
-          translate.use(browserCultureLang);
+          pendingLanguage = initLanguage;
         }
-        if (this._cookieService.get('SelectedLanguage') !== undefined) {
-          translate.use(this._cookieService.get('SelectedLanguage'));
-        }
+        this.translate.use(pendingLanguage);
       },
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {
@@ -38,7 +41,7 @@ export class LanguageService {
   }
 
   getBrowserCultureLanguage(): string {
-    return this.translate.getBrowserCultureLang();
+    return window.navigator.language;
   }
 
   switchLanguage(language: string) {

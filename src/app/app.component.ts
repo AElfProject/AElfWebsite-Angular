@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CookieService} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -11,10 +12,6 @@ import {FontFamliyService} from './shared/font-famliy.service';
 })
 export class AppComponent implements OnInit {
 
-  languageFontDic = {
-    'English': 'font-en',
-    'Chinese': 'font-zh'
-  };
   currentLanguage = '';
   languagesDic: any;
   languageList = [];
@@ -48,10 +45,9 @@ export class AppComponent implements OnInit {
       this.languagesDic = data['languagesDic'];
       this.languageList = data['languageOptions'];
       this.currentLanguage = data['languagesDic2'][this.language.getBrowserCultureLanguage()];
+
       if (this._cookieService.get('SelectedLanguage') !== undefined) {
         this.currentLanguage = data['languagesDic2'][this._cookieService.get('SelectedLanguage')];
-        // console.log('---------Header Component----------' + data['languagesDic2'][this._cookieService.get('SelectedLanguage')]);
-        // this.language.switchLanguage(this._cookieService.get('SelectedLanguage'));
       }
       this.ffArial = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-arial');
       this.ffCg = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cg');
