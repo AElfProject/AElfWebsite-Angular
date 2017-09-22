@@ -63,11 +63,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'border-radius': '6px'});
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'width': '12px'});
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css('cssText', 'width: 7px !important');
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'opacity': 0.6});
-    perfectScrollbarContainer.find('.ps__scrollbar-y').css({'width': '11px'});
 
   }
 }
