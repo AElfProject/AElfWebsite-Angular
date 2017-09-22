@@ -1,17 +1,16 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {CookieService} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
-import {TranslateService} from '@ngx-translate/core';
 import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
-
+declare let $: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   public config: PerfectScrollbarConfigInterface = {};
 
   currentLanguage = '';
@@ -60,5 +59,8 @@ export class AppComponent implements OnInit {
       this.ffSs = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-ss');
       this.ffTnri = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-tnri');
     });
+  }
+  ngAfterViewInit() {
+    $('.perfect-scrollbar-container').find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
   }
 }
