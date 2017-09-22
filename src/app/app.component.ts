@@ -3,6 +3,7 @@ import {CookieService} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import {TranslateService} from '@ngx-translate/core';
+import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
 
 
 @Component({
@@ -11,6 +12,7 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  public config: PerfectScrollbarConfigInterface = {};
 
   currentLanguage = '';
   languagesDic: any;

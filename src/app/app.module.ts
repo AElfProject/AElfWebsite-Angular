@@ -8,10 +8,14 @@ import { AppComponent } from './app.component';
 import {CookieModule} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
+import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    CookieModule.forRoot()
+    CookieModule.forRoot(),
+    PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG)
   ],
   providers: [LanguageService, FontFamliyService],
   bootstrap: [AppComponent]
