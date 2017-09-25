@@ -1,7 +1,9 @@
 @import 'https://cdn.bootcss.com/jquery.perfect-scrollbar/0.8.0/css/perfect-scrollbar.min.css';
+
 .ff-arial-zh, .ff-cg-zh, .ff-cgb-zh, .ff-dbb-zh, .ff-hnlt-zh, .ff-my-zh, .ff-ss-zh, .ff-tnri-zh {
   font-family: "Microsoft Yahei", SimSun, sans-serif, arial, "STHeiti Light"
 }
+
 .ff-arial-en {
   font-family: arial, SimSun, sans-serif, "Microsoft Yahei", "STHeiti Light"
 }
@@ -33,6 +35,7 @@
 .ff-ss-en {
   font-family: SimSun, sans-serif, arial, "STHeiti Light"
 }
+
 .perfect-scrollbar-container {
   position: absolute;
   overflow: hidden;
@@ -40,3 +43,10 @@
 
 }
 
+.header .active {
+  background-image: -webkit-linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95));
+  background-image: -moz-linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95));
+  background-image: -ms-linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95));
+  background-image: -o-linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95));
+  background-image: linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95))
+}

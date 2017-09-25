@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {CookieService} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
@@ -11,6 +11,7 @@ declare let $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  headerActiveCssClass = '';
   public config: PerfectScrollbarConfigInterface = {};
 
   currentLanguage = '';
@@ -68,5 +69,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'opacity': 0.6});
 
+  }
+  @HostListener('window:scroll', ['$event'])
+  scrollTop(event) {
+    // console.log('Scroll Event', window.pageYOffset );
+    if (window.pageYOffset !== 0) {
+      this.headerActiveCssClass = 'active';
+    } else {
+      this.headerActiveCssClass = '';
+    }
   }
 }
