@@ -11,6 +11,7 @@ declare let $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  clicked = false;
   headerActiveCssClass = '';
   public config: PerfectScrollbarConfigInterface = {};
 
@@ -68,15 +69,24 @@ export class AppComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'opacity': 0.6});
-
   }
   @HostListener('window:scroll', ['$event'])
   scrollTop(event) {
     // console.log('Scroll Event', window.pageYOffset );
-    if (window.pageYOffset !== 0) {
-      this.headerActiveCssClass = 'active-header';
-    } else {
+    if (this.clicked === false) {
+      if (window.pageYOffset !== 0) {
+        this.headerActiveCssClass = 'active-header';
+      } else {
+        this.headerActiveCssClass = '';
+      }
+    }
+  }
+  menuClick() {
+    this.clicked = ( this.clicked ? false : true );
+    if (this.clicked === true) {
       this.headerActiveCssClass = '';
+    } else {
+      this.headerActiveCssClass = 'active-header';
     }
   }
 }

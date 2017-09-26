@@ -7,19 +7,19 @@
             <span class="clearfix">
                 <a href="mailto:gridblockchain@gmail.com"><i class="fa fa-envelope-o"></i></a>
                 <a href="https://www.facebook.com/grid.blockchain.1" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/GridBlockchain" target="_blank"><i class="fa fa-tumblr"></i></a>
+                <a href="https://twitter.com/GridBlockchain" target="_blank"><i class="fa fa-twitter"></i></a>
                 <a href="http://weibo.com/p/1006066351606243/home?from=page_100606&mod=TAB#place" target="_blank"><i class="fa fa-weibo"></i></a>
                 <a href="javascript:;" class="weixin-img"><i class="fa fa-weixin"></i><em class="img"><img src="assets/images/qrcode_for_Grid.jpg" alt=""></em></a>
                 <a href="https://gridblockchaininfo.slack.com/messages/C6Y3TKU2W/" target="_blank"><i class="fa fa-slack"></i></a>
             </span>
         </div>
     <div [ngClass]="ffMy" class="lang color-white">
-      <span class="fs-12"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
-      <ul class="fs-12 clearfix">
+      <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
+      <ul class="fs-14 clearfix">
         <li *ngFor="let item of languageList" (click)="OnChange(item)">{{item}}</li>
       </ul>
     </div>
-    <div class="menu-btn clearfix">
+    <div class="menu-btn clearfix" (click)="menuClick()">
       <span class="menu-icon">
         <span>
           <i></i>
@@ -40,22 +40,22 @@
       <div class="gcol-2 gcol-sm-2 gcol-tn-1"></div>
     </div>
   </div>
-  <div class="menu-list2-bd grow clearfix ta-c">
-    <a href="#transition_section" class="mlb-item gcol-sm-2 hp100">
+  <div class="index-pagination menu-list2-bd grow clearfix ta-c">
+    <a href="javascript:;" class="anchor-hd mlb-item gcol-sm-2 hp100 ahchor" data-anchor="transition">
       <div class="mlb-txt">
         <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
         <div [ngClass]="ffArial" class="name-en fs-48"><b>Transition</b></div>
         <div class="name-cn fs-24">转折</div>
       </div>
     </a>
-    <a href="#feature_section" class="mlb-item gcol-sm-2 hp100">
+    <a href="javascript:;" class="anchor-hd mlb-item gcol-sm-2 hp100" data-anchor="features">
       <div class="mlb-txt">
         <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
         <div [ngClass]="ffArial" class="name-en fs-48"><b>Features</b></div>
         <div class="name-cn fs-24">特性</div>
       </div>
     </a>
-    <a href="#advantage_section" class="mlb-item gcol-sm-2 hp100">
+    <a href="javascript:;" class="anchor-hd mlb-item gcol-sm-2 hp100" data-anchor="advantage">
       <div class="mlb-txt">
         <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
         <div [ngClass]="ffArial" class="name-en fs-48"><b>Advantage</b></div>
@@ -75,11 +75,31 @@
       <div class="tn-hidden mlb-txt3">
         <p [ngClass]="ffArial" class="fs-12 color-white">Copyright © 2017 GRID Foundation</p>
       </div>
-    </div>
+	</div>
   </div>
+  <div [ngClass]="ffArial" class="menu-list2-bd2 hidden tn-show">
+        <ul class="fs-24 clearfix mb50">
+            <li><a href="" class="active">{{'区块链转折' | translate}}</a></li>
+            <li><a href="">{{'项目特性' | translate}}</a></li>
+            <li><a href="">{{'优势' | translate}}</a></li>
+            <li><a href="">{{'团队和顾问' | translate}}</a></li>
+            <li><a href="">{{'合作伙伴' | translate}}</a></li>
+        </ul>
+        <div class="fs-30 clearfix shares">
+            <span class="clearfix">
+              <a href="mailto:gridblockchain@gmail.com"><i class="fa fa-envelope-o"></i></a>
+                <a href="https://www.facebook.com/grid.blockchain.1" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/GridBlockchain" target="_blank"><i class="fa fa-twitter"></i></a>
+              <br />
+                <a href="http://weibo.com/p/1006066351606243/home?from=page_100606&mod=TAB#place" target="_blank"><i class="fa fa-weibo"></i></a>
+                <a href="javascript:;" class="weixin-img"><i class="fa fa-weixin"></i><em class="img"><img src="assets/images/qrcode_for_Grid.jpg" alt=""></em></a>
+                <a href="https://gridblockchaininfo.slack.com/messages/C6Y3TKU2W/" target="_blank"><i class="fa fa-slack"></i></a>
+            </span>
+        </div>
+    </div>
 </section>
 
-<div class="container" id="skrollr-body">
+<div class="container index-step" id="skrollr-body">
   <section class="section section-1">
     <div class="lines lines-1">
       <div class="wrapper clearfix">
@@ -97,9 +117,11 @@
     </div>
     <div class="cont">
       <div class="earth">
-        <span class="point-ani2"><i></i><i></i><i></i><i></i><i></i></span>
-        <div id="particles2"></div>
-        <div id="particles3"></div>
+	  <div class="bg-img" style="background-image:url(assets/images/section-1-bg.png);"></div>
+      	<div class="earth-canvas">
+        	<span class="point-ani2"><i></i><i></i><i></i><i></i><i></i></span>
+        	<div id="particles2"></div>
+		</div>
       </div>
       <div class="txt">
         <div class="wrapper clearfix" data-center="transform:translate(0, 0%);opacity:1;" data-top-bottom="transform: translate(0px, 60%);opacity:0;">
@@ -788,7 +810,7 @@
             <span class="clearfix">
                 <a href="mailto:gridblockchain@gmail.com"><i class="fa fa-envelope-o"></i></a>
                 <a href="https://www.facebook.com/grid.blockchain.1" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/GridBlockchain" target="_blank"><i class="fa fa-tumblr"></i></a>
+                <a href="https://twitter.com/GridBlockchain" target="_blank"><i class="fa fa-twitter"></i></a>
                 <a href="http://weibo.com/p/1006066351606243/home?from=page_100606&mod=TAB#place" target="_blank"><i class="fa fa-weibo"></i></a>
                 <a href="javascript:;" class="weixin-img"><i class="fa fa-weixin"></i><em class="img"><img src="assets/images/qrcode_for_Grid.jpg" alt=""></em></a>
                 <a href="https://gridblockchaininfo.slack.com/messages/C6Y3TKU2W/" target="_blank"><i class="fa fa-slack"></i></a>
