@@ -74,7 +74,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   scrollTop(event) {
     // console.log('Scroll Event', window.pageYOffset );
     if (window.pageYOffset !== 0) {
-      this.headerActiveCssClass = 'active';
+      this.headerActiveCssClass = 'active-header';
     } else {
       this.headerActiveCssClass = '';
     }
