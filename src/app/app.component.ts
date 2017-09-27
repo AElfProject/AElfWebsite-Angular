@@ -82,8 +82,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     // console.log('headerActiveCssClass: ', this.headerActiveCssClass);
   }
   menuClick() {
-    if (this.headerActiveCssClass !== '') {
+    if (this.headerActiveCssClass !== '' && !($('#dropdown-pagination-menu').hasClass('active'))) {
       this.headerActiveCssClass = '';
+    } else if (this.headerActiveCssClass === '' && $('#dropdown-pagination-menu').hasClass('active') && (window.pageYOffset !== 0)) {
+      this.headerActiveCssClass = 'active-header';
     }
   }
 }
