@@ -73,20 +73,17 @@ export class AppComponent implements OnInit, AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   scrollTop(event) {
     // console.log('Scroll Event', window.pageYOffset );
-    if (this.clicked === false) {
-      if (window.pageYOffset !== 0) {
+    // console.log('class name: ', $('#dropdown-pagination-menu').attr('class') );
+      if (window.pageYOffset !== 0 && !($('#dropdown-pagination-menu').hasClass('active'))) {
         this.headerActiveCssClass = 'active-header';
       } else {
         this.headerActiveCssClass = '';
       }
-    }
+    // console.log('headerActiveCssClass: ', this.headerActiveCssClass);
   }
   menuClick() {
-    this.clicked = ( this.clicked ? false : true );
-    if (this.clicked === true) {
+    if (this.headerActiveCssClass !== '') {
       this.headerActiveCssClass = '';
-    } else {
-      this.headerActiveCssClass = 'active-header';
     }
   }
 }

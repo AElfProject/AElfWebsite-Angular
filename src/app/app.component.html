@@ -31,7 +31,7 @@
   </div>
 
 </header>
-<section class="menu-list2">
+<section id="dropdown-pagination-menu" class="index-pagination menu-list2">
   <div class="lines lines-3">
     <div class="grow clearfix">
       <div class="gcol-2 gcol-sm-2 gcol-tn-1"></div>
@@ -40,8 +40,8 @@
       <div class="gcol-2 gcol-sm-2 gcol-tn-1"></div>
     </div>
   </div>
-  <div class="index-pagination menu-list2-bd grow clearfix ta-c">
-    <a href="javascript:;" class="anchor-hd mlb-item gcol-sm-2 hp100 ahchor" data-anchor="transition">
+  <div class="menu-list2-bd grow clearfix ta-c">
+    <a href="javascript:;" class="anchor-hd mlb-item gcol-sm-2 hp100" data-anchor="transition">
       <div class="mlb-txt">
         <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
         <div [ngClass]="ffArial" class="name-en fs-48"><b>Transition</b></div>
@@ -79,11 +79,11 @@
   </div>
   <div [ngClass]="ffArial" class="menu-list2-bd2 hidden tn-show">
         <ul class="fs-24 clearfix mb50">
-            <li><a href="" class="active">{{'区块链转折' | translate}}</a></li>
-            <li><a href="">{{'项目特性' | translate}}</a></li>
-            <li><a href="">{{'优势' | translate}}</a></li>
-            <li><a href="">{{'团队和顾问' | translate}}</a></li>
-            <li><a href="">{{'合作伙伴' | translate}}</a></li>
+            <li><a href="javascript:;" class="anchor-hd" data-anchor="transition">{{'区块链转折' | translate}}</a></li>
+            <li><a href="javascript:;" class="anchor-hd" data-anchor="features">{{'项目特性' | translate}}</a></li>
+            <li><a href="javascript:;" class="anchor-hd" data-anchor="advantage">{{'优势' | translate}}</a></li>
+            <li><a href="javascript:;" class="anchor-hd" data-anchor="team">{{'团队和顾问' | translate}}</a></li>
+            <li><a href="javascript:;" class="anchor-hd" data-anchor="platforms">{{'合作伙伴' | translate}}</a></li>
         </ul>
         <div class="fs-30 clearfix shares">
             <span class="clearfix">
@@ -160,7 +160,7 @@
       <div [ngClass]="ffArial" class="scroll-down fs-14 color-white">{{ 'Scroll down' | translate }}</div>
     </div>
   </section>
-  <section class="section section-2">
+  <section class="section section-2 anchor-bd" id="transition">
     <div class="lines lines-2">
       <div class="wrapper clearfix">
         <div class="grow clearfix">
@@ -212,7 +212,7 @@
         </div>
       </div>
     </div>
-    <div id="transition_section" class="cont">
+    <div class="cont">
       <div class="txt pt110">
         <div class="wrapper clearfix">
           <div class="grow clearfix mb55" data-bottom="transform:translate(-100%, 0%);" data-center="transform: translate(0px, 0);">
@@ -297,7 +297,7 @@
       </div>
     </div>
   </section>
-  <section class="section section-4 bg-img" style="background-image: url(assets/images/section-4-bg.jpg);">
+  <section class="section section-4 bg-img anchor-bd" id="features" style="background-image: url(assets/images/section-4-bg.jpg);">
     <div class="lines lines-1">
       <div class="wrapper clearfix">
         <div class="grow clearfix">
@@ -312,7 +312,7 @@
         </div>
       </div>
     </div>
-    <div id="feature_section" class="cont">
+    <div class="cont">
       <div class="txt pt50 pb80">
         <div class="wrapper clearfix">
           <div class="grow clearfix">
@@ -388,7 +388,7 @@
       </div>
     </div>
   </section>
-  <section class="section section-5 bg-img bg-color-0F9CFF">
+  <section class="section section-5 bg-img bg-color-0F9CFF anchor-bd" id="advantage">
     <div class="circles">
       <div class="c1"><i class="bg-color-5F38D7" data-bottom-top="transform:translate(0%, -300%);" data-top-bottom="transform:translate(0%, 300%);"></i></div>
       <div class="c2"><i class="bg-color-5F38D7" data-top-bottom="transform:translate(0%, -100%);" data-bottom-top="transform:translate(0%, 0%);"></i></div>
@@ -412,7 +412,7 @@
         </div>
       </div>
     </div>
-    <div id="advantage_section" class="cont color-white">
+    <div class="cont color-white">
       <div class="txt pt150 pb100">
         <div class="wrapper clearfix">
           <div class="grow clearfix pt180">
@@ -627,7 +627,7 @@
       </div>
     </div>
   </section>
-  <section class="section section-7 bg-img" style="background-image: url(assets/images/section-7-bg.jpg);">
+  <section class="section section-7 bg-img anchor-bd" id="team" style="background-image: url(assets/images/section-7-bg.jpg);">
     <div class="lines lines-1">
       <div class="wrapper clearfix">
         <div class="grow clearfix">
@@ -727,7 +727,7 @@
     </div>
   </section>
 
-  <section class="section section-9 bg-color-7652E6">
+  <section class="section section-9 bg-color-7652E6 anchor-bd" id="platforms">
     <div class="lines lines-1">
       <div class="wrapper clearfix">
         <div class="grow clearfix">
