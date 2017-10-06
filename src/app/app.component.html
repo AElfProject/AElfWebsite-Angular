@@ -68,7 +68,8 @@
         <div class="tn-hidden line m-auto mb35 w1 h30 bg-color-CBCBCB"></div>
         <div [ngClass]="ffArial" class="name-en fs-60 mb45"><b>Grid Foundation</b></div>
         <div class="w180 btns m-auto">
-          <a href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan.zip" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14 mb15">{{'Grid商业企划书' | translate}}</a>
+          <a *ngIf="currentLanguage==='Chinese'" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_zh.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14 mb15">{{'Grid商业企划书' | translate}}</a>
+          <a *ngIf="currentLanguage==='English'" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_en.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14 mb15">{{'Grid商业企划书' | translate}}</a>
           <a href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_1.0.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14">{{'项目白皮书' | translate}}</a>
         </div>
       </div>
