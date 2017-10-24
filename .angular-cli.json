@@ -19,13 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css",
-        "./assets/font-awesome-4.6.3/css/font-awesome.min.css",
-        "./assets/fonts/fonts.css",
-        "./assets/plugin.min.css",
-        "./assets/layout.min.css",
-        "./assets/theme-and-page.min.css",
-        "./assets/responsive.min.css"
+        "styles.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
