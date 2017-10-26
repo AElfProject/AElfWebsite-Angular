@@ -9,6 +9,7 @@ import {CookieModule} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+import {WindowService} from './shared/window.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,7 +35,7 @@ const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CookieModule.forRoot(),
     PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG)
   ],
-  providers: [LanguageService, FontFamliyService],
+  providers: [LanguageService, FontFamliyService, WindowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

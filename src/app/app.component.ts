@@ -3,6 +3,7 @@ import {CookieService} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
+import {WindowService} from "./shared/window.service";
 declare let $: any;
 
 @Component({
@@ -11,55 +12,23 @@ declare let $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  clicked = false;
-  headerActiveCssClass = '';
+  public headerActiveCssClass = '';
   public config: PerfectScrollbarConfigInterface = {};
 
-  currentLanguage = '';
-  languagesDic: any;
-  languageList = [];
-  ffArial = '';
-  ffCg = '';
-  ffCgb = '';
-  ffDbb = '';
-  ffHnlt = '';
-  ffMy = '';
-  ffSs = '';
-  ffTnri = '';
-  constructor( private language: LanguageService, private _cookieService: CookieService, private _fontFamlily: FontFamliyService) {
-  }
-
-  OnChange(languageSelection: string) {
-    console.log('---------switch language----------' + languageSelection);
-    this.language.switchLanguage(this.languagesDic[languageSelection]);
-    this.currentLanguage = languageSelection;
-    this.ffArial = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-arial');
-    this.ffCg = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cg');
-    this.ffCgb = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cgb');
-    this.ffDbb = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-dbb');
-    this.ffHnlt = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-hnlt');
-    this.ffMy = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-my');
-    this.ffSs = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-ss');
-    this.ffTnri = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-tnri');
-    this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+  public currentLanguage = '';
+  public languagesDic: any;
+  public languageList = ['', ''];
+  constructor( private _languageService: LanguageService,
+               private _cookieService: CookieService,
+               public _fontFamlily: FontFamliyService,
+               private _windowRef: WindowService) {
   }
   ngOnInit() {
-    this.language.getLanguageConfig().subscribe(data => {
-      this.languagesDic = data['languagesDic'];
+    this._languageService.getLanguageConfig().subscribe(data => {
+      this.languagesDic = data['languagesDic1'];
       this.languageList = data['languageOptions'];
-      this.currentLanguage = data['languagesDic2'][this.language.getBrowserCultureLanguage()];
-
-      if (this._cookieService.get('SelectedLanguage') !== undefined) {
-        this.currentLanguage = data['languagesDic2'][this._cookieService.get('SelectedLanguage')];
-      }
-      this.ffArial = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-arial');
-      this.ffCg = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cg');
-      this.ffCgb = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-cgb');
-      this.ffDbb = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-dbb');
-      this.ffHnlt = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-hnlt');
-      this.ffMy = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-my');
-      this.ffSs = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-ss');
-      this.ffTnri = this._fontFamlily.getFontFamily(this.currentLanguage, 'ff-tnri');
+      this.currentLanguage = data['languagesDic2'][this._languageService.getWebPageCurrentLanguage()];
+      this._fontFamlily.changeFontFamily(this.currentLanguage);
     });
   }
   ngAfterViewInit() {
@@ -70,21 +39,30 @@ export class AppComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'opacity': 0.6});
   }
+  OnChange(languageSelection: string) {
+    console.log('---------switch _languageService----------' + languageSelection);
+    this._languageService.switchLanguage(this.languagesDic[languageSelection]);
+    this.currentLanguage = languageSelection;
+    this._fontFamlily.changeFontFamily(this.currentLanguage);
+    this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+  }
+  // nav bar change color when the scroll event happens.
   @HostListener('window:scroll', ['$event'])
   scrollTop(event) {
     // console.log('Scroll Event', window.pageYOffset );
     // console.log('class name: ', $('#dropdown-pagination-menu').attr('class') );
-      if (window.pageYOffset !== 0 && !($('#dropdown-pagination-menu').hasClass('active'))) {
+      if (this._windowRef.nativeWindow.pageYOffset !== 0 && !($('#dropdown-pagination-menu').hasClass('active'))) {
         this.headerActiveCssClass = 'active-header';
       } else {
         this.headerActiveCssClass = '';
       }
     // console.log('headerActiveCssClass: ', this.headerActiveCssClass);
   }
+  // add or delete active class for html header element when click menu button.
   menuClick() {
     if (this.headerActiveCssClass !== '' && !($('#dropdown-pagination-menu').hasClass('active'))) {
       this.headerActiveCssClass = '';
-    } else if (this.headerActiveCssClass === '' && $('#dropdown-pagination-menu').hasClass('active') && (window.pageYOffset !== 0)) {
+    } else if (this.headerActiveCssClass === '' && $('#dropdown-pagination-menu').hasClass('active') && (this._windowRef.nativeWindow.pageYOffset !== 0)) {
       this.headerActiveCssClass = 'active-header';
     }
   }

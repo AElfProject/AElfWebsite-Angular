@@ -13,7 +13,7 @@
                 <a href="https://gridblockchaininfo.slack.com/messages/C6Y3TKU2W/" target="_blank"><i class="fa fa-slack"></i></a>
             </span>
         </div>
-    <div [ngClass]="ffMy" class="lang color-white">
+    <div [ngClass]="_fontFamlily.ffMy" class="lang color-white">
       <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
       <ul class="fs-14 clearfix">
         <li *ngFor="let item of languageList" (click)="OnChange(item)">{{item}}</li>
@@ -44,21 +44,21 @@
     <a href="javascript:;" class="anchor-hd mlb-item gcol-sm-2 hp100" data-anchor="transition">
       <div class="mlb-txt">
         <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
-        <div [ngClass]="ffArial" class="name-en fs-48"><b>Transition</b></div>
+        <div [ngClass]="_fontFamlily.ffArial" class="name-en fs-48"><b>Transition</b></div>
         <div class="name-cn fs-24">转折</div>
       </div>
     </a>
     <a href="javascript:;" class="anchor-hd mlb-item gcol-sm-2 hp100" data-anchor="features">
       <div class="mlb-txt">
         <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
-        <div [ngClass]="ffArial" class="name-en fs-48"><b>Features</b></div>
+        <div [ngClass]="_fontFamlily.ffArial" class="name-en fs-48"><b>Features</b></div>
         <div class="name-cn fs-24">特性</div>
       </div>
     </a>
     <a href="javascript:;" class="anchor-hd mlb-item gcol-sm-2 hp100" data-anchor="advantage">
       <div class="mlb-txt">
         <div class="line m-auto mb20 w1 h20 bg-color-CBCBCB"></div>
-        <div [ngClass]="ffArial" class="name-en fs-48"><b>Advantage</b></div>
+        <div [ngClass]="_fontFamlily.ffArial" class="name-en fs-48"><b>Advantage</b></div>
         <div class="name-cn fs-24">优势</div>
       </div>
     </a>
@@ -66,19 +66,19 @@
       <div class="mlb-txt2">
         <div class="tn-hidden logo-img mb30"><img src="assets/images/logo.png" alt=""></div>
         <div class="tn-hidden line m-auto mb35 w1 h30 bg-color-CBCBCB"></div>
-        <div [ngClass]="ffArial" class="name-en fs-60 mb45"><b>Grid Foundation</b></div>
+        <div [ngClass]="_fontFamlily.ffArial" class="name-en fs-60 mb45"><b>Grid Foundation</b></div>
         <div class="w180 btns m-auto">
-          <a *ngIf="currentLanguage==='Chinese'" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_zh.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14 mb15">{{'Grid商业企划书' | translate}}</a>
-          <a *ngIf="currentLanguage==='English'" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_en.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14 mb15">{{'Grid商业企划书' | translate}}</a>
+          <a *ngIf="currentLanguage===languageList[1]" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_zh.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14 mb15">{{'Grid商业企划书' | translate}}</a>
+          <a *ngIf="currentLanguage===languageList[0]" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_en.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14 mb15">{{'Grid商业企划书' | translate}}</a>
           <a href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_1.0.pdf" class="wp100 btn btn-h40 btn-rounded btn-border-thin btn-style-4 fs-14">{{'项目白皮书' | translate}}</a>
         </div>
       </div>
       <div class="tn-hidden mlb-txt3">
-        <p [ngClass]="ffArial" class="fs-12 color-white">Copyright © 2017 GRID Foundation</p>
+        <p [ngClass]="_fontFamlily.ffArial" class="fs-12 color-white">Copyright © 2017 GRID Foundation</p>
       </div>
 	</div>
   </div>
-  <div [ngClass]="ffArial" class="menu-list2-bd2 hidden tn-show">
+  <div [ngClass]="_fontFamlily.ffArial" class="menu-list2-bd2 hidden tn-show">
         <ul class="fs-24 clearfix mb50">
             <li><a href="javascript:;" class="anchor-hd" data-anchor="transition">{{'区块链转折' | translate}}</a></li>
             <li><a href="javascript:;" class="anchor-hd" data-anchor="features">{{'项目特性' | translate}}</a></li>
@@ -128,20 +128,20 @@
         <div class="wrapper clearfix" data-center="transform:translate(0, 0%);opacity:1;" data-top-bottom="transform: translate(0px, 60%);opacity:0;">
           <div class="grow clearfix">
             <div class="gcol-3 gcol-ol-1 gcol-md-4 no-pl no-pr">
-              <h3 [ngClass]="ffCgb" class="fs-115 color-white lh-10em mb40">{{ 'Grid' | translate }}<br/>{{ '基金会' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-115 color-white lh-10em mb40">{{ 'Grid' | translate }}<br/>{{ '基金会' | translate }}</h3>
               <div class="times-style-1 ta-c color-white timer-simple-seconds clearfix mb65" datetime="2017/9/5 0:0:1">
                 <ul class="clearfix">
                   <li class="mr40 pt10">
                     <p class="name ff-ai fs-12">{{ 'Year' | translate }}:</p>
-                    <p [ngClass]="ffHnlt" class="hour value fs-48">2017</p>
+                    <p [ngClass]="_fontFamlily.ffHnlt" class="hour value fs-48">2017</p>
                   </li>
                   <li class="mr40 pt10">
                     <p class="name ff-ai fs-12">{{ 'Month' | translate }}:</p>
-                    <p [ngClass]="ffHnlt" class="minute value fs-48">09</p>
+                    <p [ngClass]="_fontFamlily.ffHnlt" class="minute value fs-48">09</p>
                   </li>
                   <li class="mr40 pt10">
                     <p class="name ff-ai fs-12">{{ 'Day' | translate }}:</p>
-                    <p [ngClass]="ffHnlt" class="second value fs-48">13</p>
+                    <p [ngClass]="_fontFamlily.ffHnlt" class="second value fs-48">13</p>
                   </li>
                 </ul>
               </div>
@@ -150,8 +150,8 @@
           <div class="btns grow clearfix">
             <div class="gcol-1 gcol-ol-1 gcol-md-2 gcol-sm-4 no-pl no-pr">
               <p class="mb20">
-                <a *ngIf="currentLanguage==='Chinese'" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_zh.pdf" class="wp100 btn btn-border-thick btn-h46 btn-style-speical-1 fs-16 ta-c"><span>{{ 'Grid商业企划书' | translate }}</span></a>
-                <a *ngIf="currentLanguage==='English'" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_en.pdf" class="wp100 btn btn-border-thick btn-h46 btn-style-speical-1 fs-16 ta-c"><span>{{ 'Grid商业企划书' | translate }}</span></a>
+                <a *ngIf="currentLanguage===languageList[1]" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_zh.pdf" class="wp100 btn btn-border-thick btn-h46 btn-style-speical-1 fs-16 ta-c"><span>{{ 'Grid商业企划书' | translate }}</span></a>
+                <a *ngIf="currentLanguage===languageList[0]" href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_Business_Plan/Grid_Business_Plan_en.pdf" class="wp100 btn btn-border-thick btn-h46 btn-style-speical-1 fs-16 ta-c"><span>{{ 'Grid商业企划书' | translate }}</span></a>
               </p>
               <p><a href="https://github.com/GridProject/GridWebsite-Angular/raw/master/WhitePaper/Grid_1.0.pdf" class="wp100 btn btn-border-thick btn-h46 btn-style-speical-1 fs-16 ta-c"><span>{{ '项目白皮书' | translate }}</span></a>
               </p>
@@ -159,7 +159,7 @@
           </div>
         </div>
       </div>
-      <div [ngClass]="ffArial" class="scroll-down fs-14 color-white">{{ 'Scroll down' | translate }}</div>
+      <div [ngClass]="_fontFamlily.ffArial" class="scroll-down fs-14 color-white">{{ 'Scroll down' | translate }}</div>
     </div>
   </section>
   <section class="section section-2 anchor-bd" id="transition">
@@ -171,7 +171,7 @@
           <div class="gcol-1 gcol-tn-1"></div>
           <div class="gcol-1 gcol-tn-1"></div>
           <div class="gcol-1 gcol-tn-1"></div>
-          <div class="gcol-1 gcol-tn-1"><i class="line-box2 w1 h345" data-100p="height:0%;" data-130p="height:60%"><span [ngClass]="ffArial"
+          <div class="gcol-1 gcol-tn-1"><i class="line-box2 w1 h345" data-100p="height:0%;" data-130p="height:60%"><span [ngClass]="_fontFamlily.ffArial"
             class="line-txt fs-14 color-8f5ff0 mt25" style="font-style:normal;"><b> {{ 'Critical' | translate }}<br/>{{ 'Point' | translate }}</b></span></i>
           </div>
           <div class="gcol-1 gcol-tn-1"></div>
@@ -187,18 +187,18 @@
           <div class="gcol-1 gcol-tn-1">
             <div class="s1 num" data-bottom="transform:scale(0);" data-center="transform:scale(1);"><span class="fs-16 color-8f5ff0"><b>200</b></span></div>
             <div class="info color-white wp55 ta-c" data-bottom="transform:translate(-50%, 30%); opacity:0;" data-center-bottom="transform:translate(-50%, 0%); opacity:1;">
-              <p [ngClass]="ffArial" class="mb30 lh-14em-3over fs-18"><b>{{ '染色币/链' | translate }}</b></p>
-              <h4 [ngClass]="ffDbb" class="fs-72 mb10">01</h4>
-              <p [ngClass]="ffArial" class="fs-18">2013 - 2014</p>
+              <p [ngClass]="_fontFamlily.ffArial" class="mb30 lh-14em-3over fs-18"><b>{{ '染色币/链' | translate }}</b></p>
+              <h4 [ngClass]="_fontFamlily.ffDbb" class="fs-72 mb10">01</h4>
+              <p [ngClass]="_fontFamlily.ffArial" class="fs-18">2013 - 2014</p>
             </div>
           </div>
           <div class="gcol-1 gcol-tn-1"></div>
           <div class="gcol-1 gcol-tn-1">
             <div class="s2 num" data-bottom="transform:scale(0);" data-center="transform:scale(1);"><span class="fs-16 color-8f5ff0"><b>500</b></span></div>
             <div class="info color-white wp55 ta-c" data-bottom="transform:translate(-50%, 40%); opacity:0;" data-center-bottom="transform:translate(-50%, 0%); opacity:1;">
-              <p [ngClass]="ffArial" class="mb30 lh-14em-3over fs-18"><b>{{ '基于商业概念的代币发售' | translate }}</b></p>
-              <h4 [ngClass]="ffDbb" class="fs-72 mb10">02</h4>
-              <p [ngClass]="ffArial" class="fs-18">2015 - 2017</p>
+              <p [ngClass]="_fontFamlily.ffArial" class="mb30 lh-14em-3over fs-18"><b>{{ '基于商业概念的代币发售' | translate }}</b></p>
+              <h4 [ngClass]="_fontFamlily.ffDbb" class="fs-72 mb10">02</h4>
+              <p [ngClass]="_fontFamlily.ffArial" class="fs-18">2015 - 2017</p>
             </div>
           </div>
           <div class="gcol-1 gcol-tn-1"></div>
@@ -206,8 +206,8 @@
             <div class="s3 num" data-bottom="transform:scale(0);" data-center="transform:scale(1);"><span class="fs-16 color-8f5ff0"><b>1000</b></span></div>
             <div class="info color-white wp55 ta-c" data-bottom="transform:translate(-50%, 50%); opacity:0;" data-center-bottom="transform:translate(-50%, 0%); opacity:1;">
               <p class="mb30 lh-14em-3over fs-18">{{ '真实商业价值进入区块链的临界点' | translate }}</p>
-              <h4 [ngClass]="ffDbb" class="fs-72 mb10">03</h4>
-              <p [ngClass]="ffArial" class="fs-18">{{ '未来' | translate }}</p>
+              <h4 [ngClass]="_fontFamlily.ffDbb" class="fs-72 mb10">03</h4>
+              <p [ngClass]="_fontFamlily.ffArial" class="fs-18">{{ '未来' | translate }}</p>
             </div>
           </div>
           <div class="gcol-1 gcol-tn-1"></div>
@@ -219,7 +219,7 @@
         <div class="wrapper clearfix">
           <div class="grow clearfix mb55" data-bottom="transform:translate(-100%, 0%);" data-center="transform: translate(0px, 0);">
             <div class="gcol-3 gcol-ol-1 gcol-md-4 no-pl no-pr">
-              <h3 [ngClass]="ffCgb" class="fs-115 color-8f5ff0 lh-9em">{{ 'Transition' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-115 color-8f5ff0 lh-9em">{{ 'Transition' | translate }}</h3>
               <p class="fs-36 color-8f5ff0"><b>{{ '区块链转折' | translate }}</b></p>
               <p class="fs-16 color-999999">{{ '从概念为主-商业价值驱动' | translate }}</p>
             </div>
@@ -253,7 +253,7 @@
         <div class="wrapper clearfix">
           <div class="grow clearfix">
             <div class="gcol-2 gcol-ol-1 gcol-lg-4 gcol-md-8 no-pl no-pr pt70" data-bottom="transform:translate(0%, 100%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffCgb" class="fs-115 color-8f5ff0 lh-9em">{{ 'Break' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-115 color-8f5ff0 lh-9em">{{ 'Break' | translate }}</h3>
               <p class="fs-36 color-8f5ff0 mb50"><b>{{ '区块链的下一个突破' | translate }}</b></p>
               <p class="fs-16 color-999999">{{ '区块链技术的下一个突破是建立商业级的技术平台，' | translate }}<br/>{{ '满足商业需求，促进商业应用与创新' |
                 translate }}</p>
@@ -285,7 +285,7 @@
             </div>
             <div class="gcol-1 gcol-sm-2 gcol-lg-1 pt45 nopr nopl ta-c h455 bg-color-8f5ff0 clearfix" data-bottom="transform:translate(-50%, 0%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <p class="fs-14 color-white lh-18em pl10 pr10 mb5">{{ '未来区块链行业' | translate }}</p>
-              <p [ngClass]="ffCgb" class="mb45 pl10 pr10 fs-52 color-white">{{ '构想' | translate }}</p>
+              <p [ngClass]="_fontFamlily.ffCgb" class="mb45 pl10 pr10 fs-52 color-white">{{ '构想' | translate }}</p>
               <article class="pl10 pr10 fs-16 color-white lh-16em mb55 pl10 pr10">
                 <p>{{ '保险行业' | translate }}</p>
                 <p>{{ '去中心化交易' | translate }}</p>
@@ -319,7 +319,7 @@
         <div class="wrapper clearfix">
           <div class="grow clearfix">
             <div class="i-fr gcol-3 no-pl gcol-md-2 gcol-tn-8 no-pr pt110" data-bottom="transform:translate(0%, 100%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffCgb" class="fs-115 color-white lh-9em">{{ 'Features' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-115 color-white lh-9em">{{ 'Features' | translate }}</h3>
               <p class="fs-36 color-white mb50"><b>{{ '区块链特性' | translate }}</b></p>
               <p class="fs-16 color-white"> {{ 'Grid作为一条高效可进化的多链区块链' | translate }}<br/>{{ '满足了未来推动商业融合的需求。' | translate }}</p>
             </div>
@@ -419,21 +419,21 @@
         <div class="wrapper clearfix">
           <div class="grow clearfix pt180">
             <div class="gcol-3 gcol-ol-1 gcol-lg-4 gcol-md-4 gcol-tn-8 no-pl no-pr pt110" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffCgb" class="fs-115 lh-9em">{{ 'Advantage' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-115 lh-9em">{{ 'Advantage' | translate }}</h3>
               <p class="fs-36 mb50"><b>{{ '项目优势' | translate }}</b></p>
             </div>
           </div>
           <div class="grow clearfix">
             <div class="no-pl gcol-lg-1 gcol-lg-ol-3 gcol-md-2 gcol-md-ol-2 gcol-tn-6 gcol-tn-ol-1 no-pr pt80" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffDbb" class="fs-115 lh-9em mb45">01</h3>
+              <h3 [ngClass]="_fontFamlily.ffDbb" class="fs-115 lh-9em mb45">01</h3>
               <p class="fs-24 mb25"><b> {{ '一链一场景' | translate }}<br/>{{ '拒绝冗杂' | translate }}</b></p>
               <p class="fs-14 lh-16em">{{ 'Grid 整体设计架构，如同建立了一个“商业核心区”，每一个行业都有适合其自身的侧链，一链一场景，让整个Grid架构有序、高效!' | translate }}</p>
             </div>
             <div class="gcol-lg-3 gcol-lg-ol-0 gcol-md-3 gcol-md-ol-0 gcol-tn-8 no-pl no-pr ta-c" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <p>
-                <span [ngClass]="ffDbb" class="img-txt-1 fs-12 color-white">
+                <span [ngClass]="_fontFamlily.ffDbb" class="img-txt-1 fs-12 color-white">
                   <img src="assets/images/section-5-img-1.png" alt="">
-                  <em [ngClass]="ffArial" class="em1" style="font-size:250%;"><b>Grid</b></em>
+                  <em [ngClass]="_fontFamlily.ffArial" class="em1" style="font-size:250%;"><b>Grid</b></em>
                   <em class="em2">{{ '数字资产' | translate }}<br/>{{ '发行侧链' | translate }}</em>
                   <em class="em3">{{ 'Bitcoin' | translate }}</em>
                   <em class="em4">{{ '保险行' | translate }}<br/>{{ '业侧链' | translate }}</em>
@@ -448,7 +448,7 @@
           <div class="grow clearfix mb20">
             <div class="sm-hidden gcol-md-2 gcol-md-ol-1 gcol-tn-8 no-pl ta-c" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <p>
-                <span [ngClass]="ffDbb" class="img-txt-2 ta-l fs-16 color-white">
+                <span [ngClass]="_fontFamlily.ffDbb" class="img-txt-2 ta-l fs-16 color-white">
                   <img src="assets/images/section-5-img-2.png" alt="">
                   <em class="em1" style="font-size:87.5%;">{{ '共识协议' | translate }}<br/>{{ '智能合约集' | translate }}<br/>{{ '统一化账户系统' | translate }}</em>
                   <em class="em2"> {{ '最小化区块链接系统' | translate }}<br/><i class="fs-12 lh-10em mt5" style="font-style: normal;display:inline-block"></i></em>
@@ -457,7 +457,7 @@
               </p>
             </div>
             <div class="gcol-lg-1 gcol-lg-ol-0 gcol-md-2 gcol-md-ol-0 gcol-tn-6 gcol-tn-ol-1 no-pl no-pr pt40" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffDbb" class="fs-115 lh-9em mb45">02</h3>
+              <h3 [ngClass]="_fontFamlily.ffDbb" class="fs-115 lh-9em mb45">02</h3>
               <p class="fs-24 mb25"><b> {{ '系统定制从此' | translate }}<br/>{{ '轻而易举' | translate }}</b></p>
               <p class="fs-14 lh-16em">{{ '满足瞬息万变的商业变化和创新机制' | translate }}</p>
               <ul class="ul-1" style="list-style: disc;">
@@ -468,7 +468,7 @@
             </div>
             <div class="sm-show hidden gcol-lg-2 gcol-lg-ol-1 gcol-tn-8 no-pl no-pr ta-c" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <p>
-                <span [ngClass]="ffDbb" class="img-txt-2 ta-l fs-16 color-white">
+                <span [ngClass]="_fontFamlily.ffDbb" class="img-txt-2 ta-l fs-16 color-white">
                   <img src="assets/images/section-5-img-2.png" alt="">
                   <em class="em1" style="font-size:87.5%;">{{ '共识协议' | translate }}<br/>{{ '智能合约集' | translate }}<br/>{{ '统一化账户系统' | translate }}</em>
                   <em class="em2"> {{ '最小化区块链接系统' | translate }}<br/><i class="fs-12 lh-10em mt5" style="font-style: normal;display:inline-block">Minimize block chaining <br>system</i></em>
@@ -479,7 +479,7 @@
           </div>
           <div class="grow clearfix mb20">
             <div class="gcol-lg-1 gcol-lg-ol-4 gcol-md-2 gcol-md-ol-4 gcol-tn-6 gcol-tn-ol-1 no-pl no-pr" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffDbb" class="fs-115 lh-9em mb45">03</h3>
+              <h3 [ngClass]="_fontFamlily.ffDbb" class="fs-115 lh-9em mb45">03</h3>
               <p class="fs-24 mb25"><b> {{ '告别拥堵' | translate }}<br/>{{ '从未如此容易' | translate }}</b></p>
               <p class="fs-14 lh-16em">{{ 'Grid设计了高效的并行运算机制，可满足商业级的运算需求，不用担心一个繁忙业务让整个系统拥堵' | translate }}</p>
               <ul class="ul-1" style="list-style: disc;">
@@ -489,20 +489,20 @@
               </ul>
             </div>
             <div class="gcol-md-2 gcol-tn-8 no-pl no-pr ta-c" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <p *ngIf="currentLanguage==='Chinese'" ><img src="assets/images/section-5-img-3.png" alt=""></p>
-              <p *ngIf="currentLanguage==='English'" ><img src="assets/images/section-5-img-3-en.png" alt=""></p>
+              <p *ngIf="currentLanguage===languageList[1]" ><img src="assets/images/section-5-img-3.png" alt=""></p>
+              <p *ngIf="currentLanguage===languageList[0]" ><img src="assets/images/section-5-img-3-en.png" alt=""></p>
             </div>
           </div>
           <div class="grow clearfix">
             <div class="gcol-lg-1 gcol-lg-ol-3 gcol-md-2 gcol-md-ol-3 gcol-tn-6 gcol-tn-ol-1 no-pl no-pr" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffDbb" class="fs-115 lh-9em mb45">04</h3>
+              <h3 [ngClass]="_fontFamlily.ffDbb" class="fs-115 lh-9em mb45">04</h3>
               <p class="fs-24 mb25"><b>{{ '高效跨链通信体系' | translate }}</b></p>
               <p class="fs-14 lh-16em">{{ '独特的主侧链Merkel Tree 索引，高效处理多链结构，侧链间信息传输支持跨链合作' | translate }}</p>
             </div>
           </div>
           <div class="grow clearfix">
             <div class="gcol-lg-1 gcol-lg-ol-4 gcol-md-2 gcol-md-ol-4 gcol-tn-6 gcol-tn-ol-1 no-pl no-pr" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffDbb" class="fs-115 lh-9em mb45">05</h3>
+              <h3 [ngClass]="_fontFamlily.ffDbb" class="fs-115 lh-9em mb45">05</h3>
               <p class="fs-24 mb25"><b>{{ '全新的行业生态模式' | translate }}</b></p>
               <p class="fs-14 lh-16em">{{ 'Grid 将构建一个技术+商业应用+资本三线并行的全新生态模式' | translate }}</p>
             </div>
@@ -510,7 +510,7 @@
           <div class="grow clearfix">
             <div class="gcol-md-4 gcol-md-ol-3 gcol-tn-8 no-pl no-pr ta-c" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <p>
-                <span [ngClass]="ffDbb" class="img-txt-3 ta-l fs-18 color-white">
+                <span [ngClass]="_fontFamlily.ffDbb" class="img-txt-3 ta-l fs-18 color-white">
                   <img src="assets/images/section-5-img-4.png" alt="">
                   <em class="em1">{{ '资本' | translate }}<br/><i class="fs-12 lh-16em mt10" style="font-style: normal;display:inline-block; width: 20em">{{ '使用Grid生态基金，奖励对生态有贡献者，与VC和其他基金一起对前沿创新技术进行投资。' | translate }}</i></em>
                   <em class="em2">{{ '商业应用' | translate }}<br/><i class="fs-12 lh-16em mt10" style="font-style: normal;display:inline-block; width: 20em">{{ '成立商业联盟与创业公司、大型企业一同推动基于Grid的商业创新；与国际咨询公司联合探索新的商。' | translate }}</i></em>
@@ -521,7 +521,7 @@
           </div>
           <div class="grow clearfix">
             <div class="gcol-lg-1 gcol-md-2 gcol-md-ol-3 gcol-tn-6 gcol-tn-ol-1 no-pl no-pr" data-bottom="transform:translate(0%, 200%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <h3 [ngClass]="ffDbb" class="fs-115 lh-9em mb45">06</h3>
+              <h3 [ngClass]="_fontFamlily.ffDbb" class="fs-115 lh-9em mb45">06</h3>
               <p class="fs-24 mb25"><b>{{ 'Grid 强调各链的自我进化与提升，吸收新的侧链、引入新的技术' | translate }}</b></p>
               <ul class="ul-1" style="list-style: disc;">
                 <li>{{ '各链拥有其共识机制，推动未来新技术的引进' | translate }}</li>
@@ -558,7 +558,7 @@
         <div class="wrapper clearfix">
           <div class="grow clearfix">
             <div class="gcol-lg-2 gcol-tn-8 gcol-lg-ol-1 no-pl no-pr pt210 h0">
-              <h3 [ngClass]="ffCgb" class="fs-100 color-8f5ff0 lh-9em mb20">{{ 'Time' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-100 color-8f5ff0 lh-9em mb20">{{ 'Time' | translate }}</h3>
               <p class="fs-30 color-8f5ff0 mb50"><b>{{ '时间线' | translate }}</b></p>
             </div>
             <div
@@ -649,7 +649,7 @@
         <div class="wrapper clearfix">
           <div class="grow team clearfix">
             <div class="gcol-tn-8 hidden pt30 mb30 tn-show">
-              <h3 [ngClass]="ffCgb" class="fs-100 color-white lh-9em mb5">{{ 'Teams & Advisers' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-100 color-white lh-9em mb5">{{ 'Teams & Advisers' | translate }}</h3>
               <p class="fs-30 color-white"><b>{{ '我们的团队和顾问' | translate }}</b></p>
             </div>
             <div class="h655 pt205 gcol-1 gcol-ol-1 gcol-lg-1 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c no-pl no-pr" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
@@ -690,7 +690,7 @@
             </div>
             <div class="md-hidden h655 pt205 gcol-1 gcol-lg-3 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c no-pl no-pr" data-bottom="transform:translate(0%, 60%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <p class="mb25"><img src="assets/images/icon-4.png" alt=""></p>
-              <h3 [ngClass]="ffCgb" class="fs-60 lh-10em mb5">{{ 'Teams & Advisers' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-60 lh-10em mb5">{{ 'Teams & Advisers' | translate }}</h3>
               <p class="fs-24 mb95"><b>{{ '我们的团队和顾问' | translate }}</b></p>
               <a href="" class="add-btn2 m-auto"><i></i><i></i></a>
             </div>
@@ -707,7 +707,7 @@
             </div>
             <div class="hidden tn-hidden md-show h655 pt205 gcol-1 gcol-lg-3 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c no-pl no-pr" data-bottom="transform:translate(0%, 60%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <p class="mb25"><img src="assets/images/icon-4.png" alt=""></p>
-              <h3 [ngClass]="ffCgb" class="fs-60 lh-10em mb5">{{ 'Teams & Advisers' | translate }}</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-60 lh-10em mb5">{{ 'Teams & Advisers' | translate }}</h3>
               <p class="fs-24 mb95"><b>{{ '我们的团队和顾问' | translate }}</b></p>
               <a href="" class="add-btn2 m-auto"><i></i><i></i></a>
             </div>
@@ -758,7 +758,7 @@
         <div class="wrapper clearfix">
           <div class="grow clearfix">
             <div class="i-fr gcol-2 gcol-ol-1 gcol-md-2 no-pl no-pr gcol-tn-8">
-              <h3 [ngClass]="ffCgb" class="fs-45 color-white lh-9em mb20"> {{ '' | translate }}<br/><span [ngClass]="ffCg">Partners</span></h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-45 color-white lh-9em mb20"> {{ '' | translate }}<br/><span [ngClass]="_fontFamlily.ffCg">Partners</span></h3>
               <p class="fs-30 color-white"><b>合作伙伴</b></p>
             </div>
             <div class="i-fl gcol-4 gcol-ol-1 gcol-lg-5 gcol-md-6 no-pl no-pr pt45 gcol-tn-8">
@@ -790,67 +790,6 @@
         </div>
       </div>
     </div>
-    <!--<div class="cont pt100 pb100">
-      <div class="txt">
-        <div class="wrapper clearfix">
-          <div class="grow clearfix">
-            <div class="i-fr gcol-2 gcol-ol-1 mb40 gcol-md-2 no-pl no-pr gcol-tn-8">
-              <h3 class="ff-cgb fs-72 color-white lh-9em mb20">News</h3>
-              <p class="fs-30 color-white">新闻</p>
-            </div>
-            <div class="i-fl gcol-4 gcol-ol-1 gcol-lg-5 gcol-md-6 no-pl no-pr gcol-tn-8">
-              <div class="news-list clearfix">
-                <div class="news-item clearfix" data-bottom="transform:translate(0%, 30%); opacity:0;"
-                     data-center="transform:translate(0%, 0%); opacity:1;">
-                  <div class="date mb30 color-white">
-                    <h3 class="fs-72 ff-cgb lh-10em">21</h3>
-                    <p class="fs-14"><b>2018.10</b></p>
-                  </div>
-                  <div class="txt color-white mb35">
-                    <h3 class="fs-30 lh-12em-2over mb20"><a href="" class="link-2"><b>基于Grid的商业应用开始...</b></a></h3>
-                    <p class="fs-14 color-white lh-15em-4over">基于Grid的商业应用开始在Grid系统中正式开始运行。</p>
-                  </div>
-                  <div class="more">
-                    <a href="" class="btn btn-h46 btn-circle btn-style-5 icon-hover"><i
-                      class="icon-arrow icon-1"></i></a>
-                  </div>
-                </div>
-                <div class="news-item clearfix" data-bottom="transform:translate(0%, 60%); opacity:0;"
-                     data-center="transform:translate(0%, 0%); opacity:1;">
-                  <div class="date mb30 color-white">
-                    <h3 class="fs-72 ff-cgb lh-10em">21</h3>
-                    <p class="fs-14"><b>2018.10</b></p>
-                  </div>
-                  <div class="txt color-white mb35">
-                    <h3 class="fs-30 lh-12em-2over mb20"><a href="" class="link-2"><b>基于Grid的商业应用开始...</b></a></h3>
-                    <p class="fs-14 color-white lh-15em-4over">Grid主链开发完成，与Grid侧链，Grid主链开发完成，与Grid侧链，其他区块链系统进行衔接。</p>
-                  </div>
-                  <div class="more">
-                    <a href="" class="btn btn-h46 btn-circle btn-style-5 icon-hover"><i
-                      class="icon-arrow icon-1"></i></a>
-                  </div>
-                </div>
-                <div class="news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                     data-center="transform:translate(0%, 0%); opacity:1;">
-                  <div class="date mb30 color-white">
-                    <h3 class="fs-72 ff-cgb lh-10em">21</h3>
-                    <p class="fs-14"><b>2018.10</b></p>
-                  </div>
-                  <div class="txt color-white mb35">
-                    <h3 class="fs-30 lh-12em-2over mb20"><a href="" class="link-2"><b>基于Grid的商业应用开始...</b></a></h3>
-                    <p class="fs-14 color-white lh-15em-4over">基于Grid的商业应用开始在Grid系统中正式开始运行。</p>
-                  </div>
-                  <div class="more">
-                    <a href="" class="btn btn-h46 btn-circle btn-style-5 icon-hover"><i
-                      class="icon-arrow icon-1"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
   </section>
 
   <section class="section section-10 bg-color-white">
@@ -873,7 +812,7 @@
         <div class="wrapper clearfix">
           <div class="grow clearfix">
             <div class="gcol-2 gcol-ol-1 gcol-md-3 no-pl no-pr">
-              <h3 [ngClass]="ffCgb" class="fs-72 color-8f5ff0 lh-9em mb20">Foundation</h3>
+              <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 color-8f5ff0 lh-9em mb20">Foundation</h3>
               <p class="fs-36 color-8f5ff0"><b>基金会</b></p>
             </div>
             <div class="gcol-2 gcol-md-3 no-pl no-pr">
