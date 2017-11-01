@@ -60,6 +60,7 @@ export class LanguageService {
   }
 
   getWebPageCurrentLanguage(): string {
+    while (this.webPageCurrentLanguage === '') {}
     return this.webPageCurrentLanguage;
   }
 
