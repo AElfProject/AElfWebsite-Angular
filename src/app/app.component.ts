@@ -27,8 +27,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     this._languageService.getLanguageConfig().subscribe(data => {
       this.languagesDic = data['languagesDic1'];
       this.languageList = data['languageOptions'];
-      this.currentLanguage = data['languagesDic2'][this._languageService.getWebPageCurrentLanguage()];
-      this._fontFamlily.changeFontFamily(this.currentLanguage);
+      this._languageService.getWebPageCurrentLanguage()
+        .subscribe((webPageCurrentLanguage) => {
+          this.currentLanguage = data['languagesDic2'][webPageCurrentLanguage];
+          this._fontFamlily.changeFontFamily(this.currentLanguage);
+        });
     });
   }
   ngAfterViewInit() {
