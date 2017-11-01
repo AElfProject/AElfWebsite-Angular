@@ -4,7 +4,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {Observable} from 'rxjs/Observable';
 import {CookieService} from 'ngx-cookie';
 import {WindowService} from './window.service';
-
+import 'rxjs/Rx';
 @Injectable()
 export class LanguageService {
   // en-US, zh-CN
@@ -59,9 +59,8 @@ export class LanguageService {
     return this._windowRef.nativeWindow.navigator.language;
   }
 
-  getWebPageCurrentLanguage(): string {
-    while (this.webPageCurrentLanguage === '') {}
-    return this.webPageCurrentLanguage;
+  getWebPageCurrentLanguage(): Observable<string> {
+    return Observable.interval(100).mapTo(this.webPageCurrentLanguage).takeWhile((result) => result !== '').take(1);
   }
 
   switchLanguage(language: string) {
