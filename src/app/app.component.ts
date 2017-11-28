@@ -3,7 +3,7 @@ import {CookieService} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
-import {WindowService} from "./shared/window.service";
+import {WindowService} from './shared/window.service';
 declare let $: any;
 
 @Component({

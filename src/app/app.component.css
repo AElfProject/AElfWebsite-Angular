@@ -44,10 +44,6 @@
 }
 
 .active-header {
-  background-image: -webkit-linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95));
-  background-image: -moz-linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95));
-  background-image: -ms-linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95));
-  background-image: -o-linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95));
-  background-image: linear-gradient(to right, rgba(15, 156, 255, .95), rgba(143, 95, 240, .95))
+  background-color: rgba(105,11,177,.5);
 }
 

@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
-    "serve:aot": "ng serve --prod --aot",
-    "build:aot": "ng build --prod --aot",
+    "serve": "ng serve",
+    "build": "ng build",
+    "serve:prod": "ng serve --prod",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
