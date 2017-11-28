@@ -1,26 +1,28 @@
-<div class="fix-top-left">
-  <header class="header clearfix">
+<div class="fix-top">
+  <header class="header clearfix" [ngClass]="headerActiveCssClass">
     <h1 class="logo"><a href=""><img src="assets/images/logo.jpg" alt=""></a></h1>
     <!-- <h1 class="logo3"><a href=""><img src="assets/images/logo3.png" alt=""></a></h1> -->
-    <nav class="nav fs-20 sm-hidden clearfix" style="font-weight:bold;">
+    <nav class="nav fs-20 sm-hidden index-pagination clearfix" style="font-weight:bold;">
       <ul class="clearfix">
-        <li><a href="#anchor-home">{{"首页" | translate}}</a></li>
-        <li><a href="#advantage2">{{"关于我们" | translate}}</a></li>
-        <li><a href="#anchor-team-adviser">{{"团队&顾问" | translate}}</a></li>
+        <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="index">{{"首页" | translate}}</a></li>
+        <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="advan">{{"关于我们" | translate}}</a></li>
+        <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="team">{{"团队" | translate}}</a></li>
+        <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="team2">{{"顾问" | translate}}</a></li>
+        <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="team3">{{"支持机构" | translate}}</a></li>
       </ul>
     </nav>
+    <div class="other">
+      <div [ngClass]="_fontFamlily.ffMy" class="lang color-white">
+        <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
+        <ul class="fs-14 clearfix">
+          <li *ngFor="let item of languageList" (click)="OnChange(item)">{{item}}</li>
+        </ul>
+      </div>
+      <div [ngClass]="_fontFamlily.ffMy" class="btns">
+        <a href="https://grid.hoopox.com/aelf_whitepaper_final4.pdf" class="fs-14"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"白皮书" | translate}}</span></a>
+      </div>
+    </div>
   </header>
-</div>
-<div class="fix-top-right clearfix">
-  <div [ngClass]="_fontFamlily.ffMy" class="lang color-white">
-    <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
-    <ul class="fs-14 clearfix">
-      <li *ngFor="let item of languageList" (click)="OnChange(item)">{{item}}</li>
-    </ul>
-  </div>
-  <div [ngClass]="_fontFamlily.ffMy" class="btns">
-    <a href="https://grid.hoopox.com/aelf_whitepaper_final4.pdf" class="fs-14"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"白皮书" | translate}}</span></a>
-  </div>
 </div>
 <div class="fix-bottom-right sm-hidden">
   <div [ngClass]="_fontFamlily.ffArial" class="copys mb10">Copyright © 2017 ælf</div>
@@ -37,7 +39,7 @@
   </div>
 </div>
 <div class="container index-step" id="skrollr-body">
-  <section class="section section-1" id="anchor-home">
+  <section class="section section-1 anchor-bd" id="index">
     <div class="cont">
       <div class="earth">
         <!-- <div class="bg-img" style="background-image:url(assets/images/section-1-bg.png);"></div> -->
@@ -58,7 +60,7 @@
       </div>
     </div>
   </section>
-  <section class="section section-22 anchor-hd" id="advantage2">
+  <section class="section section-22 anchor-hd" id="advan">
     <div class="cont pt200 pb200">
       <div class="grow pic-txt-list-22 ta-c color-white clearfix">
         <div class="gcol-sm-2 gcol-sm-ol-1 ptl22-item">
@@ -91,14 +93,14 @@
       </div>
     </div>
   </section>
-  <section class="section section-8" id="anchor-team-adviser">
+  <section class="section section-8 anchor-bd" id="team">
     <div class="cont pt200 pb200">
       <div class="txt">
         <div class="wrapper clearfix">
           <div class="grow team2 clearfix">
             <div class="gcol-tn-8 hidden pt30 mb30 tn-show mb30">
               <!-- <h3 class="ff-cgb fs-100 color-white lh-9em mb5">Adviser</h3> -->
-              <p class="fs-34 mb15 color-white"><b>{{"团队&顾问" | translate}}</b></p>
+              <p class="fs-34 mb15 color-white"><b>{{"团队" | translate}}</b></p>
             </div>
             <div class="gcol-1 gcol-ol-1 gcol-lg-1 gcol-sm-2 gcol-md-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-box clearfix">
@@ -136,25 +138,21 @@
                 </div>
               </div>
             </div>
+            <!--<div class="gcol-lg-1 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 80%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+
+              </div>
+            </div>-->
             <div class="md-hidden gcol-1 gcol-lg-3 gcol-sm-2 gcol-md-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 40%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-box clearfix">
-                <p class="fs-34 mb15"><b>{{"团队&顾问" | translate}}</b></p>
+                <p class="fs-34 mb15"><b>{{"团队" | translate}}</b></p>
 
                 <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
               </div>
             </div>
-            <div class="gcol-lg-1 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 80%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="team-box clearfix">
-                <div class="team-pic"><img src="assets/images/face-4.png" alt=""></div>
-                <div class="team-txt pl45 pr45">
-                  <h4 class="fs-18 mb20"><b>{{"周硕基" | translate}}</b></h4>
-                  <div class="fs-12 lh-16em-5over-noellipsis scroll-bd">{{"FBGCapital 创始合伙人，在数字资产交易和投资方面拥有丰富的经验。他同时是一系列区块链企业和项目的早期投资人，被视为亚洲最成熟、富有远见的加密对冲基金领导人。" | translate}}</div>
-                </div>
-              </div>
-            </div>
             <div class="hidden md-show tn-hidden gcol-1 gcol-lg-3 gcol-sm-2 gcol-md-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 40%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-box clearfix">
-                <p class="fs-34 mb15"><b>{{"团队&顾问" | translate}}</b></p>
+                <p class="fs-34 mb15"><b>{{"团队" | translate}}</b></p>
 
                 <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
               </div>
@@ -163,6 +161,110 @@
               <div class="team-box clearfix">
                 <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-8 anchor-bd" id="team2">
+    <div class="cont pt200 pb200">
+      <div class="txt">
+        <div class="wrapper clearfix">
+          <div class="grow team2 clearfix">
+            <div class="gcol-tn-8 hidden pt30 mb30 tn-show mb30">
+              <!-- <h3 class="ff-cgb fs-100 color-white lh-9em mb5">Adviser</h3> -->
+              <p class="fs-34 mb15 color-white"><b>{{"顾问" | translate}}</b></p>
+            </div>
+            <div class="gcol-1 gcol-ol-1 gcol-lg-1 gcol-sm-2 gcol-md-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+                <div class="team-pic"><img src="assets/images/face-6.jpg" alt=""></div>
+                <div class="team-txt pl45 pr45">
+                  <h4 class="fs-18 mb20"><b>{{"Liam Robertson" | translate}}</b></h4>
+                  <div class="perfect-scrollbar-container lh-16em-5over-noellipsis" [perfect-scrollbar]="config">
+                    <div class="fs-12 scroll-bd">{{ '特许金融分析师，特许另类投资分析师' | translate }}<br/>{{ 'Liam是欧洲和中东地区最大的个人和公司交易商之一。作为英国的认证投资经理，他在2016年成立了世界上第一个合规加密货币对冲基金。作为Alphabit的创始人和首席执行官，Liam现在为一些基金，家族企业和突破性区块链企业提供咨询服务。' | translate }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gcol-lg-1 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 50%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+                <div class="team-pic"><img src="assets/images/face-4.png" alt=""></div>
+                <div class="team-txt pl45 pr45">
+                  <h4 class="fs-18 mb20"><b>{{"周硕基" | translate}}</b></h4>
+                  <div class="perfect-scrollbar-container lh-16em-5over-noellipsis" [perfect-scrollbar]="config">
+                    <div class="fs-12  scroll-bd">{{"FBGCapital 创始合伙人，在数字资产交易和投资方面拥有丰富的经验。他同时是一系列区块链企业和项目的早期投资人，被视为亚洲最成熟、富有远见的加密对冲基金领导人。" | translate}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--<div class="gcol-lg-1 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 60%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+              </div>
+            </div>
+            <div class="gcol-lg-1 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 70%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+              </div>
+            </div>
+            <div class="gcol-lg-1 gcol-md-2 gcol-sm-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 80%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+              </div>
+            </div>-->
+            <div class="md-hidden gcol-1 gcol-lg-3 gcol-sm-2 gcol-md-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 40%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+                <p class="fs-34 mb15"><b>{{"顾问" | translate}}</b></p>
+
+                <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
+              </div>
+            </div>
+            <div class="hidden md-show tn-hidden gcol-1 gcol-lg-3 gcol-sm-2 gcol-md-2 gcol-tn-8 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 40%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+                <p class="fs-34 mb15"><b>{{"顾问" | translate}}</b></p>
+
+                <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
+              </div>
+            </div>
+            <div class="hidden tn-show gcol-lg-1 gcol-md-2 gcol-sm-2 gcol-tn-8 ta-c team-item skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 80%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-box clearfix">
+                <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-8 anchor-bd" id="team3">
+    <div class="cont pt200 pb200">
+      <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">{{"支持机构" | translate}}</div>
+      <div class="txt">
+        <div class="wrapper clearfix">
+          <div class="grow team3 clearfix">
+            <div class="gcol-lg-ol-1 gcol-lg-1 gcol-sm-2 gcol-tn-4 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic"><img src="assets/images/partner-2.png" alt=""></div>
+            </div>
+            <div class="gcol-lg-1 gcol-sm-2 gcol-tn-4 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic"><img src="assets/images/partner-5.png" alt=""></div>
+            </div>
+            <div class="gcol-lg-1 gcol-sm-2 gcol-tn-4 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic"><img src="assets/images/partner-6.jpg" alt=""></div>
+            </div>
+            <div class="gcol-lg-1 gcol-sm-2 gcol-tn-4 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic"><img src="" alt=""></div>
+            </div>
+            <div class="gcol-lg-1 gcol-sm-2 gcol-tn-4 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic"><img src="" alt=""></div>
+            </div>
+            <div class="gcol-lg-1 gcol-sm-2 gcol-tn-4 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic"><img src="" alt=""></div>
+            </div>
+
+
+            <div class="gcol-lg-ol-1 gcol-lg-1 gcol-sm-2 gcol-tn-4 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic"><img src="" alt=""></div>
+            </div>
+            <div class="gcol-lg-1 gcol-sm-2 gcol-tn-4 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic"><img src="" alt=""></div>
             </div>
           </div>
         </div>
