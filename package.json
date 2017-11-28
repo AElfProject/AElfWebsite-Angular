@@ -1,6 +1,6 @@
 {
-  "name": "grid-website",
-  "version": "0.0.0",
+  "name": "ælf-website",
+  "version": "1.0.5",
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
@@ -27,6 +27,7 @@
     "@ngx-translate/core": "^8.0.0",
     "@ngx-translate/http-loader": "^2.0.0",
     "core-js": "^2.5.1",
+    "intl": "^1.2.5",
     "jquery": "^3.2.1",
     "ngx-cookie": "^1.0.0",
     "ngx-perfect-scrollbar": "^4.6.4",
