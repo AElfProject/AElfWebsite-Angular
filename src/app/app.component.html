@@ -50,7 +50,8 @@
       <div class="txt color-white">
         <h2 class="fs-90 mb30">{{"去中心化云计算系统" | translate}}</h2>
         <div class="btn-video mb15">
-          <a href=""><img src="assets/images/watch-video.png" alt=""></a>
+          <a *ngIf="currentLanguage===languageList[1]" href="https://grid.hoopox.com/aelf_presentation_CN.pdf"><img src="assets/images/watch-video.png" alt=""></a>
+          <a *ngIf="currentLanguage===languageList[0]" href="https://grid.hoopox.com/aelf_presentation_EN.pdf"><img src="assets/images/watch-video.png" alt=""></a>
         </div>
         <p [ngClass]="_fontFamlily.ffArial" class="fs-12"><strong>Video</strong></p>
       </div>
