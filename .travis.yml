@@ -13,6 +13,6 @@ before_script:
 script:
 - npm run build:prod
 after_success:
-- ssh root@grid.best "sh ~/ci/deploy.sh"
+- ssh -o StrictHostKeyChecking=no root@grid.best "sh ~/ci/deploy.sh"
 addons:
   ssh_known_hosts: grid.best
