@@ -1,6 +1,6 @@
 {
   "name": "aelf-website",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "license": "MIT",
   "scripts": {
     "start": "ng serve --host 0.0.0.0 --disable-host-check",
