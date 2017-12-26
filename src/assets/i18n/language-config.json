@@ -3,18 +3,22 @@
   "initLanguage": "en-US",
   "languagesDic1": {
     "English": "en-US",
-    "Chinese": "zh-CN"
+    "Chinese": "zh-CN",
+    "Japanese": "ja"
   },
   "languagesDic2": {
     "en-US": "English",
-    "zh-CN": "Chinese"
+    "zh-CN": "Chinese",
+    "ja": "Japanese"
   },
   "languages": [
     "en-US",
-    "zh-CN"
+    "zh-CN",
+    "ja"
   ],
   "languageOptions": [
     "English",
-    "Chinese"
+    "Chinese",
+    "Japanese"
   ]
 }
