@@ -54,3 +54,8 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'MS PGothic';
+  src: url("ms-pgothic.ttf") format('truetype');
+}
+
