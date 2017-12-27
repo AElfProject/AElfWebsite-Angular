@@ -4,6 +4,14 @@
   font-family: "Microsoft Yahei", SimSun, sans-serif, arial, "STHeiti Light"
 }
 
+.ff-arial-ja, .ff-cg-ja, .ff-cgb-ja, .ff-dbb-ja, .ff-hnlt-ja, .ff-my-ja, .ff-ss-ja, .ff-tnri-ja {
+  font-family:  "MS PGothic", "Microsoft Yahei", SimSun, sans-serif, arial, "STHeiti Light" !important;
+}
+
+.ff-ja {
+  font-family: 'MS PGothic', Osaka, Arial, sans-serif !important;
+}
+
 .ff-arial-en {
   font-family: arial, SimSun, sans-serif, "Microsoft Yahei", "STHeiti Light"
 }
