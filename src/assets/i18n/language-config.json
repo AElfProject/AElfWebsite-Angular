@@ -4,21 +4,25 @@
   "languagesDic1": {
     "English": "en-US",
     "Chinese": "zh-CN",
-    "Japanese": "ja"
+    "Japanese": "ja",
+    "Korean": "ko"
   },
   "languagesDic2": {
     "en-US": "English",
     "zh-CN": "Chinese",
-    "ja": "Japanese"
+    "ja": "Japanese",
+    "ko": "Korean"
   },
   "languages": [
     "en-US",
     "zh-CN",
-    "ja"
+    "ja",
+    "ko"
   ],
   "languageOptions": [
     "English",
     "Chinese",
-    "Japanese"
+    "Japanese",
+    "Korean"
   ]
 }

@@ -21,6 +21,7 @@ export class LanguageService {
         // set language from browser language, init language and cookie language.--start
         let pendingLanguage = '';
         const browserCultureLang = this.getBrowserCultureLanguage();
+        console.log('browserCultureLang', browserCultureLang);
         const initLanguage = data['initLanguage'];
         const cookieLanguage = this._cookieService.get('SelectedLanguage');
         if (cookieLanguage !== undefined) {
