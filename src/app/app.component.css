@@ -54,4 +54,7 @@
 .active-header {
   background-color: rgba(105,11,177,.5);
 }
+.pie-content-width {
+  width: 380px !important;
+}
 
