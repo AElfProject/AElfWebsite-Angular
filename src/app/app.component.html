@@ -25,7 +25,10 @@
                 </ul>
             </div>
             <div [ngClass]="_fontFamlily.ffMy" class="btns">
-                <a href="https://grid.hoopox.com/%C3%A6lf_whitepaper_v1.2.pdf" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"白皮书" | translate}}</span></a>
+              <a *ngIf="currentLanguage===languageList[1]" href="https://grid.hoopox.com/Aelf%E7%99%BD%E7%9A%AE%E4%B9%A6%E4%B8%AD%E6%96%87v1.2.pdf" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"白皮书" | translate}}</span></a>
+              <a *ngIf="currentLanguage===languageList[0]" href="https://grid.hoopox.com/%C3%A6lf_whitepaper_v1.2.pdf" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"白皮书" | translate}}</span></a>
+              <a *ngIf="currentLanguage===languageList[2]" href="https://grid.hoopox.com/%C3%A6lf_whitepaper_v1.2.pdf" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"白皮书" | translate}}</span></a>
+              <a *ngIf="currentLanguage===languageList[3]" href="https://grid.hoopox.com/%C3%A6lf_whitepaper_v1.2.pdf" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"白皮书" | translate}}</span></a>
             </div>
         </div>
     </header>
