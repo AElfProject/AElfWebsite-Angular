@@ -5,24 +5,28 @@
     "English": "en-US",
     "Chinese": "zh-CN",
     "Japanese": "ja",
-    "Korean": "ko"
+    "Korean": "ko",
+    "French": "fr"
   },
   "languagesDic2": {
     "en-US": "English",
     "zh-CN": "Chinese",
     "ja": "Japanese",
-    "ko": "Korean"
+    "ko": "Korean",
+    "fr": "French"
   },
   "languages": [
     "en-US",
     "zh-CN",
     "ja",
-    "ko"
+    "ko",
+    "fr"
   ],
   "languageOptions": [
     "English",
     "Chinese",
     "Japanese",
-    "Korean"
+    "Korean",
+    "French"
   ]
 }
