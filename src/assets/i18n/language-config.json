@@ -3,17 +3,17 @@
   "initLanguage": "en-US",
   "languagesDic1": {
     "English": "en-US",
-    "Chinese": "zh-CN",
-    "Japanese": "ja",
-    "Korean": "ko",
-    "French": "fr"
+    "中文": "zh-CN",
+    "日本語": "ja",
+    "한국어": "ko",
+    "français": "fr"
   },
   "languagesDic2": {
     "en-US": "English",
-    "zh-CN": "Chinese",
-    "ja": "Japanese",
-    "ko": "Korean",
-    "fr": "French"
+    "zh-CN": "中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "fr": "français"
   },
   "languages": [
     "en-US",
@@ -24,9 +24,9 @@
   ],
   "languageOptions": [
     "English",
-    "Chinese",
-    "Japanese",
-    "Korean",
-    "French"
+    "中文",
+    "日本語",
+    "한국어",
+    "français"
   ]
 }

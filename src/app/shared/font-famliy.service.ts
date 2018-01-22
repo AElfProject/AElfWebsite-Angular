@@ -8,43 +8,43 @@ export class FontFamliyService {
   private FontFamily = {
     'ff-cgb': {
       'English': 'ff-cgb-en',
-      'Chinese': 'ff-cgb-zh',
-      'Japanese': 'ff-cgb-ja'
+      '中文': 'ff-cgb-zh',
+      '日本語': 'ff-cgb-ja'
     },
     'ff-arial': {
       'English': 'ff-arial-en',
-      'Chinese': 'ff-arial-zh',
-      'Japanese': 'ff-arial-ja'
+      '中文': 'ff-arial-zh',
+      '日本語': 'ff-arial-ja'
     },
     'ff-cg': {
       'English': 'ff-cg-en',
-      'Chinese': 'ff-cg-zh',
-      'Japanese': 'ff-cg-ja'
+      '中文': 'ff-cg-zh',
+      '日本語': 'ff-cg-ja'
     },
     'ff-dbb': {
       'English': 'ff-Dbb-en',
-      'Chinese': 'ff-Dbb-zh',
-      'Japanese': 'ff-Dbb-ja'
+      '中文': 'ff-Dbb-zh',
+      '日本語': 'ff-Dbb-ja'
     },
     'ff-hnlt': {
       'English': 'ff-hnlt-en',
-      'Chinese': 'ff-hnlt-zh',
-      'Japanese': 'ff-hnlt-ja'
+      '中文': 'ff-hnlt-zh',
+      '日本語': 'ff-hnlt-ja'
     },
     'ff-my': {
       'English': 'ff-my-en',
-      'Chinese': 'ff-my-zh',
-      'Japanese': 'ff-my-ja'
+      '中文': 'ff-my-zh',
+      '日本語': 'ff-my-ja'
     },
     'ff-ss': {
       'English': 'ff-ss-en',
-      'Chinese': 'ff-ss-zh',
-      'Japanese': 'ff-ss-ja'
+      '中文': 'ff-ss-zh',
+      '日本語': 'ff-ss-ja'
     },
     'ff-tnri': {
       'English': 'ff-tnri-en',
-      'Chinese': 'ff-tnri-zh',
-      'Japanese': 'ff-tnri-ja'
+      '中文': 'ff-tnri-zh',
+      '日本語': 'ff-tnri-ja'
     }
   };
   public ffArial = '';
@@ -69,7 +69,7 @@ export class FontFamliyService {
     this.ffSs = this.getFontFamily(language, 'ff-ss');
     this.ffTnri = this.getFontFamily(language, 'ff-tnri');
     const font = 'STHeiti Light';
-    if (language === 'Japanese') {
+    if (language === '日本語') {
       $('body').attr('style', 'font-family: "MS PGothic", Osaka, Arial, sans-serif !important');
     } else {
       $('body').attr('style', 'font-family: "Microsoft Yahei", arial, Helvetica !important');
