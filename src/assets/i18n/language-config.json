@@ -6,27 +6,31 @@
     "中文": "zh-CN",
     "日本語": "ja",
     "한국어": "ko",
-    "français": "fr"
+    "français": "fr",
+    "Deutsch": "de"
   },
   "languagesDic2": {
     "en-US": "English",
     "zh-CN": "中文",
     "ja": "日本語",
     "ko": "한국어",
-    "fr": "français"
+    "fr": "français",
+    "de": "Deutsch"
   },
   "languages": [
     "en-US",
     "zh-CN",
     "ja",
     "ko",
-    "fr"
+    "fr",
+    "de"
   ],
   "languageOptions": [
     "English",
     "中文",
     "日本語",
     "한국어",
-    "français"
+    "français",
+    "Deutsch"
   ]
 }
