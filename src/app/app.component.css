@@ -5,7 +5,7 @@
 }
 
 .ff-arial-ja, .ff-cg-ja, .ff-cgb-ja, .ff-dbb-ja, .ff-hnlt-ja, .ff-my-ja, .ff-ss-ja, .ff-tnri-ja {
-  font-family:  "MS PGothic", "Microsoft Yahei", SimSun, sans-serif, arial, "STHeiti Light" !important;
+  font-family: "MS PGothic", "Microsoft Yahei", SimSun, sans-serif, arial, "STHeiti Light" !important;
 }
 
 .ff-ja {
@@ -52,9 +52,16 @@
 }
 
 .active-header {
-  background-color: rgba(105,11,177,.5);
+  background-color: rgba(105, 11, 177, .5);
 }
+
 .pie-content-width {
   width: 380px !important;
 }
 
+@media screen and (min-width: 2200px) {
+  .col-ysg-2 {
+    float: left;
+    width: 16.66667%;
+  }
+}
