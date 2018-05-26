@@ -642,63 +642,6 @@
       </div>
     </div>
   </section>-->
-    <!--<section class="section section-11 anchor-bd" id="news">
-    <div class="cont pt100 pb100">
-      <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"新闻" | translate}}</b></div>
-      <div class="txt">
-        <div class="grow news-list clearfix">
-          <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-            <div class="news-box">
-              <div class="date mb30 color-white">
-                <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">28</h3>
-                <p class="fs-14"><b>2017.11</b></p>
-              </div>
-              <div class="pic mb30"><div class="bg-img" style="background-image: url(assets/images/Blog-1.jpg);"></div></div>
-              <div class="txt color-white mb35">
-                <h3 class="fs-30 lh-12em-2over mb20"><a href="https://medium.com/@aelfblockchain/%C3%A6lf-announces-its-plan-for-a-blockhain-central-business-district-52b7bfbcc830" target="_blank" class="link-2"><b>ælf Announces Its Plan for a Blockhain ‘Central Business District’</b></a></h3>
-                <p class="fs-14 color-white lh-15em-4over">28th November 2017, NEW YORK — In front of a packed audience at Consensus Invest 2017, ælf (http://aelf.io/) Co-founder Zhuling Chen presented their plan to unleash commercial values on a performant multi-layer blockchain system. The vision is to establish a “Central Business District” where different industry applications have dedicated chains to serve their needs.</p>
-              </div>
-              <div class="more">
-                <a href="https://medium.com/@aelfblockchain/%C3%A6lf-announces-its-plan-for-a-blockhain-central-business-district-52b7bfbcc830" target="_blank" class="btn btn-h46 btn-circle btn-style-5 icon-hover"><i class="icon-arrow icon-1"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 60%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-            <div class="news-box">
-              <div class="date mb30 color-white">
-                <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">24</h3>
-                <p class="fs-14"><b>2017.11</b></p>
-              </div>
-              <div class="pic mb30"><div class="bg-img" style="background-image: url(assets/images/Blog-2.jpeg);"></div></div>
-              <div class="txt color-white mb35">
-                <h3 class="fs-30 lh-12em-2over mb20"><a href="https://medium.com/@aelfblockchain/announcement-we-rename-grid-to-%C3%A6lf-7d4dbf9c4fff" target="_blank" class="link-2"><b>Announcement: we rename Grid to ælf !</b></a></h3>
-                <p class="fs-14 color-white lh-15em-4over">Grid, initiated by the non-profit organization Grid Foundation in Singapore, announced it changes its project name to to ælf and its official logo and website accordingly. We have encountered many confusions caused by the coincidental similarities of our name Grid and the other project called Grid+. To avoid future misunderstandings, we have decided to adopt the name ælf, in line with the features of our project. An ælf is indicative of similar speciality of our design in the power of the cluster computing and the flexibility of the multi-chain structure.</p>
-              </div>
-              <div class="more">
-                <a href="https://medium.com/@aelfblockchain/announcement-we-rename-grid-to-%C3%A6lf-7d4dbf9c4fff" target="_blank" class="btn btn-h46 btn-circle btn-style-5 icon-hover"><i class="icon-arrow icon-1"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-            <div class="news-box">
-              <div class="date mb30 color-white">
-                <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">18</h3>
-                <p class="fs-14"><b>2017.11</b></p>
-              </div>
-              <div class="pic mb30"><div class="bg-img" style="background-image: url(assets/images/Blog-3.jpg);"></div></div>
-              <div class="txt color-white mb35">
-                <h3 class="fs-30 lh-12em-2over mb20"><a href="https://medium.com/@aelfblockchain/we-are-a-different-animal-from-polkadot-91d81deb09db" target="_blank" class="link-2"><b>We Are A DIFFERENT Animal from Polkadot</b></a></h3>
-                <p class="fs-14 color-white lh-15em-4over">We have been asked by this question since the beginning. We believe it is necessary to present a straightforward answer: no, Polkadot and Grid are two different ideas.</p>
-              </div>
-              <div class="more">
-                <a href="https://medium.com/@aelfblockchain/we-are-a-different-animal-from-polkadot-91d81deb09db" target="_blank" class="btn btn-h46 btn-circle btn-style-5 icon-hover"><i class="icon-arrow icon-1"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>-->
   <section class="section section-13 anchor-bd" id="token_allocation">
     <div class="cont">
       <div class="txt">
@@ -739,6 +682,235 @@
       </div>
     </div>
   </section>
+  <section class="section section-11 anchor-bd" id="news" [ngSwitch]="currentLanguage">
+    <ng-template [ngSwitchCase]="languageList[1]">
+      <div class="cont pt100 pb100">
+        <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between"
+             data-bottom="transform:translate(0%, 30%); opacity:0;"
+             data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"新闻" | translate}}</b></div>
+        <div class="txt">
+          <div class="grow news-list clearfix">
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 30%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">22</h3>
+                  <p class="fs-14"><b>2018.5</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-1.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="http://news.ifeng.com/a/20180522/58404226_0.shtml"
+                    target="_blank" class="link-2"><b>ælf参加CONSENSUS2018大会</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 60%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">8</h3>
+                  <p class="fs-14"><b>2018.5</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-3.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="http://nb.chinabyte.com/302/14506302.shtml"
+                    target="_blank" class="link-2"><b>ælf创新联盟价值几何</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">16</h3>
+                  <p class="fs-14"><b>2018.5</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-6.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="https://www.jinse.com/blockchain/193566.html"
+                    target="_blank" class="link-2"><b>NASDAQ专访ælf联合创始人陈注伶</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">11</h3>
+                  <p class="fs-14"><b>2018.5</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-7.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="http://games.qq.com/a/20180511/019486.htm"
+                    target="_blank" class="link-2"><b>下一站，ælf之城！</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">2</h3>
+                  <p class="fs-14"><b>2018.3</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-4.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="https://www.jinse.com/blockchain/155725.html"
+                    target="_blank" class="link-2"><b>ælf出席斯坦福会议</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">20</h3>
+                  <p class="fs-14"><b>2017.12</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-9.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="http://www.sohu.com/a/211728005_133037"
+                    target="_blank" class="link-2"><b>「ælf」剑指EOS和以太坊</b></a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+      <div class="cont pt100 pb100">
+        <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between"
+             data-bottom="transform:translate(0%, 30%); opacity:0;"
+             data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"新闻" | translate}}</b></div>
+        <div class="txt">
+          <div class="grow news-list clearfix">
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 30%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">4</h3>
+                  <p class="fs-14"><b>2018.5</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-12.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="https://globalcoinreport.com/aelf-elf-is-working-on-mass-adoption-with-innovation-alliance/"
+                    target="_blank" class="link-2"><b>ælf is Working on Mass Adoption with Innovation Alliance</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">11</h3>
+                  <p class="fs-14"><b>2018.4</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-18.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="https://medium.com/@aelfblockchain/aelf-real-world-applications-9bff7c2ffbeb"
+                    target="_blank" class="link-2"><b>ælf — Real world Applications</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">6</h3>
+                  <p class="fs-14"><b>2018.4</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-14.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="https://cryptorecorder.com/2018/04/06/aelf-elf-the-candy-system-will-open-up-demand-for-this-crypto/"
+                    target="_blank" class="link-2"><b>The candy system will open up demand for this crypto</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">2</h3>
+                  <p class="fs-14"><b>2018.4</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-17.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="https://medium.com/@aelfblockchain/aelf-the-linux-of-blockchain-ffcb78d83730"
+                    target="_blank" class="link-2"><b>ælf — the Linux of Blockchain</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">1</h3>
+                  <p class="fs-14"><b>2018.3</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-15.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="https://www.valuewalk.com/2018/03/aelf-entrance-south-korean-market/"
+                    target="_blank" class="link-2"><b>ælf Makes Grand Entrance Into Booming South Korean Market</b></a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 60%); opacity:0;"
+                 data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="news-box">
+                <div class="date mb30 color-white">
+                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">25</h3>
+                  <p class="fs-14"><b>2018.2</b></p>
+                </div>
+                <div class="pic mb30">
+                  <div class="bg-img" style="background-image: url(assets/images/blog-13.jpg);"></div>
+                </div>
+                <div class="txt color-white mb35">
+                  <h3 class="fs-30 lh-12em-2over mb20"><a
+                    href="http://paymentsjournal.com/aelf-expands-global-reach-listing-bitfinex/"
+                    target="_blank" class="link-2"><b>ælf Expands Global Reach With Listing on Bitfinex</b></a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </section>
+
 </div>
 <footer class="footer pt65 pb65 ta-c">
     <div class="wrapper clearfix">
