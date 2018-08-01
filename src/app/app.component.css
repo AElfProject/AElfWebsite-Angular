@@ -79,3 +79,16 @@
   -ms-transform: translate(0,-25px);
   transform: translate(0,-25px);
 }
+
+#biyong {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 4px;
+  background: url("../assets/images/biyong-o.png");
+}
+
+#biyong:hover {
+  background: url("../assets/images/biyong-o-b.png");
+}
