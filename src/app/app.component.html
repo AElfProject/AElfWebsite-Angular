@@ -1,5 +1,5 @@
 <div class="fix-top">
-    <header class="header clearfix" [ngClass]="headerActiveCssClass">
+    <header class="header clearfix header-white" [ngClass]="headerActiveCssClass">
         <h1 class="logo">
             <a href=""><img src="assets/images/logo.jpg" alt=""></a>
         </h1>
@@ -73,6 +73,32 @@
 </div>
 <div class="container index-step" id="skrollr-body">
     <section class="section section-1 anchor-bd" id="index">
+        <div class="aelf-notice">
+          <a href="javascript:;" (click)="toggleNotice('notice-1')">关于冒用aelf名义进行违法活动的相关声明</a>
+          <span class="hide-small"> / </span>
+          <a class="hide-small" href="javascript:;" (click)="toggleNotice('notice-2')">针对冒用aelf名义开展“挖矿”活动的声明</a>
+          <span class="hide-small"> / </span>
+          <a class="hide-small" href="https://www.jinse.com/bitcoin/224520.html" target="_blank">aelf测试网TPS数据首次公布</a>
+          <span class="hide-small"> / </span>
+          <a class="hide-small" href="https://mp.weixin.qq.com/s/AQqNpnNtPtl7KWF8uXTQ_Q" target="_blank">aelf被韩国著名经济新闻频道报导</a>
+        </div>
+        <div class="aelf-notice-text" id="notice-1">
+          <h1 class="aelf-notice-title">- 公告 -</h1>
+          <h2 class="aelf-notice-subtitle">ANNOUNCEMENT</h2>
+          <p>近期，接到用户举报，市场上有个别组织盗取aelf官网内容，骗取用户信任，以“ELF社区联盟”名义开展“锁仓返利活动”宣传，并声称团体参与活动可获得“算力币”，并采取线下收款等形式，欺骗用户，损害用户利益。aelf官方在此声明：</p>
+          <p>1.aelf除官方积分奖励系统——Candy System（https：//candy.aelf.io）以及与已上线的交易所或钱包联合举办的活动之外，从未授权过任何组织及个人举办任何形式的锁仓活动；</p>
+          <p>2.aelf从未在线下举办过此类形式的“锁仓活动”，也从未授权任何组织及个人举办此类形式活动。</p>
+          <p>3.所谓“ELF社区联盟锁仓活动”使用的代币，并非aelf官方发行的代币ELF。</p>
+          <p>在此，aelf提醒用户提高警惕，谨防上当受骗，切实维护好自身利益。针对以aelf名义或aelf合作方名义进行的虚假宣传等行为，aelf将保留追究其法律责任的权益，如发现此类活动在您当地展开，请尽快与当地警方取得联系。对于此类对用户进行诈骗等行为，aelf绝不姑息，再次提醒广大aelf爱好者，注意防范风险。</p>
+          <div class="aelf-notice-close" (click)="toggleNotice('notice-1')">朕已阅</div>
+        </div>
+        <div class="aelf-notice-text" id="notice-2">
+          <h1 class="aelf-notice-title">- 公告 -</h1>
+          <h2 class="aelf-notice-subtitle">ANNOUNCEMENT</h2>
+          <p>近期aelf注意到有商家假冒aelf挖矿。aelf敬请粉丝注意，截图中的APP并不能通过“数据挖矿”挖到aelf币，希望广大aelf粉丝提高警惕，不要相信来源不明的信息。</p>
+          <p>aelf目前不支持除官方积分奖励系统励系统https://candy.aelf.io以外，任以外，任何形式的“数据挖矿”。未经授权声称可用APP“数据挖矿”aelf币的行为，侵犯了aelf与粉丝的利益，aelf将保留通过法律途径追究侵权人的法律责任的权利。</p>
+          <div class="aelf-notice-close" (click)="toggleNotice('notice-2')">朕已阅</div>
+        </div>
         <div class="cont">
             <div class="earth">
                 <!--<div class="webgl bg-img" style="background-image:url(assets/images/section-1-bg.png);"></div>-->

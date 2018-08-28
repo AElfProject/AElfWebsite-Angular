@@ -92,3 +92,89 @@
 #biyong:hover {
   background: url("../assets/images/biyong-o-b.png");
 }
+
+/* 2018.08.28 新增公告, 调整banner样式 */
+.header-white {
+  background-color: rgba(255,255,255, 0.2);
+}
+.aelf-notice {
+  text-align: center;
+  height: 30px;
+  padding: 118px 18px 118px 18px;
+  z-index: 100;
+  position: relative;
+  color: #FFF;
+}
+@media only screen and (max-width: 1024px) {
+    .aelf-notice {
+        padding: 68px 18px 118px 18px;
+    }
+}
+.aelf-notice a:hover {
+  color: #260a7f;
+  cursor: pointer;
+}
+
+.aelf-notice-text {
+    z-index: 102;
+    width: 80%;
+    max-width: 900px;
+    border: 3px solid #fff;
+    border-radius: 15px;
+    padding: 18px;
+    left: 50%;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to right, #8e21d0, #42018f);
+    color: #FFF;
+    font-size: 14px;
+    display: none;
+}
+.aelf-notice-title {
+  font-size: 36px;
+  text-align: center;
+}
+.aelf-notice-subtitle {
+  font-size: 18px;
+  text-align: center;
+  padding: 3px 0 8px 0;
+}
+.aelf-notice-close {
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    width: 100px;
+    margin: 15px auto 0 auto;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    .hide-small {
+      display: none;
+    }
+    .aelf-notice-text {
+        z-index: 102;
+         width: 100%; 
+        max-width: 900px;
+        border: 3px solid #fff;
+        border-radius: 15px;
+        padding: 18px;
+        left: 0; 
+        position: fixed;
+        top: 0;
+         -webkit-transform: translate(0%, 0%); 
+         transform: translate(0%, 0%); 
+        background: linear-gradient(to right, #8e21d0, #42018f);
+        color: #FFF;
+        font-size: 14px;
+        display: none;
+        overflow-y: scroll;
+        height: 80%;
+        top: 10%;
+    }
+}
