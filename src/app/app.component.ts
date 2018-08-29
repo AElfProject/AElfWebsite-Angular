@@ -42,6 +42,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   toggleNotice(id) {
     const $notice = document.getElementById(id);
     const display = $notice.style.display;
+
+    const $container = $('.aelf-notice-text');
+    $container.css({ 'display': 'none' });
+
     const displayNew  = display === 'block' ? 'none' : 'block';
     $notice.style.display = displayNew;
   }
