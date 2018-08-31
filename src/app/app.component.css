@@ -95,7 +95,7 @@
 
 /* 2018.08.28 新增公告, 调整banner样式 */
 .header-white {
-  background-color: rgba(255,255,255, 0.2);
+  /*background-color: rgba(255,255,255, 0.2);*/
 }
 .aelf-notice {
   text-align: center;
