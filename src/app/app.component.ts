@@ -1,9 +1,9 @@
-import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
-import {CookieService} from 'ngx-cookie';
-import {LanguageService} from './shared/language.service';
-import {FontFamliyService} from './shared/font-famliy.service';
-import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
-import {WindowService} from './shared/window.service';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie';
+import { LanguageService } from './shared/language.service';
+import { FontFamliyService } from './shared/font-famliy.service';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { WindowService } from './shared/window.service';
 declare let $: any;
 
 @Component({
@@ -18,10 +18,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   public currentLanguage = '';
   public languagesDic: any;
   public languageList = ['', ''];
-  constructor( private _languageService: LanguageService,
-               private _cookieService: CookieService,
-               public _fontFamlily: FontFamliyService,
-               private _windowRef: WindowService) {
+  constructor(private _languageService: LanguageService,
+    private _cookieService: CookieService,
+    public _fontFamlily: FontFamliyService,
+    private _windowRef: WindowService) {
   }
   ngOnInit() {
     this._languageService.getLanguageConfig().subscribe(data => {
@@ -30,14 +30,19 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.currentLanguage = data['languagesDic2'][this._languageService.getWebPageCurrentLanguage()];
       this._fontFamlily.changeFontFamily(this.currentLanguage);
     });
+      const vedioWidth =  parseInt($('#player').css('width'), 10);
+      const vedioHeight =  vedioWidth / 16 * 9;
+      $('#player').css('height', vedioHeight + 'px' );
+
   }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'border-radius': '6px'});
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'border-radius': '6px' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css('cssText', 'width: 7px !important');
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'background-color': 'rgba(255, 255, 255, 0.1)'});
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({'opacity': 0.6});
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
+
   }
   toggleNotice(id) {
     const $notice = document.getElementById(id);
@@ -46,7 +51,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     const $container = $('.aelf-notice-text');
     $container.css({ 'display': 'none' });
 
-    const displayNew  = display === 'block' ? 'none' : 'block';
+    const displayNew = display === 'block' ? 'none' : 'block';
     $notice.style.display = displayNew;
   }
   OnChange(languageSelection: string) {
@@ -56,16 +61,17 @@ export class AppComponent implements OnInit, AfterViewInit {
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
   }
+
   // nav bar change color when the scroll event happens.
   @HostListener('window:scroll', ['$event'])
   scrollTop(event) {
     // console.log('Scroll Event', window.pageYOffset );
     // console.log('class name: ', $('#dropdown-pagination-menu').attr('class') );
-      if (this._windowRef.nativeWindow.pageYOffset !== 0 && !($('#dropdown-pagination-menu').hasClass('active'))) {
-        this.headerActiveCssClass = 'active-header';
-      } else {
-        this.headerActiveCssClass = '';
-      }
+    if (this._windowRef.nativeWindow.pageYOffset !== 0 && !($('#dropdown-pagination-menu').hasClass('active'))) {
+      this.headerActiveCssClass = 'active-header';
+    } else {
+      this.headerActiveCssClass = '';
+    }
     // console.log('headerActiveCssClass: ', this.headerActiveCssClass);
   }
   // add or delete active class for html header element when click menu button.
@@ -75,5 +81,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     } else if (this.headerActiveCssClass === '' && $('#dropdown-pagination-menu').hasClass('active') && (this._windowRef.nativeWindow.pageYOffset !== 0)) {
       this.headerActiveCssClass = 'active-header';
     }
+  }
+
+  @HostListener('window:resize') onresize() {
+    const vedioHeight = $('.vedio-size').find('.ptl22-box').css('height');
+    setTimeout(() => {
+      $('#player').css('height', vedioHeight);
+    }, 200);
   }
 }
