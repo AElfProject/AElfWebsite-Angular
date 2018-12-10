@@ -51,6 +51,10 @@
 
 }
 
+.youtube-player{
+  height:360px;
+}
+
 .active-header {
   background-color: rgba(105, 11, 177, .5);
 }
@@ -176,5 +180,9 @@
         overflow-y: scroll;
         height: 80%;
         top: 10%;
+    }
+
+    .youtube-player{
+      height:240px;
     }
 }

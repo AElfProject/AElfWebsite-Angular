@@ -109,22 +109,22 @@
             <div class="txt color-white">
                 <h2 class="fs-90 mb30">{{"去中心化云计算区块链网络" | translate}}</h2>
                 <div class="btn btn-video mb15">
-                    <div class="video-play" [ngSwitch]="currentLanguage">
-                      <ng-template [ngSwitchCase]="languageList[1]">
+                    <!-- <div class="video-play" [ngSwitch]="currentLanguage"> -->
+                      <!-- <ng-template [ngSwitchCase]="languageList[1]"> -->
                         <!-- <a href="https://aelf.io/gridcn/AElf.pdf?v=2"><img src="assets/images/watch-video.png" alt=""></a> -->
-                        <a href="https://drive.google.com/file/d/1E2ngC0igOKxIAVTBi01qt52p-aoOVLC3/view" target="_blank">
+                        <!-- <a href="https://drive.google.com/file/d/1E2ngC0igOKxIAVTBi01qt52p-aoOVLC3/view" target="_blank">
                           <img src="assets/images/watch-video.png" alt="">
-                        </a>
-                      </ng-template>
-                      <ng-template ngSwitchDefault>
+                        </a> -->
+                      <!-- </ng-template> -->
+                      <!-- <ng-template ngSwitchDefault> -->
                         <!-- <a href="https://aelf.io/gridcn/AElf.pdf?v=2"><img src="assets/images/watch-video.png" alt=""></a> -->
-                        <a href="https://drive.google.com/file/d/1E2ngC0igOKxIAVTBi01qt52p-aoOVLC3/view" target="_blank">
+                        <!-- <a href="https://drive.google.com/file/d/1E2ngC0igOKxIAVTBi01qt52p-aoOVLC3/view" target="_blank">
                           <img src="assets/images/watch-video.png" alt="">
-                        </a>
-                      </ng-template>
-                    </div>
+                        </a> -->
+                      <!-- </ng-template> -->
+                    <!-- </div> -->
                 </div>
-                <p [ngClass]="_fontFamlily.ffArial" class="fs-12"><strong>About</strong></p>
+                <!-- <p [ngClass]="_fontFamlily.ffArial" class="fs-12"><strong>About</strong></p> -->
             </div>
             <div [ngClass]="_fontFamlily.ffArial" class="scroll-down fs-14 color-white ta-c">
                 <p class="mb10"><img src="assets/images/scroll-down.png" alt=""></p>
@@ -135,30 +135,35 @@
     <section class="section section-22 anchor-hd" id="advan">
         <div class="cont pt200 pb200">
             <div class="grow pic-txt-list-22 ta-c color-white clearfix">
-                <div class="col12-sm-4 ptl22-item">
+                <div class="col12-sm-6 ptl22-item">
+                    <div class="ptl22-box">
+                        <iframe class="youtube-player"  type="text/html" src="http://www.youtube.com/embed/qbIP1TEX33Q" frameborder="0" width="90%" ></iframe>
+                    </div>
+                </div>
+                <div class="col12-sm-2 ptl22-item">
                     <div class="ptl22-box">
                         <div class="ptl22-img mb80"><img src="assets/images/icon-9.png" alt=""></div>
                         <div class="ptl22-txt">
-                            <h3 class="fs-48 mb20"><strong>{{"高性能" | translate}}</strong></h3>
-                            <p class="fs-22 lh-16em-3over">{{"ælf的全节点能够运行在服务器集群上" | translate}}</p>
+                            <h3 class="fs-30 mb20"><strong>{{"高性能" | translate}}</strong></h3>
+                            <p class="fs-20 lh-16em-3over">{{"ælf的全节点能够运行在服务器集群上" | translate}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col12-sm-4 ptl22-item">
+                <div class="col12-sm-2 ptl22-item">
                     <div class="ptl22-box">
                         <div class="ptl22-img mb80"><img src="assets/images/icon-10.png" alt=""></div>
                         <div class="ptl22-txt">
-                            <h3 class="fs-48 mb20"><strong>{{"资源隔离" | translate}}</strong></h3>
-                            <p class="fs-22 lh-16em-3over">{{"每一个智能合约拥有一条自己的区块链" | translate}}</p>
+                            <h3 class="fs-30 mb20"><strong>{{"资源隔离" | translate}}</strong></h3>
+                            <p class="fs-20 lh-16em-3over">{{"每一个智能合约拥有一条自己的区块链" | translate}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col12-sm-4 ptl22-item">
+                <div class="col12-sm-2 ptl22-item">
                     <div class="ptl22-box">
                         <div class="ptl22-img mb80"><img src="assets/images/icon-11.png" alt=""></div>
                         <div class="ptl22-txt">
-                            <h3 class="fs-48 mb20"><strong>{{"治理&发展" | translate}}</strong></h3>
-                            <p class="fs-22 lh-16em-3over">{{"代币持有人的委托票选制度" | translate}}</p>
+                            <h3 class="fs-30 mb20"><strong>{{"治理&发展" | translate}}</strong></h3>
+                            <p class="fs-20 lh-16em-3over">{{"代币持有人的委托票选制度" | translate}}</p>
                         </div>
                     </div>
                 </div>
