@@ -51,9 +51,7 @@
 
 }
 
-.youtube-player{
-  height:360px;
-}
+
 
 .active-header {
   background-color: rgba(105, 11, 177, .5);
@@ -61,6 +59,11 @@
 
 .pie-content-width {
   width: 380px !important;
+}
+
+.youtube-player{
+  width:640px;
+  height:360px;
 }
 
 @media screen and (min-width: 2200px) {
@@ -183,6 +186,7 @@
     }
 
     .youtube-player{
+      width:90%;
       height:240px;
     }
 }
