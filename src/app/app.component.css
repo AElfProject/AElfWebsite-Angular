@@ -63,7 +63,7 @@
 
 .youtube-player{
   width:90%;
-  height:420px;
+  height:560px;
 }
 
 @media screen and (min-width: 2200px) {
@@ -74,7 +74,7 @@
 
   .youtube-player{
     width:90%;
-    height:385px;
+    height:560px;
   }
 }
 
