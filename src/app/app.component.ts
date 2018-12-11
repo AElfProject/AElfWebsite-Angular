@@ -20,7 +20,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   public currentLanguage = '';
   public languagesDic: any;
   public languageList = ['', ''];
-  public VideoSrc : any;
+  public VideoSrc: any;
   constructor(private _languageService: LanguageService,
     private _cookieService: CookieService,
     public _fontFamlily: FontFamliyService,
