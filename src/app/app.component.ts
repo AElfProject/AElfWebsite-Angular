@@ -30,6 +30,15 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.currentLanguage = data['languagesDic2'][this._languageService.getWebPageCurrentLanguage()];
       this._fontFamlily.changeFontFamily(this.currentLanguage);
     });
+
+      let VedioPlayer = '';
+      if (new Date().getTimezoneOffset() === -480) {
+          VedioPlayer = '<iframe id="player" width="90%" src="https://v.qq.com/iframe/player.html?vid=v08049tau4n" frameborder="0" ></iframe>';
+      } else {
+          VedioPlayer = '<iframe  id="player"  width="90%" type="text/html" src="https://www.youtube.com/embed/qbIP1TEX33Q" frameborder="0" ></iframe>';
+      }
+
+      $('#advan').find('.col12-sm-6').append(VedioPlayer);
       const vedioWidth =  parseInt($('#player').css('width'), 10);
       const vedioHeight =  vedioWidth / 16 * 9;
       $('#player').css('height', vedioHeight + 'px' );
