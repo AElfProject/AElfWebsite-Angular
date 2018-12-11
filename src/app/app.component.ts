@@ -4,6 +4,8 @@ import { LanguageService } from './shared/language.service';
 import { FontFamliyService } from './shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from './shared/window.service';
+import { DomSanitizer } from '@angular/platform-browser';
+
 declare let $: any;
 
 @Component({
@@ -18,11 +20,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   public currentLanguage = '';
   public languagesDic: any;
   public languageList = ['', ''];
+  public VideoSrc: any;
   constructor(private _languageService: LanguageService,
     private _cookieService: CookieService,
     public _fontFamlily: FontFamliyService,
-    private _windowRef: WindowService) {
+    private _windowRef: WindowService,
+    private sanitizer: DomSanitizer) {
   }
+
   ngOnInit() {
     this._languageService.getLanguageConfig().subscribe(data => {
       this.languagesDic = data['languagesDic1'];
@@ -30,6 +35,14 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.currentLanguage = data['languagesDic2'][this._languageService.getWebPageCurrentLanguage()];
       this._fontFamlily.changeFontFamily(this.currentLanguage);
     });
+
+      if (new Date().getTimezoneOffset() === -480) {
+          this.VideoSrc = 'https://v.qq.com/iframe/player.html?vid=v08049tau4n';
+      } else {
+          this.VideoSrc = 'https://www.youtube.com/embed/qbIP1TEX33Q';
+      }
+
+      this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.VideoSrc);
       const vedioWidth =  parseInt($('#player').css('width'), 10);
       const vedioHeight =  vedioWidth / 16 * 9;
       $('#player').css('height', vedioHeight + 'px' );
@@ -60,6 +73,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+  }
+
+  getSafeUrl(url){
+    this.VideoSrc = this.VideoSrc.bypassSecurityTrustResourceUrl(url);
   }
 
   // nav bar change color when the scroll event happens.
