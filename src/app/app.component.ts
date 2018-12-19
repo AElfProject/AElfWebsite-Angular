@@ -36,12 +36,17 @@ export class AppComponent implements OnInit, AfterViewInit {
       this._fontFamlily.changeFontFamily(this.currentLanguage);
     });
 
-      const isChina = new Date().getTimezoneOffset() === -480;
-      this.VideoSrc = isChina ? 'https://v.qq.com/iframe/player.html?vid=v08049tau4n' : 'https://www.youtube.com/embed/qbIP1TEX33Q';
-      this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.VideoSrc);
-      const vedioWidth =  parseInt($('#player').css('width'), 10);
-      const vedioHeight =  vedioWidth / 16 * 9;
-      $('#player').css('height', vedioHeight + 'px' );
+    let isChina = false;
+    let lang = navigator.language.toLowerCase();
+    if (lang.includes('zh')) {
+        isChina = true;
+    }
+
+    this.VideoSrc = isChina ? 'https://v.qq.com/iframe/player.html?vid=v08049tau4n' : 'https://www.youtube.com/embed/qbIP1TEX33Q';
+    this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.VideoSrc);
+    const vedioWidth =  parseInt($('#player').css('width'), 10);
+    const vedioHeight =  vedioWidth / 16 * 9;
+    $('#player').css('height', vedioHeight + 'px' );
 
   }
   ngAfterViewInit() {
