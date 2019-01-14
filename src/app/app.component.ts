@@ -29,26 +29,22 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this._languageService.getLanguageConfig().subscribe(data => {
-      this.languagesDic = data['languagesDic1'];
-      this.languageList = data['languageOptions'];
-      this.currentLanguage = data['languagesDic2'][this._languageService.getWebPageCurrentLanguage()];
-      this._fontFamlily.changeFontFamily(this.currentLanguage);
-    });
+        this._languageService
+            .getLanguageConfig()
+            .subscribe(data => {
+            this.languagesDic = data["languagesDic1"];
+            this.languageList = data["languageOptions"];
+            this.currentLanguage =
+                data["languagesDic2"][
+                this._languageService.getWebPageCurrentLanguage()
+                ];
+            this._fontFamlily.changeFontFamily(
+                this.currentLanguage
+            );
+            });
 
-    let isChina = false;
-    let lang = navigator.language.toLowerCase();
-    if (lang.includes('zh')) {
-        isChina = true;
+        this.setVideo();
     }
-
-    this.VideoSrc = isChina ? 'https://v.qq.com/iframe/player.html?vid=v08049tau4n' : 'https://www.youtube.com/embed/qbIP1TEX33Q';
-    this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.VideoSrc);
-    const vedioWidth =  parseInt($('#player').css('width'), 10);
-    const vedioHeight =  vedioWidth / 16 * 9;
-    $('#player').css('height', vedioHeight + 'px' );
-
-  }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'border-radius': '6px' });
@@ -74,10 +70,22 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+    this.setVideo();
   }
 
-  getSafeUrl(url){
-    this.VideoSrc = this.VideoSrc.bypassSecurityTrustResourceUrl(url);
+  setVideo() {
+    let videoSrcTemp = 'https://www.youtube.com/embed/qbIP1TEX33Q';
+    if (document.cookie.includes("zh-CN")) {
+        videoSrcTemp = 'https://v.qq.com/iframe/player.html?vid=v08049tau4n';
+        if (window.navigator.userAgent.toLowerCase().indexOf('chrome') === -1) {
+            videoSrcTemp = "https://dwz.cn/ZMnoq3eH";
+        }
+    }
+    this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videoSrcTemp);
+    const vedioWidth = parseInt($("#player").css("width"), 10);
+    const vedioHeight = (vedioWidth / 16) * 9;
+    $("#player").css("height", vedioHeight + "px");
+    // this.VideoSrc = this.VideoSrc.bypassSecurityTrustResourceUrl(url);
   }
 
   // nav bar change color when the scroll event happens.

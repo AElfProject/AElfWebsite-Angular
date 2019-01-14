@@ -72,7 +72,7 @@ export class FontFamliyService {
     if (language === '日本語') {
       $('body').attr('style', 'font-family: "MS PGothic", Osaka, Arial, sans-serif !important');
     } else {
-      $('body').attr('style', 'font-family: "Microsoft Yahei", arial, Helvetica !important');
+      $('body').attr('style', 'font-family: Arial, "Times New Roman", "Microsoft Yahei", arial, Helvetica !important');
     }
   }
 }
