@@ -213,9 +213,9 @@
   version "2.5.54"
   resolved "http://registry.npm.taobao.org/@types/jasmine/download/@types/jasmine-2.5.54.tgz#a6b5f2ae2afb6e0307774e8c7c608e037d491c63"
 
-"@types/jasminewd2@~2.0.2":
-  version "2.0.3"
-  resolved "http://registry.npm.taobao.org/@types/jasminewd2/download/@types/jasminewd2-2.0.3.tgz#0d2886b0cbdae4c0eeba55e30792f584bf040a95"
+"@types/jasminewd2@~2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@types/jasminewd2/-/jasminewd2-2.0.6.tgz#2f57a8d9875a6c9ef328a14bd070ba14a055ac39"
   dependencies:
     "@types/jasmine" "*"
 
