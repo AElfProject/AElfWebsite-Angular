@@ -27,7 +27,7 @@
     "@ngx-translate/core": "^8.0.0",
     "@ngx-translate/http-loader": "^2.0.0",
     "classlist.js": "^1.1.20150312",
-    "core-js": "^2.5.1",
+    "core-js": "^2.6.5",
     "intl": "^1.2.5",
     "jquery": "^3.2.1",
     "ngx-cookie": "^1.0.0",
