@@ -135,9 +135,9 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/language-service@^4.0.0":
-  version "4.4.6"
-  resolved "http://registry.npm.taobao.org/@angular/language-service/download/@angular/language-service-4.4.6.tgz#498ece95c5f6066403bf9fd3c5831af42b45618b"
+"@angular/language-service@^7.2.7":
+  version "7.2.7"
+  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-7.2.7.tgz#c92d7fde437d6bddd2a4fe197f9c06005f3a5c53"
 
 "@angular/platform-browser-dynamic@^4.4.6":
   version "4.4.6"
