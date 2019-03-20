@@ -1092,8 +1092,8 @@ $(window).load(function(){
 		renderer.setClearColor(0xFFFFFF, 0);
 
 		// add it to the target element
-		var mapDiv = document.getElementById("particles2");
-		mapDiv.appendChild(renderer.domElement);
+        var mapDiv = document.getElementById("particles2");
+        mapDiv ? mapDiv.appendChild(renderer.domElement) : null;
 
 		// setup a camera that points to the center
 		var camera = new THREE.PerspectiveCamera(FOV,WIDTH/HEIGHT,NEAR,FAR);

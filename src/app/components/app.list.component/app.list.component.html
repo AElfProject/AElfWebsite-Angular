@@ -1,0 +1,14 @@
+<section class="section section-22 anchor-hd" >
+    <div class="cont pt200 pb200 pl200 pr200">
+        <ul class="grow pic-txt-list-22 ta-c color-white clearfix">
+            <li class="" *ngFor="let item of dataList" >
+                <div class="col12-sm-8">
+                    <p class="fs-18 mb20 text-left" (click)="getListInfo(item.date)" >{{ item.title }}</p>
+                </div>
+                <div class="col12-sm-4">
+                    <p class="fs-18 mb20 text-right">{{ item.date }}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -10,6 +10,10 @@ import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {WindowService} from './shared/window.service';
+import {RoutingModule} from './router/router';
+
+import {AppNavComponent} from '../app/components/app.nav.component/app.nav.component';
+import {AppBottomComponent} from '../app/components/app.bottom.component/app.bottom.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -20,7 +24,9 @@ const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppNavComponent,
+    AppBottomComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,8 @@ const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       }
     }),
     CookieModule.forRoot(),
-    PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG)
+    PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG),
+    RoutingModule
   ],
   providers: [LanguageService, FontFamliyService, WindowService],
   bootstrap: [AppComponent]
