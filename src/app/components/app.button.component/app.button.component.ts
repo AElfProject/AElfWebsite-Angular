@@ -1,6 +1,7 @@
 /**
  * @file app.button.component
  * @author zhouminghui
+ * @description 小按钮。。 不多说了
 */
 
 import {Component, Input} from '@angular/core';

@@ -1,14 +1,13 @@
 /**
  * @file app.home.page
  * @author zhouminghui
+ * @description 首页
+ * TODO: 如果有时间可以继续拆分 首页太臃肿 维护很难
 */
 
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie';
-import { LanguageService } from '../../shared/language.service';
 import { FontFamliyService } from '../../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { WindowService } from '../../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare let $: any;

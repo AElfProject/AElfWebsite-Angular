@@ -1,0 +1,28 @@
+.app-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-btn {
+    width: 100px;
+}
+
+.carousel-box {
+    overflow: hidden;
+}
+.carousel-cont {
+    overflow: hidden;
+    height: 30vw;
+}
+
+.carousel-item {
+    list-style: none;
+    margin: 0;
+    height: 30vw;
+    background-color: rgba(200,200,80, 1);
+    text-align: center;
+    line-height: 30vw;
+    float: left;
+    font-weight: bold;
+    font-size: 120px;
+}

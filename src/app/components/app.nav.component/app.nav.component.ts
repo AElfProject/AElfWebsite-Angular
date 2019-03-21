@@ -1,6 +1,7 @@
 /**
  * @file app.nav.component
  * @author zhouminghui
+ * @description 全网公用导航
 */
 
 import {Component, AfterViewInit, OnInit} from '@angular/core';

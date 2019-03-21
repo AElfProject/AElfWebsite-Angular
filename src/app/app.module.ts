@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -40,7 +41,8 @@ const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     }),
     CookieModule.forRoot(),
     PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG),
-    RoutingModule
+    RoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [LanguageService, FontFamliyService, WindowService],
   bootstrap: [AppComponent]

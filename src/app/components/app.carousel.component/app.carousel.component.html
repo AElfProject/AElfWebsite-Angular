@@ -1,0 +1,18 @@
+<div style="overflow: hidden" (mouseenter)="stopPlay()" (mouseleave)="autoPlay()">
+    <div class="col12-sm-1">
+        <div class="carousel-btn" style="color: #FFF;" (click)="playPre()">LeftBtn</div>
+    </div>
+    <div class="col12-sm-10">
+        <div class="carousel-box" id="carousel-box">
+            <div class="carousel-cont" [style.width]="boxWidth" [@carousel] = 'state' (@carousel.done)="afterPlay()" >
+                <div *ngFor="let item of imglist" class="carousel-item" [style.width]="carouselWidth + 'px'">
+                    <img [src]="item.src" [alt]="item.alt">
+                </div>
+            </div>
+            <div class=""></div>
+        </div>
+    </div>
+    <div class="col12-sm-1">
+            <div  class="carousel-btn" style="color: #FFF;" (click)="playNext()">rightBtn</div>
+    </div>
+</div>

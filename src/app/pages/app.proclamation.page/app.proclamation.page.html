@@ -1,3 +1,13 @@
-<div class="app-procalmation">
-    <app-list></app-list>
+<div class="app-procalmation" [hidden]="showModal">
+    <section class="section section-22 anchor-hd">
+        <div class="cont pt200 pb100">
+            <app-carousel></app-carousel>
+        </div>
+    </section>
+    <section class="section section-22 anchor-hd" >
+        <div class="cont pt100 pb100 pl100 pr100">
+            <app-list [datalist]="datalist" (childEvent)="getChildEvent($event)" ></app-list>
+        </div>
+    </section>
 </div>
+<app-modal [itemdata]="itemData" [hidden]="!showModal" (childEvent)="closeModal($event)"></app-modal>

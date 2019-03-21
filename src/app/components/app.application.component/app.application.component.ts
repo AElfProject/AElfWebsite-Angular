@@ -1,6 +1,7 @@
 /**
  * @file app.application.component.js
  * @author zhouminghui
+ * @description 可自定义 左图右文 或者 右图左文 样式的图文模块
 */
 
 import {Component, OnInit, Input, NgModule} from '@angular/core';

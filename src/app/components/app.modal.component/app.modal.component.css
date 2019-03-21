@@ -1,0 +1,22 @@
+.app-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #651d9e;
+    width: 100%;
+    z-index: 9;
+}
+
+.space {
+    height: 70px;
+    background: rgba(0, 0, 0, .3);
+    width: 100%;
+}
+
+.template-body {
+    overflow: auto;
+}
+
+.modal-close {
+    text-align: center;
+}

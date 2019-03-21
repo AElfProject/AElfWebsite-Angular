@@ -1,9 +1,10 @@
 /**
  * @file app.list.component.ts
  * @author zhouminghui
+ * @description 一个可复用的列表组件
 */
 
-import {Component, AfterContentInit} from '@angular/core';
+import {Component, AfterContentInit, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
     selector: 'app-list',
@@ -11,43 +12,25 @@ import {Component, AfterContentInit} from '@angular/core';
     styleUrls: ['./app.list.component.css']
 })
 
-export class ListComponent implements AfterContentInit {
-
-    public dataList = [];
-
+export class ListComponent implements AfterContentInit, OnInit {
+    @Input() datalist: any;
+    @Output() childEvent = new EventEmitter<any>();
+    public itemContent: any;
     // 像react一样 渲染之后填充数据
+
+    ngOnInit(): void {
+
+    }
     ngAfterContentInit(): void {
-        this.dataList = [
-            {
-                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
-                date: '2019/01.01'
-            },
-            {
-                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
-                date: '2019/01.02'
-            },
-            {
-                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
-                date: '2019/01.03'
-            },
-            {
-                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
-                date: '2019/01.04'
-            },
-            {
-                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
-                date: '2019/01.05'
-            },
-            {
-                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
-                date: '2019/01.06'
-            }
-        ];
+
     }
 
     // 显示公告浮层
-    getListInfo(date: string) {
-        console.log(date);
+    getListInfo(key: string) {
+        this.itemContent = this.datalist.filter(item => {
+            return item.key === key;
+        });
+        this.childEvent.emit(this.itemContent);
     }
 
 }
