@@ -3,11 +3,11 @@
     <li class="list-item" *ngFor="let item of datalist" >
         <div class="col12-sm-8">
             <p class="fs-18 mb20 text-left" >
-                <span (click)="getListInfo(item.key)" >{{ item.title }}</span>
+                <span (click)="getListInfo(item.key)" >{{ item.title | translate }}</span>
             </p>
         </div>
         <div class="col12-sm-4">
-            <p class="fs-18 mb20 text-right">{{ item.date }}</p>
+            <p class="fs-18 mb20 text-right">{{ item.date | translate }}</p>
         </div>
     </li>
 </ul>

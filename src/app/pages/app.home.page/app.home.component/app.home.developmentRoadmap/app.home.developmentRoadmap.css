@@ -1,0 +1,115 @@
+.roadmap {
+    width: 1400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, .1);
+    position: relative;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.develop {
+    position: absolute;
+}
+
+.step-1 {
+    left: 4%;
+    top: 66%;
+}
+
+.step-2 {
+    left: 13%;
+    top: 16%;
+}
+
+.step-3 {
+    left: 13%;
+    top: 77%;
+}
+
+.step-4 {
+    left: 22%;
+    top: 26%;
+}
+
+.step-5 {
+    left: 33%;
+    top: 13%;
+}
+
+.step-6 {
+    left: 33%;
+    top: 77%;
+}
+
+.step-7 {
+    left: 43%;
+    top: 67%;
+}
+
+.step-8 {
+    left: 53%;
+    top: 13%;
+}
+
+.step-9 {
+    left: 53%;
+    top: 77%;
+}
+
+.step-10 {
+    left: 63%;
+    top: 24%;
+}
+
+.step-11 {
+    left: 72%;
+    top: 14%;
+}
+
+.step-12 {
+    left: 72%;
+    top: 76%;
+}
+
+.step-13 {
+    left: 82%;
+    top: 26%;
+}
+
+.step-14 {
+    left: 92%;
+    top: 55%;
+}
+
+.color-green {
+    color: #4ae47d;
+}
+
+.mb20 {
+    font-weight: 900;
+}
+
+@media screen and (max-width: 1400px) {
+    .roadmap {
+        width: 1000px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .roadmap {
+        width: 100%;
+    }
+
+    .develop {
+        position: static;
+        text-align: center;
+    }
+
+    .img {
+        display: none;
+    }
+}

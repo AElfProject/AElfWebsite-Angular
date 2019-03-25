@@ -1,13 +1,16 @@
-<div class="app-procalmation" [hidden]="showModal">
-    <section class="section section-22 anchor-hd">
-        <div class="cont pt200 pb100">
-            <app-carousel></app-carousel>
-        </div>
-    </section>
-    <section class="section section-22 anchor-hd" >
-        <div class="cont pt100 pb100 pl100 pr100">
-            <app-list [datalist]="datalist" (childEvent)="getChildEvent($event)" ></app-list>
-        </div>
-    </section>
+<div [ngSwitch]="showModal">
+    <div class="app-procalmation" *ngSwitchDefault >
+        <section class="section section-22 anchor-hd">
+            <div class="cont pt200 pb100">
+                <app-carousel [data]="carouselData" (childEvent)="getChildEvent($event)"></app-carousel>
+            </div>
+        </section>
+        <section class="section section-22 anchor-hd" >
+            <div class="cont pt100 pb100 pl100 pr100">
+                <app-list [datalist]="datalist" (childEvent)="getChildEvent($event)" ></app-list>
+                <div class="color-white more">{{"查看更多 >>>>>" | translate}}</div>
+            </div>
+        </section>
+    </div>
+    <app-modal [itemdata]="itemData" *ngSwitchCase="'show'" (childEvent)="closeModal($event)"></app-modal>
 </div>
-<app-modal [itemdata]="itemData" [hidden]="!showModal" (childEvent)="closeModal($event)"></app-modal>

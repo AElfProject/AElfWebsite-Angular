@@ -4,13 +4,12 @@
  * @description 全网公用导航
 */
 
-import {Component, AfterViewInit, OnInit} from '@angular/core';
+import {Component, AfterViewInit, OnInit, Output, EventEmitter} from '@angular/core';
 import { FontFamliyService } from '../../shared/font-famliy.service';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../../shared/language.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../../shared/window.service';
-import { DomSanitizer } from '@angular/platform-browser';
 
 declare let $: any;
 
@@ -25,16 +24,19 @@ export class AppNavComponent implements OnInit, AfterViewInit {
     public config: PerfectScrollbarConfigInterface = {};
     public currentLanguage = '';
     public languagesDic: any;
+    public pathName: any;
     public languageList = ['', ''];
-    public show: any;
+    public menuList: any[] = ['/', '/application', '/node', '/community', '/proclamation'];
+    public hide: boolean;
+
     constructor(private _languageService: LanguageService,
         private _cookieService: CookieService,
         public _fontFamlily: FontFamliyService,
-        private _windowRef: WindowService) {
-    }
+        private _windowRef: WindowService
+    ) {}
 
     ngOnInit() {
-        this.show = true;
+        this.hide = true;
         this._languageService
         .getLanguageConfig()
         .subscribe(data => {
@@ -47,6 +49,12 @@ export class AppNavComponent implements OnInit, AfterViewInit {
             this._fontFamlily.changeFontFamily(
                 this.currentLanguage
             );
+        });
+        this.pathName = location.pathname;
+        this.menuList.map((item, index) => {
+            if (this.pathName === item) {
+                $('.clearfix li').eq(index).addClass('active').siblings().removeClass('active');
+            }
         });
     }
 
@@ -67,23 +75,34 @@ export class AppNavComponent implements OnInit, AfterViewInit {
         this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
     }
 
+    showMenu() {
+        if (this.pathName === '/') {
+            this.hide = false;
+        }
+    }
+
+    hideMenu() {
+        this.hide = true;
+    }
+
     // nav bar change color when the scroll event happens.
     scrollTop(event) {
         // console.log('Scroll Event', window.pageYOffset );
         // console.log('class name: ', $('#dropdown-pagination-menu').attr('class') );
         if (this._windowRef.nativeWindow.pageYOffset !== 0 && !($('#dropdown-pagination-menu').hasClass('active'))) {
-        this.headerActiveCssClass = 'active-header';
+            this.headerActiveCssClass = 'active-header';
         } else {
-        this.headerActiveCssClass = '';
+            this.headerActiveCssClass = '';
         }
         // console.log('headerActiveCssClass: ', this.headerActiveCssClass);
     }
     // add or delete active class for html header element when click menu button.
     menuClick() {
-        if (this.headerActiveCssClass !== '' && !($('#dropdown-pagination-menu').hasClass('active'))) {
-        this.headerActiveCssClass = '';
-        } else if (this.headerActiveCssClass === '' && $('#dropdown-pagination-menu').hasClass('active') && (this._windowRef.nativeWindow.pageYOffset !== 0)) {
-        this.headerActiveCssClass = 'active-header';
-        }
+        this.pathName = location.pathname;
+        this.menuList.map((item, index) => {
+            if (this.pathName === item) {
+                $('.clearfix li').eq(index).addClass('active').siblings().removeClass('active');
+            }
+        });
     }
 }

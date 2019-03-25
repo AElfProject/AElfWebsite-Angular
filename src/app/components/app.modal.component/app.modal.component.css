@@ -3,8 +3,13 @@
     left: 0;
     top: 0;
     background: #651d9e;
+    color: #fff;
     width: 100%;
     z-index: 9;
+}
+
+.app-modal > p {
+    font-size: 50px;
 }
 
 .space {

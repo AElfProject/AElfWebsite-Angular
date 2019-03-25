@@ -1,38 +1,38 @@
 <section [ngSwitch]="type" id="application">
-    <div class="cont pt200 pb200" *ngSwitchDefault>
-            <div class="grow pic-txt-list-22 ta-c color-white clearfix">
-                    <div class="col12-sm-6">
-                        <div class="ptl22-box">
-                            <div class="ptl22-txt">
-                                <h3 class="fs-30 mb20 text-left"><strong>{{ title | translate}}</strong></h3>
-                                <p class="fs-20 lh-16em-3over text-left">{{ brief | translate}}</p>
-                                <app-button [hidden]="!showbtn" text="了解更多"></app-button>
-                            </div>
+    <div class="cont pt100 pb100" *ngSwitchDefault>
+        <div class="grow pic-txt-list-22 ta-c color-white clearfix">
+                <div class="col12-sm-6">
+                    <div class="ptl22-box">
+                        <div class="ptl22-txt">
+                            <h3 class="fs-30 mb20 text-left"><strong>{{ title | translate}}</strong></h3>
+                            <p class="fs-20 lh-16em-5over text-left">{{ brief | translate}}</p>
+                            <app-button [hidden]="!showbtn" [text]="buttontext" (click)="onClick(title)"></app-button>
                         </div>
                     </div>
-                    <div class="col12-sm-6">
-                        <div class="ptl22-box">
-                            <div class="ptl22-img mb80"><img [src]="imgurl" alt=""></div>
-                        </div>
+                </div>
+                <div class="col12-sm-6">
+                    <div class="ptl22-box image-box">
+                        <div class="ptl22-img"><img [src]="imgurl" alt="" [style.width]="imgWidth"></div>
                     </div>
-            </div>
+                </div>
+        </div>
     </div>
-    <div class="cont pt200 pb200" *ngSwitchCase="'right'">
-            <div class="grow pic-txt-list-22 ta-c color-white clearfix">
-                    <div class="col12-sm-6">
-                        <div class="ptl22-box">
-                            <div class="ptl22-img mb80"><img [src]="imgurl" alt=""></div>
+    <div class="cont pt100 pb100" *ngSwitchCase="'right'">
+        <div class="grow pic-txt-list-22 ta-c color-white clearfix">
+                <div class="col12-sm-6">
+                    <div class="ptl22-box image-box">
+                        <div class="ptl22-img"><img [src]="imgurl" alt="" [style.width]="imgWidth"></div>
+                    </div>
+                </div>
+                <div class="col12-sm-6">
+                    <div class="ptl22-box">
+                        <div class="ptl22-txt">
+                            <h3 class="fs-30 mb20 text-right"><strong>{{ title | translate}}</strong></h3>
+                            <p class="fs-20 lh-16em-5over text-right">{{ brief | translate}}</p>
+                            <app-button [hidden]="!showbtn" [text]="buttontext" (click)="onClick(title)"></app-button>
                         </div>
                     </div>
-                    <div class="col12-sm-6">
-                            <div class="ptl22-box">
-                                <div class="ptl22-txt">
-                                    <h3 class="fs-30 mb20 text-right"><strong>{{ title | translate}}</strong></h3>
-                                    <p class="fs-20 lh-16em-3over text-right">{{ brief | translate}}</p>
-                                    <app-button [hidden]="!showbtn" text="了解更多"></app-button>
-                                </div>
-                            </div>
-                        </div>
-            </div>
+                </div>
+        </div>
     </div>
 </section>

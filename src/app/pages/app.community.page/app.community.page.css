@@ -1,0 +1,79 @@
+.text-left {
+    text-align: left;
+}
+
+.image-box {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.co {
+    position: absolute;
+    display: block;
+    width: 10%;
+    height: 15%;
+}
+
+.co:hover {
+    transform: scale(1.5);
+}
+
+.co-facebook {
+    background: url(../../../assets/newImages/facebook-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 64%;
+    top: 18%;
+}
+
+.co-facebook:hover {
+    background: url(../../../assets/newImages/facebook.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-wechat {
+    background: url(../../../assets/newImages/wechat-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 45%;
+    top: 5%;
+}
+
+.co-wechat:hover {
+    background: url(../../../assets/newImages/wechat.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-tme {
+    background: url(../../../assets/newImages/telegram-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 25%;
+    top: 18%;
+}
+
+.co-tme:hover {
+    background: url(../../../assets/newImages/telegram.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-twitter {
+    background: url(../../../assets/newImages/twitter-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 19%;
+    top: 45%;
+}
+
+.co-twitter:hover {
+    background: url(../../../assets/newImages/twitter.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-reddit {
+    background: url(../../../assets/newImages/reddit-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 71%;
+    top: 45%;
+}
+
+.co-reddit:hover {
+    background: url(../../../assets/newImages/reddit.png) no-repeat;
+    background-size: 100% 100%;
+}

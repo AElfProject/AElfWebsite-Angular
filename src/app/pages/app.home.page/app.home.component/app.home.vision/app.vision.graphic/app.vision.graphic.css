@@ -1,0 +1,16 @@
+.graphic {
+    padding: 20px;
+    margin: 20px;
+    background: rgba(255, 255, 255, .1);
+    clear: both;
+    overflow: hidden;
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.graphic:hover {
+    background: rgba(255, 255, 255 , .5);
+    box-shadow: 2px 2px 5px #333;
+    -webkit-box-shadow: 2px 2px 5px #333;
+    -moz-box-shadow: 2px 2px 5px #333; 
+}

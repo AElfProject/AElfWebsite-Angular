@@ -1,0 +1,13 @@
+.content-text {
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .pl100 {
+        padding: 0;
+    }
+    
+    .pr100 {
+        padding: 0;
+    }
+}

@@ -8,6 +8,7 @@
     display: inline-block;
     margin-top: 20px;
     color: #FFF;
+    cursor: pointer;
 }
 
 .app-button > a {

@@ -1,10 +1,31 @@
+
+.carousel {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .app-carousel {
     position: relative;
     overflow: hidden;
 }
 
 .carousel-btn {
-    width: 100px;
+    width: 32px;
+    height: 52px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.col12-sm-1 {
+    margin-top: 13vw;
+}
+
+.btnL {
+    background: url(../../../assets/newImages/ArrowL.png) no-repeat;
+}
+
+.btnR {
+    background: url(../../../assets/newImages/ArrowR.png) no-repeat;
 }
 
 .carousel-box {
@@ -19,10 +40,37 @@
     list-style: none;
     margin: 0;
     height: 30vw;
-    background-color: rgba(200,200,80, 1);
+    background-color: rgba(255, 255, 255, .3);
     text-align: center;
     line-height: 30vw;
     float: left;
     font-weight: bold;
     font-size: 120px;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination-point {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 5px;
+    width: 22px;
+    height: 4px;
+    background: rgba(255, 255, 255, .3);
+}
+
+.pagination-point.active {
+    background: rgba(255, 255, 255, 1);
+}
+
+img {
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .carousel-btn  {
+        display: none;
+    }
 }

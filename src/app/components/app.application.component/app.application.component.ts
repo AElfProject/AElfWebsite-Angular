@@ -4,7 +4,7 @@
  * @description 可自定义 左图右文 或者 右图左文 样式的图文模块
 */
 
-import {Component, OnInit, Input, NgModule} from '@angular/core';
+import {Component, OnInit, Input, NgModule, Output, EventEmitter} from '@angular/core';
 import {ButtonComponent} from '../app.button.component/app.button.component';
 
 @Component({
@@ -24,10 +24,18 @@ export class AppApplicationComponent implements OnInit {
     @Input() brief: string;
     @Input() imgurl: string;
     @Input() showbtn: boolean;
+    @Input() buttontext: string;
+    @Input() imgWidth: string;
+    @Output() onClicked = new EventEmitter<boolean>();
 
     constructor() {}
     ngOnInit() {
-        console.log(typeof this.showbtn);
-        console.log('application 组件渲染开始!');
+        if (!this.buttontext) {
+            this.buttontext = '了解更多';
+        }
+    }
+
+    onClick(title) {
+        this.onClicked.emit(title);
     }
 }

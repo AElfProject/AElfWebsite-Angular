@@ -1,0 +1,60 @@
+.campaign-node-infomation {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.download {
+    text-decoration: underline;
+}
+
+.app-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #651d9e;
+    color: #fff;
+    width: 100%;
+    z-index: 9;
+}
+
+.app-modal > p {
+    font-size: 50px;
+}
+
+.space {
+    height: 70px;
+    background: rgba(0, 0, 0, .3);
+    width: 100%;
+}
+
+.template-body {
+    overflow: auto;
+}
+
+.modal-close {
+    text-align: center;
+}
+
+.fs-20 {
+    margin-left: 2em;
+}
+
+.fs-30 {
+    font-weight: 700;
+}
+
+table {
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, .3);
+    margin: 4em;
+}
+
+table td {
+    border: 1px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+    height: 2vw;
+}
+
+img {
+    margin-top: 70px;
+}

@@ -10,3 +10,11 @@
     text-align: left;
     padding: 96px;
 }
+
+.image-box {
+    vertical-align: middle;
+}
+
+img {
+    width: 70%;
+}

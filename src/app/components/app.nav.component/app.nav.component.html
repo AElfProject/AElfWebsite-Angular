@@ -6,11 +6,11 @@
         <!-- <h1 class="logo3"><a href=""><img src="assets/images/logo3.png" alt=""></a></h1> -->
         <nav class="nav fs-20 sm-hidden index-pagination clearfix" style="font-weight:bold;">
             <ul class="clearfix" >
-                <li (mouseenter)="show = false" (mouseleave)="show = true" >
-                    <a href="/" >{{"首页" | translate}}</a>
-                    <div class="two-stage-nav fs-14" [hidden]="show">
+                <li (mouseenter)="showMenu()" (mouseleave)="hideMenu()" (click)="menuClick()">
+                    <a href="/" ><span>{{"首页" | translate}}</span></a>
+                    <div class="two-stage-nav fs-14" [hidden]="hide">
                         <div class="anchor-hd" data-anchor="team" ><span>{{"愿景" | translate}}</span></div>
-                        <div class="anchor-hd" data-anchor="team" ><span>{{"优势" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="advantage" ><span>{{"优势" | translate}}</span></div>
                         <div class="anchor-hd" data-anchor="team" ><span>{{"路线图" | translate}}</span></div>
                         <div class="anchor-hd" data-anchor="team" ><span>{{"团队成员" | translate}}</span></div>
                         <div class="anchor-hd" data-anchor="team3" ><span>{{"投资机构" | translate}}</span></div>
@@ -18,13 +18,11 @@
                         <div class="anchor-hd" data-anchor="team" ><span>{{"代币分配" | translate}}</span></div>
                     </div>
                 </li>
-                <li>
-                    <a [routerLink]="['/developer']" >{{"开发者文档" | translate}}</a>
-                </li>
-                <li><a [routerLink]="['/application']" >{{"应用中心" | translate}}</a></li>
-                <li><a [routerLink]="['/developer']" >{{"节点竞选" | translate}}</a></li>
-                <li><a [routerLink]="['/developer']" >{{"社区" | translate}}</a></li>
-                <li><a [routerLink]="['/proclamation']" >{{"公告" | translate}}</a></li>
+                <!-- <li (click)="menuClick()"><a [routerLink]="['/developer']" ><span>{{"开发者文档" | translate}}</span></a></li> -->
+                <li (click)="menuClick()"><a [routerLink]="['/application']" ><span>{{"应用中心" | translate}}</span></a></li>
+                <li (click)="menuClick()"><a [routerLink]="['/node']" ><span>{{"节点竞选" | translate}}</span></a></li>
+                <li (click)="menuClick()"><a [routerLink]="['/community']" ><span>{{"社区" | translate}}</span></a></li>
+                <li (click)="menuClick()"><a [routerLink]="['/proclamation']" ><span>{{"公告" | translate}}</span></a></li>
             </ul>
         </nav>
         <div class="other">

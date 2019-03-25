@@ -1,18 +1,25 @@
-<div style="overflow: hidden" (mouseenter)="stopPlay()" (mouseleave)="autoPlay()">
+<div style="overflow: hidden" (mouseenter)="stopPlay()" (mouseleave)="autoPlay()" class="carousel">
     <div class="col12-sm-1">
-        <div class="carousel-btn" style="color: #FFF;" (click)="playPre()">LeftBtn</div>
+        <div class="carousel-btn btnL" style="color: #FFF;" (click)="playPre()"></div>
     </div>
     <div class="col12-sm-10">
-        <div class="carousel-box" id="carousel-box">
-            <div class="carousel-cont" [style.width]="boxWidth" [@carousel] = 'state' (@carousel.done)="afterPlay()" >
-                <div *ngFor="let item of imglist" class="carousel-item" [style.width]="carouselWidth + 'px'">
-                    <img [src]="item.src" [alt]="item.alt">
+        <div class="carousel-box" id="carousel-box" >
+            <div class="carousel-cont" [ngStyle]="moveStyle" [style.width]='boxWidth' >
+                <div class="carousel-item" *ngFor="let item of imglist"  [style.width]="carouselWidth" >
+                    <div [innerHTML]="item.carousel" (click)="getListInfo(item.key)"></div>
                 </div>
             </div>
-            <div class=""></div>
+            <div class="pagination pt20 pb20" [hidden]="!showpPagination"  >
+                <span 
+                    class="pagination-point"
+                    *ngFor="let item of data;let i = index" 
+                    [ngClass]="i === _thisPaginationIndex ? 'active' : ''"
+                    (click)="paginationClick(i)"
+                ></span>
+            </div>
         </div>
     </div>
     <div class="col12-sm-1">
-            <div  class="carousel-btn" style="color: #FFF;" (click)="playNext()">rightBtn</div>
+            <div  class="carousel-btn  btnR" style="color: #FFF;" (click)="playNext()"></div>
     </div>
 </div>

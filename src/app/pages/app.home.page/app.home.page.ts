@@ -5,10 +5,11 @@
  * TODO: 如果有时间可以继续拆分 首页太臃肿 维护很难
 */
 
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, NgModule } from '@angular/core';
 import { FontFamliyService } from '../../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { DomSanitizer } from '@angular/platform-browser';
+import { HomeAdvantageComponent } from '../app.home.page/app.home.component/app.home.advantage/app.home.advantage';
 
 declare let $: any;
 
@@ -18,13 +19,14 @@ declare let $: any;
   styleUrls: ['./app.home.page.css']
 })
 
+@NgModule({
+    declarations: [HomeAdvantageComponent]
+})
+
 export class AppHomepageComponent implements OnInit, AfterViewInit {
     public headerActiveCssClass = '';
     public config: PerfectScrollbarConfigInterface = {};
-
-    public currentLanguage = '';
     public languagesDic: any;
-    public languageList = ['', ''];
     public VideoSrc: any;
     constructor(
         public _fontFamlily: FontFamliyService,

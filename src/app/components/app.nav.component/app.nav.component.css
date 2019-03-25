@@ -207,8 +207,9 @@
     text-align: center;
 }
 
-.header .nav li.active {
-    border: 4px solid #7DBDEB;
+.header .nav li.active a span {
+    display: inline;
+    border-bottom: 4px solid #7DBDEB;
 }
 
 .two-stage-nav {
