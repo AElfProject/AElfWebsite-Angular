@@ -67,7 +67,8 @@ export class ProclamationPageComponent implements OnInit {
                 title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
                 date: '2019/01.03',
                 content: '<p>这是标题</p><p>2019-01-03</p>',
-                hot: false
+                carousel: '<img src="../../../assets/test/a.jpeg" width="100%"   alt="图片3">',
+                hot: true
             },
             {
                 key: '3',
