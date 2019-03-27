@@ -1,9 +1,9 @@
 <div style="overflow: hidden" (mouseenter)="stopPlay()" (mouseleave)="autoPlay()" class="carousel">
-    <div class="col12-sm-1">
+    <div>
         <div class="carousel-btn btnL" style="color: #FFF;" (click)="playPre()"></div>
     </div>
-    <div class="col12-sm-10">
-        <div class="carousel-box" id="carousel-box" >
+    <div class="carousel-body">
+        <div class="carousel-box" id="carousel-box" (touchstart)="touchStart($event)" (touchend)="touchEnd($event)" (touchmove)="touchMove($event)">
             <div class="carousel-cont" [ngStyle]="moveStyle" [style.width]='boxWidth' >
                 <div class="carousel-item" *ngFor="let item of imglist"  [style.width]="carouselWidth" >
                     <div [innerHTML]="item.carousel" (click)="getListInfo(item.key)"></div>
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="col12-sm-1">
+    <div>
             <div  class="carousel-btn  btnR" style="color: #FFF;" (click)="playNext()"></div>
     </div>
 </div>

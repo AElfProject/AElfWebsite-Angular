@@ -18,5 +18,23 @@
 @media screen and (max-width: 1024px) {
     .col12-sm-8 {
         margin-top: 30px;
+        width: 50%;
+    }
+
+    .col12-sm-4 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .col12-sm-8 {
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .col12-sm-4 {
+        width: 100%;
+        text-align: center;
     }
 }

@@ -29,10 +29,6 @@
     background: rgba(255, 255, 255, .1);
 }
 
-img {
-    width: 80%;
-}
-
 .dividing-line {
     display:flex;
     justify-content: space-between;
@@ -50,6 +46,15 @@ img {
     text-align: center;
 }
 
-.pic-list {
+@media only screen and (max-width: 714px) {
+    .dividing-line .line {
+        margin: 0;
+        width: 30%;
+    }
+
+    .tips {
+        width: 40%;
+        text-align: center;
+    }
     
 }

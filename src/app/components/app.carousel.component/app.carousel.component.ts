@@ -19,6 +19,9 @@ declare let $: any;
 export class CorouselComponent implements OnInit {
     public timer: any;
     public dataLen: any;
+    public moveDistance: any;
+    public touchStartPoint: any;
+    public touchEenPoint: any;
     public len: any;
     public boxWidth: any;
     public carouselWidth: any;
@@ -35,7 +38,6 @@ export class CorouselComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        console.log(this.data);
         this.isMove = true;
         // 这么傻逼的方法是因为获取宽度不准确 所以用了百分比  正好可以适应不同宽高。。。。。。
         this.dataLen = this.data.length;
@@ -67,7 +69,6 @@ export class CorouselComponent implements OnInit {
 
     paginationClick(index) {
         // planC
-        console.log(index);
         if (this.isMove) {
             this._thisPaginationIndex = index;
             this.isMove = false;
@@ -181,7 +182,6 @@ export class CorouselComponent implements OnInit {
                 this._thisPaginationIndex = (this.dataLen - 1);
                 // 这里要用总长度来计算恢复的位置
                 const leftWidth = (this.len - 2) * (100 / this.len);
-                console.log(leftWidth);
                 this.moveStyle = {
                     'transition-duration': '500ms',
                     'transition-timing-function': 'linear',
@@ -197,7 +197,6 @@ export class CorouselComponent implements OnInit {
                 this._thisPaginationIndex -= 1;
                 // 展示的总是要比下标位置多一个位置 因为为了无缝复制出了两个元素
                 const leftWidth = (this._thisPaginationIndex + 1) * (100 / this.len);
-                console.log(leftWidth);
                 this.moveStyle = {
                     'transition-duration': '500ms',
                     'transition-timing-function': 'linear',
@@ -210,6 +209,25 @@ export class CorouselComponent implements OnInit {
         }
     }
 
+    touchStart(event) {
+        this.stopPlay();
+        this.touchStartPoint = event.touches[0].clientX;
+    }
+
+    touchMove(event) {
+        this.touchEenPoint =  event.touches[0].clientX;
+    }
+
+    touchEnd() {
+        if (Math.abs(this.touchStartPoint - this.touchEenPoint) > 50) {
+            if (this.touchStartPoint > this.touchEenPoint) {
+                this.playNext();
+            } else {
+                this.playPre();
+            }
+        }
+        this.autoPlay();
+    }
     // playPre(): void {
     //     if (this.isMove) {
     //         console.log('pre');
