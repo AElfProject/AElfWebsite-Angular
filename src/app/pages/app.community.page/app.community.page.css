@@ -3,15 +3,17 @@
 }
 
 .image-box {
-    width: 70%;
+    width: 500px;
+    height: 500px;
     margin: 0 auto;
+    position: relative;
 }
 
 .co {
     position: absolute;
     display: block;
-    width: 10%;
-    height: 15%;
+    width: 64px;
+    height: 64px;
 }
 
 .co:hover {
@@ -21,7 +23,7 @@
 .co-facebook {
     background: url(../../../assets/newImages/facebook-1.png) no-repeat;
     background-size: 100% 100%;
-    left: 64%;
+    left: 72%;
     top: 18%;
 }
 
@@ -45,7 +47,7 @@
 .co-tme {
     background: url(../../../assets/newImages/telegram-1.png) no-repeat;
     background-size: 100% 100%;
-    left: 25%;
+    left: 15%;
     top: 18%;
 }
 
@@ -57,8 +59,8 @@
 .co-twitter {
     background: url(../../../assets/newImages/twitter-1.png) no-repeat;
     background-size: 100% 100%;
-    left: 19%;
-    top: 45%;
+    left: 5%;
+    top: 43%;
 }
 
 .co-twitter:hover {
@@ -69,11 +71,82 @@
 .co-reddit {
     background: url(../../../assets/newImages/reddit-1.png) no-repeat;
     background-size: 100% 100%;
-    left: 71%;
-    top: 45%;
+    left: 82%;
+    top: 43%;
 }
 
 .co-reddit:hover {
     background: url(../../../assets/newImages/reddit.png) no-repeat;
     background-size: 100% 100%;
 }
+
+.co-linkedin {
+    background: url(../../../assets/newImages/in-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 15%;
+    top: 68%;
+}
+
+.co-linkedin:hover {
+    background: url(../../../assets/newImages/in.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-github {
+    background: url(../../../assets/newImages/github-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 72%;
+    top: 68%;
+}
+
+.co-github:hover {
+    background: url(../../../assets/newImages/github.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-youtube {
+    background: url(../../../assets/newImages/youtube-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 45%;
+    top: 82%;
+}
+
+.co-youtube:hover {
+    background: url(../../../assets/newImages/youtube.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+@media only screen and (max-width: 1100px) {
+    .image-box {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .co {
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    .pl100 {
+        padding-left: 10px; 
+    }
+
+    .pb300 {
+        padding-bottom: 30px;
+    }
+
+    .pt300 {
+        padding-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .ptl22-txt {
+        padding: 96px 20px;
+    }
+}
+

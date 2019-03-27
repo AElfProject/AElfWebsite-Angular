@@ -27,7 +27,7 @@
           <span class="hide-small"> {{ "/" | translate }} </span>
           <a class="hide-small" href="http://finance.ifeng.com/a/20180827/16470938_0.shtml" target="_blank">{{ "aelf为迎接商业应用落地做好准备" | translate }}</a>
         </div> -->
-        <div class="aelf-notice-text" id="notice-1">
+        <!-- <div class="aelf-notice-text" id="notice-1">
           <h1 class="aelf-notice-title">- 公告 -</h1>
           <h2 class="aelf-notice-subtitle">ANNOUNCEMENT</h2>
           <p>近期，接到用户举报，市场上有个别组织盗取aelf官网内容，骗取用户信任，以“ELF社区联盟”名义开展“锁仓返利活动”宣传，并声称团体参与活动可获得“算力币”，并采取线下收款等形式，欺骗用户，损害用户利益。aelf官方在此声明：</p>
@@ -43,7 +43,7 @@
           <p>近期aelf注意到有商家假冒aelf挖矿。aelf敬请粉丝注意，截图中的APP并不能通过“数据挖矿”挖到aelf币，希望广大aelf粉丝提高警惕，不要相信来源不明的信息。</p>
           <p>aelf目前不支持除官方积分奖励系统励系统https://candy.aelf.io以外，任以外，任何形式的“数据挖矿”。未经授权声称可用APP“数据挖矿”aelf币的行为，侵犯了aelf与粉丝的利益，aelf将保留通过法律途径追究侵权人的法律责任的权利。</p>
           <div class="aelf-notice-close" (click)="toggleNotice('notice-2')">朕已阅</div>
-        </div>
+        </div> -->
         <div class="cont">
             <div class="earth">
                 <div class="webgl bg-img" style="background-image:url(assets/images/section-1-bg.png);"></div>
@@ -53,29 +53,14 @@
             </div>
             <div class="txt color-white">
                 <h2 class="fs-90 mb30">{{"去中心化云计算区块链网络" | translate}}</h2>
-                <!-- <div class="btn btn-video mb15">
-                    <div class="video-play" [ngSwitch]="currentLanguage"> -->
-                      <!-- <ng-template [ngSwitchCase]="languageList[1]"> -->
-                        <!-- <a href="https://aelf.io/gridcn/AElf.pdf?v=2"><img src="assets/images/watch-video.png" alt=""></a> -->
-                       <!--  <a href="https://drive.google.com/file/d/1E2ngC0igOKxIAVTBi01qt52p-aoOVLC3/view" target="_blank">
-                          <img src="assets/images/watch-video.png" alt="">
-                        </a> -->
-                      <!-- </ng-template> -->
-                      <!-- <ng-template ngSwitchDefault>
-                        <a href="https://aelf.io/gridcn/AElf.pdf?v=2"><img src="assets/images/watch-video.png" alt=""></a>
-                        <a href="https://drive.google.com/file/d/1E2ngC0igOKxIAVTBi01qt52p-aoOVLC3/view" target="_blank">
-                          <img src="assets/images/watch-video.png" alt="">
-                        </a>
-                      </ng-template> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-                <!-- <p [ngClass]="_fontFamlily.ffArial" class="fs-12"><strong>About</strong></p> -->
             </div>
             <div [ngClass]="_fontFamlily.ffArial" class="scroll-down fs-14 color-white ta-c">
                 <p class="mb10"><img src="assets/images/scroll-down.png" alt=""></p>
                 <p class="fs-11">Scrolling mouse</p>
             </div>
         </div>
+        <!-- <app-carousel [data]="carouselData" ></app-carousel> -->
+        <!-- <app-home-carousel  [data]="carouselData"></app-home-carousel> -->
     </section>
     <section class="section section-8 anchor-bd" id="vision">
         <app-home-vision></app-home-vision>
@@ -83,7 +68,7 @@
     <section class="section section-22 anchor-hd" id="advantage">
         <app-home-advantage></app-home-advantage>
     </section>
-    <section class="section section-8 anchor-hd" id="developmentRoadmap">
+    <section class="section section-8 anchor-hd" id="development_roadmap">
         <app-home-development-roadmap></app-home-development-roadmap>
     </section>
     <!-- <section class="section section-22 anchor-hd" id="advan">
@@ -200,6 +185,9 @@
     <section class="section section-8 anchor-bd" id="exchange">
         <app-home-exchange></app-home-exchange>
     </section>
+    <section calss="section section-22 anchor-bd" id="innovation_alliance">
+        <app-innovation-alliance></app-innovation-alliance>
+    </section>
     <!--<section class="section section-12 anchor-bd" id="news">
         <div class="cont pt100 pb100">
         <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">Development Roadmap</div>
@@ -298,6 +286,6 @@
         <app-home-token-allocation></app-home-token-allocation>
     </section>
     <section class="section section-11 anchor-bd" id="news">
-        <app-home-news></app-home-news>
+        <app-new-news></app-new-news>
     </section>
 </div>

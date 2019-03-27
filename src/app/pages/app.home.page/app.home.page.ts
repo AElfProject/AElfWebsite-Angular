@@ -28,12 +28,40 @@ export class AppHomepageComponent implements OnInit, AfterViewInit {
     public config: PerfectScrollbarConfigInterface = {};
     public languagesDic: any;
     public VideoSrc: any;
+    public carouselData: any[] = [];
     constructor(
         public _fontFamlily: FontFamliyService,
         private sanitizer: DomSanitizer
     ) {}
 
     ngOnInit() {
+        const canvas = '<div class="cont">' +
+        '            <div class="earth">' +
+        '                <div class="webgl bg-img" style="background-image:url(assets/images/section-1-bg.png);"></div>'+
+        '                <div class="earth-canvas">' +
+        '                    <div id="particles2"></div>' +
+        '                </div>' +
+        '            </div>' +
+        '            <div class="txt color-white">' +
+        '                <h2 class="fs-90 mb30">去中心化云计算区块链网络</h2>' +
+        '            </div>' +
+        '            <div [ngClass]="_fontFamlily.ffArial" class="scroll-down fs-14 color-white ta-c">' +
+        '                <p class="mb10"><img src="assets/images/scroll-down.png" alt=""></p>' +
+        '                <p class="fs-11">Scrolling mouse</p>' +
+        '            </div>' +
+        '        </div>';
+        this.carouselData = [
+            {
+                key: '0',
+                carousel: canvas,
+                hot: true
+            },
+            {
+                key: '1',
+                carousel: '<div></div>',
+                hot: true
+            },
+        ];
         this.setVideo();
     }
 

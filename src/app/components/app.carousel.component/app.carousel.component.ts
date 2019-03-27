@@ -35,6 +35,7 @@ export class CorouselComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
+        console.log(this.data);
         this.isMove = true;
         // 这么傻逼的方法是因为获取宽度不准确 所以用了百分比  正好可以适应不同宽高。。。。。。
         this.dataLen = this.data.length;

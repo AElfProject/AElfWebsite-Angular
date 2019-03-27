@@ -1,5 +1,5 @@
 .campaign-node-infomation {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .download {
@@ -22,7 +22,7 @@
 
 .space {
     height: 70px;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .1);
     width: 100%;
 }
 
@@ -44,7 +44,7 @@
 
 table {
     border: 1px solid #fff;
-    background: rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .1);
     margin: 4em;
 }
 
@@ -57,4 +57,61 @@ table td {
 
 img {
     margin-top: 70px;
+}
+
+.head {
+    text-align: center;
+    background: #421b6b;
+}
+
+.button {
+    text-align: center;
+}
+
+.align-center {
+    text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+    #application .ptl22-txt {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pr100 {
+        padding-right: 20px;
+    }
+
+    .pl100 {
+        padding-left: 20px;
+    }
+
+    table {
+        margin:10px;
+    }
+}
+
+@media screen and (max-width: 1840px) {
+    .col12-lg-4 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1310px) {
+    .col12-lg-4 {
+        width: 100%;
+    }
+}
+
+.more {
+    min-height: 200px;
+    background: rgba(255, 255, 255, .1);
+    text-align: center;
+    line-height: 200px;
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.more:hover {
+    background: rgba(255, 255, 255, .3);
 }

@@ -33,6 +33,11 @@ import {HomeNewsComponent} from '../pages/app.home.page/app.home.component/app.h
 import {HomeVisionComponent} from '../pages/app.home.page/app.home.component/app.home.vision/app.home.vision';
 import {HomeVisionGraphicComponent} from '../pages/app.home.page/app.home.component/app.home.vision/app.vision.graphic/app.vision.graphic'
 import {HomeDevelopmentRoadmapComponent} from '../pages/app.home.page/app.home.component/app.home.developmentRoadmap/app.home.developmentRoadmap';
+import {HomeInnovationAllianceComponent} from '../pages/app.home.page/app.home.component/app.home.InnovationAlliance/app.home.InnovationAlliance';
+import {InnnovationAllianceComponent} from '../pages/app.home.page/app.home.component/app.home.InnovationAlliance/innovation.alliance.component/innovation.alliance.component';
+import {NewNewsComponent} from '../pages/app.home.page/app.home.component/app.home.new.news/app.home.new.news';
+import {NodelistComponent} from '../pages/app.node.page/node.component/node.nodelist/node.nodelist';
+import {HomeCorouselComponent} from '../pages/app.home.page/app.home.component/app.home.carousel/app.home.carousel';
 
 const routes: Routes = [
     { path: '', component: AppHomepageComponent },
@@ -76,7 +81,12 @@ export function HttpLoaderFactory(http: HttpClient) {
         HomeNewsComponent,
         HomeVisionComponent,
         HomeVisionGraphicComponent,
-        HomeDevelopmentRoadmapComponent
+        HomeDevelopmentRoadmapComponent,
+        HomeInnovationAllianceComponent,
+        InnnovationAllianceComponent,
+        NewNewsComponent,
+        NodelistComponent,
+        HomeCorouselComponent
     ],
     imports: [
         RouterModule.forRoot(routes),

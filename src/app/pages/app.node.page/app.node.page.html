@@ -5,7 +5,7 @@
                     type="left"
                     title="节点竞选"
                     brief="AELF是一个高效的、深度可定制的OS，我们期待它能成为区块链里的Linux，提供一个高效可以稳定运行的商业应用的可靠配置。本介绍页面将说明AELF节点竞选规则，包括竞选条件以及收益等。"
-                    imgurl="assets/newImages/node.png"
+                    imgurl="../../../assets/newImages/Node.png"
                     [showbtn]="true"
                     buttontext="查看详情"
                     (onClicked)="buttonClick($event)"
@@ -14,11 +14,87 @@
         </section>
         <section class="section section-8 anchor-hd">
             <div class="pt100 pb100 pl100 pr100">
+                <div class="fs-30 color-white pt20 pb20 align-center">{{"节点展示" | translate}}</div>
+                <div class="node-list clearfix">
+                    <div class="col12-lg-4">
+                        <div class="node">
+                            <app-nodelist
+                                campaigner="xxx公司"
+                                describe="xxxxxx"
+                                number="数量等"
+                                nodename="节点名称"
+                            ></app-nodelist>
+                        </div>
+                    </div>
+                    <div class="col12-lg-4">
+                        <div class="node">
+                            <app-nodelist
+                                campaigner="xxx公司"
+                                describe="xxxxxx"
+                                number="数量等"
+                                nodename="节点名称"
+                            ></app-nodelist>
+                        </div>
+                    </div>
+                    <div class="col12-lg-4">
+                        <div class="node">
+                            <app-nodelist
+                                campaigner="xxx公司"
+                                describe="xxxxxx"
+                                number="数量等"
+                                nodename="节点名称"
+                            ></app-nodelist>
+                        </div>
+                    </div>
+                    <div class="col12-lg-4">
+                        <div class="node">
+                            <app-nodelist
+                                campaigner="xxx公司"
+                                describe="xxxxxx"
+                                number="数量等"
+                                nodename="节点名称"
+                            ></app-nodelist>
+                        </div>
+                    </div>
+                    <div class="col12-lg-4">
+                        <div class="node">
+                            <app-nodelist
+                                campaigner="xxx公司"
+                                describe="xxxxxx"
+                                number="数量等"
+                                nodename="节点名称"
+                            ></app-nodelist>
+                        </div>
+                    </div>
+                    <div class="col12-lg-4">
+                        <div class="node">
+                            <app-nodelist
+                                campaigner="xxx公司"
+                                describe="xxxxxx"
+                                number="数量等"
+                                nodename="节点名称"
+                            ></app-nodelist>
+                        </div>
+                    </div>
+                    <div class="col12-lg-4">
+                        <div class="more fs-22 color-white">
+                            {{"更多节点加入中..." | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-8 anchor-hd">
+            <div class="pt100 pb100 pl100 pr100">
+                <div class="fs-30 color-white pt20 pb20 head">{{"竞选节点" | translate}}</div>
                 <div class="campaign-node-infomation pt20 pb20 pl20 pr20 ptl22-txt color-white">
                     <div class="fs-22 mb20" (click)="getModalShow()">{{"开始时间: 2019年4月15日" | translate}}</div>
                     <div class="fs-22 mb20">{{"截止时间: 2019年10月15日" | translate}}</div>
                     <div class="fs-22 mb20">{{"下载节点竞选申请表:" | translate}} <a class="download" href="javascript:void(0);">{{"《AELF节点竞选申请表（点击下载）" | translate}}</a></div>
-                    <div class="fs-22 mb20">{{"公示与投票: 竞选情况将在官网与社群等官方渠道进行公示；公示时间为10天；公示结束后进入BP节点竞选投票" | translate}}</div>
+                    <div class="fs-22 mb40">{{"公示与投票: 竞选情况将在官网与社群等官方渠道进行公示；公示时间为10天；公示结束后进入BP节点竞选投票" | translate}}</div>
+                    <div class="button">
+                        <app-button text="邮件报名" linkurl="mailto:contact@aelf.io" ></app-button>
+                    </div>
                 </div>
             </div>
         </section>

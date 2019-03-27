@@ -2,12 +2,16 @@
     text-align: center;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     .pl100 {
-        padding: 0;
+        padding-left: 20px;
     }
     
     .pr100 {
-        padding: 0;
+        padding-right: 20px;
+    }
+
+    .col12-sm-8 {
+        margin-top: 30px;
     }
 }

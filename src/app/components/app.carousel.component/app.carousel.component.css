@@ -17,7 +17,7 @@
 }
 
 .col12-sm-1 {
-    margin-top: 13vw;
+    margin-top: 26%;
 }
 
 .btnL {
@@ -40,9 +40,7 @@
     list-style: none;
     margin: 0;
     height: 30vw;
-    background-color: rgba(255, 255, 255, .3);
     text-align: center;
-    line-height: 30vw;
     float: left;
     font-weight: bold;
     font-size: 120px;

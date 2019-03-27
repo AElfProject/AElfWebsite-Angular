@@ -4,10 +4,10 @@
             <a href=""><img src="assets/images/logo.jpg" alt=""></a>
         </h1>
         <!-- <h1 class="logo3"><a href=""><img src="assets/images/logo3.png" alt=""></a></h1> -->
-        <nav class="nav fs-20 sm-hidden index-pagination clearfix" style="font-weight:bold;">
+        <div class="nav fs-20 index-pagination" style="font-weight:bold;" [hidden]="mobileMenuHide">
             <ul class="clearfix" >
                 <li (mouseenter)="showMenu()" (mouseleave)="hideMenu()" (click)="menuClick()">
-                    <a href="/" ><span>{{"首页" | translate}}</span></a>
+                    <a [href]="linkHref"><span>{{"首页" | translate}}</span></a>
                     <div class="two-stage-nav fs-14" [hidden]="hide">
                         <div class="anchor-hd" data-anchor="team" ><span>{{"愿景" | translate}}</span></div>
                         <div class="anchor-hd" data-anchor="advantage" ><span>{{"优势" | translate}}</span></div>
@@ -24,7 +24,7 @@
                 <li (click)="menuClick()"><a [routerLink]="['/community']" ><span>{{"社区" | translate}}</span></a></li>
                 <li (click)="menuClick()"><a [routerLink]="['/proclamation']" ><span>{{"公告" | translate}}</span></a></li>
             </ul>
-        </nav>
+        </div>
         <div class="other">
             <div [ngClass]="_fontFamlily.ffMy" class="lang color-white">
                 <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
@@ -64,6 +64,7 @@
                 <a href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"白皮书" | translate}}</span></a>
               </ng-template>
             </div>
+            <div class="menu ml30" (click)="mobileMenuClick()" ></div>
         </div>
     </header>
 </div>

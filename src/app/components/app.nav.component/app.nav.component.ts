@@ -4,7 +4,7 @@
  * @description 全网公用导航
 */
 
-import {Component, AfterViewInit, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, AfterViewInit, OnInit, Output, EventEmitter, HostListener} from '@angular/core';
 import { FontFamliyService } from '../../shared/font-famliy.service';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../../shared/language.service';
@@ -21,13 +21,16 @@ declare let $: any;
 
 export class AppNavComponent implements OnInit, AfterViewInit {
     public headerActiveCssClass = '';
+    public deviceWidth = window.innerWidth || document.documentElement.clientWidth;
     public config: PerfectScrollbarConfigInterface = {};
     public currentLanguage = '';
     public languagesDic: any;
     public pathName: any;
     public languageList = ['', ''];
     public menuList: any[] = ['/', '/application', '/node', '/community', '/proclamation'];
+    public mobileMenuHide = true;
     public hide: boolean;
+    public linkHref = '/';
 
     constructor(private _languageService: LanguageService,
         private _cookieService: CookieService,
@@ -56,7 +59,19 @@ export class AppNavComponent implements OnInit, AfterViewInit {
                 $('.clearfix li').eq(index).addClass('active').siblings().removeClass('active');
             }
         });
+
+        if (this.deviceWidth > 1024) {
+            this.mobileMenuHide = false;
+        }
+
+        if (this.pathName === '/') {
+            this.linkHref = 'javascript:void(0);';
+        }
+
     }
+
+
+
 
     ngAfterViewInit() {
         const perfectScrollbarContainer = $('.perfect-scrollbar-container');
@@ -76,13 +91,31 @@ export class AppNavComponent implements OnInit, AfterViewInit {
     }
 
     showMenu() {
-        if (this.pathName === '/') {
-            this.hide = false;
+        if (this.deviceWidth > 1024) {
+            if (this.pathName === '/') {
+                this.hide = false;
+                this.linkHref = 'javascript:void(0);';
+            } else {
+                this.linkHref = '/';
+            }
         }
     }
 
     hideMenu() {
         this.hide = true;
+    }
+
+    mobileMenuClick() {
+        this.mobileMenuHide = !this.mobileMenuHide;
+    }
+
+    @HostListener('window:resize') onresize() {
+        this.deviceWidth = window.innerWidth || document.documentElement.clientWidth;
+        if (this.deviceWidth > 1024) {
+            this.mobileMenuHide = false;
+        } else {
+            this.mobileMenuHide = true;
+        }
     }
 
     // nav bar change color when the scroll event happens.
@@ -99,8 +132,17 @@ export class AppNavComponent implements OnInit, AfterViewInit {
     // add or delete active class for html header element when click menu button.
     menuClick() {
         this.pathName = location.pathname;
+        if (this.pathName !== '/' && this.deviceWidth < 1024) {
+            this.mobileMenuHide = true;
+        }
+
         this.menuList.map((item, index) => {
             if (this.pathName === item) {
+                if (this.pathName === '/') {
+                    this.hide = !this.hide;
+                } else {
+                    this.linkHref = '/';
+                }
                 $('.clearfix li').eq(index).addClass('active').siblings().removeClass('active');
             }
         });

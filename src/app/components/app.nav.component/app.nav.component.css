@@ -120,12 +120,6 @@
     color: #FFF;
 }
 
-@media only screen and (max-width: 1024px) {
-    .aelf-notice {
-        padding: 68px 18px 118px 18px;
-    }
-}
-
 .aelf-notice a:hover {
     color: #260a7f;
     cursor: pointer;
@@ -173,31 +167,6 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
-    .hide-small {
-        display: none;
-    }
-    .aelf-notice-text {
-        z-index: 102;
-        width: 100%;
-        max-width: 900px;
-        border: 3px solid #fff;
-        border-radius: 15px;
-        padding: 18px;
-        left: 0;
-        position: fixed;
-        top: 0;
-        -webkit-transform: translate(0%, 0%);
-        transform: translate(0%, 0%);
-        background: linear-gradient(to right, #8e21d0, #42018f);
-        color: #FFF;
-        font-size: 14px;
-        display: none;
-        overflow-y: scroll;
-        height: 80%;
-        top: 10%;
-    }
-}
 
 /* two stage nav */
 
@@ -230,4 +199,78 @@
 
 .two-stage-nav > div:hover span {
     border-bottom:  1px solid #FFF;
+}
+
+.menu {
+    background: url(../../../assets//newImages/menu.png) no-repeat;
+    background-size: 100% 100%;
+    height: 30px;
+    width: 30px;
+    float: left;
+    display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    .aelf-notice {
+        padding: 68px 18px 118px 18px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .nav li {
+        float: inherit;
+    }
+
+    .nav {
+        float: inherit;
+        position: absolute;
+        top: 60px;
+        background: rgba(255, 255, 255, .1);
+        width: 100%;
+        left: 0;
+        
+    }
+
+    .header .nav li  {
+        text-align: left;
+        padding-left: 20px; 
+    }
+
+    .two-stage-nav {
+        position: relative;
+        padding-top: 0;
+        padding-left: 24px;
+        width: auto;
+        text-align: left;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+    .hide-small {
+        display: none;
+    }
+    .aelf-notice-text {
+        z-index: 102;
+        width: 100%;
+        max-width: 900px;
+        border: 3px solid #fff;
+        border-radius: 15px;
+        padding: 18px;
+        left: 0;
+        position: fixed;
+        top: 0;
+        -webkit-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+        background: linear-gradient(to right, #8e21d0, #42018f);
+        color: #FFF;
+        font-size: 14px;
+        display: none;
+        overflow-y: scroll;
+        height: 80%;
+        top: 10%;
+    }
 }

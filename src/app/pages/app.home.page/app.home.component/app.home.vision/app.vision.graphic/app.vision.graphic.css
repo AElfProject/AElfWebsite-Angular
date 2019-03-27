@@ -14,3 +14,9 @@
     -webkit-box-shadow: 2px 2px 5px #333;
     -moz-box-shadow: 2px 2px 5px #333; 
 }
+
+@media screen and (max-width: 1024px) {
+    .col12-sm-8 {
+        margin-top: 30px;
+    }
+}

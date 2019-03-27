@@ -1,0 +1,36 @@
+<div style="overflow: hidden" [style.height]="screenHeight + 'px'" (mouseenter)="stopPlay()" (mouseleave)="autoPlay()" class="carousel">
+        <!-- <div class="col12-sm-1">
+            <div class="carousel-btn btnL" style="color: #FFF;" (click)="playPre()"></div>
+        </div>
+        <div class="col12-sm-10"> -->
+            <div class="carousel-box" id="carousel-box" >
+                <div class="carousel-cont" [ngStyle]="moveStyle" [style.width]='boxWidth' >
+                    <div class="carousel-item" [style.width]="carouselWidth" >
+                        <div class="cont">
+                            <div class="earth">
+                                <div class="webgl bg-img" style="background-image:url(assets/images/section-1-bg.png);"></div>
+                                <div class="earth-canvas">
+                                    <div id="particles2"></div>
+                                </div>
+                            </div>
+                            <div class="txt color-white">
+                                <h2 class="fs-90 mb30">{{"去中心化云计算区块链网络" | translate}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination pt20 pb20" [hidden]="!showpPagination"  >
+                    <span 
+                        class="pagination-point"
+                        *ngFor="let item of data;let i = index" 
+                        [ngClass]="i === _thisPaginationIndex ? 'active' : ''"
+                        (click)="paginationClick(i)"
+                    ></span>
+                </div>
+            </div>
+        <!-- </div>
+        <div class="col12-sm-1">
+                <div  class="carousel-btn  btnR" style="color: #FFF;" (click)="playNext()"></div>
+        </div> -->
+    </div>
+    
