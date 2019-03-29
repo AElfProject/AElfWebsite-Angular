@@ -17,7 +17,7 @@ export class ButtonComponent implements OnInit {
     @Input() linkurl: string;
 
     ngOnInit() {
-        this.linkurl = this.linkurl ? this.linkurl : 'javascript:void(0);';
+        this.linkurl = this.linkurl || 'javascript:void(0);';
     }
 
 }
