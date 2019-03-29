@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1270px) {
     .pl100 {
         padding-left: 20px;
     }

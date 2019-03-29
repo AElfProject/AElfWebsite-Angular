@@ -16,8 +16,7 @@ import { LanguageService } from '../../../../shared/language.service';
 })
 
 export class HomeNewsComponent implements AfterViewChecked, OnInit {
-    public currentLanguage = this._cookieService.get('SelectedLanguage');
-    public languageList = ['', ''];
+    public currentLanguage: any;
     public languagesDic: any;
 
     constructor(
@@ -28,13 +27,12 @@ export class HomeNewsComponent implements AfterViewChecked, OnInit {
 
     ngOnInit(): void {
         this._languageService
-            .getLanguageConfig()
-            .subscribe(data => {
+        .getLanguageConfig()
+        .subscribe(data => {
             this.currentLanguage =
                 data['languagesDic2'][
                 this._languageService.getWebPageCurrentLanguage()
                 ];
-            console.log(this.currentLanguage);
             this._fontFamlily.changeFontFamily(
                 this.currentLanguage
             );
@@ -49,7 +47,9 @@ export class HomeNewsComponent implements AfterViewChecked, OnInit {
         if (this._cookieService.get('SelectedLanguage')) {
             if (this.currentLanguage !== this._cookieService.get('SelectedLanguage')) {
                 setTimeout(() => {
-                    this.currentLanguage = this._cookieService.get('SelectedLanguage');
+                    if (this._cookieService.get('SelectedLanguage') === 'zh-CN') {
+                        this.currentLanguage = '中文';
+                    }
                 });
             }
         }
