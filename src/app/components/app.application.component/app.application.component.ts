@@ -26,6 +26,7 @@ export class AppApplicationComponent implements OnInit {
     @Input() showbtn: boolean;
     @Input() buttontext: string;
     @Input() imgWidth: string;
+    @Input() linkurl: string;
     @Output() onClicked = new EventEmitter<boolean>();
 
     constructor() {}

@@ -1,0 +1,40 @@
+.paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginate li {
+    list-style-type: none;
+    color: #C7B8CC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 2px;
+}
+
+.paginate li:hover {
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+    cursor: pointer;
+}
+
+.paginate li.active {
+    background: #03c4fc;
+    color: #fff;
+    font-weight: 900;
+}
+
+.paginate li.disable {
+    color: #ccc;
+}
+
+.paginate li.disable:hover {
+    background-color: none;
+    line-height: 50px;
+}
+
+

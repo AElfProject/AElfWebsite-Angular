@@ -4,7 +4,7 @@
  * @description 小按钮。。 不多说了
 */
 
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
     selector: 'app-button',
@@ -12,12 +12,13 @@ import {Component, Input, OnInit} from '@angular/core';
     styleUrls: ['./app.button.component.css']
 })
 
-export class ButtonComponent implements OnInit {
+export class ButtonComponent  {
     @Input() text: string;
-    @Input() linkurl: string;
+    @Input() linkurl: any;
 
-    ngOnInit() {
-        this.linkurl = this.linkurl || 'javascript:void(0);';
+    onClick() {
+        if (this.linkurl) {
+            window.open(this.linkurl);
+        }
     }
-
 }

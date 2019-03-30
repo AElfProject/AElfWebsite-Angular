@@ -6,7 +6,7 @@
                         <div class="ptl22-txt">
                             <h3 class="fs-30 mb20 text-left"><strong>{{ title | translate}}</strong></h3>
                             <p class="fs-20 lh-16em-5over text-left">{{ brief | translate}}</p>
-                            <app-button [hidden]="!showbtn" [text]="buttontext" (click)="onClick(title)"></app-button>
+                            <app-button [hidden]="!showbtn" [text]="buttontext" (click)="onClick(title)" [linkurl]="linkurl"></app-button>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <div class="ptl22-txt">
                             <h3 class="fs-30 mb20 text-right"><strong>{{ title | translate}}</strong></h3>
                             <p class="fs-20 lh-16em-5over text-right">{{ brief | translate}}</p>
-                            <app-button [hidden]="!showbtn" [text]="buttontext" (click)="onClick(title)"></app-button>
+                            <app-button [hidden]="!showbtn" [text]="buttontext" (click)="onClick(title)"  [linkurl]="linkurl"></app-button>
                         </div>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ export class AppNavComponent implements OnInit, AfterViewInit {
     public languagesDic: any;
     public pathName: any;
     public languageList = ['', ''];
-    public menuList: any[] = ['/', '/application', '/node', '/community', '/proclamation'];
+    public menuList: any[] = ['/', '/developer', '/application', '/node', '/community', '/proclamation'];
     public mobileMenuHide = true;
     public hide: boolean;
     public linkHref = '/';
@@ -136,6 +136,8 @@ export class AppNavComponent implements OnInit, AfterViewInit {
             this.mobileMenuHide = true;
         }
 
+    //    const pathIndex = this.menuList.indexOf(this.pathName, 0);
+
         this.menuList.map((item, index) => {
             if (this.pathName === item) {
                 if (this.pathName === '/') {
@@ -146,5 +148,11 @@ export class AppNavComponent implements OnInit, AfterViewInit {
                 $('.clearfix li').eq(index).addClass('active').siblings().removeClass('active');
             }
         });
+
+        // console.log(pathIndex);
+    }
+
+    bindActive(event) {
+        $(event).addClass('active').siblings().removeClass('active');
     }
 }

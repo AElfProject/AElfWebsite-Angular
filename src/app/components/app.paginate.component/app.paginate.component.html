@@ -1,0 +1,30 @@
+<ul class="paginate clearfix">
+    <li
+        (click)="changePage('first')"
+        class="fa fa-angle-double-left"
+        [ngClass]="{'disable': pageValidation.isFirst}">
+    </li>
+    <li
+        (click)="changePage('pre')"
+        class="fa fa-angle-left"
+        [ngClass]="{'disable': pageValidation.isFirst}">
+    </li>
+    <li
+        (click)="changePage(page)"
+        *ngFor="let page of pageArr"
+        [ngClass]="{'active': page == currentPage}"
+    >
+        {{page + 1}}
+    </li>
+    <li
+        (click)="changePage('next')"
+        class="fa fa-angle-right"
+        [ngClass]="{'disable': pageValidation.isLast}"
+    >
+    </li>
+    <li
+        (click)="changePage('last')"
+        class="fa fa-angle-double-right"
+        [ngClass]="{'disable': pageValidation.isLast}"
+    ></li>
+</ul>

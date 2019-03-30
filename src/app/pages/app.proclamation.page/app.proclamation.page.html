@@ -1,16 +1,21 @@
 <div [ngSwitch]="showModal">
-    <div class="app-procalmation" *ngSwitchDefault >
+    <div class="app-procalmation" >
         <section class="section section-22 anchor-hd">
             <div class="cont pt200 pb100">
                 <app-carousel [data]="carouselData" (childEvent)="getChildEvent($event)"></app-carousel>
             </div>
         </section>
-        <section class="section section-22 anchor-hd" >
+        <section class="section section-22 anchor-hd pb100" >
             <div class="cont pt100 pb100 pl100 pr100">
-                <app-list [datalist]="datalist" (childEvent)="getChildEvent($event)" ></app-list>
-                <div class="color-white more">{{"查看更多 >>>>>" | translate}}</div>
+                <app-list [datalist]="paginateData" (childEvent)="getChildEvent($event)" ></app-list>
             </div>
+            <app-paginator
+                [totalRecords]="total"
+                [rows]="5"
+                [currentPage]="0"
+                (onPageChange)="paginate($event)"
+            ></app-paginator>
         </section>
     </div>
-    <app-modal [itemdata]="itemData" *ngSwitchCase="'show'" (childEvent)="closeModal($event)"></app-modal>
+    <app-modal [itemData]="itemData" *ngSwitchCase="'show'" (childEvent)="closeModal($event)"></app-modal>
 </div>

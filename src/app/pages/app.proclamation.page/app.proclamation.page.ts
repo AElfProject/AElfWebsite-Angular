@@ -6,17 +6,24 @@
 
 import {Component, OnInit} from '@angular/core';
 
+declare let $: any;
 @Component({
     selector: 'app-proclamation',
     templateUrl: './app.proclamation.page.html',
     styleUrls: ['./app.proclamation.page.css']
 })
 
+
+
 export class ProclamationPageComponent implements OnInit {
     public datalist: any[] = [];
     public itemData: any;
-    public showModal: any = 'hide';
+    public showModal = 'hide';
     public carouselData: any;
+    public bodyScroll: any;
+    public total: any;
+    public paginateData: any;
+
     ngOnInit() {
         this.datalist = [
             {
@@ -90,21 +97,63 @@ export class ProclamationPageComponent implements OnInit {
                 date: '2019/01.06',
                 content: '<p>这是标题</p><p>2019-01-06</p>',
                 hot: false
+            },
+            {
+                key: '6',
+                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
+                date: '2019/01.06',
+                content: '<p>这是标题</p><p>2019-01-06</p>',
+                hot: false
+            },
+            {
+                key: '7',
+                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
+                date: '2019/01.06',
+                content: '<p>这是标题</p><p>2019-01-06</p>',
+                hot: false
+            },
+            {
+                key: '8',
+                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
+                date: '2019/01.06',
+                content: '<p>这是标题</p><p>2019-01-06</p>',
+                hot: false
+            },
+            {
+                key: '9',
+                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
+                date: '2019/01.06',
+                content: '<p>这是标题</p><p>2019-01-06</p>',
+                hot: false
+            },
+            {
+                key: '10',
+                title: '这是公告的题目，点击之后弹出浮动页面现实文本内容',
+                date: '2019/01.06',
+                content: '<p>这是标题</p><p>2019-01-06</p>',
+                hot: false
             }
         ];
 
+        this.paginateData = this.datalist.slice(0, 5);
+        this.total = this.datalist.length;
         this.carouselData = this.datalist.filter(item => {
             return item.hot;
         });
     }
 
     getChildEvent(item: object) {
-        console.log(item);
         this.itemData = item;
         this.showModal = 'show';
+        $('body').css({'overflow': 'hidden'});
     }
 
     closeModal(isShow: boolean) {
         this.showModal = 'hide';
+        $('body').css({'overflow': 'auto'});
+    }
+
+    paginate(e) {
+        this.paginateData = this.datalist.slice(e.first, e.first + e.rows);
     }
 }

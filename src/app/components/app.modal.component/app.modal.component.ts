@@ -15,13 +15,14 @@ import {Component, OnInit, HostListener, Input, EventEmitter, Output} from '@ang
 
 export class ModalComponent implements OnInit {
     public modalHeight = window.innerHeight || document.documentElement.clientHeight;
-    @Input() itemdata: any;
+    @Input() itemData: any;
     @Output() childEvent = new EventEmitter<any>();
     public contHTML: any;
     constructor() {}
 
     ngOnInit(): void {
-        this.contHTML = this.itemdata ? this.itemdata[0].content : '<div></div>';
+        console.log(this.itemData);
+        this.contHTML = this.itemData ? this.itemData[0].content : '<div></div>';
     }
 
     @HostListener('window:resize') onresize() {
@@ -31,6 +32,8 @@ export class ModalComponent implements OnInit {
     closeModal() {
         this.childEvent.emit('hide');
     }
+
+    
 
 
 }

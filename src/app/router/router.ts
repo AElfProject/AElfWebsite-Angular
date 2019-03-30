@@ -38,6 +38,7 @@ import {InnnovationAllianceComponent} from '../pages/app.home.page/app.home.comp
 import {NewNewsComponent} from '../pages/app.home.page/app.home.component/app.home.new.news/app.home.new.news';
 import {NodelistComponent} from '../pages/app.node.page/node.component/node.nodelist/node.nodelist';
 import {HomeCorouselComponent} from '../pages/app.home.page/app.home.component/app.home.carousel/app.home.carousel';
+import {PaginatorComponent} from '../components/app.paginate.component/app.paginate.component';
 
 const routes: Routes = [
     { path: '', component: AppHomepageComponent },
@@ -86,7 +87,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         InnnovationAllianceComponent,
         NewNewsComponent,
         NodelistComponent,
-        HomeCorouselComponent
+        HomeCorouselComponent,
+        PaginatorComponent
     ],
     imports: [
         RouterModule.forRoot(routes),

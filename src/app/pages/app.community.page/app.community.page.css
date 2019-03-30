@@ -39,6 +39,12 @@
     top: 5%;
 }
 
+.co-wechat.active {
+    background: url(../../../assets/newImages/wechat.png) no-repeat;
+    background-size: 100% 100%;
+    transform: scale(1.5);
+}
+
 .co-wechat:hover {
     background: url(../../../assets/newImages/wechat.png) no-repeat;
     background-size: 100% 100%;
@@ -61,6 +67,12 @@
     background-size: 100% 100%;
     left: 5%;
     top: 43%;
+}
+
+.co-twitter.active {
+    background: url(../../../assets/newImages/twitter.png) no-repeat;
+    background-size: 100% 100%;
+    transform: scale(1.5);
 }
 
 .co-twitter:hover {

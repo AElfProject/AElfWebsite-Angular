@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-
 import { AppComponent } from './app.component';
 import {CookieModule} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
