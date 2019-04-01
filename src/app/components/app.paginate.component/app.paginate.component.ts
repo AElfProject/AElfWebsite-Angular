@@ -18,7 +18,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class PaginatorComponent implements OnInit {
 
     @Input() totalRecords: number;
-    @Input() rows = 6;
+    @Input() rows = 5;
     @Input() currentPage: number;
     @Input() pageLinkSize: number;
     @Output() onPageChange = new EventEmitter();

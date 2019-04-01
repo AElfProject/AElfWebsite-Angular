@@ -28,7 +28,7 @@ export class CommunityPageComponent implements AfterViewChecked, OnInit {
 
 
     ngOnInit() {
-        this.currentLanguage = this._languageService.getWebPageCurrentLanguage();
+        this.currentLanguage = navigator.language;
         if (this.currentLanguage === 'zh-CN') {
             $('.co-wechat').addClass('active').siblings().removeClass('active');
         } else {
