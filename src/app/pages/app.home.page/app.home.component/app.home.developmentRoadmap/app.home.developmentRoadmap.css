@@ -13,74 +13,52 @@
     position: absolute;
 }
 
+.roadmap-box {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.step-0 {
+    width: 212px;
+    left: 5%;
+    top: 15%;
+}
+
 .step-1 {
-    left: 4%;
-    top: 66%;
+    width: 446px;
+    left: 5%;
+    top: 55%;
 }
 
 .step-2 {
-    left: 13%;
-    top: 16%;
+    width: 446px;
+    left: 27%;
+    top: 20%;
 }
 
 .step-3 {
-    left: 13%;
-    top: 77%;
+    width: 446px;
+    left: 48%;
+    top: 54%;
 }
 
 .step-4 {
-    left: 22%;
-    top: 26%;
+    width: 446px;
+    left: 70%;
+    top: 20%;
 }
 
-.step-5 {
-    left: 33%;
-    top: 13%;
-}
-
-.step-6 {
-    left: 33%;
-    top: 77%;
-}
-
-.step-7 {
-    left: 43%;
-    top: 67%;
-}
-
-.step-8 {
-    left: 53%;
-    top: 13%;
-}
-
-.step-9 {
-    left: 53%;
-    top: 77%;
-}
-
-.step-10 {
-    left: 63%;
-    top: 24%;
-}
-
-.step-11 {
-    left: 72%;
-    top: 14%;
-}
-
-.step-12 {
-    left: 72%;
-    top: 76%;
-}
-
-.step-13 {
-    left: 82%;
-    top: 26%;
-}
-
-.step-14 {
-    left: 92%;
-    top: 55%;
+.roadmap-line {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .color-green {
@@ -95,6 +73,37 @@
     .roadmap {
         width: 1000px;
     }
+    
+    .step-0 {
+        width: 148px;
+        left: 6%;
+        top: 18%;
+    }
+    
+    .step-1 {
+        width: 318px;
+        left: 5%;
+        top: 55%;
+    }
+    
+    .step-2 {
+        width: 318px;
+        left: 27%;
+        top: 22%;
+    }
+    
+    .step-3 {
+        width: 318px;
+        left: 48%;
+        top: 54%;
+    }
+    
+    .step-4 {
+        width: 318px;
+        left: 70%;
+        top: 22%;
+    }
+    
 }
 
 
@@ -102,6 +111,10 @@
 
     .roadmap {
         width: 100%;
+    }
+
+    .roadmap-line {
+        display: none;
     }
 
     .develop {
@@ -112,4 +125,17 @@
     .img {
         display: none;
     }
+
+    .step-0 {
+        margin: 0 auto;
+    }
+
+    .step-1,
+    .step-2,
+    .step-3,
+    .step-4 {
+        width: 80%;
+        margin: 0 auto
+    }
+
 }

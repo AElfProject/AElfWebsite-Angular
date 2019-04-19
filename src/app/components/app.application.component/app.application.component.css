@@ -23,8 +23,20 @@ img {
     width: 70%;
 }
 
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
 @media only screen and (max-width: 1024px) {
     #application .ptl22-txt {
         padding: 96px 20px;
     }
+
+    .flex {
+        display: block;
+        align-items: center;
+    }
+
 }

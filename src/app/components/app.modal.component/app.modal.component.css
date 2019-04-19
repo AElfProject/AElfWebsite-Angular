@@ -12,6 +12,14 @@
     font-size: 50px;
 }
 
+.center {
+    text-align: center;
+    text-indent: 0;
+}
+
+p {
+    text-indent: 2em;
+}
 .space {
     height: 70px;
     background: rgba(0, 0, 0, .3);
@@ -50,4 +58,8 @@
     background: #651d9e;
     opacity: .3;
     height: 30px;
+}
+
+.center {
+    text-align: center;
 }

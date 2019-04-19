@@ -10,13 +10,12 @@
     border-radius: 8px;
     text-align: center;
     height: 200px;
+    cursor: pointer;
 }
 
 .innovation-allinance-content:hover {
-    background: rgba(255, 255, 255 , .5);
+    background: #27bfff;
     box-shadow: 2px 2px 5px #333;
-    -webkit-box-shadow: 2px 2px 5px #333;
-    -moz-box-shadow: 2px 2px 5px #333;
 }
 
 a {

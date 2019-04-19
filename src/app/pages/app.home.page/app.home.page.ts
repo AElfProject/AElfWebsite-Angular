@@ -29,6 +29,11 @@ export class AppHomepageComponent implements OnInit, AfterViewInit {
     public languagesDic: any;
     public VideoSrc: any;
     public carouselData: any[] = [];
+    public showBox = '';
+    public videoSrcTemp: any;
+    public flex = {
+        'display': 'none'
+    };
     constructor(
         public _fontFamlily: FontFamliyService,
         private sanitizer: DomSanitizer
@@ -62,7 +67,6 @@ export class AppHomepageComponent implements OnInit, AfterViewInit {
                 hot: true
             },
         ];
-        this.setVideo();
     }
 
     ngAfterViewInit() {
@@ -86,26 +90,35 @@ export class AppHomepageComponent implements OnInit, AfterViewInit {
         $notice.style.display = displayNew;
     }
 
+    showVedioBox() {
+        this.showBox = 'show';
+        setTimeout(() => {
+            this.setVideo();
+        });
+        $('body').css({'overflow': 'hidden'});
+    }
+
+    getHideVedioBox() {
+        this.showBox = '';
+        $('body').css({'overflow': 'auto'});
+    }
+
+
     setVideo() {
-        let videoSrcTemp = 'https://www.youtube.com/embed/qbIP1TEX33Q';
+        this.videoSrcTemp = 'https://www.youtube.com/embed/qbIP1TEX33Q';
         if (document.cookie.includes('zh-CN')) {
-            videoSrcTemp = 'https://v.qq.com/iframe/player.html?vid=v08049tau4n';
+            this.videoSrcTemp = 'https://v.qq.com/iframe/player.html?vid=v08049tau4n';
             if (window.navigator.userAgent.toLowerCase().indexOf('chrome') === -1) {
-                videoSrcTemp = 'https://dwz.cn/ZMnoq3eH';
+                this.videoSrcTemp = 'https://dwz.cn/ZMnoq3eH';
             }
         }
-        this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videoSrcTemp);
-        const vedioWidth = parseInt($('#player').css('width'), 10);
+        this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoSrcTemp);
+        const vedioWidth = parseInt($('.vedio-limiter').css('width'), 10);
         const vedioHeight = (vedioWidth / 16) * 9;
         $('#player').css('height', vedioHeight + 'px');
         // this.VideoSrc = this.VideoSrc.bypassSecurityTrustResourceUrl(url);
     }
 
     @HostListener('window:scroll', ['$event'])
-    @HostListener('window:resize') onresize() {
-        const vedioHeight = $('.vedio-size').find('.ptl22-box').css('height');
-        setTimeout(() => {
-        $('#player').css('height', vedioHeight);
-        }, 200);
-    }
+    @HostListener('window:resize') onresize() {}
 }

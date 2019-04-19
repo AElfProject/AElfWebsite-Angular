@@ -17,33 +17,7 @@
     </div>
 </div>
 <div class="container index-step" id="skrollr-body">
-    <section class="section section-1 anchor-bd" id="index">
-        <!-- <div class="aelf-notice">
-          <a href="javascript:;" (click)="toggleNotice('notice-1')">{{ "关于冒用aelf名义进行违法活动的相关声明" | translate }}</a>
-          <span class="hide-small"> {{ "/" | translate }} </span>
-          <a class="hide-small" href="javascript:;" (click)="toggleNotice('notice-2')">{{ "针对冒用aelf名义开展“挖矿”活动的声明" | translate }}</a>
-          <span class="hide-small"> {{ "/" | translate }} </span>
-          <a class="hide-small" href="http://www.31qu.cn/news/details?id=17548" target="_blank">{{ "31区-区块链50人专访aelf创始人马昊伯" | translate }}</a>
-          <span class="hide-small"> {{ "/" | translate }} </span>
-          <a class="hide-small" href="http://finance.ifeng.com/a/20180827/16470938_0.shtml" target="_blank">{{ "aelf为迎接商业应用落地做好准备" | translate }}</a>
-        </div> -->
-        <!-- <div class="aelf-notice-text" id="notice-1">
-          <h1 class="aelf-notice-title">- 公告 -</h1>
-          <h2 class="aelf-notice-subtitle">ANNOUNCEMENT</h2>
-          <p>近期，接到用户举报，市场上有个别组织盗取aelf官网内容，骗取用户信任，以“ELF社区联盟”名义开展“锁仓返利活动”宣传，并声称团体参与活动可获得“算力币”，并采取线下收款等形式，欺骗用户，损害用户利益。aelf官方在此声明：</p>
-          <p>1.aelf除官方积分奖励系统——Candy System（https：//candy.aelf.io）以及与已上线的交易所或钱包联合举办的活动之外，从未授权过任何组织及个人举办任何形式的锁仓活动；</p>
-          <p>2.aelf从未在线下举办过此类形式的“锁仓活动”，也从未授权任何组织及个人举办此类形式活动。</p>
-          <p>3.所谓“ELF社区联盟锁仓活动”使用的代币，并非aelf官方发行的代币ELF。</p>
-          <p>在此，aelf提醒用户提高警惕，谨防上当受骗，切实维护好自身利益。针对以aelf名义或aelf合作方名义进行的虚假宣传等行为，aelf将保留追究其法律责任的权益，如发现此类活动在您当地展开，请尽快与当地警方取得联系。对于此类对用户进行诈骗等行为，aelf绝不姑息，再次提醒广大aelf爱好者，注意防范风险。</p>
-          <div class="aelf-notice-close" (click)="toggleNotice('notice-1')">朕已阅</div>
-        </div>
-        <div class="aelf-notice-text" id="notice-2">
-          <h1 class="aelf-notice-title">- 公告 -</h1>
-          <h2 class="aelf-notice-subtitle">ANNOUNCEMENT</h2>
-          <p>近期aelf注意到有商家假冒aelf挖矿。aelf敬请粉丝注意，截图中的APP并不能通过“数据挖矿”挖到aelf币，希望广大aelf粉丝提高警惕，不要相信来源不明的信息。</p>
-          <p>aelf目前不支持除官方积分奖励系统励系统https://candy.aelf.io以外，任以外，任何形式的“数据挖矿”。未经授权声称可用APP“数据挖矿”aelf币的行为，侵犯了aelf与粉丝的利益，aelf将保留通过法律途径追究侵权人的法律责任的权利。</p>
-          <div class="aelf-notice-close" (click)="toggleNotice('notice-2')">朕已阅</div>
-        </div> -->
+    <section class="section section-1 anchor-bd" id="index" [ngSwitch]="showBox">
         <div class="cont">
             <div class="earth">
                 <div class="webgl bg-img" style="background-image:url(assets/images/section-1-bg.png);"></div>
@@ -51,12 +25,21 @@
                     <div id="particles2"></div>
                 </div>
             </div>
-            <div class="txt color-white">
-                <h2 class="fs-90 mb30">{{"去中心化云计算区块链网络" | translate}}</h2>
+            <div class="txt color-white position-40">
+                <h2 class="fs-90 mb30">{{"基于云计算的商用公有链" | translate}}</h2>
+                <p class="fs-22 mb">{{"世界首个分布式云计算区块链网络" | translate}}</p>
+                <p class="mb10 mt100 vedio-btn" (click)="showVedioBox()"><img src="assets/newImages/vedio-icon.png" alt=""></p>
+                <p class="fs-11">{{"观看视频" | translate}}</p>
             </div>
             <div [ngClass]="_fontFamlily.ffArial" class="scroll-down fs-14 color-white ta-c">
                 <p class="mb10"><img src="assets/images/scroll-down.png" alt=""></p>
                 <p class="fs-11">Scrolling mouse</p>
+            </div>
+            <div class="vedio-box" *ngSwitchCase="'show'">
+                <div class="vedio-limiter" > 
+                    <div class="close" (click)="getHideVedioBox()"><img src="assets/newImages/close.png"></div>
+                    <iframe  id="player"  width="90%" type="text/html" [src]="VideoSrc" frameborder="0" scrolling="no" border="0" frameborder = "no" framespacing = "0" allowfullscreen = "true"></iframe>
+                </div>
             </div>
         </div>
         <!-- <app-carousel [data]="carouselData" ></app-carousel> -->
@@ -65,223 +48,25 @@
     <section class="section section-8 anchor-bd" id="vision">
         <app-home-vision></app-home-vision>
     </section>
-    <section class="section section-22 anchor-hd" id="advantage">
+    <section class="section section-8 anchor-hd" id="advantage">
         <app-home-advantage></app-home-advantage>
     </section>
     <section class="section section-8 anchor-hd" id="development_roadmap">
         <app-home-development-roadmap></app-home-development-roadmap>
     </section>
-    <!-- <section class="section section-22 anchor-hd" id="advan">
-        <div class="cont pt200 pb200">
-            <div class="grow pic-txt-list-22 ta-c color-white clearfix vedio-size">
-                <div class="col12-sm-6 ptl22-item">
-                  <iframe  id="player"  width="90%" type="text/html" [src]="VideoSrc" frameborder="0" scrolling = "no" border = "0" frameborder = "no" framespacing = "0" allowfullscreen = "true"></iframe>
-                </div>
-                <div class="col12-sm-2 ptl22-item">
-                    <div class="ptl22-box">
-                        <div class="ptl22-img mb80"><img src="assets/images/icon-9.png" alt=""></div>
-                        <div class="ptl22-txt">
-                            <h3 class="fs-30 mb20"><strong>{{"高性能" | translate}}</strong></h3>
-                            <p class="fs-20 lh-16em-3over">{{"ælf的全节点能够运行在服务器集群上" | translate}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col12-sm-2 ptl22-item">
-                    <div class="ptl22-box">
-                        <div class="ptl22-img mb80"><img src="assets/images/icon-10.png" alt=""></div>
-                        <div class="ptl22-txt">
-                            <h3 class="fs-30 mb20"><strong>{{"资源隔离" | translate}}</strong></h3>
-                            <p class="fs-20 lh-16em-3over">{{"每一个智能合约拥有一条自己的区块链" | translate}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col12-sm-2 ptl22-item">
-                    <div class="ptl22-box">
-                        <div class="ptl22-img mb80"><img src="assets/images/icon-11.png" alt=""></div>
-                        <div class="ptl22-txt">
-                            <h3 class="fs-30 mb20"><strong>{{"治理&发展" | translate}}</strong></h3>
-                            <p class="fs-20 lh-16em-3over">{{"代币持有人的委托票选制度" | translate}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <section class="section section-8 anchor-bd" id="team">
         <app-home-team></app-home-team>
     </section>
-    <!-- <section class="section section-8 anchor-bd" id="team2">
-        <div class="cont pt200 pb200">
-            <div class="txt">
-                <div class="wrapper clearfix">
-                    <div class="grow team2 clearfix">
-                        <div class="col12-tn-12 hidden ta-c pt30 mb30 tn-show mb30">
-                            <h3 class="ff-cgb fs-100 color-white lh-9em mb5">Adviser</h3>
-                            <p class="fs-34 mb15 color-white"><b>{{"顾问" | translate}}</b></p>
-                        </div>
-                        <div class="col-ysg-2  col12-gt-3 col12-md-4 col12-sm-4 col12-tn-12 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-                            <div class="team-box h400 clearfix">
-                                <div class="team-pic"><img src="assets/images/face-6.png" alt=""></div>
-                                <div class="team-txt pl45 pr45">
-                                    <h4 class="fs-18 mb20"><b>{{"Liam Robertson" | translate}}</b></h4>
-                                    <div class="fs-12 lh-16em">{{ '特许金融分析师，特许另类投资分析师' | translate }}<br/>{{ 'Liam是欧洲和中东地区最大的个人和公司交易商之一。作为英国的认证投资经理，他在2016年成立了世界上第一个合规加密货币对冲基金。作为Alphabit的创始人和首席执行官，Liam现在为一些基金，家族企业和突破性区块链企业提供咨询服务。' | translate }}</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-ysg-2  col12-gt-3 col12-md-4 col12-sm-4 col12-tn-12 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 50%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-                            <div class="team-box h400 clearfix">
-                                <div class="team-pic"><img src="assets/images/face-4.png" alt=""></div>
-                                <div class="team-txt pl45 pr45">
-                                    <h4 class="fs-18 mb20"><b>{{"周硕基" | translate}}</b></h4>
-                                    <div class="fs-12  lh-16em">{{"FBGCapital 创始合伙人，在数字资产交易和投资方面拥有丰富的经验。他同时是一系列区块链企业和项目的早期投资人，被视为亚洲最成熟、富有远见的加密对冲基金领导人。" | translate}}</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-ysg-2  col12-gt-3 col12-md-4 col12-sm-4 col12-tn-12 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 50%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-                            <div class="team-box h400 clearfix">
-                                <div class="team-pic"><img src="assets/images/face-7.jpg" alt=""></div>
-                                <div class="team-txt pl45 pr45">
-                                    <h4 class="fs-18 mb20"><b>{{"Kenneth Oh" | translate}}</b></h4>
-                                    <div class="fs-12  lh-16em">{{"Dentons Rodyk＆Davidson 中国/印度尼西亚分公司的高级合伙人。 精通企业融资，在风险投资，私募股权，IPO/代币销售，IPO/代币销售融资后期以及并购方面拥有近二十年的丰富经验。" | translate}}</div>
-                                </div>
-                            </div>
-                        </div>
-                      <div class="col-ysg-2  col12-gt-3 col12-md-4 col12-sm-4 col12-tn-12 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 50%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-                        <div class="team-box h400 clearfix">
-                          <div class="team-pic"><img src="assets/images/face-8.png" alt=""></div>
-                          <div class="team-txt pl45 pr45">
-                            <h4 class="fs-18 mb20"><b>{{"J. Michael Arrington" | translate}}</b></h4>
-                            <div class="fs-12  lh-16em">{{"TechCrunch创始人兼首席执行官，RealNames副总裁，Achex的联合创始人，Zip.ca和Pool.com的创始人，Razorgator的首席运营官。曾为Verisign等众多企业提供咨询服务。2008年5月，曾被《时代》评选为全球最具影响力100人之一。" | translate}}</div>
-                          </div>
-                        </div>
-                      </div>
-                        <div class="md-hidden col-ysg-2 col12-gt-3 col12-md-4 col12-sm-4 col12-tn-12 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 40%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-                            <div class="team-box h400 clearfix">
-                                <p class="fs-34 mb15"><b>{{"顾问" | translate}}</b></p>
-
-                                <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
-                            </div>
-                        </div>
-                        <div class="hidden col-ysg-2  md-show tn-hidden col12-gt-3 col12-md-4 col12-sm-4 col12-tn-12 team-item ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 40%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-                            <div class="team-box h400 clearfix">
-                                <p class="fs-34 mb15"><b>{{"顾问" | translate}}</b></p>
-
-                                <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
-                            </div>
-                        </div>
-                        <div class="hidden col-ysg-2 tn-show col12-gt-3 col12-md-4 col12-sm-4 col12-tn-12 ta-c team-item skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 80%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
-                            <div class="team-box h400 clearfix">
-                                <a href="" class="more clearfix"><span class="add-btn3"><i></i><i></i></span> <span>{{"更多" | translate}}</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <section class="section section-8 anchor-bd" id="team3">
         <app-home-investmen-institution></app-home-investmen-institution>
     </section>
     <section class="section section-8 anchor-bd" id="exchange">
         <app-home-exchange></app-home-exchange>
     </section>
-    <section calss="section section-22 anchor-bd" id="innovation_alliance">
+    <section class="section section-8 anchor-bd" id="innovation_alliance">
         <app-innovation-alliance></app-innovation-alliance>
+        <!-- <div style="height: 300px"></div> -->
     </section>
-    <!--<section class="section section-12 anchor-bd" id="news">
-        <div class="cont pt100 pb100">
-        <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">Development Roadmap</div>
-        <div class="txt grow clearfix">
-            <div class="col12-gt-8 col12-gt-ol-2 clearfix">
-            <div class="time-list">
-                <ul class="clearfix">
-                <li class="mb25 clearfix">
-                    <div class="icon"><i><img src="assets/images/icon-13.png" alt=""></i></div>
-                    <div class="date ff-cgb">
-                    <em class="fs-72 lh-10em">01</em>
-                    <span class="fs-16">2019</span>
-                    </div>
-                    <div class="title">
-                    <h3 class="fs-24 lh-12em"><a href="https://github.com/AElfProject/AElf" target="_blank">Ready To Launch</a></h3>
-                    <p class="fs16 lh-14em mt10">
-                        1. Code optimization before mainnet launching.<br/>
-                        2. Code review, pre-releases.<br/>
-                        3. Business case battle test.
-                    </p>
-                    </div>
-                </li>
-                <li class="mb25 clearfix">
-                    <div class="icon"><i><img src="assets/images/icon-12.png" alt=""></i></div>
-                    <div class="date ff-cgb">
-                    <em class="fs-72 lh-10em">08</em>
-                    <span class="fs-16">2018</span>
-                    </div>
-                    <div class="title">
-                    <h3 class="fs-24 lh-12em"><a href="https://github.com/AElfProject/AElf" target="_blank">Governance</a></h3>
-                    <p class="fs16 lh-14em mt10">
-                        1. Voting mechanism for sidechain join/leave<br/>
-                        2. Voting mechanism for emergency treatment
-                    </p>
-                    </div>
-                </li>
-                <li class="mb25 clearfix">
-                    <div class="icon"><i><img src="assets/images/icon-13.png" alt=""></i></div>
-                    <div class="date ff-cgb">
-                    <em class="fs-72 lh-10em">05</em>
-                    <span class="fs-16">2018</span>
-                    </div>
-                    <div class="title">
-                    <h3 class="fs-24 lh-12em"><a href="https://github.com/AElfProject/AElf" target="_blank">The Main Chain</a></h3>
-                    <p class="fs-16 lh-14em mt10">
-                        1. Crosschain，two-way peg, merkle proofs.<br/>
-                        2. Event trigger from one sidechain to another a.k.a cross chain interoperability.
-                    </p>
-                    </div>
-                </li>
-                <li class="mb25 clearfix">
-                    <div class="icon"><i><img src="assets/images/icon-12.png" alt=""></i></div>
-                    <div class="date ff-cgb">
-                    <em class="fs-72 lh-10em">05</em>
-                    <span class="fs-16">2018</span>
-                    </div>
-                    <div class="title">
-                    <h3 class="fs-24 lh-12em"><a href="https://github.com/AElfProject/AElf" target="_blank">A Tale Between Two Nodes</a></h3>
-                    <p class="fs16 lh-14em mt10">
-                        1. tx_pool/mem_pool design.<br/>
-                        2. Basic block in-memory construct, eg: merkletree, block header, transactions, statsdb, caching.<br/>
-                        3. Wire protocol for inter-ledger block/tx transfering.<br/>
-                        4. DPoS implementation, hashing, mining.<br/>
-                        5. Block validator, crypto related algorithms, e.g. signing, hmac.<br/>
-                        6. p2p discovery/communication.
-                    </p>
-                    </div>
-                </li>
-                <li class="mb25 clearfix">
-                    <div class="icon"><i><img src="assets/images/icon-12.png" alt=""></i></div>
-                    <div class="date ff-cgb">
-                    <em class="fs-72 lh-10em">03</em>
-                    <span class="fs-16">2018</span>
-                    </div>
-                    <div class="title">
-                    <h3 class="fs-24 lh-12em"><a href="https://github.com/AElfProject/AElf" target="_blank">The Internal Affair Of The Wonderland</a></h3>
-                    <p class="fs-16 lh-14em mt10">
-                        1. Graph-based scheduler algorithm implementation. <br />
-                        2. Tagged primitive resource Data-Structure, the basic element for resource isolation.<br />
-                        3. In-cluster wire protocol (data/task marshal/unmarshal).<br />
-                        4. Actor (e.g. akka) based task distribution inside a single cluster/ledger.<br />
-                        5. Contract as demostration of concurrent execution.
-                    </p>
-                    </div>
-                </li>
-                </ul>
-            </div>
-            <div class="btns pt50 ta-c clearfix">
-                <div class="btn"><i class="icon-down"><img src="assets/images/arrow_01.png" alt=""></i></div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </section>-->
     <section class="section section-13 anchor-bd" id="token_allocation">
         <app-home-token-allocation></app-home-token-allocation>
     </section>

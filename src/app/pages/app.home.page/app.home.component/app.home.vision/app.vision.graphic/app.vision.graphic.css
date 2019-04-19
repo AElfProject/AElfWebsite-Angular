@@ -11,10 +11,8 @@
 }
 
 .graphic:hover {
-    background: rgba(255, 255, 255 , .5);
+    background: #27bfff;
     box-shadow: 2px 2px 5px #333;
-    -webkit-box-shadow: 2px 2px 5px #333;
-    -moz-box-shadow: 2px 2px 5px #333; 
 }
 
 @media screen and (max-width: 1024px) {

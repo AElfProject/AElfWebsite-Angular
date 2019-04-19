@@ -52,6 +52,7 @@ export class AppNavComponent implements OnInit, AfterViewInit {
             this._fontFamlily.changeFontFamily(
                 this.currentLanguage
             );
+            this._cookieService.put('SelectedLanguage', this.languagesDic[this.currentLanguage]);
         });
         this.pathName = location.pathname;
         this.menuList.map((item, index) => {

@@ -33,9 +33,11 @@ export class HomeNewsComponent implements AfterViewChecked, OnInit {
                 data['languagesDic2'][
                 this._languageService.getWebPageCurrentLanguage()
                 ];
-            this._fontFamlily.changeFontFamily(
-                this.currentLanguage
-            );
+            if (this.currentLanguage === '中文') {
+                this.currentLanguage = 'zh-CN';
+            } else {
+                this.currentLanguage = 'en-US';
+            }
         });
     }
 
@@ -48,7 +50,9 @@ export class HomeNewsComponent implements AfterViewChecked, OnInit {
             if (this.currentLanguage !== this._cookieService.get('SelectedLanguage')) {
                 setTimeout(() => {
                     if (this._cookieService.get('SelectedLanguage') === 'zh-CN') {
-                        this.currentLanguage = '中文';
+                        this.currentLanguage = 'zh-CN';
+                    } else {
+                        this.currentLanguage = 'en-US';
                     }
                 });
             }
