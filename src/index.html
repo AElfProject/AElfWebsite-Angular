@@ -76,6 +76,8 @@
 <!-- 微信分享 -->
 <!-- <script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script>
+    var title = 'aelf - 可定制的高性能区块链网络';
+    var descContent = '全球首个基于云计算+区块链技术,服务于商业应用的分布式网络系统';
     wx.config({
         debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
         appId: '', // 必填，公众号的唯一标识
@@ -88,7 +90,7 @@
     wx.ready(function(){
         // alert("我已经进来了");
         wx.onMenuShareTimeline({
-            title: title, // 分享标题
+            title: 'title', // 分享标题
             link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
             imgUrl: "url", // 分享图标
             success: function () {

@@ -3,18 +3,18 @@
         <section class="section section-8 anchor-hd">
                 <app-application
                     type="left"
-                    title="节点竞选"
-                    brief="AELF是一个高效的、深度可定制的OS，我们期待它能成为区块链里的Linux，提供一个高效可以稳定运行的商业应用的可靠配置。本介绍页面将说明AELF节点竞选规则，包括竞选条件以及收益等。"
+                    title="Node Election"
+                    brief="In aelf's DPoS consensus, all stakeholders can vote for delegate nodes, which are responsible for executing transactions, compiling blocks, and generating consensus management rules. Stakeholders can also vote on decisions regarding updates to the system contract. See below for rules of the aelf node election, including election requirements and benefits."
                     imgurl="../../../assets/newImages/Node.png"
                     [showbtn]="true"
-                    buttontext="查看详情"
+                    buttontext="View details"
                     (onClicked)="buttonClick($event)"
                     [imgWidth]="'90%'"
                 ></app-application>
         </section>
         <section class="section section-8 anchor-hd">
             <div class="pt100 pb100 pl100 pr100">
-                <div class="fs-30 color-white pt20 pb20 align-center">{{"节点展示" | translate}}</div>
+                <div class="fs-30 color-white pt20 pb20 align-center">{{"Node Display" | translate}}</div>
                 <div class="node-list clearfix">
                     <div class="col12-lg-4">
                         <div class="node">
@@ -78,7 +78,7 @@
                     </div>
                     <div class="col12-lg-4">
                         <div class="more fs-22 color-white">
-                            {{"更多节点加入中..." | translate}}
+                            {{"More nodes are joining..." | translate}}
                         </div>
                     </div>
                 </div>
@@ -86,15 +86,15 @@
         </section>
         <section class="section section-8 anchor-hd">
             <div class="pt100 pb100 pl100 pr100">
-                <div class="fs-30 color-white pt20 pb20 head">{{"竞选节点" | translate}}</div>
+                <div class="fs-30 color-white pt20 pb20 head">{{"Campaign Node" | translate}}</div>
                 <div class="campaign-node-infomation pt20 pb20 pl20 pr20 ptl22-txt color-white">
-                    <div class="fs-22 mb20" (click)="getModalShow()">{{"开始时间: XXXX年XX月XX日" | translate}}</div>
-                    <div class="fs-22 mb20">{{"截止时间: XXXX年XX月XX日" | translate}}</div>
-                    <div class="fs-22 mb20">{{"下载节点竞选申请表:" | translate}} <a class="download" href="javascript:void(0);">{{"《AELF节点竞选申请表》（点击下载）" | translate}}</a></div>
-                    <div class="fs-22 mb40">{{"公示与投票: 竞选情况将在官网与社群等官方渠道进行公示；公示时间为XX天；公示结束后进入BP节点竞选投票" | translate}}</div>
+                    <div class="fs-22 mb20" (click)="getModalShow()">{{"Start Time:" | translate}}</div>
+                    <div class="fs-22 mb20">{{"Deadline:" | translate}}</div>
+                    <div class="fs-22 mb20">{{"Download Node Election Application Form:" | translate}} <a class="download" href="javascript:void(0);">{{"Alf Node Election Application Form (click to download)" | translate}}</a></div>
+                    <div class="fs-22 mb40">{{"Publicity and voting: The election situation will be publicized through official channels such as the official website and the community; the publicity time is XX days; after the publication, the election will enter the BP node to vote." | translate}}</div>
                     <div class="button">
                         <a href="mailto:xxxx@aelf.com?subject=AELF节点竞选报名申请--单位名称/2019年X月X日&body=(请阐述您的节点申请内容，包括申请单位、联系方式、实力描述、愿景展望等)">
-                            <app-button text="邮件报名" ></app-button>
+                            <app-button text="Mail registration" ></app-button>
                         </a>
                     </div>
                 </div>
@@ -105,27 +105,27 @@
     <!-- <div class="app-modal" [style.height]="modalHeight + 'px'" > -->
         <div class="space"></div>
         <div class="template-body pl100 mt100 pr100" [style.height]="modalHeight - 270 + 'px'">
-            <div class="fs-30 mb20">{{"（一）节点竞选者要求：" | translate}}</div>
-            <div class="fs-20 mb20">{{"持币要求： 申请BP节点的个人或团队需要持有10万个ELF" | translate}}</div>
-            <div class="fs-20 mb20">{{"硬件要求：8核 / 16GB / 5TB / 100Mbps" | translate}}</div>
-            <div class="fs-30 mb20">{{"（二）如何成为正式节点：" | translate}}</div>
-            <div class="fs-20 mb20">{{"创世阶段将设置17个BP节点，由全网投票得票数最多的前17名担任BP节点。" | translate}}</div>
-            <div class="fs-20 mb20">{{"成为BP节点参与区块的生产并获得奖励。" | translate}}</div>
-            <div class="fs-30 mb20">{{"（三）BP节点的收益" | translate}}</div>
-            <div class="fs-20 mb20">{{"1、区块生产奖励：所有节点共享发行量总量12%的ELF收益。获得票数越多，连任届数越多，获得的奖励将会越高。" | translate}}</div>
-            <div class="fs-20 mb20">{{"2、出块奖励：BP节点将按相应权重获得出块奖励（基本收益 + 得票权重 + 连任权重）" | translate}}</div>
-            <div class="fs-20 mb20">{{"3、GAS费用：平台GAS费收益" | translate}}</div>
-            <div class="fs-20 mb20">{{"4、索引费收益：侧链索引费收益" | translate}}</div>
-            <div class="fs-20 mb20">{{"5、测链分红收益：开发者扶持测链分红" | translate}}</div>
-            <div class="fs-30 mb10">{{"（四）收益分配比例：" | translate}}</div>
+            <div class="fs-30 mb20">{{"Node Candidate Requirements" | translate}}</div>
+            <div class="fs-20 mb20">{{"Token Requirements: Individuals or teams applying for BP nodes need to hold 100,000 ELFs" | translate}}</div>
+            <div class="fs-20 mb20">{{"Hardware Requirements: 8 cores / 16GB / 5TB / 100Mbps" | translate}}</div>
+            <div class="fs-30 mb20">{{"How to Become a Node" | translate}}</div>
+            <div class="fs-20 mb20">{{"In the creation phase, 17 BP nodes will be set up, and the top 17 votes will be the BP nodes." | translate}}</div>
+            <div class="fs-20 mb20">{{"Become a BP node to participate in blocks packaging and get awards" | translate}}</div>
+            <div class="fs-30 mb20">{{"Benefits of BP Nodes" | translate}}</div>
+            <div class="fs-20 mb20">{{"1. Block production incentive: All nodes share 12% of the total circulation of ELF revenue. The more votes you get, the more re-elected you will get, the higher the rewards you will get." | translate}}</div>
+            <div class="fs-20 mb20">{{"2. Block reward: BP node will get block reward according to the corresponding weight (basic income + voting weight + re-election weight)" | translate}}</div>
+            <div class="fs-20 mb20">{{"3. GAS fee: platform GAS fee revenue" | translate}}</div>
+            <div class="fs-20 mb20">{{"4. Index Fee Income: Side Chain Index Fee Income" | translate}}</div>
+            <div class="fs-20 mb20">{{"5. Side Chain Dividend Benefit: Developer Support Measuring Chain Dividend Benefit" | translate}}</div>
+            <div class="fs-30 mb10">{{"Income distribution ratio" | translate}}</div>
             <div class="mb20">
                 <table>
                     <tr>
-                        <td>{{"BP基本收益" | translate}}</td>
-                        <td>{{"BP得票权重分红" | translate}}</td>
-                        <td>{{"BP连任权重分红" | translate}}</td>
-                        <td>{{"候选节点分红" | translate}}</td>
-                        <td>{{"用户投票分红" | translate}}</td>
+                        <td>{{"BP Basic Benefits" | translate}}</td>
+                        <td>{{"BP Vote Weight Dividend" | translate}}</td>
+                        <td>{{"BP Re-election Weight Dividend" | translate}}</td>
+                        <td>{{"Candidate node dividend" | translate}}</td>
+                        <td>{{"User voting dividend" | translate}}</td>
                     </tr>
                     <tr>
                         <td>40%</td>
@@ -136,14 +136,14 @@
                     </tr>
                 </table>
             </div>
-            <div class="fs-30 mb20">{{"（五）收益预测：" | translate}}</div>
-            <div class="fs-20 mb20">{{"每生产的打包区块，奖励2 ELF；" | translate}}</div>
-            <div class="fs-20 mb20">{{"17个超级节点每日出块数量约为： 21600；" | translate}}</div>
-            <div class="fs-20 mb20">{{"21600 / 7个超级节点 = 1270.5（计算按每4秒生成一个区块，每天生产区块21600；单个BP节点打包月1270块）" | translate}}</div>
-            <div class="fs-20">{{"假设总投票数3亿计算，获得2千万票所获票数全部由该节点投出，竞选节点将获得节点收益80%作为收益。" | translate}}</div>
+            <div class="fs-30 mb20">{{"Revenue forecast" | translate}}</div>
+            <div class="fs-20 mb20">{{"2 ELF for each packaged block produced" | translate}}</div>
+            <div class="fs-20 mb20">{{"The number of blocks produced by 17 super nodes per day is about 21600." | translate}}</div>
+            <div class="fs-20 mb20">{{"21600/7 super nodes = 1270.5 (calculation generates a block every 4 seconds, producing blocks 21600 per day; single BP node packs 1270 blocks per month)" | translate}}</div>
+            <div class="fs-20">{{"Assuming that the total number of votes is 300 million, the total number of votes obtained by 20 million votes will be cast by the node, and the election node will receive 80% of the node's revenue as revenue." | translate}}</div>
         </div>
         <div class="modal-close">
-            <app-button text="关闭窗口" (click)="closeModal()" ></app-button>
+            <app-button text="Close Window" (click)="closeModal()" ></app-button>
         </div>
     </div>
 </div>

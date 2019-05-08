@@ -18,11 +18,19 @@
     .col12-sm-4 {
         width: 50%;
     }
+
+    .content-text .fs-18 {
+        text-align: left;
+    }
 }
 
 @media screen and (max-width: 770px) {
 
     .col12-sm-4 {
         width: 100%;
+    }
+
+    .content-text .fs-18 {
+        text-align: left;
     }
 }

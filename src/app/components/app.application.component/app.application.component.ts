@@ -32,7 +32,7 @@ export class AppApplicationComponent implements OnInit {
     constructor() {}
     ngOnInit() {
         if (!this.buttontext) {
-            this.buttontext = '了解更多';
+            this.buttontext = 'Learn more';
         }
     }
 

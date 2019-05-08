@@ -27,7 +27,8 @@ export class AppNavComponent implements OnInit, AfterViewInit {
     public languagesDic: any;
     public pathName: any;
     public languageList = ['', ''];
-    public menuList: any[] = ['/', '/developer', '/application', '/node', '/community', '/proclamation'];
+    // public menuList: any[] = ['/', '/developer', '/application', '/node', '/community', '/proclamation'];
+    public menuList: any[] = ['/', '/developer', '/application', '/community', '/proclamation'];
     public mobileMenuHide = true;
     public hide: boolean;
     public linkHref = '/';
@@ -61,7 +62,7 @@ export class AppNavComponent implements OnInit, AfterViewInit {
             }
         });
 
-        if (this.deviceWidth > 1024) {
+        if (this.deviceWidth > 1280) {
             this.mobileMenuHide = false;
         }
 
@@ -92,7 +93,7 @@ export class AppNavComponent implements OnInit, AfterViewInit {
     }
 
     showMenu() {
-        if (this.deviceWidth > 1024) {
+        if (this.deviceWidth > 1280) {
             if (this.pathName === '/') {
                 this.hide = false;
                 this.linkHref = 'javascript:void(0);';
@@ -112,7 +113,7 @@ export class AppNavComponent implements OnInit, AfterViewInit {
 
     @HostListener('window:resize') onresize() {
         this.deviceWidth = window.innerWidth || document.documentElement.clientWidth;
-        if (this.deviceWidth > 1024) {
+        if (this.deviceWidth > 1280) {
             this.mobileMenuHide = false;
         } else {
             this.mobileMenuHide = true;
@@ -133,7 +134,7 @@ export class AppNavComponent implements OnInit, AfterViewInit {
     // add or delete active class for html header element when click menu button.
     menuClick() {
         this.pathName = location.pathname;
-        if (this.pathName !== '/' && this.deviceWidth < 1024) {
+        if (this.pathName !== '/' && this.deviceWidth < 1280) {
             this.mobileMenuHide = true;
         }
 

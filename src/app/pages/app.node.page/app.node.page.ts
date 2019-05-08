@@ -30,7 +30,8 @@ export class NodePageComponent implements OnInit {
     }
 
     buttonClick(title) {
-        if (title === '节点竞选') {
+        console.log(title);
+        if (title === 'Node Election') {
             this.getModalShow();
         }
     }
