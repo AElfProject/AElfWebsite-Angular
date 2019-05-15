@@ -36,8 +36,17 @@ export class CommunityPageComponent implements AfterViewChecked, OnInit {
         }
     }
 
-    removeClass() {
+    removeClass(e) {
         $('.co').removeClass('active');
+        if (e) {
+            $('.qrcode').show();
+        } else {
+            $('.qrcode').hide();
+        }
+    }
+
+    hideQrcode() {
+        $('.qrcode').hide();
     }
 
     ngAfterViewChecked() {
@@ -47,6 +56,7 @@ export class CommunityPageComponent implements AfterViewChecked, OnInit {
         // https://www.cnblogs.com/xudengwei/p/9214959.html
         if (this._cookieService.get('SelectedLanguage')) {
             if (this.currentLanguage !== this._cookieService.get('SelectedLanguage')) {
+                this.currentLanguage = this._cookieService.get('SelectedLanguage');
                 setTimeout(() => {
                     if (this._cookieService.get('SelectedLanguage') === 'zh-CN') {
                         $('.co-wechat').addClass('active').siblings().removeClass('active');

@@ -69,7 +69,6 @@ export class AppNavComponent implements OnInit, AfterViewInit {
         if (this.pathName === '/') {
             this.linkHref = 'javascript:void(0);';
         }
-
     }
 
 
@@ -133,6 +132,7 @@ export class AppNavComponent implements OnInit, AfterViewInit {
     }
     // add or delete active class for html header element when click menu button.
     menuClick() {
+        $(window).scrollTop(0);
         this.pathName = location.pathname;
         if (this.pathName !== '/' && this.deviceWidth < 1280) {
             this.mobileMenuHide = true;

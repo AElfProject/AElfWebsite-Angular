@@ -3,14 +3,22 @@
     float: left;
 }
 
+
+
 .innovation-allinance-content {
     margin:0 20px;
-    padding: 0 10px 20px 10px;
+    padding: 0 10px;
     background: rgba(255, 255, 255, .1);
     border-radius: 8px;
     text-align: center;
     height: 200px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.innovation-allinance-bd {
+    width: 100%;
 }
 
 .innovation-allinance-content:hover {

@@ -1,11 +1,10 @@
 .graphic {
-    padding: 20px;
     margin: 20px;
     background: rgba(255, 255, 255, .1);
     clear: both;
     overflow: hidden;
     border-radius: 8px;
-    min-height: 200px;
+    min-height: 300px;
     display: flex;
     align-items: center;
 }
