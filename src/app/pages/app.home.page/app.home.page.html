@@ -1,0 +1,76 @@
+<div class="fix-bottom-right sm-hidden">
+    <div [ngClass]="_fontFamlily.ffArial" class="copys mb10">Copyright © 2018 ælf</div>
+    <div class="shares fs-18 sm-hidden clearfix">
+        <span class="clearfix">
+          <a href="mailto:contact@aelf.io"><i class="fa fa-envelope-o"></i></a>
+          <a href="https://www.facebook.com/aelfofficial/" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="https://twitter.com/aelfblockchain" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://t.me/aelfblockchain" class="weixin-img" target="_blank"><i class="fa fa-send"></i></a>
+          <a href="https://www.reddit.com/r/aelfofficial/" target="_blank"><i class="fa fa-reddit-alien"></i></a>
+          <a href="https://medium.com/aelfblockchain" target="_blank"><i class="fa fa-medium"></i></a>
+          <a href="https://github.com/aelfProject" target="_blank"><i class="fa fa-github"></i></a>
+          <a href="http://slack.aelf.io/" target="_blank"><i class="fa fa-slack"></i></a>
+          <a href="https://www.linkedin.com/company/aelfblockchain/" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="http://www.youtube.com/c/aelfblockchain" target="_blank"><i class="fa fa-youtube-play"></i></a>
+          <a href="https://0.plus/aelf_chs" target="_blank"><div id="biyong"></div></a>
+        </span>
+    </div>
+</div>
+<div class="container index-step" id="skrollr-body">
+    <section class="section section-1 anchor-bd" id="index" [ngSwitch]="showBox">
+        <div class="cont">
+            <div class="earth">
+                <div class="webgl bg-img" style="background-image:url(assets/images/section-1-bg.png);"></div>
+                <div class="earth-canvas">
+                    <div id="particles2"></div>
+                </div>
+            </div>
+            <div class="txt color-white position-40">
+                <h2 class="fs-90 mb30">{{"Customizable High Performance Blockchain Network for Businesses" | translate}}</h2>
+                <p class="fs-22 mb">{{"The world’s first decentralized network system based on cloud computing" | translate}}</p>
+                <p class="mb10 mt100 vedio-btn" (click)="showVedioBox()"><img src="assets/newImages/vedio-icon.png" alt=""></p>
+                <p class="fs-11">{{"Watch Video" | translate}}</p>
+            </div>
+            <div [ngClass]="_fontFamlily.ffArial" class="scroll-down fs-14 color-white ta-c">
+                <p class="mb10"><img src="assets/images/scroll-down.png" alt=""></p>
+                <p class="fs-11">Scrolling mouse</p>
+            </div>
+            <div class="vedio-box" *ngSwitchCase="'show'">
+                <div class="vedio-limiter" > 
+                    <div class="close" (click)="getHideVedioBox()"><img src="assets/newImages/close.png"></div>
+                    <iframe  id="player"  width="90%" type="text/html" [src]="VideoSrc" frameborder="0" scrolling="no" border="0" frameborder = "no" framespacing = "0" allowfullscreen = "true"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- <app-carousel [data]="carouselData" ></app-carousel> -->
+        <!-- <app-home-carousel  [data]="carouselData"></app-home-carousel> -->
+    </section>
+    <section class="section section-8 anchor-bd" id="vision">
+        <app-home-vision></app-home-vision>
+    </section>
+    <section class="section section-8 anchor-hd" id="advantage">
+        <app-home-advantage></app-home-advantage>
+    </section>
+    <section class="section section-8 anchor-hd" id="development_roadmap">
+        <app-home-development-roadmap></app-home-development-roadmap>
+    </section>
+    <section class="section section-8 anchor-bd" id="team">
+        <app-home-team></app-home-team>
+    </section>
+    <section class="section section-8 anchor-bd" id="team3">
+        <app-home-investmen-institution></app-home-investmen-institution>
+    </section>
+    <section class="section section-8 anchor-bd" id="exchange">
+        <app-home-exchange></app-home-exchange>
+    </section>
+    <section class="section section-8 anchor-bd" id="innovation_alliance">
+        <app-innovation-alliance></app-innovation-alliance>
+        <!-- <div style="height: 300px"></div> -->
+    </section>
+    <section class="section section-13 anchor-bd" id="token_allocation">
+        <app-home-token-allocation></app-home-token-allocation>
+    </section>
+    <section class="section section-11 anchor-bd" id="news">
+        <app-new-news></app-new-news>
+    </section>
+</div>

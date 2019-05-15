@@ -1,0 +1,141 @@
+.roadmap {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.develop {
+    position: absolute;
+}
+
+.roadmap-box {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.step-0 {
+    width: 212px;
+    left: 5%;
+    top: 15%;
+}
+
+.step-1 {
+    width: 446px;
+    left: 5%;
+    top: 55%;
+}
+
+.step-2 {
+    width: 446px;
+    left: 27%;
+    top: 20%;
+}
+
+.step-3 {
+    width: 446px;
+    left: 48%;
+    top: 54%;
+}
+
+.step-4 {
+    width: 446px;
+    left: 70%;
+    top: 20%;
+}
+
+.roadmap-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.color-green {
+    color: #4ae47d;
+}
+
+.mb20 {
+    font-weight: 900;
+}
+
+@media screen and (max-width: 1400px) {
+    .roadmap {
+        width: 1000px;
+    }
+    
+    .step-0 {
+        width: 148px;
+        left: 6%;
+        top: 18%;
+    }
+    
+    .step-1 {
+        width: 318px;
+        left: 5%;
+        top: 55%;
+    }
+    
+    .step-2 {
+        width: 318px;
+        left: 27%;
+        top: 22%;
+    }
+    
+    .step-3 {
+        width: 318px;
+        left: 48%;
+        top: 54%;
+    }
+    
+    .step-4 {
+        width: 318px;
+        left: 70%;
+        top: 22%;
+    }
+    
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .roadmap {
+        width: 100%;
+    }
+
+    .roadmap-line {
+        display: none;
+    }
+
+    .develop {
+        position: static;
+        text-align: center;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .step-0 {
+        margin: 0 auto;
+        display: none;
+    }
+
+    .step-1,
+    .step-2,
+    .step-3,
+    .step-4 {
+        width: 80%;
+        margin: 0 auto
+    }
+
+}

@@ -1,0 +1,38 @@
+<section [ngSwitch]="type" id="application">
+    <div class="cont pt100 pb100" *ngSwitchDefault>
+        <div class="pic-txt-list-22 ta-c color-white clearfix flex">
+                <div class="col12-sm-6 text">
+                    <div class="ptl22-box">
+                        <div class="ptl22-txt">
+                            <h3 class="fs-30 mb50 text-left"><strong>{{ title | translate}}</strong></h3>
+                            <p class="fs-20 lh-16em text-left">{{ brief | translate}}</p>
+                            <app-button [hidden]="!showbtn" [text]="buttontext" (click)="onClick(title)" [linkurl]="linkurl"></app-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col12-sm-6 images">
+                    <div class="ptl22-box image-box">
+                        <div class="ptl22-img"><img [src]="imgurl" alt="" [style.width]="imgWidth"></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="cont pt100 pb100" *ngSwitchCase="'right'">
+        <div class="pic-txt-list-22 ta-c color-white clearfix  flex">
+                <div class="col12-sm-6 images">
+                    <div class="ptl22-box image-box">
+                        <div class="ptl22-img"><img [src]="imgurl" alt="" [style.width]="imgWidth"></div>
+                    </div>
+                </div>
+                <div class="col12-sm-6 text">
+                    <div class="ptl22-box">
+                        <div class="ptl22-txt">
+                            <h3 class="fs-30 mb50 text-right"><strong>{{ title | translate}}</strong></h3>
+                            <p class="fs-20 lh-16em text-right">{{ brief | translate}}</p>
+                            <app-button [hidden]="!showbtn" [text]="buttontext" (click)="onClick(title)"  [linkurl]="linkurl"></app-button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>

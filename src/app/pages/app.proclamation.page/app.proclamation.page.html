@@ -1,0 +1,21 @@
+<div [ngSwitch]="showModal">
+    <div class="app-procalmation" >
+        <section class="section section-22 anchor-hd">
+            <div class="cont pt200 pb100">
+                <app-carousel [data]="carouselData" (childEvent)="getChildEvent($event)"></app-carousel>
+            </div>
+        </section>
+        <section class="section section-22 anchor-hd pb100" >
+            <div class="cont pt100 pb100 pl100 pr100">
+                <app-list [datalist]="paginateData" (childEvent)="getChildEvent($event)" ></app-list>
+            </div>
+            <app-paginator
+                [totalRecords]="total"
+                [rows]="5"
+                [currentPage]="0"
+                (onPageChange)="paginate($event)"
+            ></app-paginator>
+        </section>
+    </div>
+    <app-modal [itemData]="itemData" *ngSwitchCase="'show'" (childEvent)="closeModal($event)"></app-modal>
+</div>

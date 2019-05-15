@@ -1,0 +1,55 @@
+#application .text-right {
+    text-align: left;
+}
+
+#application .text-left {
+    text-align: left;
+}
+
+#application .ptl22-txt {
+    text-align: left;
+    padding: 96px;
+}
+
+.ptl22-img {
+    padding: 50px;
+}
+
+.image-box {
+    vertical-align: middle;
+}
+
+img {
+    width: 70%;
+}
+
+
+.flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+@media only screen and (max-width: 1024px) {
+    #application .ptl22-txt {
+        padding: 96px 20px;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .col12-sm-6 {
+        width: 100%;
+    }
+
+    .images {
+        order: 1;
+    }
+
+    .text {
+        order: 0;
+    }
+
+}
