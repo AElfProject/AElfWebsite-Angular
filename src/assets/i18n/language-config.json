@@ -9,7 +9,11 @@
     "Français": "fr",
     "Deutsch": "de",
     "Italiano": "it",
-    "Pусский": "ru"
+    "Pусский": "ru",
+    "Español": "es",
+    "Tiếng Việt": "vi",
+    "Türkçe": "tr",
+    "Portuguese": "pt-BR"
   },
   "languagesDic2": {
     "en-US": "English",
@@ -19,7 +23,11 @@
     "fr": "Français",
     "de": "Deutsch",
     "it": "Italiano",
-    "ru": "Pусский"
+    "ru": "Pусский",
+    "es": "Español",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt-BR": "Portuguese"
   },
   "languages": [
     "en-US",
@@ -29,7 +37,11 @@
     "fr",
     "de",
     "it",
-    "ru"
+    "ru",
+    "es",
+    "vi",
+    "tr",
+    "pt-BR"
   ],
   "languageOptions": [
     "English",
@@ -39,6 +51,10 @@
     "Français",
     "Deutsch",
     "Italiano",
-    "Pусский"
+    "Pусский",
+    "Español",
+    "Tiếng Việt",
+    "Türkçe",
+    "Portuguese"
   ]
 }
