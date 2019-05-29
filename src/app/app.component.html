@@ -21,7 +21,7 @@
             <div [ngClass]="_fontFamlily.ffMy" class="lang color-white">
                 <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
                 <ul class="fs-14 clearfix">
-                    <li *ngFor="let item of languageList" (click)="OnChange(item)">{{item}}</li>
+                    <li *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
                 </ul>
             </div>
             <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
