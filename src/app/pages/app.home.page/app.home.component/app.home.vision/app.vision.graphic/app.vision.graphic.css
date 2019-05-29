@@ -1,0 +1,38 @@
+.graphic {
+    margin: 20px;
+    background: rgba(255, 255, 255, .1);
+    clear: both;
+    overflow: hidden;
+    border-radius: 8px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.graphic:hover {
+    background: #27bfff;
+    box-shadow: 2px 2px 5px #333;
+}
+
+@media screen and (max-width: 1024px) {
+    .col12-sm-8 {
+        margin-top: 30px;
+        width: 50%;
+    }
+
+    .col12-sm-4 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .col12-sm-8 {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .col12-sm-4 {
+        width: 100%;
+    }
+
+}

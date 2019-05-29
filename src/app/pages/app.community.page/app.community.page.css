@@ -1,0 +1,202 @@
+.text-left {
+    text-align: left;
+}
+
+.image-box {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.co {
+    position: absolute;
+    display: block;
+    width: 64px;
+    height: 64px;
+}
+
+.co:hover {
+    transform: scale(1.5);
+}
+
+.co-facebook {
+    background: url(../../../assets/newImages/facebook-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 70%;
+    top: 15%;
+}
+
+.co-facebook:hover {
+    background: url(../../../assets/newImages/facebook.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-wechat {
+    background: url(../../../assets/newImages/wechat-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 45%;
+    top: 5%;
+}
+
+.co-wechat.active {
+    background: url(../../../assets/newImages/wechat.png) no-repeat;
+    background-size: 100% 100%;
+    transform: scale(1.5);
+}
+
+.co-wechat:hover {
+    background: url(../../../assets/newImages/wechat.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-tme {
+    background: url(../../../assets/newImages/telegram-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 17%;
+    top: 16%;
+}
+
+.co-tme:hover {
+    background: url(../../../assets/newImages/telegram.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-twitter {
+    background: url(../../../assets/newImages/twitter-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 5%;
+    top: 38%;
+}
+
+.co-twitter.active {
+    background: url(../../../assets/newImages/twitter.png) no-repeat;
+    background-size: 100% 100%;
+    transform: scale(1.5);
+}
+
+.co-twitter:hover {
+    background: url(../../../assets/newImages/twitter.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-reddit {
+    background: url(../../../assets/newImages/reddit-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 82%;
+    top: 38%;
+}
+
+.co-reddit:hover {
+    background: url(../../../assets/newImages/reddit.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-linkedin {
+    background: url(../../../assets/newImages/in-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 9%;
+    top: 62%;
+}
+
+.co-linkedin:hover {
+    background: url(../../../assets/newImages/in.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-github {
+    background: url(../../../assets/newImages/github-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 77%;
+    top: 62%;
+}
+
+.co-github:hover {
+    background: url(../../../assets/newImages/github.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-youtube {
+    background: url(../../../assets/newImages/youtube-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 29%;
+    top: 80%;
+}
+
+.co-youtube:hover {
+    background: url(../../../assets/newImages/youtube.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.co-medium {
+    background: url(../../../assets/newImages/medium-1.png) no-repeat;
+    background-size: 100% 100%;
+    left: 58%;
+    top: 80%;
+}
+
+.co-medium:hover {
+    background: url(../../../assets/newImages/medium.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.qrcode {
+    position: absolute;
+    background: url(../../../assets/newImages/qrcode.png) no-repeat;
+    background-size: 100% 100%;
+    width: 205px;
+    height: 208px;
+    left: 29%;
+    top: 29%;
+    display: none;
+}
+
+.ptl22-txt {
+    padding: 96px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .image-box {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .qrcode {
+        position: absolute;
+        background: url(../../../assets/newImages/qrcode.png) no-repeat;
+        background-size: 100% 100%;
+        width: 120px;
+        height: 120px;
+        left: 30%;
+        top: 30%;
+    }
+
+    .co {
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    .pl100 {
+        padding-left: 10px; 
+    }
+
+    .pb300 {
+        padding-bottom: 30px;
+    }
+
+    .pt300 {
+        padding-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .ptl22-txt {
+        padding: 96px 20px;
+    }
+    
+}
+

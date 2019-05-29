@@ -1,0 +1,14 @@
+.node-list {
+    background: rgba(255, 255, 255, .1);
+    overflow: hidden;
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.node-list:hover {
+    background: rgba(255, 255, 255, .3);
+}
+
+.color-d6cb39 {
+    color: #d6cb39;
+}

@@ -1,0 +1,36 @@
+.content-text {
+    text-align: center;
+}
+
+@media screen and (max-width: 1270px) {
+    .pl100 {
+        padding-left: 20px;
+    }
+    
+    .pr100 {
+        padding-right: 20px;
+    }
+
+    .col12-sm-8 {
+        margin-top: 30px;
+    }
+
+    .col12-sm-4 {
+        width: 50%;
+    }
+
+    .content-text .fs-18 {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 770px) {
+
+    .col12-sm-4 {
+        width: 100%;
+    }
+
+    .content-text .fs-18 {
+        text-align: left;
+    }
+}

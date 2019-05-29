@@ -1,0 +1,37 @@
+.innovation-allinance-box {
+    width: 25%;
+    float: left;
+}
+
+
+
+.innovation-allinance-content {
+    margin:0 20px;
+    padding: 0 10px;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 8px;
+    text-align: center;
+    height: 200px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.innovation-allinance-bd {
+    width: 100%;
+}
+
+.innovation-allinance-content:hover {
+    background: #27bfff;
+    box-shadow: 2px 2px 5px #333;
+}
+
+a {
+    display: block;
+}
+
+@media only screen and (max-width: 1024px) {
+    .innovation-allinance-box {
+        width: 100%;
+    }
+}

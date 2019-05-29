@@ -1,0 +1,14 @@
+
+<ul class="grow pic-txt-list-22 ta-c color-white clearfix">
+    <li class="list-item clearfix mb20" *ngFor="let item of datalist" >
+        <div class="col12-sm-8">
+            <p class="fs-18 text-left" >
+                <i class="disc"></i>
+                <span (click)="getListInfo(item.key)" >{{ item.title | translate }}</span>
+            </p>
+        </div>
+        <div class="col12-sm-4">
+            <p class="fs-18 text-right">{{ item.date | translate }}</p>
+        </div>
+    </li>
+</ul>

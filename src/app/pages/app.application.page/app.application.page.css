@@ -1,0 +1,14 @@
+.application-page {
+    position: relative;
+}
+
+.application-page .more {
+    width: 90%;
+    bottom: 30px;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    color: #FFF;
+}

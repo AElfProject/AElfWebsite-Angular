@@ -1,0 +1,9 @@
+<div class="app-modal" [style.height]="modalHeight + 'px'" >
+    <div class="space"></div>
+    <div class="template-body pl100 mt30 pr100" [style.height]="modalHeight - 270 + 'px'">
+        <div class="content-bd" [innerHTML]="contHTML"></div>
+    </div>
+    <div class="modal-close">
+        <app-button text="Close Window" (click)="closeModal()" ></app-button>
+    </div>
+</div>

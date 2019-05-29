@@ -1,0 +1,79 @@
+<div class="fix-top" >
+    <header class="header clearfix header-white" [ngClass]="headerActiveCssClass" >
+        <h1 class="logo">
+            <a href=""><img src="assets/images/logo.jpg" alt=""></a>
+        </h1>
+        <!-- <h1 class="logo3"><a href=""><img src="assets/images/logo3.png" alt=""></a></h1> -->
+        <div class="nav fs-20 index-pagination" style="font-weight:bold;" [hidden]="mobileMenuHide">
+            <ul class="clearfix" >
+                <li (mouseenter)="showMenu()" (mouseleave)="hideMenu()" (click)="menuClick()">
+                    <a [href]="linkHref"><span>{{"Home" | translate}}</span></a>
+                    <div class="two-stage-nav fs-12" [hidden]="hide">
+                        <div class="anchor-hd" data-anchor="vision" ><span>{{"Vision" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="advantage" ><span>{{"Advantage" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="development_roadmap" ><span>{{"Development Roadmap" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="team" ><span>{{"Team Members" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="team3" ><span>{{"Lead Investors" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="exchange" ><span>{{"Exchanges" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="innovation_alliance" ><span>{{"Innovation Alliance" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="token_allocation" ><span>{{"Token Distribution" | translate}}</span></div>
+                        <div class="anchor-hd" data-anchor="news" ><span>{{"News Report" | translate}}</span></div>
+                    </div>
+                </li>
+                <li><a href="https://docs.aelf.io/" target="_blank" ><span>{{"Developer Documentation" | translate}}</span></a></li>
+                <li (click)="menuClick()"><a [routerLink]="['/application']" ><span>{{"Application Center" | translate}}</span></a></li>
+                <!-- <li (click)="menuClick()"><a [routerLink]="['/node']" ><span>{{"Node Election" | translate}}</span></a></li> -->
+                <li (click)="menuClick()"><a [routerLink]="['/community']" ><span>{{"Community" | translate}}</span></a></li>
+                <li (click)="menuClick()"><a [routerLink]="['/proclamation']" ><span>{{"Announcement" | translate}}</span></a></li>
+                <li><a href="https://medium.com/aelfblockchain" target="_blank" ><span>{{"Blog" | translate}}</span></a></li>
+            </ul>
+        </div>
+        <div class="other">
+            <div [ngClass]="_fontFamlily.ffMy" class="lang color-white">
+                <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
+                <ul class="fs-14 clearfix">
+                    <li *ngFor="let item of languageList" (click)="OnChange(item)">{{item}}</li>
+                </ul>
+            </div>
+            <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
+              <ng-template [ngSwitchCase]="languageList[0]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1.6" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[1]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_ZH.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[2]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_JA.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[3]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_KO.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[4]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_FR.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[5]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_DE.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[6]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_IT.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[7]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_RU.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[8]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_SP.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[10]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_TR.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template [ngSwitchCase]="languageList[11]">
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_PT-BR.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+              <ng-template ngSwitchDefault>
+                <a href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1" class="fs-14 downbtn"><em><img src="assets/images/icon-8.png" alt=""></em> <span>{{"White Paper" | translate}}</span></a>
+              </ng-template>
+            </div>
+            <div class="menu ml30" (click)="mobileMenuClick()" ></div>
+        </div>
+    </header>
+</div>

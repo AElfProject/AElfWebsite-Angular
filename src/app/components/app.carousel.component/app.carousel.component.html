@@ -1,0 +1,25 @@
+<div style="overflow: hidden" (mouseenter)="stopPlay()" (mouseleave)="autoPlay()" class="carousel">
+    <div>
+        <div class="carousel-btn btnL" style="color: #FFF;" (click)="playPre()"></div>
+    </div>
+    <div class="carousel-body">
+        <div class="carousel-box" id="carousel-box" (touchstart)="touchStart($event)" (touchend)="touchEnd($event)" (touchmove)="touchMove($event)">
+            <div class="carousel-cont" [ngStyle]="moveStyle" [style.width]='boxWidth' >
+                <div class="carousel-item" *ngFor="let item of imglist"  [style.width]="carouselWidth" >
+                    <div [innerHTML]="item.carousel" (click)="getListInfo(item.key)"></div>
+                </div>
+            </div>
+            <div class="pagination pt20 pb20" [hidden]="!showpPagination"  >
+                <span 
+                    class="pagination-point"
+                    *ngFor="let item of data;let i = index" 
+                    [ngClass]="i === _thisPaginationIndex ? 'active' : ''"
+                    (click)="paginationClick(i)"
+                ></span>
+            </div>
+        </div>
+    </div>
+    <div>
+            <div  class="carousel-btn  btnR" style="color: #FFF;" (click)="playNext()"></div>
+    </div>
+</div>

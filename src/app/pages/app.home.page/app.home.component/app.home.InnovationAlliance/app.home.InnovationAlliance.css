@@ -1,0 +1,59 @@
+.align-center {
+    text-align: center;
+}
+
+.innovation-alliance .more {
+    height: 30px;
+    line-height: 30px;
+    background-color: #27BFFF;
+    padding: 0 15px;
+    border-radius: 15px;
+    color: #fff;
+    display: inline-block;
+    margin-top: 85px;
+}
+
+.innovation-alliance .more > a {
+    display: block;
+}
+
+.add-btn3 {
+    display: inline-block;
+}
+
+.innovation-allinance-box {
+    width: 25%;
+    float: left;
+}
+
+.innovation-allinance-content {
+    margin:0 20px;
+    padding: 0 10px 20px 10px;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 8px;
+    text-align: center;
+    height: 200px;
+}
+
+.innovation-allinance-content:hover {
+    background: #27BFFF;
+    box-shadow: 2px 2px 5px #333;
+}
+
+@media only screen and (max-width: 1024px) {
+    .pr100 {
+        padding-right: 20px;
+    }
+
+    .pl100 {
+        padding-left: 20px;
+    }
+
+    .fs-18 {
+        text-align: left;
+    }
+
+    .innovation-allinance-box {
+        width: 100%;
+    }
+}
