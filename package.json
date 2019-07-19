@@ -5,9 +5,10 @@
   "scripts": {
     "start": "ng serve --host 0.0.0.0 --disable-host-check",
     "serve": "ng serve --host 0.0.0.0 --disable-host-check",
-    "build": "ng build",
+    "build": "ng build && npm run copy",
     "serve:prod": "ng serve --prod",
-    "build:prod": "ng build --prod",
+    "build:prod": "ng build --prod && npm run copy",
+    "copy": "cp -rf hp_wallet ./dist",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

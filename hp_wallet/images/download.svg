@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.406" height="24.406" viewBox="0 0 24.406 24.406">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #25bfff;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="app_download" transform="translate(-1739.609 -50.226)">
+    <circle id="Ellipse_19" data-name="Ellipse 19" class="cls-1" cx="12.203" cy="12.203" r="12.203" transform="translate(1739.609 50.226)"/>
+    <g id="Group_141" data-name="Group 141">
+      <g id="Group_140" data-name="Group 140">
+        <g id="Group_139" data-name="Group 139">
+          <path id="Path_69" data-name="Path 69" class="cls-2" d="M1752.274,66.583V56.429h-.923V66.583l-2.954-2.954-.738.646,4.154,4.154,4.154-4.154-.738-.646Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

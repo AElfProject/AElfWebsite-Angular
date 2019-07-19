@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="178.567" height="178.567" viewBox="0 0 178.567 178.567">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #9075c6;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-miterlimit: 10;
+        stroke-width: 1.067px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #e8ecef;
+      }
+
+      .cls-3 {
+        filter: url(#Rectangle_4);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.799" y1="-0.017" x2="0.201" y2="1.017" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#661fb1"/>
+      <stop offset="0.324" stop-color="#5c1ba8"/>
+      <stop offset="0.856" stop-color="#431290"/>
+      <stop offset="0.999" stop-color="#3c0f89"/>
+    </linearGradient>
+    <filter id="Rectangle_4" x="0" y="0" width="178.567" height="178.567" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.917" result="blur"/>
+      <feFlood flood-opacity="0"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="app_icon_aelf" transform="translate(-2399.717 -179.385)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 2399.72, 179.39)">
+      <rect id="Rectangle_4-2" data-name="Rectangle 4" class="cls-1" width="160" height="160" rx="37.5" transform="translate(9.28 9.28)"/>
+    </g>
+    <g id="Group_12" data-name="Group 12">
+      <g id="Group_11" data-name="Group 11">
+        <ellipse id="Ellipse_1" data-name="Ellipse 1" class="cls-2" cx="26.16" cy="25.807" rx="26.16" ry="25.807" transform="matrix(0.005, -1, 1, 0.005, 2499.75, 294.472)"/>
+        <path id="Path_3" data-name="Path 3" class="cls-2" d="M2486.5,273.081a7.442,7.442,0,0,0-3.8,2.872v0a7.831,7.831,0,0,0-.758,1.364,12.454,12.454,0,0,1-2.358,3.578,25.66,25.66,0,0,1-6.211,4.732c-4.414,2.482-13.674-1.432-17.87-3.456a18.879,18.879,0,0,0-2.08-1.053l-.071-.039,0,.007a18.934,18.934,0,0,0-21.006,4.339,19.648,19.648,0,0,0-2.412,24.043,18.967,18.967,0,0,0,28.191,4.491,19.307,19.307,0,0,0,6.395-10.221l.014.03c2.065-9.085,6.1-13.259,10.285-15.622s11.676-.358,11.676-.358l0-.01a7.591,7.591,0,0,0,7.353-1.337,7.856,7.856,0,0,0,.31-11.775A7.673,7.673,0,0,0,2486.5,273.081Z"/>
+        <ellipse id="Ellipse_2" data-name="Ellipse 2" class="cls-2" cx="12.815" cy="12.646" rx="12.815" ry="12.646" transform="translate(2479.724 331.04) rotate(-89.421)"/>
+        <ellipse id="Ellipse_3" data-name="Ellipse 3" class="cls-2" cx="12.815" cy="12.646" rx="12.815" ry="12.646" transform="translate(2479.724 231.671) rotate(-89.421)"/>
+        <path id="Path_4" data-name="Path 4" class="cls-2" d="M2492.5,248.207a7.343,7.343,0,0,0-4.7-.6l0,0-.006,0a7.6,7.6,0,0,0-1.48.449,12.132,12.132,0,0,1-4.148.915,25.3,25.3,0,0,1-7.711-.965c-4.877-1.32-8.86-10.653-10.493-15.062a19.641,19.641,0,0,0-.775-2.221l-.025-.078,0,.007a19.049,19.049,0,0,0-36.3,3.946,19.333,19.333,0,0,0,17.211,23.069,18.815,18.815,0,0,0,11.6-2.856l-.01.032c7.709-5.085,13.472-5.249,18.1-4s8.648,7.958,8.648,7.958l.005-.009a7.665,7.665,0,0,0,14.5-4.043A7.856,7.856,0,0,0,2492.5,248.207Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
