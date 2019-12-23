@@ -12,7 +12,6 @@
                 <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="team2">{{"顾问" | translate}}</a></li>
                 <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="team3">{{"投资机构" | translate}}</a></li>
                 <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="exchange">{{"交易所" | translate}}</a></li>
-                <li><a href="https://medium.com/aelfblockchain" target="_blank" class="anchor-hd">{{"博客" | translate}}</a></li>
               <!--<li><a href="javascript:void(0);" class="anchor-hd" data-anchor="token_allocation">{{"代币分配" | translate}}</a></li>-->
               <!--<li><a href="javascript:void(0);" class="anchor-hd" data-anchor="news">{{"新闻" | translate}}</a></li>-->
             </ul>
@@ -650,6 +649,74 @@
             <div class="col12-lg-2 col12-sm-4 col12-tn-6 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
                 <a href="https://vcc.exchange/" target="_blank"><img src="assets/images/exchange-vcc.png" alt="exchange-vcc"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-8 anchor-bd" id="test-net">
+    <div class="cont pt200 pb200">
+      <div class="txt">
+        <div class="wrapper clearfix">
+          <div class="grow clearfix">
+            <div [ngSwitch]="currentLanguage" class="col12-lg-6 col12-md-6 col12-sm-12 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <ng-template [ngSwitchCase]="languageList[1]">
+                <img class="test-net-map" src="assets/images/map-zh.png" />
+              </ng-template>
+              <ng-template ngSwitchDefault>
+                <img class="test-net-map" src="assets/images/map-en.png" />
+              </ng-template>
+            </div>
+            <div class="col12-lg-6 col12-md-6 col12-sm-12 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <h2 class="bigTitle fs-48 ta-c mb40 color-white skrollable skrollable-between">
+                {{"AELF公开测试网及配套设施介绍" | translate}}
+              </h2>
+              <div class="fs-18 ta-l lh-36 mb150 skrollable skrollable-between color-white">
+                {{"aelf公开测试网是一个功能齐全、成熟易用、可公开访问的测试网络。该测试网络具备完备的区块链智能合约系统、开发套件、开发文档以及功能丰富的基础设施。实现了稳定的网络交易、完善的跨链搭建、全面的经济系统运行，在安全性、可扩展性、高效性、高可用性方面有着良好的体现。" | translate}}
+              </div>
+              <div class="fs-16 lh-38 grow clearfix skrollable skrollable-between test-net-buttons">
+                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
+                  <a href="https://docs.aelf.io/" target="_blank" rel="noreferrer noopener">
+                    {{"开发者文档" | translate}}
+                    <i class="fa fa-file-text-o ml5"></i>
+                  </a>
+                </div>
+                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
+                  <a
+                    [href]="currentLanguage === '中文' ? 'http://aelf-elf.mikecrm.com/YZG77IT' : 'https://docs.google.com/forms/d/e/1FAIpQLSf6HUXKMQ28__mtV_jKBpidkhw9RanbG659k4yU6HpaqVDN2g/viewform'"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    {{"测试Token申请" | translate}}
+                    <i class="fa fa-hand-paper-o ml5"></i>
+                  </a>
+                </div>
+                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
+                  <a href="http://explorer-test.aelf.io/" target="_blank" rel="noreferrer noopener">
+                    {{"访问测试网浏览器" | translate}}
+                    <i class="fa fa-compass ml5"></i>
+                  </a>
+                </div>
+                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
+                  <a href="https://wallet-test.aelf.io/" target="_blank" rel="noreferrer noopener">
+                    {{"访问测试网Web钱包" | translate}}
+                    <i class="fa fa-credit-card-alt ml5"></i>
+                  </a>
+                </div>
+                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
+                  <a href="https://fir.im/AelfAndroid" target="_blank" rel="noreferrer noopener">
+                    {{"Android测试版钱包" | translate}}
+                    <i class="fa fa-download ml5"></i>
+                  </a>
+                </div>
+                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
+                  <a href="https://fir.im/iOSAElf" target="_blank" rel="noreferrer noopener">
+                    {{"iOS测试版钱包" | translate}}
+                    <i class="fa fa-download ml5"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
