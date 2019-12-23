@@ -32,18 +32,17 @@ export class AppComponent implements OnInit, AfterViewInit {
         this._languageService
             .getLanguageConfig()
             .subscribe(data => {
-            this.languagesDic = data["languagesDic1"];
-            this.languageList = data["languageOptions"];
-            this.currentLanguage =
-                data["languagesDic2"][
-                this._languageService.getWebPageCurrentLanguage()
-                ];
-            this._fontFamlily.changeFontFamily(
-                this.currentLanguage
-            );
+              this.languagesDic = data["languagesDic1"];
+              this.languageList = data["languageOptions"];
+              this.currentLanguage =
+                  data["languagesDic2"][
+                  this._languageService.getWebPageCurrentLanguage()
+                  ];
+              this._fontFamlily.changeFontFamily(
+                  this.currentLanguage
+              );
+              this.setVideo();
             });
-
-        this.setVideo();
     }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
@@ -65,7 +64,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     $notice.style.display = displayNew;
   }
   OnChange(languageSelection: string) {
-    console.log('---------switch _languageService----------' + languageSelection);
     this._languageService.switchLanguage(this.languagesDic[languageSelection]);
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
@@ -75,17 +73,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   setVideo() {
     let videoSrcTemp = 'https://www.youtube.com/embed/qbIP1TEX33Q';
-    if (document.cookie.includes("zh-CN")) {
+    if (this.currentLanguage === '中文') {
         videoSrcTemp = 'https://v.qq.com/iframe/player.html?vid=v08049tau4n';
-        if (window.navigator.userAgent.toLowerCase().indexOf('chrome') === -1) {
-            videoSrcTemp = "https://dwz.cn/ZMnoq3eH";
-        }
     }
     this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videoSrcTemp);
-    const vedioWidth = parseInt($("#player").css("width"), 10);
-    const vedioHeight = (vedioWidth / 16) * 9;
-    $("#player").css("height", vedioHeight + "px");
-    // this.VideoSrc = this.VideoSrc.bypassSecurityTrustResourceUrl(url);
+    const videoWidth = parseInt($('#player').css('width'), 10);
+    const videoHeight = (videoWidth / 16) * 9;
+    $('#player').css('height', `${videoHeight}px`);
   }
 
   // nav bar change color when the scroll event happens.

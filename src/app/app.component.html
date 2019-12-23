@@ -13,7 +13,7 @@
                 <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="team3">{{"投资机构" | translate}}</a></li>
                 <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="exchange">{{"交易所" | translate}}</a></li>
               <!--<li><a href="javascript:void(0);" class="anchor-hd" data-anchor="token_allocation">{{"代币分配" | translate}}</a></li>-->
-              <!--<li><a href="javascript:void(0);" class="anchor-hd" data-anchor="news">{{"新闻" | translate}}</a></li>-->
+              <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="test-net">{{"测试网" | translate}}</a></li>
             </ul>
         </nav>
         <div class="other">
@@ -677,46 +677,35 @@
                 {{"aelf公开测试网是一个功能齐全、成熟易用、可公开访问的测试网络。该测试网络具备完备的区块链智能合约系统、开发套件、开发文档以及功能丰富的基础设施。实现了稳定的网络交易、完善的跨链搭建、全面的经济系统运行，在安全性、可扩展性、高效性、高可用性方面有着良好的体现。" | translate}}
               </div>
               <div class="fs-16 lh-38 grow clearfix skrollable skrollable-between test-net-buttons">
-                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
-                  <a href="https://docs.aelf.io/" target="_blank" rel="noreferrer noopener">
-                    {{"开发者文档" | translate}}
-                    <i class="fa fa-file-text-o ml5"></i>
-                  </a>
-                </div>
-                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
-                  <a
-                    [href]="currentLanguage === '中文' ? 'http://aelf-elf.mikecrm.com/YZG77IT' : 'https://docs.google.com/forms/d/e/1FAIpQLSf6HUXKMQ28__mtV_jKBpidkhw9RanbG659k4yU6HpaqVDN2g/viewform'"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    {{"测试Token申请" | translate}}
-                    <i class="fa fa-hand-paper-o ml5"></i>
-                  </a>
-                </div>
-                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
-                  <a href="http://explorer-test.aelf.io/" target="_blank" rel="noreferrer noopener">
-                    {{"访问测试网浏览器" | translate}}
-                    <i class="fa fa-compass ml5"></i>
-                  </a>
-                </div>
-                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
-                  <a href="https://wallet-test.aelf.io/" target="_blank" rel="noreferrer noopener">
-                    {{"访问测试网Web钱包" | translate}}
-                    <i class="fa fa-credit-card-alt ml5"></i>
-                  </a>
-                </div>
-                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
-                  <a href="https://fir.im/AelfAndroid" target="_blank" rel="noreferrer noopener">
-                    {{"Android测试版钱包" | translate}}
-                    <i class="fa fa-download ml5"></i>
-                  </a>
-                </div>
-                <div class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
-                  <a href="https://fir.im/iOSAElf" target="_blank" rel="noreferrer noopener">
-                    {{"iOS测试版钱包" | translate}}
-                    <i class="fa fa-download ml5"></i>
-                  </a>
-                </div>
+                <a class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button" href="https://docs.aelf.io/" target="_blank" rel="noreferrer noopener">
+                  {{"开发者文档" | translate}}
+                  <i class="fa fa-file-text ml5"></i>
+                </a>
+                <a
+                  class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button"
+                  [href]="currentLanguage === '中文' ? 'http://aelf-elf.mikecrm.com/YZG77IT' : 'https://docs.google.com/forms/d/e/1FAIpQLSf6HUXKMQ28__mtV_jKBpidkhw9RanbG659k4yU6HpaqVDN2g/viewform'"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {{"测试Token申请" | translate}}
+                  <i class="fa fa-plus-square ml5"></i>
+                </a>
+                <a class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button" href="http://explorer-test.aelf.io/" target="_blank" rel="noreferrer noopener">
+                  {{"访问测试网浏览器" | translate}}
+                  <i class="fa fa-chrome ml5"></i>
+                </a>
+                <a class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button" href="https://wallet-test.aelf.io/" target="_blank" rel="noreferrer noopener">
+                  {{"访问测试网Web钱包" | translate}}
+                  <i class="fa fa-credit-card-alt ml5"></i>
+                </a>
+                <a class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button" href="https://fir.im/AelfAndroid" target="_blank" rel="noreferrer noopener">
+                  {{"Android测试版钱包" | translate}}
+                  <i class="fa fa-download ml5"></i>
+                </a>
+                <a class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button" href="https://fir.im/iOSAElf" target="_blank" rel="noreferrer noopener">
+                  {{"iOS测试版钱包" | translate}}
+                  <i class="fa fa-download ml5"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -858,257 +847,55 @@
       </div>
     </div>
   </section>
-  <section class="section section-11 anchor-bd" id="news" [ngSwitch]="currentLanguage">
-    <ng-template [ngSwitchCase]="languageList[1]">
-      <div class="cont pt100 pb100">
-        <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between"
-             data-bottom="transform:translate(0%, 30%); opacity:0;"
-             data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"新闻" | translate}}</b></div>
-        <div class="txt">
-          <div class="grow news-list clearfix">
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">10</h3>
-                  <p class="fs-14"><b>2018.7</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="http://www.prcfe.com/finance/2018/0710/265355.html" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-3.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="http://www.prcfe.com/finance/2018/0710/265355.html"
-                    target="_blank" class="link-2"><b>ælf用工程化思路构建永不宕机的云计算</b></a></h3>
-                </div>
+  <section class="section section-11 anchor-bd" id="news">
+    <div class="cont pt100 pb100">
+      <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between"
+           data-bottom="transform:translate(0%, 30%); opacity:0;"
+           data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"新闻" | translate}}</b></div>
+      <div class="txt">
+        <div class="grow news-list clearfix">
+          <div
+            *ngFor="let index of [1, 2, 3, 4, 5, 6]"
+            class="col12-sm-4 news-item clearfix"
+            data-bottom="transform:translate(0%, 60%); opacity:0;"
+            data-center="transform:translate(0%, 0%); opacity:1;">
+            <div class="news-box">
+              <div class="date mb30 color-white">
+                <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">{{"news_" + index + ".day" | translate}}</h3>
+                <p class="fs-14"><b>{{"news_" + index + ".month" | translate}}</b></p>
               </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">1</h3>
-                  <p class="fs-14"><b>2018.7</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="http://www.sohu.com/a/238694613_115060" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-4.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="http://www.sohu.com/a/238694613_115060"
-                    target="_blank" class="link-2"><b>ælf测试网正式上线</b></a></h3>
-                </div>
+              <div class="pic mb30">
+                <a
+                  [href]="'news_' + index + '.url' | translate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div
+                    class="bg-img"
+                    [ngStyle]="{'background-image': 'news_' + index + '.image' | translate}"
+                  >
+                  </div>
+                </a>
               </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">27</h3>
-                  <p class="fs-14"><b>2018.6</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="http://www.iterduo.com/kuaixun/57568.html" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-5.png);"></div>
+              <div class="txt color-white mb35">
+                <h3 class="fs-30 lh-12em-2over mb20">
+                  <a
+                    [href]="'news_' + index + '.url' | translate"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="link-2"
+                  >
+                    <b>
+                      {{"news_" + index + ".title" | translate}}
+                    </b>
                   </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="http://www.iterduo.com/kuaixun/57568.html"
-                    target="_blank" class="link-2"><b>ælf创新联盟又添新员</b></a></h3>
-                </div>
-              </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 60%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">27</h3>
-                  <p class="fs-14"><b>2018.6</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="https://www.jinse.com/blockchain/206491.html" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-2.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="https://www.jinse.com/blockchain/206491.html"
-                    target="_blank" class="link-2"><b>ælf参加Blockchain Connect</b></a></h3>
-                </div>
-              </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 30%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">26</h3>
-                  <p class="fs-14"><b>2018.6</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="https://xueqiu.com/5786743765/109489945" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-1.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="https://xueqiu.com/5786743765/109489945"
-                    target="_blank" class="link-2"><b>ælf技术团队及创始人荣获人民网创投两项大奖</b></a></h3>
-                </div>
-              </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">9</h3>
-                  <p class="fs-14"><b>2017.6</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="https://www.jinse.com/blockchain/201355.html" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-6.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="https://www.jinse.com/blockchain/201355.html"
-                    target="_blank" class="link-2"><b>区块链是一种新型的激励分配方式</b></a></h3>
-                </div>
+                </h3>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </ng-template>
-    <ng-template ngSwitchDefault>
-      <div class="cont pt100 pb100">
-        <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between"
-             data-bottom="transform:translate(0%, 30%); opacity:0;"
-             data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"新闻" | translate}}</b></div>
-        <div class="txt">
-          <div class="grow news-list clearfix">
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 30%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">14</h3>
-                  <p class="fs-14"><b>2018.6</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="http://www.hodlerxl.com/aelf/elf-a-decentralized-self-evolving-cloud-computing-network/" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-12.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="http://www.hodlerxl.com/aelf/elf-a-decentralized-self-evolving-cloud-computing-network/"
-                    target="_blank" class="link-2"><b>Aelf (ELF) A Decentralized Self-evolving Cloud Computing Network</b></a></h3>
-                </div>
-              </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">19</h3>
-                  <p class="fs-14"><b>2018.5</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="https://stocksgazette.com/2018/05/19/what-is-the-future-of-aelf-elf-huobi-token-ht-cybermiles-cmt/" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-18.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="https://stocksgazette.com/2018/05/19/what-is-the-future-of-aelf-elf-huobi-token-ht-cybermiles-cmt/"
-                    target="_blank" class="link-2"><b>What is the future of aelf</b></a></h3>
-                </div>
-              </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">16</h3>
-                  <p class="fs-14"><b>2018.4</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="https://www.banklesstimes.com/2018/04/16/aelf-fortifies-south-korean-presence-with-bithumb-listing/" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-14.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="https://www.banklesstimes.com/2018/04/16/aelf-fortifies-south-korean-presence-with-bithumb-listing/"
-                    target="_blank" class="link-2"><b>aelf fortifies South Korean presence with Bithumb listing</b></a></h3>
-                </div>
-              </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">11</h3>
-                  <p class="fs-14"><b>2018.4</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="https://globalcoinreport.com/aelf-elf-is-implementing-a-reward-system-noted-rise-of-42/" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-17.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="https://globalcoinreport.com/aelf-elf-is-implementing-a-reward-system-noted-rise-of-42/"
-                    target="_blank" class="link-2"><b>aelf (ELF) is Implementing a Reward System: Noted Rise of 42%</b></a></h3>
-                </div>
-              </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 90%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">23</h3>
-                  <p class="fs-14"><b>2018.2</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="https://coincentral.com/aelf-beginner-guide/amp/" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-15.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="https://coincentral.com/aelf-beginner-guide/amp/"
-                    target="_blank" class="link-2"><b>What is aelf (ELF)? | Beginner’s Guide</b></a></h3>
-                </div>
-              </div>
-            </div>
-            <div class="col12-sm-4 news-item clearfix" data-bottom="transform:translate(0%, 60%); opacity:0;"
-                 data-center="transform:translate(0%, 0%); opacity:1;">
-              <div class="news-box">
-                <div class="date mb30 color-white">
-                  <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">31</h3>
-                  <p class="fs-14"><b>2018.1</b></p>
-                </div>
-                <div class="pic mb30">
-                  <a href="https://steemit.com/cryptocurrency/@veganlifestyle/2ywtkk-why-i-think-aelf-will-be-huge-in-2018" target="_blank">
-                    <div class="bg-img" style="background-image: url(assets/images/blog-13.png);"></div>
-                  </a>
-                </div>
-                <div class="txt color-white mb35">
-                  <h3 class="fs-30 lh-12em-2over mb20"><a
-                    href="https://steemit.com/cryptocurrency/@veganlifestyle/2ywtkk-why-i-think-aelf-will-be-huge-in-2018"
-                    target="_blank" class="link-2"><b>Why i think AELF will be huge in 2018</b></a></h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </ng-template>
+    </div>
   </section>
 
 </div>
