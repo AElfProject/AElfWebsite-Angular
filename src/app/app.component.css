@@ -212,7 +212,6 @@
         padding: 18px;
         left: 0;
         position: fixed;
-        top: 0;
         -webkit-transform: translate(0%, 0%);
         transform: translate(0%, 0%);
         background: linear-gradient(to right, #8e21d0, #42018f);

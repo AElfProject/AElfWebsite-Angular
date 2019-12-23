@@ -70,46 +70,48 @@
   "iOS测试版钱包": "Beta iOS Wallet",
   "测试网": "Testnet",
   "token领取地址": "https://docs.google.com/forms/d/e/1FAIpQLSf6HUXKMQ28__mtV_jKBpidkhw9RanbG659k4yU6HpaqVDN2g/viewform",
-  "news_1": {
-    "title": "aelf Enterprise 0.9.0 Officially Released",
-    "url": "https://medium.com/aelfblockchain/aelf-enterprise-0-9-0-officially-released-738d95c113be",
-    "image": "url(assets/images/news/en/Enterprise.jpg)",
-    "day": "11",
-    "month": "2019.12"
-  },
-  "news_2": {
-    "title": "Microsoft Invites aelf to Attend Ignite Conference",
-    "url": "https://medium.com/aelfblockchain/microsoft-invites-aelf-to-attend-ignite-conference-30899cd8e648",
-    "image": "url(assets/images/news/en/MS.jpg)",
-    "day": "16",
-    "month": "2019.12"
-  },
-  "news_3": {
-    "title": "aelf Launches Bug Bounty",
-    "url": "https://medium.com/aelfblockchain/aelf-launches-bug-bounty-c1e185f8aca4",
-    "image": "url(assets/images/news/en/Bug.jpg)",
-    "day": "22",
-    "month": "2019.10"
-  },
-  "news_4": {
-    "title": "Google Cloud Supports aelf Blockchain",
-    "url": "https://medium.com/aelfblockchain/google-cloud-supports-aelf-blockchain-62f3d59c0af5",
-    "image": "url(assets/images/news/en/google.jpg)",
-    "day": "30",
-    "month": "2019.10"
-  },
-  "news_5": {
-    "title": "aelf Invited to Present at DotNet Elite Forum",
-    "url": "https://medium.com/aelfblockchain/aelf-invited-to-present-at-dotnet-elite-forum-e7c100c83bf",
-    "image": "url(assets/images/news/en/DNT.jpg)",
-    "day": "29",
-    "month": "2019.10"
-  },
-  "news_6": {
-    "title": "Aelf Joins Huawei Cloud as Technology Partner & Invited to 2019 Huawei Connected Conference to Aid in Digital Transformation",
-    "url": "https://medium.com/aelfblockchain/aelf-joins-huawei-cloud-as-technology-partner-invited-to-2019-huawei-connected-conference-to-aid-ac97b095886b",
-    "image": "url(assets/images/news/en/hwc.jpg)",
-    "day": "20",
-    "month": "2019.9"
-  }
+  "news": [
+    {
+      "title": "aelf Enterprise 0.9.0 Officially Released",
+      "url": "https://medium.com/aelfblockchain/aelf-enterprise-0-9-0-officially-released-738d95c113be",
+      "image": "url(assets/images/news/en/Enterprise.jpg)",
+      "day": "11",
+      "month": "2019.12"
+    },
+    {
+      "title": "Microsoft Invites aelf to Attend Ignite Conference",
+      "url": "https://medium.com/aelfblockchain/microsoft-invites-aelf-to-attend-ignite-conference-30899cd8e648",
+      "image": "url(assets/images/news/en/MS.jpg)",
+      "day": "16",
+      "month": "2019.12"
+    },
+    {
+      "title": "aelf Launches Bug Bounty",
+      "url": "https://medium.com/aelfblockchain/aelf-launches-bug-bounty-c1e185f8aca4",
+      "image": "url(assets/images/news/en/Bug.jpg)",
+      "day": "22",
+      "month": "2019.10"
+    },
+    {
+      "title": "Google Cloud Supports aelf Blockchain",
+      "url": "https://medium.com/aelfblockchain/google-cloud-supports-aelf-blockchain-62f3d59c0af5",
+      "image": "url(assets/images/news/en/google.jpg)",
+      "day": "30",
+      "month": "2019.10"
+    },
+    {
+      "title": "aelf Invited to Present at DotNet Elite Forum",
+      "url": "https://medium.com/aelfblockchain/aelf-invited-to-present-at-dotnet-elite-forum-e7c100c83bf",
+      "image": "url(assets/images/news/en/DNT.jpg)",
+      "day": "29",
+      "month": "2019.10"
+    },
+    {
+      "title": "Aelf Joins Huawei Cloud as Technology Partner & Invited to 2019 Huawei Connected Conference to Aid in Digital Transformation",
+      "url": "https://medium.com/aelfblockchain/aelf-joins-huawei-cloud-as-technology-partner-invited-to-2019-huawei-connected-conference-to-aid-ac97b095886b",
+      "image": "url(assets/images/news/en/hwc.jpg)",
+      "day": "20",
+      "month": "2019.9"
+    }
+  ]
 }

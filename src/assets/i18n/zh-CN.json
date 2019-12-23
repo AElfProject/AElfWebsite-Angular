@@ -70,46 +70,48 @@
   "iOS测试版钱包": "iOS测试版钱包",
   "测试网": "测试网",
   "token领取地址": "http://aelf-elf.mikecrm.com/YZG77IT",
-  "news_1": {
-    "title": "aelf Enterprise 0.9.0 版正式发布",
-    "url": "https://mp.weixin.qq.com/s/VAbzGRc2a_8PvIea9XGhuQ",
-    "image": "url(assets/images/news/zh/Enterprise.jpg)",
-    "day": "11",
-    "month": "2019.12"
-  },
-  "news_2": {
-    "title": "aelf技术副总裁戎朋受邀参加微软Ignite大会，就“区块链+电商”发展潜力及研发实践进行主题分享",
-    "url": "https://mp.weixin.qq.com/s/QTYVzdTNjRHtkUqUpFv3aA",
-    "image": "url(assets/images/news/zh/MS.jpg)",
-    "day": "10",
-    "month": "2019.12"
-  },
-  "news_3": {
-    "title": "aelf联合创始人&COO陈注伶作为特邀嘉宾做客华为亚太云业务部线上培训，深度解读aelf将为企业带来的无限可能",
-    "url": "https://mp.weixin.qq.com/s/qsin1X4i57gxkA1BXLuZ5A",
-    "image": "url(assets/images/news/zh/zhuling-hw.jpg)",
-    "day": "12",
-    "month": "2019.11"
-  },
-  "news_4": {
-    "title": "aelf Enterprise 0.8.0 beta“Bug奖金计划”完美收官",
-    "url": "https://mp.weixin.qq.com/s/BQfMHb7_d5sISdVVI0CNZg",
-    "image": "url(assets/images/news/zh/Bug.jpg)",
-    "day": "7",
-    "month": "2019.11"
-  },
-  "news_5": {
-    "title": "Google Cloud支持首个区块链跨链项目aelf，一键部署去中心化云服务",
-    "url": "https://mp.weixin.qq.com/s/fPdtpU62hGjBPNrHIf4_kg",
-    "image": "url(assets/images/news/zh/google.jpg)",
-    "day": "30",
-    "month": "2019.10"
-  },
-  "news_6": {
-    "title": "aelf高级技术经理石文凯以区块链跨链技术的设计与实践为题，分享如何搭建高效稳定的多层级跨链平台",
-    "url": "https://mp.weixin.qq.com/s/R_zPVERLQ7OtpaqkLLCLsA",
-    "image": "url(assets/images/news/zh/DNT.jpg)",
-    "day": "28",
-    "month": "2019.10"
-  }
+  "news": [
+    {
+      "title": "aelf Enterprise 0.9.0 版正式发布",
+      "url": "https://mp.weixin.qq.com/s/VAbzGRc2a_8PvIea9XGhuQ",
+      "image": "url(assets/images/news/zh/Enterprise.jpg)",
+      "day": "11",
+      "month": "2019.12"
+    },
+    {
+      "title": "aelf技术副总裁戎朋受邀参加微软Ignite大会，就“区块链+电商”发展潜力及研发实践进行主题分享",
+      "url": "https://mp.weixin.qq.com/s/QTYVzdTNjRHtkUqUpFv3aA",
+      "image": "url(assets/images/news/zh/MS.jpg)",
+      "day": "10",
+      "month": "2019.12"
+    },
+    {
+      "title": "aelf联合创始人&COO陈注伶作为特邀嘉宾做客华为亚太云业务部线上培训，深度解读aelf将为企业带来的无限可能",
+      "url": "https://mp.weixin.qq.com/s/qsin1X4i57gxkA1BXLuZ5A",
+      "image": "url(assets/images/news/zh/zhuling-hw.jpg)",
+      "day": "12",
+      "month": "2019.11"
+    },
+    {
+      "title": "aelf Enterprise 0.8.0 beta“Bug奖金计划”完美收官",
+      "url": "https://mp.weixin.qq.com/s/BQfMHb7_d5sISdVVI0CNZg",
+      "image": "url(assets/images/news/zh/Bug.jpg)",
+      "day": "7",
+      "month": "2019.11"
+    },
+    {
+      "title": "Google Cloud支持首个区块链跨链项目aelf，一键部署去中心化云服务",
+      "url": "https://mp.weixin.qq.com/s/fPdtpU62hGjBPNrHIf4_kg",
+      "image": "url(assets/images/news/zh/google.jpg)",
+      "day": "30",
+      "month": "2019.10"
+    },
+    {
+      "title": "aelf高级技术经理石文凯以区块链跨链技术的设计与实践为题，分享如何搭建高效稳定的多层级跨链平台",
+      "url": "https://mp.weixin.qq.com/s/R_zPVERLQ7OtpaqkLLCLsA",
+      "image": "url(assets/images/news/zh/DNT.jpg)",
+      "day": "28",
+      "month": "2019.10"
+    }
+  ]
 }

@@ -855,24 +855,24 @@
       <div class="txt">
         <div class="grow news-list clearfix">
           <div
-            *ngFor="let index of [1, 2, 3, 4, 5, 6]"
+            *ngFor="let item of (('news' | translate) === 'news' ? [] : ('news' | translate)).slice(0, 6)"
             class="col12-sm-4 news-item clearfix"
             data-bottom="transform:translate(0%, 60%); opacity:0;"
             data-center="transform:translate(0%, 0%); opacity:1;">
             <div class="news-box">
               <div class="date mb30 color-white">
-                <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">{{"news_" + index + ".day" | translate}}</h3>
-                <p class="fs-14"><b>{{"news_" + index + ".month" | translate}}</b></p>
+                <h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">{{item.day}}</h3>
+                <p class="fs-14"><b>{{item.month}}</b></p>
               </div>
               <div class="pic mb30">
                 <a
-                  [href]="'news_' + index + '.url' | translate"
+                  [href]="item.url"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <div
                     class="bg-img"
-                    [ngStyle]="{'background-image': 'news_' + index + '.image' | translate}"
+                    [ngStyle]="{'background-image': item.image}"
                   >
                   </div>
                 </a>
@@ -880,13 +880,13 @@
               <div class="txt color-white mb35">
                 <h3 class="fs-30 lh-12em-2over mb20">
                   <a
-                    [href]="'news_' + index + '.url' | translate"
+                    [href]="item.url"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="link-2"
                   >
                     <b>
-                      {{"news_" + index + ".title" | translate}}
+                      {{item.title}}
                     </b>
                   </a>
                 </h3>
