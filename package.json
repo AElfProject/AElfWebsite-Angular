@@ -15,7 +15,10 @@
   },
   "reactSnap": {
     "source": "dist",
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
     "inlineCss": false
   },
   "dependencies": {
@@ -61,7 +64,7 @@
     "file-loader": "^5.0.2",
     "git-cz": "^4.1.0",
     "glob": "^7.1.6",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^4.0.0-beta.11",
     "husky": "^4.0.10",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",

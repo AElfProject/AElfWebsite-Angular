@@ -87,10 +87,10 @@ const baseConfig = {
     ...PAGES.map(({ name, config }) => {
       let chunks = [name];
       const filename = path.resolve(OUTPUT_PATH, config.name || `${name}.html`);
-      if (isProdMode) {
-        const runtime = `runtime.${name}`;
-        chunks = [runtime, 'vendors', name];
-      }
+      // if (isProdMode) {
+      //   const runtime = `runtime.${name}`;
+      //   chunks = [runtime, 'vendors', name];
+      // }
       return new HtmlWebpackPlugin({
         template: path.resolve(ROOT, './template.ejs'),
         filename,
