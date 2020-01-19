@@ -1,0 +1,11 @@
+[
+  {
+    "target": "http://127.0.0.1:7740",
+    "context": [
+      "/api"
+    ],
+    "headers": {
+      "Host": "test.aelf.io"
+    }
+  }
+]

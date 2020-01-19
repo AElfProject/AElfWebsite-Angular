@@ -1,0 +1,39 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "lodash",
+      {
+        "id": [
+          "lodash"
+        ]
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "react-use",
+        "libraryDirectory": "lib",
+        "camel2DashComponentName": false
+      },
+      "react-use"
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime"
+  ]
+}
