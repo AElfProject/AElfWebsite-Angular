@@ -1,5 +1,4 @@
 {
-  "root": false,
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2019,
@@ -17,10 +16,12 @@
   },
   "plugins": [
     "babel",
-    "import"
+    "import",
+    "security"
   ],
   "extends": [
-    "eslint-config-airbnb"
+    "eslint-config-airbnb",
+    "plugin:security/recommended"
   ],
   "globals": {},
   "rules": {
