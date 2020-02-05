@@ -109,4 +109,12 @@ export class AppComponent implements OnInit, AfterViewInit {
       $('#player').css('height', vedioHeight);
     }, 200);
   }
+
+  OnTestNetClick(classname) {
+    $(classname).slideToggle().parent().siblings().find('ul').hide()
+  }
+
+  OnTestNetMouseleave(classname) {
+    $(classname).slideUp()
+  }
 }

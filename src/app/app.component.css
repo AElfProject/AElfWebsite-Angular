@@ -200,9 +200,14 @@
     display: block;
 }
 
-#test-net .test-net-button:hover,#test-net a:hover {
-  background-color: #5fbdf9;
-  color: #ffffff;
+#test-net .test-net-button {
+    padding: 0;
+}
+
+#test-net a:hover {
+    border-radius: 5px;
+    background-color: #5fbdf9;
+    color: #ffffff;
 }
 
 @media only screen and (max-width: 600px) {
@@ -235,7 +240,7 @@
     /* height: 278px; */
     background-color: #fff;
     border-radius: 5px;
-    /* display: none; */
+    display: none;
     position: absolute;
     left: 0;
     top: 50px;

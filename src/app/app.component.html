@@ -710,21 +710,27 @@
                 </li>
                 
                 <!-- 测试Token申请 -->
-                <li class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
+                <li 
+                  class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button"
+                  (click)="OnTestNetClick('.test-token')"
+                  (mouseleave)="OnTestNetMouseleave('.test-token')"
+                >
                   <a
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    {{"测试Token申请" | translate}}
+                    {{"aelf节点测试Token申请" | translate}}
                     <i class="fa fa-plus-square ml5"></i>
                   </a>
                   <ul class="test-token">
                     <li>
-                      <a href="http://blockchain-aelf.hk.mikecrm.com/vx5roeV" target="_blank">{{"aelf节点测试Token申请" | translate}}</a>
+                      <a 
+                        [href]="currentLanguage === '中文' ? 'http://blockchain-aelf.hk.mikecrm.com/vx5roeV' : 'https://docs.google.com/forms/d/e/1FAIpQLSehX3CnuZl9hht8aoCXdra5fREA7MlTls7lWBPDqH92G6-Iaw/viewform?usp=sf_link'"
+                      >{{"aelf节点测试Token申请" | translate}}</a>
                     </li>
                     <li>
                       <a 
-                        [href]="currentLanguage === '中文' ? 'http://blockchain-aelf.hk.mikecrm.com/ZTTiwW4' : 'https://docs.google.com/forms/d/e/1FAIpQLSf6HUXKMQ28__mtV_jKBpidkhw9RanbG659k4yU6HpaqVDN2g/viewform?usp=sf_link'"
+                        [href]="currentLanguage === '中文' ? 'http://blockchain-aelf.hk.mikecrm.com/ZTTiwW4' : 'https://docs.google.com/forms/d/e/1FAIpQLSfwilEdP2C5hXTtKebsSx5LRq8w1Mihwh9lJV80QJfgGcNmoQ/viewform?usp=sf_link'"
                         target="_blank"
                       >{{"aelf测试token申请" | translate}}</a>
                     </li>
@@ -732,8 +738,12 @@
                 </li>
                 
                 <!-- 测试网浏览器 -->
-                <li class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
-                  <a  href="http://explorer-test.aelf.io/" target="_blank" rel="noreferrer noopener">
+                <li
+                  class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button"
+                  (click)="OnTestNetClick('.test-explorer')"
+                  (mouseleave)="OnTestNetMouseleave('.test-explorer')"
+                >
+                  <a target="_blank" rel="noreferrer noopener">
                     {{"访问测试网浏览器" | translate}}
                     <i class="fa fa-chrome ml5"></i>
                   </a>
@@ -760,8 +770,12 @@
                 </li>
                 
                 <!-- 测试网Web钱包 -->
-                <li class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
-                  <a href="https://wallet-test.aelf.io/" target="_blank" rel="noreferrer noopener">
+                <li 
+                  class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button"
+                  (click)="OnTestNetClick('.test-wallet')"
+                  (mouseleave)="OnTestNetMouseleave('.test-wallet')"
+                >
+                  <a target="_blank" rel="noreferrer noopener">
                     {{"访问测试网Web钱包" | translate}}
                     <i class="fa fa-credit-card-alt ml5"></i>
                   </a>
