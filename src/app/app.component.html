@@ -16,7 +16,7 @@
                 <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="team3">{{"投资机构" | translate}}</a></li>
                 <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="exchange">{{"交易所" | translate}}</a></li>
               <!--<li><a href="javascript:void(0);" class="anchor-hd" data-anchor="token_allocation">{{"代币分配" | translate}}</a></li>-->
-              <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="test-net">{{"测试网" | translate}}</a></li>
+              <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="test-net">{{"测试网&配套设施" | translate}}</a></li>
             </ul>
         </nav>
 
@@ -699,8 +699,8 @@
               <div class="fs-18 ta-l lh-36 mb150 skrollable skrollable-between color-white">
                 {{"aelf公开测试网是一个功能齐全、成熟易用、可公开访问的测试网络。该测试网络具备完备的区块链智能合约系统、开发套件、开发文档以及功能丰富的基础设施。实现了稳定的网络交易、完善的跨链搭建、全面的经济系统运行，在安全性、可扩展性、高效性、高可用性方面有着良好的体现。" | translate}}
               </div>
+
               <ul class="fs-16 lh-38 grow clearfix skrollable skrollable-between test-net-buttons">
-                
                 <!-- 开发者文档 -->
                 <li class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
                   <a class="" href="https://docs.aelf.io/" target="_blank" rel="noreferrer noopener">
@@ -710,7 +710,7 @@
                 </li>
                 
                 <!-- 测试Token申请 -->
-                <li  class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
+                <li class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
                   <a
                     target="_blank"
                     rel="noreferrer noopener"
@@ -720,10 +720,13 @@
                   </a>
                   <ul class="test-token">
                     <li>
-                      <a href="http://blockchain-aelf.hk.mikecrm.com/vx5roeV" target="_blank">aelf节点测试Token申请</a>
+                      <a href="http://blockchain-aelf.hk.mikecrm.com/vx5roeV" target="_blank">{{"aelf节点测试Token申请" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://blockchain-aelf.hk.mikecrm.com/ZTTiwW4" target="_blank">aelf测试token申请</a>
+                      <a 
+                        [href]="currentLanguage === '中文' ? 'http://blockchain-aelf.hk.mikecrm.com/ZTTiwW4' : 'https://docs.google.com/forms/d/e/1FAIpQLSf6HUXKMQ28__mtV_jKBpidkhw9RanbG659k4yU6HpaqVDN2g/viewform?usp=sf_link'"
+                        target="_blank"
+                      >{{"aelf测试token申请" | translate}}</a>
                     </li>
                   </ul>
                 </li>
@@ -736,26 +739,26 @@
                   </a>
                   <ul class="test-explorer">
                     <li>
-                      <a href="http://aelf-explorer-test.aelf.io/">主链AELF</a>
+                      <a href="http://aelf-explorer-test.aelf.io/">{{"主链AELF" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvv-explorer-test.aelf.io/">侧链tDVV</a>
+                      <a href="http://tdvv-explorer-test.aelf.io/">{{"侧链tDVV" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvw-explorer-test.aelf.io/">侧链tDVW</a>
+                      <a href="http://tdvw-explorer-test.aelf.io/">{{"侧链tDVW" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvx-explorer-test.aelf.io/">侧链tDVX</a>
+                      <a href="http://tdvx-explorer-test.aelf.io/">{{"侧链tDVX" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvy-explorer-test.aelf.io/">侧链tDVY</a>
+                      <a href="http://tdvy-explorer-test.aelf.io/">{{"侧链tDVY" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvz-explorer-test.aelf.io/">侧链tDVZ</a>
+                      <a href="http://tdvz-explorer-test.aelf.io/">{{"侧链tDVZ" | translate}}</a>
                     </li>
                   </ul>
                 </li>
-
+                
                 <!-- 测试网Web钱包 -->
                 <li class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
                   <a href="https://wallet-test.aelf.io/" target="_blank" rel="noreferrer noopener">
@@ -764,26 +767,26 @@
                   </a>
                   <ul class="test-wallet">
                     <li>
-                      <a href="http://aelf-wallet-test.aelf.io">主链AELF</a>
+                      <a href="http://aelf-wallet-test.aelf.io">{{"主链AELF" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvv-wallet-test.aelf.io">侧链tDVV</a>
+                      <a href="http://tdvv-wallet-test.aelf.io">{{"侧链tDVV" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvw-wallet-test.aelf.io">侧链tDVW</a>
+                      <a href="http://tdvw-wallet-test.aelf.io">{{"侧链tDVW" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvx-wallet-test.aelf.io">侧链tDVX</a>
+                      <a href="http://tdvx-wallet-test.aelf.io">{{"侧链tDVX" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvy-wallet-test.aelf.io">侧链tDVY</a>
+                      <a href="http://tdvy-wallet-test.aelf.io">{{"侧链tDVY" | translate}}</a>
                     </li>
                     <li>
-                      <a href="http://tdvz-wallet-test.aelf.io">侧链tDVZ</a>
+                      <a href="http://tdvz-wallet-test.aelf.io">{{"侧链tDVZ" | translate}}</a>
                     </li>
                   </ul>
                 </li>
-
+                
                 <!-- Android -->
                 <li class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
                   <a href="https://fir.im/AelfAndroid" target="_blank" rel="noreferrer noopener">
@@ -791,7 +794,7 @@
                     <i class="fa fa-download ml5"></i>
                   </a>
                 </li>
-
+                
                 <!-- ios -->
                 <li class="col12-lg-4 col12-md-4 col12-sm-6 mr30 mb25 test-net-button">
                   <a href="https://fir.im/iOSAElf" target="_blank" rel="noreferrer noopener">
@@ -799,7 +802,6 @@
                     <i class="fa fa-download ml5"></i>
                   </a>
                 </li>
-                
               </ul>
             </div>
           </div>
