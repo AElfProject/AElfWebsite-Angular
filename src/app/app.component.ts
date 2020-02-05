@@ -74,12 +74,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   setVideo() {
     let videoSrcTemp = 'https://www.youtube.com/embed/qbIP1TEX33Q';
     if (this.currentLanguage === '中文') {
-        videoSrcTemp = 'https://v.qq.com/iframe/player.html?vid=v08049tau4n';
+        videoSrcTemp = 'https://www.hoopox.com/aelf.mp4';
     }
     this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videoSrcTemp);
-    const videoWidth = parseInt($('#player').css('width'), 10);
-    const videoHeight = (videoWidth / 16) * 9;
-    $('#player').css('height', `${videoHeight}px`);
+    setTimeout(() => {
+      const videoWidth = parseInt($('#player').css('width'), 10);
+      const videoHeight = (videoWidth / 16) * 9;
+      $('#player').css('height', `${videoHeight}px`);
+    }, 200);
   }
 
   // nav bar change color when the scroll event happens.

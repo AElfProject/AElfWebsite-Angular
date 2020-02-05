@@ -146,8 +146,13 @@
     <section class="section section-22 anchor-hd" id="advan">
         <div class="cont pt200 pb200">
             <div class="grow pic-txt-list-22 ta-c color-white clearfix vedio-size">
-                <div class="col12-sm-6 ptl22-item">
-                  <iframe  id="player"  width="90%" type="text/html" [src]="VideoSrc" frameborder="0" scrolling = "no" border = "0" frameborder = "no" framespacing = "0" allowfullscreen = "true"></iframe>
+                <div [ngSwitch]="currentLanguage" class="col12-sm-6 ptl22-item">
+                  <ng-template [ngSwitchCase]="languageList[1]">
+                    <video  id="player" width="90%" [src]="VideoSrc" controls></video>
+                  </ng-template>
+                  <ng-template ngSwitchDefault>
+                    <iframe  id="player"  width="90%" type="text/html" [src]="VideoSrc" frameborder="0" scrolling = "no" border = "0" frameborder = "no" framespacing = "0" allowfullscreen = "true"></iframe>
+                  </ng-template>
                 </div>
                 <div class="col12-sm-2 ptl22-item">
                     <div class="ptl22-box">
@@ -917,6 +922,6 @@
               <a href="https://0.plus/aelf_chs" target="_blank"><img style="margin-bottom: 3px; height: 1.1em; width: 1.1em;" src="../assets/images/biyong.png"></a>
             </span>
         </div>
-        <p class="fs-12 lh-20em color-999999">Copyright © 2018 ælf</p>
+        <p class="fs-12 lh-20em color-999999">Copyright © 2020 ælf</p>
     </div>
 </footer>
