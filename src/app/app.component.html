@@ -1,9 +1,12 @@
+<!-- 头部导航 -->
 <div class="fix-top" >
     <header class="header clearfix header-white" [ngClass]="headerActiveCssClass" >
         <h1 class="logo">
             <a href=""><img src="assets/images/logo.jpg" alt=""></a>
         </h1>
         <!-- <h1 class="logo3"><a href=""><img src="assets/images/logo3.png" alt=""></a></h1> -->
+
+        <!-- 导航 -->
         <nav class="nav fs-20 sm-hidden index-pagination clearfix" style="font-weight:bold;">
             <ul class="clearfix">
                 <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="index">{{"首页" | translate}}</a></li>
@@ -16,6 +19,8 @@
               <li><a href="javascript:void(0);" class="anchor-hd" data-anchor="test-net">{{"测试网" | translate}}</a></li>
             </ul>
         </nav>
+
+        <!-- 白皮书 -->
         <div class="other">
             <div [ngClass]="_fontFamlily.ffMy" class="lang color-white">
                 <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down"></i></span>
@@ -64,6 +69,8 @@
         </div>
     </header>
 </div>
+
+<!-- 固定定位导航 -->
 <div class="fix-bottom-right sm-hidden">
     <div [ngClass]="_fontFamlily.ffArial" class="copys mb10">Copyright © 2018 ælf</div>
     <div class="shares fs-18 sm-hidden clearfix">
@@ -82,7 +89,11 @@
         </span>
     </div>
 </div>
+
+<!-- 主体内容 -->
 <div class="container index-step" id="skrollr-body">
+
+    <!-- 首页 -->
     <section class="section section-1 anchor-bd" id="index">
         <!-- <div class="aelf-notice">
           <a href="javascript:;" (click)="toggleNotice('notice-1')">{{ "关于冒用aelf名义进行违法活动的相关声明" | translate }}</a>
@@ -143,6 +154,8 @@
             </div>
         </div>
     </section>
+
+    <!-- 关于我们 -->
     <section class="section section-22 anchor-hd" id="advan">
         <div class="cont pt200 pb200">
             <div class="grow pic-txt-list-22 ta-c color-white clearfix vedio-size">
@@ -179,6 +192,8 @@
             </div>
         </div>
     </section>
+
+    <!-- 团队 -->
     <section class="section section-8 anchor-bd" id="team">
         <div class="cont pt200 pb200">
             <div class="txt">
@@ -280,6 +295,8 @@
             </div>
         </div>
     </section>
+
+    <!-- 顾问 -->
     <section class="section section-8 anchor-bd" id="team2">
         <div class="cont pt200 pb200">
             <div class="txt">
@@ -349,6 +366,8 @@
             </div>
         </div>
     </section>
+
+    <!-- 投资机构 -->
     <section class="section section-8 anchor-bd" id="team3">
         <div class="cont pt200 pb200">
             <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"投资机构" | translate}}</b></div>
@@ -494,6 +513,8 @@
             </div>
         </div>
     </section>
+
+  <!-- 交易所 -->
   <section class="section section-8 anchor-bd" id="exchange">
     <div class="cont pt200 pb200">
       <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"交易所" | translate}}</b></div>
@@ -656,6 +677,8 @@
       </div>
     </div>
   </section>
+
+  <!-- 测试网 -->
   <section class="section section-8 anchor-bd" id="test-net">
     <div class="cont pt200 pb200">
       <div class="txt">
@@ -807,6 +830,8 @@
       </div>
     </div>
   </section>-->
+  
+  <!-- 饼图 -->
   <section class="section section-13 anchor-bd" id="token_allocation">
     <div class="cont">
       <div class="txt">
@@ -847,6 +872,8 @@
       </div>
     </div>
   </section>
+
+  <!-- 新闻 -->
   <section class="section section-11 anchor-bd" id="news">
     <div class="cont pt100 pb100">
       <div class="bigTitle fs-34 ta-c mb45 color-white skrollable skrollable-between"
@@ -899,6 +926,8 @@
   </section>
 
 </div>
+
+<!-- 底部导航 -->
 <footer class="footer pt65 pb65 ta-c">
     <div class="wrapper clearfix">
         <p class="mb30"><img src="assets/images/logo2.jpg" alt=""></p>
