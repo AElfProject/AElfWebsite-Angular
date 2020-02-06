@@ -3552,13 +3552,20 @@ input.btn {
 
 .header .nav li {
     float: left;
-    margin-right: 35px
+    margin-right: 20px
 }
 
 .header .nav li a {
     position: relative;
     color: #fff;
-    line-height: 70px
+    line-height: 70px;
+}
+
+.header .nav li:last-child a {
+    width: 155px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header .nav li a.active,
@@ -3592,12 +3599,19 @@ input.btn {
 
 .header .btns {
     float: left;
-    margin-left: 30px
+    margin-left: 10px
 }
 
 .header .btns a {
     float: left;
-    margin-right: 15px
+    margin-right: 10px
+}
+
+.header .btns:first-child a {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header .btns a:last-child {
@@ -3609,13 +3623,14 @@ input.btn {
     display: block;
     height: 30px;
     line-height: 28px;
-    border-radius: 15px
+    border-radius: 5px
 }
 
 .header .btns a.downbtn,
 .menu-mobile .btns a.downbtn {
-    padding-left: 2px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
     border: 1px solid rgba(255, 255, 255, .3);
     color: #fff;
     background-color: rgba(255, 255, 255, .15)
@@ -3729,7 +3744,8 @@ input.btn {
 }
 
 .lang {
-    z-index: 2
+    z-index: 2;
+    margin-left: 10px;
 }
 
 .lang.active2 span {
@@ -3748,6 +3764,7 @@ input.btn {
     width: 120px;
     height: 30px;
     line-height: 28px;
+    border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, .3);
     background-color: rgba(255, 255, 255, .15)
 }
