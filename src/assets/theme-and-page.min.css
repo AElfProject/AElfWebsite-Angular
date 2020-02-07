@@ -729,7 +729,7 @@ input.btn {
     }
 }
 
-@media screen and (min-width:0px) and (max-width:1024px) {
+@media screen and (min-width:0px) and (max-width:1200px) {
     .sm-hidden {
         display: none
     }
@@ -3552,7 +3552,14 @@ input.btn {
 
 .header .nav li {
     float: left;
-    margin-right: 20px
+    margin-right: 16px
+}
+
+.header .nav li:nth-child(5) a{
+    width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header .nav li a {
@@ -3597,6 +3604,12 @@ input.btn {
     cursor: pointer
 }
 
+@media screen and (max-width: 1024px) {
+    body .header .other .lang span {
+        width: 105px;
+    }
+}
+
 .header .btns {
     float: left;
     margin-left: 10px
@@ -3608,7 +3621,14 @@ input.btn {
 }
 
 .header .btns:first-child a {
-    width: 150px;
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header .btns:nth-child(2) a {
+    width: 100px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3616,6 +3636,18 @@ input.btn {
 
 .header .btns a:last-child {
     margin-right: 0
+}
+
+@media screen and (max-width:768px) {
+    body .header .btns:first-child a{
+        width: 90px;
+    }
+    body .header .btns:nth-child(2) a {
+        width: 80px;
+    }
+    body .header .other .lang span {
+        width: 95px;
+    }
 }
 
 .header .btns a,
@@ -3761,7 +3793,7 @@ input.btn {
 }
 
 .lang span {
-    width: 120px;
+    width: 110px;
     height: 30px;
     line-height: 28px;
     border-radius: 5px;
