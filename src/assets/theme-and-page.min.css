@@ -729,7 +729,7 @@ input.btn {
     }
 }
 
-@media screen and (min-width:0px) and (max-width:1024px) {
+@media screen and (min-width:0px) and (max-width:1200px) {
     .sm-hidden {
         display: none
     }
@@ -1200,7 +1200,7 @@ input.btn {
 }
 
 .fs-16 {
-    font-size: 16px
+    font-size: 12px
 }
 
 @media screen and (max-width:768px) {
@@ -3552,13 +3552,27 @@ input.btn {
 
 .header .nav li {
     float: left;
-    margin-right: 35px
+    margin-right: 16px
+}
+
+.header .nav li:nth-child(5) a{
+    width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header .nav li a {
     position: relative;
     color: #fff;
-    line-height: 70px
+    line-height: 70px;
+}
+
+.header .nav li:last-child a {
+    width: 155px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header .nav li a.active,
@@ -3590,18 +3604,50 @@ input.btn {
     cursor: pointer
 }
 
+@media screen and (max-width: 1024px) {
+    body .header .other .lang span {
+        width: 105px;
+    }
+}
+
 .header .btns {
     float: left;
-    margin-left: 30px
+    margin-left: 10px
 }
 
 .header .btns a {
     float: left;
-    margin-right: 15px
+    margin-right: 10px
+}
+
+.header .btns:first-child a {
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header .btns:nth-child(2) a {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header .btns a:last-child {
     margin-right: 0
+}
+
+@media screen and (max-width:768px) {
+    body .header .btns:first-child a{
+        width: 90px;
+    }
+    body .header .btns:nth-child(2) a {
+        width: 80px;
+    }
+    body .header .other .lang span {
+        width: 95px;
+    }
 }
 
 .header .btns a,
@@ -3609,13 +3655,14 @@ input.btn {
     display: block;
     height: 30px;
     line-height: 28px;
-    border-radius: 15px
+    border-radius: 5px
 }
 
 .header .btns a.downbtn,
 .menu-mobile .btns a.downbtn {
-    padding-left: 2px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
     border: 1px solid rgba(255, 255, 255, .3);
     color: #fff;
     background-color: rgba(255, 255, 255, .15)
@@ -3729,7 +3776,8 @@ input.btn {
 }
 
 .lang {
-    z-index: 2
+    z-index: 2;
+    margin-left: 10px;
 }
 
 .lang.active2 span {
@@ -3745,9 +3793,10 @@ input.btn {
 }
 
 .lang span {
-    width: 120px;
+    width: 110px;
     height: 30px;
     line-height: 28px;
+    border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, .3);
     background-color: rgba(255, 255, 255, .15)
 }

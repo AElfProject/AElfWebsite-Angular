@@ -173,6 +173,10 @@
     cursor: pointer;
 }
 
+#test-net .cont {
+    padding-top: 20px;
+}
+
 #test-net .test-net-buttons {
   display: flex;
   flex-flow: row wrap;
@@ -191,12 +195,23 @@
   display: inline-block;
   margin-right: auto;
   margin-left: auto;
-  min-width: 30%;
+  /* min-width: 30%; */
 }
 
-#test-net .test-net-button:hover {
-  background-color: #5fbdf9;
-  color: #ffffff;
+#test-net a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#test-net .test-net-button {
+    padding: 0;
+}
+
+#test-net a:hover {
+    border-radius: 5px;
+    background-color: #5fbdf9;
+    color: #ffffff;
 }
 
 @media only screen and (max-width: 600px) {
@@ -222,4 +237,16 @@
         height: 80%;
         top: 10%;
     }
+}
+
+.test-token,.test-explorer,.test-wallet {
+    width: 240px;
+    /* height: 278px; */
+    background-color: #fff;
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    z-index: 999;
 }
