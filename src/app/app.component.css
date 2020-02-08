@@ -173,6 +173,10 @@
     cursor: pointer;
 }
 
+#test-net .cont {
+    padding-top: 20px;
+}
+
 #test-net .test-net-buttons {
   display: flex;
   flex-flow: row wrap;
