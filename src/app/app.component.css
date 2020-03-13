@@ -223,3 +223,9 @@
         top: 10%;
     }
 }
+
+.link-blue {
+    color: #26b7ff;
+    text-decoration: underline;
+    cursor: pointer;
+}
