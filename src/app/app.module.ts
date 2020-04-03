@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {AfterViewInit, NgModule, OnInit} from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
 
 import { AppComponent } from './app.component';
 import {CookieModule} from 'ngx-cookie';
@@ -10,6 +11,7 @@ import {LanguageService} from './shared/language.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {WindowService} from './shared/window.service';
+import { AppRoutingModule } from './app-routing.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -17,10 +19,21 @@ export function HttpLoaderFactory(http: HttpClient) {
 const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
+import {AboutComponent} from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { EconomicComponent } from './economic/economic.component';
+import { FacilityComponent } from './facility/facility.component';
+import { PlugComponent } from './plug/plug.component';
+import { WebwalletComponent } from './webwallet/webwallet.component';
+import { WalletComponent } from './wallet/wallet.component';
+import { BrowserComponent } from './browser/browser.component';
+import { DeveloperComponent } from './developer/developer.component';
+import { AfterStartComponent } from './after-start/after-start.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, AboutComponent, HomeComponent, HomepageComponent, EconomicComponent, FacilityComponent, PlugComponent, WebwalletComponent, WalletComponent, BrowserComponent,  DeveloperComponent, AfterStartComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +46,12 @@ const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       }
     }),
     CookieModule.forRoot(),
-    PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG)
+    PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG),
+    AppRoutingModule
   ],
   providers: [LanguageService, FontFamliyService, WindowService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{
+
+}

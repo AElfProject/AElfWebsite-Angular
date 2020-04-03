@@ -1,0 +1,471 @@
+<div class="fix-top">
+  <header class="header clearfix header-white" [ngClass]="headerActiveCssClass">
+    <h1 class="logo pt20">
+      <a href=""><img style="width: 65px" src="assets/images/logo.png" alt=""></a>
+    </h1>
+    <nav class="nav fs-16 sm-hidden index-pagination clearfix">
+      <ul class="clearfix">
+        <li><a href="" class="anchor-hd fs-16 lh-20em">{{"home" | translate}}</a></li>
+        <li class="active"><a [routerLink]="['/homepage']" class="anchor-hd fs-16 lh-20em">{{"mainnet-lauch" | translate}}</a></li>
+        <li><a [routerLink]="['/afterstart']" class="anchor-hd fs-16 lh-20em">{{"Community" | translate}}</a></li>
+        <li><a routerLink="/economic" class="anchor-hd fs-16 lh-20em">{{"economy&governance" | translate}}</a></li>
+        <li><a routerLink="/developer" class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a></li>
+        <li>
+          <div class="lang color-white tool-menu">
+            <span class="fs-16"
+                  style="border: none;background: transparent;height: 40px;line-height: 40px"><em>{{"tools" | translate}}</em><i
+              class="fa fa-angle-down"></i></span>
+            <ul class="fs-14 clearfix">
+              <li style="width: inherit" routerLink="/browser">{{"explorer" | translate}}</li>
+              <li style="width: inherit" routerLink="/wallet">{{"wallet-APP" | translate}}</li>
+              <li style="width: inherit" routerLink="/webwallet">{{"web-Wallet" | translate}}</li>
+              <li style="width: inherit" routerLink="/plug">{{"explorer-extension" | translate}}</li>
+            </ul>
+          </div>
+        </li>
+        <li><a [routerLink]="['/facility']" class="anchor-hd fs-16 lh-20em">{{"test&suppFac" | translate}}</a></li>
+        <li><a [routerLink]="['/app-about']" class="anchor-hd fs-16 lh-20em">{{"about-us" | translate}}</a></li>
+      </ul>
+    </nav>
+
+    <div class="other sm-hidden white-book">
+      <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
+        <ng-template [ngSwitchCase]="languageList[0]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 downbtn">
+            <span>{{"economic&gover-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template [ngSwitchCase]="languageList[1]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf" class="fs-14 downbtn">
+            <span>{{"economic&gover-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template [ngSwitchCase]="languageList[10]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf" class="fs-14 downbtn">
+            <span>{{"economic&gover-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template ngSwitchDefault>
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 downbtn">
+            <span>{{"economic&gover-w-p" | translate}}</span></a>
+        </ng-template>
+      </div>
+      <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
+        <ng-template [ngSwitchCase]="languageList[0]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1.6" class="fs-14 downbtn"> <span>{{"aelf-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template [ngSwitchCase]="languageList[1]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_ZH.pdf?v=1" class="fs-14 downbtn"> <span>{{"aelf-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template ngSwitchDefault>
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1" class="fs-14 downbtn"> <span>{{"aelf-w-p" | translate}}</span></a>
+        </ng-template>
+      </div>
+      <div [ngClass]="_fontFamlily.ffMy" class="lang lang-menu color-white">
+        <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down ml5"></i></span>
+        <ul class="fs-14 clearfix">
+          <li *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lg-hidden other mobile-menu">
+      <i class="fa fa-navicon color-white fs-18"></i>
+    </div>
+  </header>
+</div>
+<div class="container index-step" id="skrollr-body">
+  <div class="lg-hidden mobile-nav">
+    <ul class="clearfix">
+      <li data-link=""><a class="anchor-hd fs-16 lh-20em">{{"home" | translate}}</a></li>
+      <li data-link="/homepage"><a class="anchor-hd fs-16 lh-20em">{{"mainnet-lauch" | translate}}</a></li>
+      <li data-link="/afterstart"><a class="anchor-hd fs-16 lh-20em">{{"Community" | translate}}</a></li>
+      <li data-link="/economic"><a class="anchor-hd fs-16 lh-20em">{{"economy&governance" | translate}}</a></li>
+      <li data-link="/developer"><a  class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a></li>
+      <li >
+        <div class="color-white mobile-tool-menu">
+            <span class="fs-16"><em>{{"tools" | translate}}</em><i
+              class="fa fa-angle-down ml20"></i></span>
+          <ul class="fs-14 clearfix">
+            <li style="width: inherit" data-link="/browser">{{"explorer" | translate}}</li>
+            <li style="width: inherit" data-link="/wallet">{{"wallet-APP" | translate}}</li>
+            <li style="width: inherit" data-link="/webwallet">{{"web-Wallet" | translate}}</li>
+            <li style="width: inherit" data-link="/plug">{{"explorer-extension" | translate}}</li>
+          </ul>
+        </div>
+      </li>
+      <li data-link="/facility"><a  class="anchor-hd fs-16 lh-20em">{{"test&suppFac" | translate}}</a></li>
+      <li data-link="/app-about"><a  class="anchor-hd fs-16 lh-20em">{{"about-us" | translate}}</a></li>
+      <li>
+        <div class="color-white mobile-language-menu" [ngClass]="_fontFamlily.ffMy">
+            <span class="fs-16"><em>{{currentLanguage}}</em><i
+              class="fa fa-angle-down ml20"></i></span>
+          <ul class="fs-14 clearfix">
+            <li style="width: inherit" *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <section class="section section-22 anchor-hd ec-bg1" id="test-net">
+    <div class="cont pt80 pb80">
+      <div class="wrapper ta-c color-white clearfix vedio-size">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide ptl22-item">
+                <div class=" ta-c color-white clearfix swiper-silde">
+                  <div class="col12-sm-6 ptl22-item">
+                    <div class="ptl22-box">
+                      <div class="ptl22-txt aelf-white-paper-on">
+                        <h3 class="fs-36 mb20 pt220 ta-l"><strong>{{"aelf-white-paper-on1" | translate}}</strong></h3>
+                        <p class="fs-18 lh-16em ta-l">{{"models1" | translate}}</p>
+                        <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20"
+                             data-bottom="transform:translate(0%, 30%); opacity:0;"
+                             data-center="transform:translate(0%, 0%); opacity:1;">
+                          <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons">
+                            <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix " [href]="currentLanguage === '中文' ? 'https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf':'https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf'" rel="noreferrer noopener">
+                              {{"click-enter" | translate}}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col12-sm-6 ptl22-item">
+                    <div class="ptl22-box">
+                      <img style="max-height: 594px" src="assets/images/homep10.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide ptl22-item">
+                <div class=" ta-c color-white clearfix swiper-silde">
+                  <div class="col12-sm-6 ptl22-item">
+                    <div class="ptl22-box">
+                      <div class="ptl22-txt aelf-white-paper-on">
+                        <h3 class="fs-36 mb20 pt220 ta-l"><strong>{{"aelf-white-paper-on2" | translate}}</strong></h3>
+                        <p class="fs-18 lh-16em ta-l">{{"models2" | translate}}</p>
+                        <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20"
+                             data-bottom="transform:translate(0%, 30%); opacity:0;"
+                             data-center="transform:translate(0%, 0%); opacity:1;">
+                          <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons">
+                            <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix" [href]="currentLanguage === '中文' ? 'https://aelf.io/gridcn/aelf_public_testnet_and_supporting_features_introduction_zh_v1.0.pdf':'https://aelf.io/gridcn/aelf_public_testnet_and_supporting_features_introduction_en_v1.0.pdf'"  rel="noreferrer noopener">
+                              {{"click-enter" | translate}}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col12-sm-6 ptl22-item">
+                    <div class="ptl22-box">
+                      <img style="max-height: 594px" src="assets/images/homep10.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide ptl22-item">
+                <div class=" ta-c color-white clearfix swiper-silde">
+                  <div class="col12-sm-6 ptl22-item">
+                    <div class="ptl22-box">
+                      <div class="ptl22-txt aelf-white-paper-on">
+                        <h3 class="fs-36 mb20 pt220 ta-l"><strong>{{"aelf-white-paper-on3" | translate}}</strong></h3>
+                        <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20"
+                             data-bottom="transform:translate(0%, 30%); opacity:0;"
+                             data-center="transform:translate(0%, 0%); opacity:1;">
+                          <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons">
+                            <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "  rel="noreferrer noopener">
+                              {{"click-enter" | translate}}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col12-sm-6 ptl22-item">
+                    <div class="ptl22-box">
+                      <img style="max-height: 594px" src="assets/images/homep10.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div><!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section section-22 anchor-hd ec-bg1" id="test-net">
+    <div class="wrapper cont pt60">
+      <div class=" ta-c color-white clearfix block-reverse">
+        <div class="col12-sm-6 ptl22-item home-launch-sum">
+          <div class="ptl22-box">
+            <div class="ptl22-txt main-launch-com">
+              <h3 class="fs-36  pt140 pb30 ta-l" ><strong>{{"main-launch-com" | translate}}</strong></h3>
+              <p class="fs-18 lh-16em ta-l">{{"int-open" | translate}}</p>
+              <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20"
+                   data-bottom="transform:translate(0%, 30%); opacity:0;"
+                   data-center="transform:translate(0%, 0%); opacity:1;">
+                <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons">
+                  <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button " [href]="currentLanguage === '中文' ? 'http://aelf-elf.mikecrm.com/fHxatQQ':''" rel="noreferrer noopener">
+                    {{"sign-up-now" | translate}}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <img src="assets/images/homep1.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cont pt10 pb20">
+      <div class="wrapper  clearfix">
+        <div class=" clearfix">
+          <div class="col12-tn-12 pt10 tn-show mb10 master-plan">
+            <h3 class="fs-36 lh-16em color-white ta-l pb40"><strong>{{"master-plan" | translate}}</strong></h3>
+          </div>
+        </div>
+      </div>
+      <div class="color-white wrapper clearfix ta-c mb30 ec-1-container inline-block flex-wrap">
+
+        <div class="ec-1-item">
+            <div class="">
+              <img style="width: 32px;margin-bottom: 22px" class="ta-c" src="assets/images/home_p1.png" alt="">
+              <h3 class="fs-24 mb10 color-white ta-c"><strong>{{"plan-mainnet" | translate}}</strong></h3>
+              <p class="lh-16em color-white fs-14 ta-c">{{"plan-mainnet-content-1" | translate}}</p>
+              <p class="lh-16em color-white fs-14 ta-c">{{"plan-mainnet-content-2" | translate}}</p>
+              <p class="lh-16em color-white fs-14 ta-c">{{"plan-mainnet-content-3" | translate}}<i style="color: #096dd9;margin-left: 2px">*</i></p>
+              <p class="lh-16em color-white fs-14 ta-c">{{"plan-mainnet-content-4" | translate}}</p>
+            </div>
+        </div>
+
+        <div class="ec-1-item -align-center">
+            <div class="">
+              <img style="width: 32px;margin-bottom: 22px" src="assets/images/home_p11.png" alt="">
+              <h3 class="fs-24 mb10 color-white ta-c"><strong>{{"pre-main" | translate}}</strong></h3>
+              <p class="fs-14 lh-16em color-white ta-c">{{"pre-main-content-1" | translate}}</p>
+              <p class="fs-14 lh-16em color-white ta-c">{{"pre-main-content-2" | translate}}</p>
+              <p class="fs-14 lh-16em color-white ta-c">{{"pre-main-content-3" | translate}}</p>
+            </div>
+        </div>
+        <div class="ec-1-item -align-center">
+            <div class="">
+              <img style="width: 32px;margin-bottom: 22px" src="assets/images/home_p12.png" alt="">
+              <h3 class="fs-24 mb10 color-white ta-c"><strong>{{"launch-main" | translate}}</strong></h3>
+              <p class="fs24 lh-16em color-white ta-c">{{"launch-main-content-1" | translate}}</p>
+              <p class="fs24 lh-16em color-white ta-c">{{"launch-main-content-2" | translate}}</p>
+              <p class="fs24 lh-16em color-white ta-c">{{"launch-main-content-3" | translate}}</p>
+              <p class="fs24 lh-16em color-white ta-c">{{"launch-main-content-4" | translate}}</p>
+            </div>
+        </div>
+        <div class="ec-1-item -align-right">
+            <div class="">
+              <img style="width: 32px;margin-bottom: 22px" src="assets/images/home_p13.png" alt="">
+              <h3 class="fs-24 mb10 color-white ta-c"><strong>{{"stabilize-mainnet" | translate}}</strong></h3>
+              <p class="fs-14 lh-16em color-white ta-c">{{"stabilize-mainnet-content" | translate}}</p>
+            </div>
+        </div>
+        <p class="lh-16em color-white mt35 fs-14 ta-l"><i style="color: #096dd9;margin-right: 2px">*</i>{{"contan" | translate}} {{"contan-sum" | translate}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-13 anchor-bd ec-bg1">
+    <div class="cont">
+      <div class="txt">
+        <div class="wrapper clearfix">
+          <div class="clearfix txt">
+            <div class="col12-tn-12 ta-l pt10 tn-show mb10">
+              <!-- <h3 class="ff-cgb fs-100 color-white lh-9em mb5">Adviser</h3> -->
+              <p class="fs-36 mb15 color-white"><b>{{"Committee Members" | translate}}</b></p>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper color-white clearfix mb30 pl40 pr40 mt20">
+          <div class="col12-sm-6 mb20 ptl22-item home-1-item">
+            <div class="wrap">
+              <div class="img-content">
+                <img style="max-width: 88px;margin-bottom: 22px" src="assets/images/home_icon1.png" alt="">
+              </div>
+              <div class="txt-content">
+                <h3 class="fs-24 mb10 color-white">
+                  <strong>{{"成员名称" | translate}}</strong>
+                  <span class="ordinary-btn brow-f ml10 fs-14 mt-5">
+                    {{"website" | translate}}
+                  </span>
+                </h3>
+                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col12-sm-6 mb20 ptl22-item home-1-item">
+            <div class="wrap">
+              <div class="img-content">
+                <img style="max-width: 88px;margin-bottom: 22px" src="assets/images/home_icon2.png" alt="">
+              </div>
+              <div class="txt-content">
+                <h3 class="fs-24 mb10 color-white">
+                  <strong>{{"成员名称" | translate}}</strong>
+                  <span class="ordinary-btn brow-f ml10 fs-14 mt-5">
+                    {{"website" | translate}}
+                  </span>
+                </h3>
+                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col12-sm-6 mb20 ptl22-item home-1-item">
+            <div class="wrap">
+              <div class="img-content">
+                <img style="max-width: 88px;margin-bottom: 22px" src="assets/images/home_icon3.png" alt="">
+              </div>
+              <div class="txt-content">
+                <h3 class="fs-24 mb10 color-white">
+                  <strong>{{"成员名称" | translate}}</strong>
+                  <span class="ordinary-btn brow-f ml10 fs-14  mt-5">
+                    {{"website" | translate}}
+                  </span>
+                </h3>
+                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col12-sm-6 mb20 ptl22-item home-1-item">
+            <div class="wrap">
+              <div class="img-content">
+                <img style="max-width: 88px;margin-bottom: 22px;" src="assets/images/home_icon4.png" alt="">
+              </div>
+              <div class="txt-content">
+                <h3 class="fs-24 mb10 color-white">
+                  <strong>{{"成员名称" | translate}}</strong>
+                  <span class="ordinary-btn brow-f ml10 fs-14 mt-5">
+                    {{"website" | translate}}
+                  </span>
+                </h3>
+                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cont pb100 tu-img">
+      <div class="txt">
+        <div class="wrapper clearfix">
+          <div class="team2 clearfix">
+            <div class="col12-tn-12 ta-l pt30 mb40 tn-show mode">
+              <!-- <h3 class="ff-cgb fs-100 color-white lh-9em mb5">Adviser</h3> -->
+              <p class="fs-36 mb15 color-white"><b>{{"Committee Member Incentive Model" | translate}}</b></p>
+            </div>
+          </div>
+        </div>
+        <!--<div class="data-chart-parent"><div class="bd"><div class="chart" id="data-chart"></div></div></div>-->
+        <div class="chart fs-18 ff-arial wrapper model-ec">
+          <div style="text-align: center"><img src="assets/images/data_ec0.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="footer_bg">
+  <footer class="footer">
+    <div class="wrapper clearfix">
+      <div class="color-white clearfix vedio-size mb30">
+        <div class="col12-sm-5 ptl22-item">
+          <div class="ptl22-box">
+            <p class="mb50 foot-icon"><img src="assets/images/logo.svg" alt=""></p>
+            <div class="fs-20 clearfix shares ">
+                <span class="clearfix foot-bar">
+                  <a target="_blank" href="mailto:hr@aelf.io"><i class="fa fa-envelope-o"></i></a>
+                  <a href="http://www.youtube.com/c/aelfblockchain" target="_blank"><i
+                    class="fa fa-youtube-play"></i></a>
+                  <a href="https://www.facebook.com/aelfofficial/" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com/aelfblockchain" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="https://github.com/aelfProject" target="_blank"><i class="fa fa-github"></i></a>
+                  <a target="_blank" href="https://www.reddit.com/r/aelfofficial/"><i
+                    class="fa fa-reddit-alien"></i></a>
+                  <a href="https://www.linkedin.com/company/aelfblockchain/" target="_blank"><i
+                    class="fa fa-linkedin"></i></a>
+                  <a href="https://t.me/aelfblockchain" class="weixin-img" target="_blank"><i
+                    class="fa fa-send"></i></a>
+                  <a href="https://medium.com/aelfblockchain" target="_blank"><i class="fa fa-medium"></i></a>
+                  <a href="https://0.plus/aelf_chs" target="_blank" id="biyong"></a>
+                </span>
+            </div>
+          </div>
+        </div>
+        <div class="col12-sm-7 ptl22-item foot-bat">
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <p class="fs-13 lh-40em" style="font-weight: bold">{{"about-us" | translate}}</p>
+              <a href="/app-about#team"><p class="fs-10 lh-30em">{{"team" | translate}}</p></a>
+              <a target="_blank" href="mailto:hr@aelf.io"><p class="fs-10 lh-30em">{{"join-us" | translate}}</p></a>
+            </div>
+          </div>
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <p class="fs-13 lh-40em" style="font-weight: bold">{{"resources" | translate}}</p>
+              <div [ngClass]="_fontFamlily.ffMy" [ngSwitch]="currentLanguage">
+                <ng-template [ngSwitchCase]="languageList[0]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 downbtn">
+                    <p class="fs-10 lh-30em" style="white-space:nowrap">{{"economic&gover-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[1]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf" class="fs-14 downbtn">
+                    <p class="fs-10 lh-30em" style="white-space:nowrap">{{"economic&gover-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[10]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf" class="fs-14 downbtn">
+                    <p class="fs-10 lh-30em" style="white-space:nowrap">{{"economic&gover-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 downbtn">
+                    <p class="fs-10 lh-30em" style="white-space:nowrap">{{"economic&gover-w-p" | translate}}</p></a>
+                </ng-template>
+              </div>
+              <div [ngClass]="_fontFamlily.ffMy"  [ngSwitch]="currentLanguage">
+                <ng-template [ngSwitchCase]="languageList[0]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1.6" class="fs-14 downbtn"><p class="fs-10 lh-30em">{{"aelf-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[1]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_ZH.pdf?v=1" class="fs-14 downbtn"><p class="fs-10 lh-30em">{{"aelf-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1" class="fs-14 downbtn"><p class="fs-10 lh-30em">{{"aelf-w-p" | translate}}</p></a>
+                </ng-template>
+              </div>
+
+
+              <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf"></a>
+            </div>
+          </div>
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <p class="fs-13 lh-40em" style="font-weight: bold">{{"tools" | translate}}</p>
+              <a href="/browser"><p class="fs-10 lh-30em">{{"explorer" | translate}}</p></a>
+              <a href="/wallet"><p class="fs-10 lh-30em">{{"wallet-APP" | translate}}</p></a>
+              <a href="/webwallet"><p class="fs-10 lh-30em">{{"web-Wallet" | translate}}</p></a>
+              <a href="/plug"><p class="fs-10 lh-30em">{{"explorer-extension" | translate}}</p></a>
+            </div>
+          </div>
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <a><p class="fs-13 lh-40em" style="font-weight: bold">{{"devel" | translate}}</p></a>
+              <a href="/developer"><p class="fs-10 lh-30em">{{"devel-center" | translate}}</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="fs-14 lh-30em color-white ta-c" style="border-top: 1px solid #fff">Copyright © 2020 ælf</p>
+    </div>
+  </footer>
+</div>

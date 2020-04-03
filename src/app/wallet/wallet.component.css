@@ -1,0 +1,188 @@
+.bg_sh{
+  background:rgba(255,255,255,.14);
+}
+/*.ec-bg1{*/
+/*  background: linear-gradient(120deg, #7713b4, #1b0160);*/
+/*}*/
+.ec-1-item>div{
+   background:rgba(255,255,255,.07);
+  border-radius:2px;
+  text-align: center;
+}
+
+#data-chart1 {
+  position: relative;
+  width: 100%
+}
+
+#data-chart1 .chart-item:nth-child(2) {
+  top: 26%;
+  left: 41.2%;
+  position: absolute;
+  width: 18%;
+}
+
+#data-chart1 .chart-item:nth-child(3) {
+  top: 16%;
+  left: 4%;
+  position: absolute;
+  width: 18%;
+}
+
+#data-chart1 .chart-item:nth-child(4) {
+  top: 16%;
+  right: 4%;
+  position: absolute;
+  width: 18%;
+}
+
+#data-chart1 .chart-item:nth-child(5) {
+  top: 50%;
+  left: 4%;
+  position: absolute;
+  width: 18%;
+}
+
+#data-chart1 .chart-item:nth-child(6) {
+  top: 50%;
+  right: 4%;
+  position: absolute;
+  width: 18%;
+}
+#test-net .test-net-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+#test-net .test-net-button {
+  width: 240px;
+  height: 29px;
+  line-height: 29px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: #320675;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 30%;
+}
+#test-net .test-net-button:hover {
+  background-color: #5fbdf9;
+  color: #ffffff;
+}
+.home-1-item>.ptl22-box{
+   background:rgba(255,255,255,.07);
+  border-radius:4px;
+  padding-top: 20px!important;
+  padding-bottom: 100px!important;
+}
+.brow{
+  width:120px;
+  height:30px;
+  line-height: 30px;
+}
+.brow-f:hover{
+  background: #096dd9!important;
+}
+.brow>img{
+  margin-right: 4px;
+  width: 14px;
+  margin-top: -1px;
+}
+.brow-f{
+  background:rgba(38,183,255,1);
+  width: fit-content;
+  border-radius:4px!important;
+  padding: 0 12px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .bbbb img{
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 0px){
+  .lg-hidden{
+    display: block;
+  }
+
+  .ordinary-btn{
+    width: 250px;
+    height: 28px;
+    text-align: center;
+    border-radius: 1px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0;
+  }
+
+  .ordinary-btn img{
+    margin-right: 4px;
+    height: 13px;
+    margin-top: -3px;
+  }
+}
+.lg-hidden{
+  /*display: none;*/
+}
+
+@media only screen and (max-width: 778px) {
+  .bbbb img{
+    height: 96px;
+  }
+  .bbbb h3{
+    padding-top: 40px;
+    margin-bottom: 10px;
+  }
+  .anchor-hd .wrapper{
+    padding-top: 148px;
+    padding-bottom: 40px;
+  }
+  .Wallet-APP{
+    padding-top: 48px;
+  }
+
+  .cont{
+    padding-top: 22px;
+    padding-bottom: 27px;
+  }
+  .anchor-hd1{
+    padding-bottom: 0;
+  }
+  .Wallet-APP .fs-36,.cont .fs-36{
+    font-size: 13px;
+    text-align: center;
+  }
+  .Wallet-APP .fs-18,.cont .fs-18{
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .bbbb .pic-txt-list-22:nth-child(1),.bbbb .pic-txt-list-22:nth-child(3){
+    display: flex;
+    flex-direction:column-reverse;
+  }
+  .bbbb .pic-txt-list-22 img{
+    height: 96px;
+    margin: 26px auto;
+  }
+
+  .brow-f{
+    width: 100%;
+    height: 28px;
+  }
+  .meenu span{
+    height: 28px;
+    line-height: 28px;
+    width: 100%;
+  }
+}
+.col12-1, .col12-10, .col12-11, .col12-12, .col12-2, .col12-3, .col12-4, .col12-5, .col12-6, .col12-7, .col12-8, .col12-9, .col12-gt-1, .col12-gt-10, .col12-gt-11, .col12-gt-12, .col12-gt-2, .col12-gt-3, .col12-gt-4, .col12-gt-5, .col12-gt-6, .col12-gt-7, .col12-gt-8, .col12-gt-9, .col12-lg-1, .col12-lg-10, .col12-lg-11, .col12-lg-12, .col12-lg-2, .col12-lg-3, .col12-lg-4, .col12-lg-5, .col12-lg-6, .col12-lg-7, .col12-lg-8, .col12-lg-9, .col12-md-1, .col12-md-10, .col12-md-11, .col12-md-12, .col12-md-2, .col12-md-3, .col12-md-4, .col12-md-5, .col12-md-6, .col12-md-7, .col12-md-8, .col12-md-9, .col12-sm-1, .col12-sm-10, .col12-sm-11, .col12-sm-12, .col12-sm-2, .col12-sm-3, .col12-sm-4, .col12-sm-5, .col12-sm-6, .col12-sm-7, .col12-sm-8, .col12-sm-9, .col12-tn-1, .col12-tn-10, .col12-tn-11, .col12-tn-12, .col12-tn-2, .col12-tn-3, .col12-tn-4, .col12-tn-5, .col12-tn-6, .col12-tn-7, .col12-tn-8, .col12-tn-9{
+  padding: 0;
+}

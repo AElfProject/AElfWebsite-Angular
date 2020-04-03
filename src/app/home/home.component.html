@@ -1,0 +1,851 @@
+<div class="fix-top">
+  <header class="header clearfix header-white" [ngClass]="headerActiveCssClass">
+    <h1 class="logo pt20">
+      <a href=""><img style="width: 65px" src="assets/images/logo.png" alt=""></a>
+    </h1>
+    <nav class="nav fs-16 sm-hidden index-pagination clearfix">
+      <ul class="clearfix">
+        <li class="active"><a href="" class="anchor-hd fs-16 lh-20em">{{"home" | translate}}</a></li>
+        <li><a [routerLink]="['/homepage']" class="anchor-hd fs-16 lh-20em">{{"mainnet-lauch" | translate}}</a></li>
+        <li><a [routerLink]="['/afterstart']" class="anchor-hd fs-16 lh-20em">{{"Community" | translate}}</a></li>
+        <li><a routerLink="/economic" class="anchor-hd fs-16 lh-20em">{{"economy&governance" | translate}}</a></li>
+        <li><a routerLink="/developer" class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a></li>
+        <li>
+          <div class="lang color-white tool-menu">
+            <span class="fs-16" style="border: none;background: transparent;height: 40px;line-height: 40px"><em>{{"tools" | translate}}</em><i class="fa fa-angle-down"></i></span>
+            <ul class="fs-14 clearfix">
+              <li style="width: inherit" routerLink="/browser">{{"explorer" | translate}}</li>
+              <li style="width: inherit" routerLink="/wallet">{{"wallet-APP" | translate}}</li>
+              <li style="width: inherit" routerLink="/webwallet">{{"web-Wallet" | translate}}</li>
+              <li style="width: inherit" routerLink="/plug">{{"explorer-extension" | translate}}</li>
+            </ul>
+          </div>
+        </li>
+        <li><a [routerLink]="['/facility']" class="anchor-hd fs-16 lh-20em">{{"test&suppFac" | translate}}</a></li>
+        <li><a [routerLink]="['/app-about']" class="anchor-hd fs-16 lh-20em">{{"about-us" | translate}}</a></li>
+      </ul>
+    </nav>
+
+    <div class="other sm-hidden white-book">
+      <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
+        <ng-template [ngSwitchCase]="languageList[0]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 downbtn">
+            <span>{{"economic&gover-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template [ngSwitchCase]="languageList[1]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf" class="fs-14 downbtn">
+            <span>{{"economic&gover-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template [ngSwitchCase]="languageList[10]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf" class="fs-14 downbtn">
+            <span>{{"economic&gover-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template ngSwitchDefault>
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 downbtn">
+            <span>{{"economic&gover-w-p" | translate}}</span></a>
+        </ng-template>
+      </div>
+      <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
+        <ng-template [ngSwitchCase]="languageList[0]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1.6" class="fs-14 downbtn">
+            <span>{{"aelf-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template [ngSwitchCase]="languageList[1]">
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_ZH.pdf?v=1" class="fs-14 downbtn">
+            <span>{{"aelf-w-p" | translate}}</span></a>
+        </ng-template>
+        <ng-template ngSwitchDefault>
+          <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1" class="fs-14 downbtn">
+            <span>{{"aelf-w-p" | translate}}</span></a>
+        </ng-template>
+      </div>
+      <div [ngClass]="_fontFamlily.ffMy" class="lang lang-menu color-white">
+        <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down ml5"></i></span>
+        <ul class="fs-14 clearfix">
+          <li *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lg-hidden other mobile-menu">
+        <i class="fa fa-navicon color-white fs-18"></i>
+    </div>
+  </header>
+</div>
+
+
+<div class="container index-step" id="skrollr-body">
+  <div class="lg-hidden mobile-nav">
+    <ul class="clearfix">
+      <li data-link=""><a class="anchor-hd fs-16 lh-20em">{{"home" | translate}}</a></li>
+      <li data-link="/homepage"><a class="anchor-hd fs-16 lh-20em">{{"mainnet-lauch" | translate}}</a></li>
+      <li data-link="/afterstart"><a class="anchor-hd fs-16 lh-20em">{{"Community" | translate}}</a></li>
+      <li data-link="/economic"><a class="anchor-hd fs-16 lh-20em">{{"economy&governance" | translate}}</a></li>
+      <li data-link="/developer"><a  class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a></li>
+      <li >
+        <div class="color-white mobile-tool-menu">
+            <span class="fs-16"><em>{{"tools" | translate}}</em><i
+              class="fa fa-angle-down ml20"></i></span>
+          <ul class="fs-14 clearfix">
+            <li style="width: inherit" data-link="/browser">{{"explorer" | translate}}</li>
+            <li style="width: inherit" data-link="/wallet">{{"wallet-APP" | translate}}</li>
+            <li style="width: inherit" data-link="/webwallet">{{"web-Wallet" | translate}}</li>
+            <li style="width: inherit" data-link="/plug">{{"explorer-extension" | translate}}</li>
+          </ul>
+        </div>
+      </li>
+      <li data-link="/facility"><a  class="anchor-hd fs-16 lh-20em">{{"test&suppFac" | translate}}</a></li>
+      <li data-link="/app-about"><a  class="anchor-hd fs-16 lh-20em">{{"about-us" | translate}}</a></li>
+      <li>
+        <div class="color-white mobile-language-menu" [ngClass]="_fontFamlily.ffMy">
+            <span class="fs-16"><em>{{currentLanguage}}</em><i
+              class="fa fa-angle-down ml20"></i></span>
+          <ul class="fs-14 clearfix">
+            <li style="width: inherit" *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <section class="section section-1 anchor-bd ec-bg1" id="index">
+    <div class="wrapper">
+      <div class="earth">
+        <div class="webgl bg-img" style="background-image:url('../../assets/images/section-1-bg.png');"></div>
+        <div class="earth-canvas">
+          <div id="particles2"></div>
+        </div>
+      </div>
+      <div class="txt color-white sssss">
+        <h2 class="fs-45 mb30" style="font-weight: bold;">{{"dec-cl-com-blo-net" | translate}}</h2>
+        <h3 class="fs-18">{{"t-l-blo-a-s-com-app" | translate}}</h3>
+      </div>
+      <div class="color-white lg-hidden bvaipi-btn">
+        <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
+          <ng-template [ngSwitchCase]="languageList[0]">
+            <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 ordinary-btn">
+              <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p></a>
+          </ng-template>
+          <ng-template [ngSwitchCase]="languageList[1]">
+            <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf" class="fs-14 ordinary-btn">
+              <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p></a>
+          </ng-template>
+          <ng-template [ngSwitchCase]="languageList[10]">
+            <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf" class="fs-14 ordinary-btn">
+              <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p></a>
+          </ng-template>
+          <ng-template ngSwitchDefault>
+            <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" >
+              <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p></a>
+          </ng-template>
+        </div>
+
+        <div [ngClass]="_fontFamlily.ffMy" class="btns mt20" [ngSwitch]="currentLanguage">
+          <ng-template [ngSwitchCase]="languageList[0]">
+            <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1.6">
+              <p class="fs-14 ordinary-btn">{{"aelf-w-p" | translate}}</p></a>
+          </ng-template>
+          <ng-template [ngSwitchCase]="languageList[1]">
+            <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_ZH.pdf?v=1" >
+              <p class="fs-14 ordinary-btn">{{"aelf-w-p" | translate}}</p></a>
+          </ng-template>
+          <ng-template ngSwitchDefault>
+            <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1">
+              <p class="fs-14 ordinary-btn">{{"aelf-w-p" | translate}}</p></a>
+          </ng-template>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="section section-22 anchor-hd ec-bg1" id="test-net">
+    <div class="cont pb20 yun pt40 pb40">
+      <div class="wrapper ta-c color-white clearfix">
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <h3 class="fs-36 mb20 ta-l pt40"><strong>{{"aelf-all-blo-to-em" | translate}}</strong></h3>
+              <p class="fs-18 lh-16em ta-l">{{"pro-a-blo-pla-&-exc-per" | translate}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <img src="assets/images/home1.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="wrapper ta-c color-white clearfix  pt90">
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <img src="assets/images/home2.png" alt="">
+          </div>
+        </div>
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <h3 class="fs-36 mb20 ta-l pt40"><strong>{{"new-bus-tra" | translate}}</strong></h3>
+              <p class="fs-18 lh-16em ta-l">{{"bre-th-tra-bus-mod" | translate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper ta-c color-white clearfix pt90">
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <h3 class="fs-36 mb20 ta-l pt40"><strong>{{"aelf-an-open-blo-net" | translate}}</strong></h3>
+              <p class="fs-18 lh-16em  ta-l">{{"fac-re-world-pro" | translate}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <img src="assets/images/home3.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-22 anchor-hd ec-bg1" id="advan">
+    <div class="cont pt80 pb50">
+      <div class="wrapper pic-txt-list-22 ta-c color-white clearfix" style="margin: 0 auto">
+        <div [ngSwitch]="currentLanguage" class="col12-sm-12 col12-lg-12  ptl22-item">
+          <ng-template [ngSwitchCase]="languageList[1]">
+            <video id="player" width="90%" style="margin: 0 auto" [src]="VideoSrc" controls></video>
+          </ng-template>
+          <ng-template ngSwitchDefault>
+            <iframe id="player" width="90%" type="text/html" [src]="VideoSrc" frameborder="0" scrolling="no" border="0"
+                    frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+          </ng-template>
+        </div>
+      </div>
+
+      <div class="color-white clearfix wrapper pt60 v-bar inline-block flex-wrap">
+        <div class="home-1-item">
+          <div class="wrap">
+            <div class="img-content">
+              <img  src="assets/images/home_icon1.png" alt="">
+            </div>
+            <div class="txt-content">
+              <h3 class="fs-24 mb10 color-white"><strong>{{"un-perf" | translate}}</strong></h3>
+              <p class="lh-16em color-white fs-14">{{"par-com&ser" | translate}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="home-1-item">
+          <div class="wrap">
+            <div class="img-content">
+              <img  src="assets/images/home_icon2.png" alt="">
+            </div>
+            <div class="txt-content">
+              <h3 class="fs-24 mb10 color-white"><strong>{{"res-isolation" | translate}}</strong></h3>
+              <p class="lh-16em color-white fs-14">{{"cross-chain-col" | translate}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="home-1-item">
+          <div class="wrap">
+            <div class="img-content">
+              <img  src="assets/images/home_icon3.png" alt="">
+            </div>
+            <div class="txt-content">
+              <h3 class="fs-24 mb10 color-white"><strong>{{"sta&sim-imp" | translate}}</strong></h3>
+              <p class="lh-16em color-white fs-14">{{"plug-and-play-app-mod" | translate}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="home-1-item">
+          <div class="wrap">
+            <div class="img-content">
+              <img  src="assets/images/home_icon4.png" alt="">
+            </div>
+            <div class="txt-content">
+              <h3 class="fs-24 mb10 color-white"><strong>{{"mul-gover" | translate}}</strong></h3>
+              <p class="lh-16em color-white fs-14">{{"the-flex-mul-gover" | translate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-22 anchor-hd ec-bg1" id="test-net">
+    <div class="cont pt100 pb20">
+      <div class="ta-c color-white clearfix wrapper">
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <div class="ptl22-txt main-laun-int">
+              <h3 class="fs-36 mb20 ta-l pt40"><strong>{{"main-laun-int" | translate}}</strong></h3>
+              <p class="fs-18 lh-16em ta-l">{{"laun-int-content" | translate}}</p>
+              <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20">
+                <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons">
+                  <a class="col12-md-2 col12-sm-3 mr30 mb25 test-net-button " href="/homepage" rel="noreferrer noopener">
+                    {{"click-enter" | translate}}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col12-sm-6 ptl22-item sm-hidden">
+          <div class="ptl22-box">
+            <img src="assets/images/home4.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="ta-c color-white clearfix wrapper pt60 pb80 dddd">
+        <div class="col12-sm-6 ptl22-item sm-hidden">
+          <div class="ptl22-box">
+            <img src="assets/images/home5.png" alt="">
+          </div>
+        </div>
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <div class="ptl22-txt main-laun-int">
+              <h3 class="fs-36 mb20 ta-l pt40"><strong>{{"start-exp-test" | translate}}</strong></h3>
+              <p class="fs-18 lh-16em ta-l">{{"start-exp-test-content" | translate}}</p>
+              <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20">
+                <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons">
+                  <a class="col12-md-2 col12-sm-3 mr30 mb25 test-net-button " href="/facility" rel="noreferrer noopener">
+                    {{"click-enter" | translate}}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-11 anchor-bd ec-bg1" id="news">
+    <div class="cont pt100 pb100 wrapper">
+      <div class="bigTitle fs-36 ta-c mb45 color-white skrollable skrollable-between "
+           data-bottom="transform:translate(0%, 30%); opacity:0;"
+           data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"development-history" | translate}}</b></div>
+      <div class="txt">
+        <div class="grow news-list clearfix pb100" id="develop_content">
+          <div class="img"><img src="assets/images/dep_bg.png" class="dep-bg" alt=""></div>
+          <div class="dep_item clearfix">
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage2-3" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage2-2" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage2-1" | translate}}</p>
+            <h3 class="fs-22 mb10 lh-16em color-white"><strong>{{"develp-stage2" | translate}}</strong></h3>
+          </div>
+          <div class="dep_item clearfix">
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage4-3" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage4-2" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage4-1" | translate}}</p>
+            <h3 class="fs-22 mb10 lh-16em color-white"><strong>{{"develp-stage4" | translate}}</strong></h3>
+          </div>
+          <div class="dep_item clearfix">
+            <h3 class="fs-22 mb10 lh-16em color-white"><strong>{{"develp-stage1" | translate}}</strong></h3>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage1-1" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage1-2" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage1-3" | translate}}</p>
+          </div>
+          <div class="dep_item clearfix">
+            <h3 class="fs-22 mb10 lh-16em color-white"><strong>{{"develp-stage3" | translate}}</strong></h3>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left;">{{"develp-stage3-1" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage3-2" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage3-3" | translate}}</p>
+          </div>
+        </div>
+        <div class="color-white clearfix ta-c mb30 ec-1-container inline-block flex-wrap">
+          <div class="ec-1-item">
+            <h3 class="fs-22 mb10 lh-16em color-white"><strong>{{"develp-stage1" | translate}}</strong></h3>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage1-1" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage1-2" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage1-3" | translate}}</p>
+          </div>
+          <div class="ec-1-item">
+            <h3 class="fs-22 mb10 lh-16em color-white"><strong>{{"develp-stage2" | translate}}</strong></h3>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage2-1" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage2-2" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage2-3" | translate}}</p>
+          </div>
+          <div class="ec-1-item">
+            <h3 class="fs-22 mb10 lh-16em color-white"><strong>{{"develp-stage3" | translate}}</strong></h3>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left;">{{"develp-stage3-1" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage3-2" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage3-3" | translate}}</p>
+          </div>
+          <div class="ec-1-item">
+            <h3 class="fs-22 mb10 lh-16em color-white"><strong>{{"develp-stage4" | translate}}</strong></h3>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage4-1" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage4-2" | translate}}</p>
+            <p class="lh-16em fs-18 color-white"
+               style="text-align: left">{{"develp-stage4-3" | translate}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-11 anchor-bd ec-bg1" id="news">
+    <div class="cont pt100 pb100">
+      <div class="bigTitle fs-36 ta-c mb45 color-white skrollable skrollable-between"
+           data-bottom="transform:translate(0%, 30%); opacity:0;"
+           data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"news_rep" | translate}}</b></div>
+      <div class="txt">
+        <div class="wrapper news-list clearfix">
+          <div
+            *ngFor="let item of (('news' | translate) === 'news' ? [] : ('news' | translate)).slice(0, 8)"
+            class="col12-sm-3 news-item clearfix"
+            data-bottom="transform:translate(0%, 30%); opacity:0;"
+            data-center="transform:translate(0%, 0%); opacity:1;">
+            <div class="news-box">
+              <!--<div class="date mb30 color-white">-->
+              <!--<h3 [ngClass]="_fontFamlily.ffCgb" class="fs-72 lh-10em">{{item.day}}</h3>-->
+              <!--<p class="fs-14"><b>{{item.month}}</b></p>-->
+              <!--</div>-->
+              <div class="pic mb30">
+                <a
+                  [href]="item.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div
+                    class="bg-img"
+                    [ngStyle]="{'background-image': item.image}"
+                  >
+                  </div>
+                </a>
+              </div>
+              <div class="txt color-white mb35">
+                <h3 class="fs-14 lh-11em mb10">
+                  <a
+                    [href]="item.url"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="link-2"
+                  >
+                    {{item.time}}
+                  </a>
+                </h3>
+                <h3 class="fs-18 lh-16em-2over mb20">
+                  <a
+                    [href]="item.url"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="link-2"
+                  >
+                    <b>
+                      {{item.title}}
+                    </b>
+                  </a>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-8 anchor-bd ec-bg1" id="team3">
+    <div class="cont pt200 pb100">
+      <div class="bigTitle fs-36 ta-c mb45 color-white skrollable skrollable-between" data-bottom="transform:translate(0%, 30%); opacity:0;"
+           data-center="transform:translate(0%, 0%); opacity:1;"><b>{{"inv-ins" | translate}}</b>
+      </div>
+      <div class="txt">
+        <div class="wrapper clearfix">
+          <div class="team3 clearfix">
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.fbg.capital/" target="_blank"><img src="assets/images/partner-fbg.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://www.alphabit.fund/" target="_blank"><img src="assets/images/partner-alphabit.jpg" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-galaxy.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://www.nodecap.com/" target="_blank"><img src="assets/images/partner-node.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://www.bven.co/" target="_blank"><img src="assets/images/partner-blockchain-ventures.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://blocktower.com/" target="_blank"><img src="assets/images/partner-blocktower.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-chain-funder.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://www.collinstar.com/" target="_blank"><img src="assets/images/partner-collinstar.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://www.danhuacap.com/" target="_blank"><img src="assets/images/partner-dhvc.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://draperdragon.com/" target="_blank"><img src="assets/images/partner-dragon.jpg" alt=""></a>
+              </div>
+            </div>
+
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.hashed.com/" target="_blank"><img src="assets/images/partner-hashed.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://hyperchain.capital/" target="_blank"><img src="assets/images/partner-hyperchain.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-d.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-1kx.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://www.linkvc.com/" target="_blank"><img src="assets/images/partner-linkvc.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="http://www.signum.capital/" target="_blank"><img src="assets/images/partner-signum.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-liaode.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-ha.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-jlab.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-as.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-cc.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-gbic.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-bixin.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://bitmain.com/" target="_blank"><img src="assets/images/partner-bitman.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.huobi.com/capital" target="_blank"><img src="assets/images/partner-huobi-capital.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.cgs.group/" target="_blank">
+                  <img src="assets/images/partner-cgs.png" alt="">
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cont pt100 pb200">
+      <div class="bigTitle fs-36 ta-c mb45 color-white skrollable skrollable-between"><b>{{"exchange" | translate}}</b>
+      </div>
+      <div class="txt">
+        <div class="wrapper clearfix">
+          <div class="team3 clearfix">
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.bitfinex.com/" target="_blank"><img src="assets/images/partner-bitfinex.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.binance.com/" target="_blank"><img src="assets/images/partner-binance.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.bithumb.com/" target="_blank"><img src="assets/images/partner-bithumb.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://upbit.com" target="_blank"><img src="assets/images/partner-upbit.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.okex.com/" target="_blank"><img src="assets/images/partner-okcoin.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.hbg.com" target="_blank"><img src="assets/images/partner-huobi.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://cex.com/" target="_blank"><img src="assets/images/partner-cex.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.bcex.ca/coins" target="_blank"><img src="assets/images/partner-bcex.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.bibox.com/" target="_blank"><img src="assets/images/partner-bibox.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://gate.io/" target="_blank"><img src="assets/images/partner-gate.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://kkex.com/" target="_blank"><img src="assets/images/partner-kkex.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://big.one/" target="_blank"><img src="assets/images/partner-bigone.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://otcbtc.com/" target="_blank"><img src="assets/images/partner-otcbtc.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.hypex.io/" target="_blank"><img src="assets/images/partner-hypex.jpg" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.gopax.co.kr/" target="_blank"><img src="assets/images/partner-gopax.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.bancor.network/" target="_blank"><img src="assets/images/partner-bancor.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.kucoin.com/" target="_blank"><img src="assets/images/partner-kucoin.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://radarrelay.com/" target="_blank"><img src="assets/images/partner-Radar-Relay.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.cointiger.com/" target="_blank"><img src="assets/images/partner-cointiger.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://kyber.network/" target="_blank"><img src="assets/images/partner-kyber.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.airswap.io/" target="_blank"><img src="assets/images/partner-airswap.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://hitbtc.com/" target="_blank"><img src="assets/images/partner-hitbtc.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://www.bitforex.com/" target="_blank"><img src="assets/images/partner-bitforex.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/partner-tbox.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/exchange-abcc.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <img src="assets/images/exchange-bitcloud.png" alt="">
+              </div>
+            </div>
+            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+              <div class="team-pic">
+                <a href="https://international.bittrex.com/" target="_blank"><img src="assets/images/exchange-bittrex.png" alt="exchange-bittrex"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="footer_bg">
+  <footer class="footer">
+    <div class="wrapper clearfix">
+      <div class="color-white clearfix vedio-size mb30">
+        <div class="col12-sm-5 ptl22-item">
+          <div class="ptl22-box">
+            <p class="mb50 foot-icon"><img src="assets/images/logo.svg" alt=""></p>
+            <div class="fs-20 clearfix shares ">
+                <span class="clearfix foot-bar">
+                  <a target="_blank" href="mailto:hr@aelf.io"><i class="fa fa-envelope-o"></i></a>
+                  <a href="http://www.youtube.com/c/aelfblockchain" target="_blank"><i
+                    class="fa fa-youtube-play"></i></a>
+                  <a href="https://www.facebook.com/aelfofficial/" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com/aelfblockchain" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="https://github.com/aelfProject" target="_blank"><i class="fa fa-github"></i></a>
+                  <a target="_blank" href="https://www.reddit.com/r/aelfofficial/"><i
+                    class="fa fa-reddit-alien"></i></a>
+                  <a href="https://www.linkedin.com/company/aelfblockchain/" target="_blank"><i
+                    class="fa fa-linkedin"></i></a>
+                  <a href="https://t.me/aelfblockchain" class="weixin-img" target="_blank"><i
+                    class="fa fa-send"></i></a>
+                  <a href="https://medium.com/aelfblockchain" target="_blank"><i class="fa fa-medium"></i></a>
+                  <a href="https://0.plus/aelf_chs" target="_blank" id="biyong"></a>
+                </span>
+            </div>
+          </div>
+        </div>
+        <div class="col12-sm-7 ptl22-item foot-bat">
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <p class="fs-13 lh-40em" style="font-weight: bold">{{"about-us" | translate}}</p>
+              <a href="/app-about#team"><p class="fs-10 lh-30em">{{"team" | translate}}</p></a>
+              <a target="_blank" href="mailto:hr@aelf.io"><p class="fs-10 lh-30em">{{"join-us" | translate}}</p></a>
+            </div>
+          </div>
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <p class="fs-13 lh-40em" style="font-weight: bold">{{"resources" | translate}}</p>
+              <div [ngClass]="_fontFamlily.ffMy" [ngSwitch]="currentLanguage">
+                <ng-template [ngSwitchCase]="languageList[0]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 downbtn">
+                    <p class="fs-10 lh-30em" style="white-space:nowrap">{{"economic&gover-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[1]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf" class="fs-14 downbtn">
+                    <p class="fs-10 lh-30em" style="white-space:nowrap">{{"economic&gover-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[10]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf" class="fs-14 downbtn">
+                    <p class="fs-10 lh-30em" style="white-space:nowrap">{{"economic&gover-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 downbtn">
+                    <p class="fs-10 lh-30em" style="white-space:nowrap">{{"economic&gover-w-p" | translate}}</p></a>
+                </ng-template>
+              </div>
+              <div [ngClass]="_fontFamlily.ffMy"  [ngSwitch]="currentLanguage">
+                <ng-template [ngSwitchCase]="languageList[0]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1.6" class="fs-14 downbtn"><p class="fs-10 lh-30em">{{"aelf-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[1]">
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_ZH.pdf?v=1" class="fs-14 downbtn"><p class="fs-10 lh-30em">{{"aelf-w-p" | translate}}</p></a>
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                  <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1" class="fs-14 downbtn"><p class="fs-10 lh-30em">{{"aelf-w-p" | translate}}</p></a>
+                </ng-template>
+              </div>
+
+
+              <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf"></a>
+            </div>
+          </div>
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <p class="fs-13 lh-40em" style="font-weight: bold">{{"tools" | translate}}</p>
+              <a href="/browser"><p class="fs-10 lh-30em">{{"explorer" | translate}}</p></a>
+              <a href="/wallet"><p class="fs-10 lh-30em">{{"wallet-APP" | translate}}</p></a>
+              <a href="/webwallet"><p class="fs-10 lh-30em">{{"web-Wallet" | translate}}</p></a>
+              <a href="/plug"><p class="fs-10 lh-30em">{{"explorer-extension" | translate}}</p></a>
+            </div>
+          </div>
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <a><p class="fs-13 lh-40em" style="font-weight: bold">{{"devel" | translate}}</p></a>
+              <a href="/developer"><p class="fs-10 lh-30em">{{"devel-center" | translate}}</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="fs-14 lh-30em color-white ta-c" style="border-top: 1px solid #fff">Copyright © 2020 ælf</p>
+    </div>
+  </footer>
+</div>

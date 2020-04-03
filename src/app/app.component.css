@@ -64,7 +64,7 @@
 }
 
 .active-header {
-    background-color: rgba(105, 11, 177, .5);
+    /*background-color: rgba(105, 11, 177, .5);*/
 }
 
 .pie-content-width {
@@ -92,17 +92,26 @@
     transform: translate(0, -25px);
 }
 
-#biyong {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 4px;
-    background: url("../assets/images/biyong-o.png");
+#biyong_a{
+  padding: 0;
+  background: none;
+}
+#biyong{
+  background-size: contain;
+  background: url("../assets/images/biyong.svg") round;
+  height: 30px;
+  width: 30px;
 }
 
+/*#biyong {*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    background-size: cover;*/
+/*    background: url("../assets/images/biyong.png") no-repeat;*/
+/*}*/
+
 #biyong:hover {
-    background: url("../assets/images/biyong-o-b.png");
+    background: url("../assets/images/biyong1.svg") round;
 }
 
 /* 2018.08.28 新增公告, 调整banner样式 */
@@ -141,11 +150,10 @@
     left: 50%;
     position: fixed;
     top: 30%;
-    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background: linear-gradient(to right, #8e21d0, #42018f);
+    background: linear-gradient(120deg, #7713b4, #1b0160);
     color: #FFF;
     font-size: 14px;
     display: none;
@@ -181,10 +189,9 @@
 
 #test-net .test-net-button {
   width: 240px;
-  height: 56px;
-  line-height: 56px;
+  height: 29px;
+  line-height: 29px;
   background-color: #ffffff;
-  box-shadow: 0 5px 11px 2px rgba(0, 0, 0, 0.18);
   border-radius: 5px;
   color: #320675;
   cursor: pointer;
@@ -198,6 +205,7 @@
   background-color: #5fbdf9;
   color: #ffffff;
 }
+
 
 @media only screen and (max-width: 600px) {
     .hide-small {
@@ -214,7 +222,7 @@
         position: fixed;
         -webkit-transform: translate(0%, 0%);
         transform: translate(0%, 0%);
-        background: linear-gradient(to right, #8e21d0, #42018f);
+        background: linear-gradient(120deg, #7713b4, #1b0160);
         color: #FFF;
         font-size: 14px;
         display: none;
@@ -223,3 +231,127 @@
         top: 10%;
     }
 }
+#example-navbar-collapse{
+  display: none;
+}
+
+.foot-bat{
+  /*display: flex;*/
+}
+.foot-bat .ptl22-box{
+  /*flex: 1;*/
+  float: right;
+}
+.foot-bat .ptl22-txt{
+  /*float: right;*/
+}
+
+@media only screen and (min-width: 1240px) {
+  .foot-bat div:nth-child(4){
+    margin-right: 18%;
+  }
+  .foot-bat div:nth-child(3){
+    margin-right: 16%;
+  }
+  .foot-bat div:nth-child(2){
+    margin-right: 10%;
+  }
+}
+
+@media screen and (min-width:1030px) and (max-width:1240px) {
+  .foot-bat div:nth-child(4){
+    margin-right: 10%;
+  }
+  .foot-bat div:nth-child(3){
+    margin-right: 6%;
+  }
+  .foot-bat div:nth-child(2){
+    margin-right: 2%;
+  }
+}
+
+@media screen and (max-width:1030px){
+  .foot-bat{
+    display: none!important;
+  }
+  .foot-icon{
+    text-align: center;
+    margin: 4px auto;
+  }
+  .foot-bar{
+    display: flex;
+    justify-content: center;
+  }
+  .foot-bar a{
+    height: 19px;
+    width:19px;
+    line-height: 19px;
+  }
+  .shares span{
+    margin:  0 auto;
+  }
+  .footer{
+    padding: 20px 0 0;
+  }
+  #biyong_a{
+    padding: 0;
+    background: none;
+  }
+  #biyong{
+    background-size: contain;
+    background: url("../assets/images/biyong.svg") round;
+    height: 19px;
+    width: 19px;
+  }
+
+  #biyong:hover {
+    background: url("../assets/images/biyong1.svg") round;
+  }
+  .foot-icon img{
+    height: 20px;
+  }
+  .foot-icon{
+    padding-bottom: 18px;
+  }
+  .footer .col12-sm-5{
+    width: 100%;
+  }
+}
+
+  .foot-bat div:nth-child(1){
+  margin-right: 0;
+}
+
+.footer .col12-sm-6{padding: 0}
+
+.foot-icon img{
+  height: 42px;
+}
+.foot-bat .fs-10:hover{
+  width: fit-content;
+  /*border-bottom:1px solid #fff;*/
+  text-decoration:underline;
+}
+
+
+
+@media only screen and (max-width: 788px) {
+
+  .other{
+    display: none;
+  }
+
+  #data-container{
+    /*max-width: 1400px;*/
+    background: url("../assets/images/bg-01.jpg");
+    /*background: linear-gradient(120deg, #7713b4, #1b0160);*/
+  }
+
+
+}
+
+.footer {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+

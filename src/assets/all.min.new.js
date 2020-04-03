@@ -1014,12 +1014,8 @@ $(function(){
 
 
 
-	$('.lang span').bind('click', function(e){
-		e.stopPropagation();
-		$('.lang').addClass('active2');
-	});
 	$('body').bind('click', function(){
-		$('.lang').removeClass('active2');
+		$('.lang,.meenu').removeClass('active2');
 	});
 
 	$('.video-play').bind('click', function(){

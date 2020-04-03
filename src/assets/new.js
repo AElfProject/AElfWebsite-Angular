@@ -17,6 +17,7 @@
 		var WIDTH = $(window).width();
 		var HEIGHT = $(window).height();
 
+
 		var FOV = 45;
 		var NEAR = 1;
 		var FAR = 4000;
@@ -27,7 +28,8 @@
 			alpha: true,
 			antialias: true
 		});
-		renderer.setSize(WIDTH,HEIGHT);
+
+    renderer.setSize(WIDTH,HEIGHT);
 		renderer.setClearColor(0xFFFFFF, 0);
 
 		// add it to the target element
