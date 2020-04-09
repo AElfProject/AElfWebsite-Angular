@@ -333,21 +333,18 @@
   text-decoration:underline;
 }
 
-
+#data-container {
+  /*max-width: 1400px;*/
+  /* background: url("../assets/images/bg-01.jpg"); */
+  background: url("../assets/images/background.jpg");
+  /*background: linear-gradient(120deg, #7713b4, #1b0160);*/
+}
 
 @media only screen and (max-width: 788px) {
 
   .other{
     display: none;
   }
-
-  #data-container{
-    /*max-width: 1400px;*/
-    background: url("../assets/images/bg-01.jpg");
-    /*background: linear-gradient(120deg, #7713b4, #1b0160);*/
-  }
-
-
 }
 
 .footer {

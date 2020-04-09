@@ -6,6 +6,7 @@
 ## development
 
 ```bash
+yarn
 npm start
 ```
 

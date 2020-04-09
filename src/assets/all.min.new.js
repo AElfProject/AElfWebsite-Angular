@@ -1037,21 +1037,38 @@ function openMenu(){
 	$('.menu-list2').addClass('active');
 }
 
+window.initSkrollr = function () {
+  if (!device.android() && !device.ios()) {
+    var s = skrollr.init({
+      forceHeight: false,
+      mobileCheck: function () {
+        //hack - forces mobile version to be off
+        return false;
+      }
+    });
+    if (s.isMobile()) {
+      s.destroy();
+    }
+  } else {
+    $('#skrollr-body').height('auto');
+  }
+}
 $(window).load(function(){
-	if(!device.android() && !device.ios()){
-		var s = skrollr.init({
-			forceHeight: false,
-			mobileCheck: function() {
-				//hack - forces mobile version to be off
-				return false;
-			}
-		});
-		if (s.isMobile()) {
-			s.destroy();
-		}
-	}else{
-		$('#skrollr-body').height('auto');
-	}
+  // window.initSkrollr();
+	// if(!device.android() && !device.ios()){
+	// 	var s = skrollr.init({
+	// 		forceHeight: false,
+	// 		mobileCheck: function() {
+	// 			//hack - forces mobile version to be off
+	// 			return false;
+	// 		}
+	// 	});
+	// 	if (s.isMobile()) {
+	// 		s.destroy();
+	// 	}
+	// }else{
+	// 	$('#skrollr-body').height('auto');
+	// }
 });
 
 ;$(function(){
