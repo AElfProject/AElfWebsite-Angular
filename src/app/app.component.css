@@ -337,6 +337,7 @@
   /*max-width: 1400px;*/
   /* background: url("../assets/images/bg-01.jpg"); */
   background: url("../assets/images/background.jpg");
+  background-size: contain;
   /*background: linear-gradient(120deg, #7713b4, #1b0160);*/
 }
 
