@@ -13,7 +13,8 @@
     "Español": "es",
     "Tiếng Việt": "vi",
     "Türkçe": "tr",
-    "Portuguese": "pt-BR"
+    "Portuguese": "pt-BR",
+    "عربي": "arabic"
   },
   "languagesDic2": {
     "en-US": "English",
@@ -27,7 +28,8 @@
     "es": "Español",
     "vi": "Tiếng Việt",
     "tr": "Türkçe",
-    "pt-BR": "Portuguese"
+    "pt-BR": "Portuguese",
+    "arabic": "عربي"
   },
   "languages": [
     "en-US",
@@ -41,7 +43,8 @@
     "es",
     "vi",
     "tr",
-    "pt-BR"
+    "pt-BR",
+    "arabic"
   ],
   "languageOptions": [
     "English",
@@ -55,6 +58,7 @@
     "Español",
     "Tiếng Việt",
     "Türkçe",
-    "Portuguese"
+    "Portuguese",
+    "عربي"
   ]
 }

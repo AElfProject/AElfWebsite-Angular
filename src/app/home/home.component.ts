@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public languagesDic: any;
   public languageList = ['', ''];
   public VideoSrc: any;
+  private resizeTime: any;
   constructor(private _languageService: LanguageService,
               private _cookieService: CookieService,
               public _fontFamlily: FontFamliyService,
@@ -115,12 +116,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('window:resize') onresize() {
-    const vedioHeight = $('.vedio-size').find('.ptl22-box').css('height');
-    setTimeout(() => {
-      $('#player').css('height', vedioHeight);
-    }, 200);
+    const videoWidth = parseInt($('#player').css('width'), 10);
+    const videoHeight = (videoWidth / 16) * 9;
+    clearTimeout(this.resizeTime);
+    this.resizeTime = setTimeout(() => {
+      $('#player').css('height', `${videoHeight}px`);
+    }, 100);
   }
-
 }
 $('body').on('click', '.lang-menu span', function(e){
   e.stopPropagation();
@@ -133,10 +135,13 @@ $('body').on('click', '.tool-menu span', function(e){
 });
 
 window.onresize = function(){
-  const vedioHeight = $('.vedio-size').find('.ptl22-box').css('height');
-  setTimeout(() => {
-    $('#player').css('height', vedioHeight);
-  }, 200);
+  const videoWidth = parseInt($('#player').css('width'), 10);
+  const videoHeight = (videoWidth / 16) * 9;
+  $('#player').css('height', `${videoHeight}px`);
+  // const vedioHeight = $('.vedio-size').find('.ptl22-box').css('height');
+  // setTimeout(() => {
+  //   $('#player').css('height', vedioHeight);
+  // }, 200);
 };
 
 

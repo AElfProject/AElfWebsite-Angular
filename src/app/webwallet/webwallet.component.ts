@@ -98,12 +98,12 @@ export class WebwalletComponent implements OnInit, AfterViewInit {
     }
   }
 
-  @HostListener('window:resize') onresize() {
-    const vedioHeight = $('.vedio-size').find('.ptl22-box').css('height');
-    setTimeout(() => {
-      $('#player').css('height', vedioHeight);
-    }, 200);
-  }
+  // @HostListener('window:resize') onresize() {
+  //   const vedioHeight = $('.vedio-size').find('.ptl22-box').css('height');
+  //   setTimeout(() => {
+  //     $('#player').css('height', vedioHeight);
+  //   }, 200);
+  // }
 }
 
 $('body').on('click', '.meenu span', function(e){

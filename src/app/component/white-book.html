@@ -1,0 +1,66 @@
+<div class="other sm-hidden white-book">
+  <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
+    <ng-template [ngSwitchCase]="languageList[0]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf"
+        class="fs-14 downbtn">
+        <span>{{"economic&gover-w-p" | translate}}</span></a>
+    </ng-template>
+    <ng-template [ngSwitchCase]="languageList[1]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf"
+        class="fs-14 downbtn">
+        <span>{{"economic&gover-w-p" | translate}}</span></a>
+    </ng-template>
+    <ng-template [ngSwitchCase]="languageList[10]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf"
+        class="fs-14 downbtn">
+        <span>{{"economic&gover-w-p" | translate}}</span></a>
+    </ng-template>
+
+    <ng-template [ngSwitchCase]="languageList[6]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_it_v1.0.pdf"
+        class="fs-14 downbtn">
+        <span>{{"economic&gover-w-p" | translate}}</span></a>
+    </ng-template>
+    <ng-template [ngSwitchCase]="languageList[8]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_es_v1.0.pdf"
+        class="fs-14 downbtn">
+        <span>{{"economic&gover-w-p" | translate}}</span></a>
+    </ng-template>
+    <ng-template [ngSwitchCase]="languageList[9]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_vn_v1.0.pdf"
+        class="fs-14 downbtn">
+        <span>{{"economic&gover-w-p" | translate}}</span></a>
+    </ng-template>
+    <ng-template [ngSwitchCase]="languageList[12]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_arbic_v1.0.pdf"
+        class="fs-14 downbtn">
+        <span>{{"economic&gover-w-p" | translate}}</span></a>
+    </ng-template>
+
+    <ng-template ngSwitchDefault>
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf"
+        class="fs-14 downbtn">
+        <span>{{"economic&gover-w-p" | translate}}</span></a>
+    </ng-template>
+  </div>
+  <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
+    <ng-template [ngSwitchCase]="languageList[0]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1.6" class="fs-14 downbtn">
+        <span>{{"aelf-w-p" | translate}}</span></a>
+    </ng-template>
+    <ng-template [ngSwitchCase]="languageList[1]">
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_ZH.pdf?v=1" class="fs-14 downbtn">
+        <span>{{"aelf-w-p" | translate}}</span></a>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+      <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1" class="fs-14 downbtn">
+        <span>{{"aelf-w-p" | translate}}</span></a>
+    </ng-template>
+  </div>
+  <div [ngClass]="_fontFamlily.ffMy" class="lang lang-menu color-white">
+    <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down ml5"></i></span>
+    <ul class="fs-14 clearfix">
+      <li *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
+    </ul>
+  </div>
+</div>

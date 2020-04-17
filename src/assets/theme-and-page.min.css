@@ -4522,6 +4522,15 @@ body.en {
     line-height: 40px
 }
 
+.team4 {
+  width: 80%;
+  margin: auto;
+}
+
+.team4 .team-pic {
+  height: 80px;
+}
+
 .break .gcol-1 {
     position: relative
 }
@@ -4961,7 +4970,7 @@ body.en {
   height:14px;
   background:#26b7ff;
   color:#fff;
-  border-radius:1px;
+  border-radius:4px !important;
   padding: 5px 7px;
 }
 .ordinary-btn:hover{
@@ -5404,6 +5413,9 @@ body.en {
     overflow-y: scroll;
     height: 80%;
     top: 10%;
+  }
+  .team4 {
+    width: 100%;
   }
 }
 #example-navbar-collapse{
