@@ -135,9 +135,44 @@
       <div class="wrapper ta-c color-white clearfix block-reverse">
         <div class="col12-sm-6 ptl22-item">
           <div class="ptl22-box">
-            <div class="ptl22-txt aelf-Economy">
-              <h3 class="fs-36 mb20 ta-l pt140"><strong>{{"aelf-Economy&Governance" | translate}}</strong> <a target="_blank"
-                style="font-size: 8px" class="ordinary-link sm-hidden" [href]="currentLanguage === '中文' ? 'https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf':'https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf'">{{"more" | translate}}</a></h3>
+            <div class="ptl22-txt aelf-Economy" [ngSwitch]="currentLanguage">
+              <h3 class="fs-36 mb20 ta-l pt140"><strong>{{"aelf-Economy&Governance" | translate}}</strong>
+                <ng-template [ngSwitchCase]="languageList[1]">
+                  <a target="_blank" style="font-size: 8px" class="ordinary-link sm-hidden"
+                    href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf">{{"more" | translate}}
+                  </a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[6]">
+                  <a target="_blank" style="font-size: 8px" class="ordinary-link sm-hidden"
+                    href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_it_v1.0.pdf">{{"more" | translate}}
+                  </a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[8]">
+                  <a target="_blank" style="font-size: 8px" class="ordinary-link sm-hidden"
+                    href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_es_v1.0.pdf">{{"more" | translate}}
+                  </a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[9]">
+                  <a target="_blank" style="font-size: 8px" class="ordinary-link sm-hidden"
+                    href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_vn_v1.0.pdf">{{"more" | translate}}
+                  </a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[10]">
+                  <a target="_blank" style="font-size: 8px" class="ordinary-link sm-hidden"
+                    href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf">{{"more" | translate}}
+                  </a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="languageList[12]">
+                  <a target="_blank" style="font-size: 8px" class="ordinary-link sm-hidden"
+                    href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_arbic_v1.0.pdf">{{"more" | translate}}
+                  </a>
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                  <a target="_blank" style="font-size: 8px" class="ordinary-link sm-hidden"
+                    href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf">{{"more" | translate}}
+                  </a>
+                </ng-template>
+              </h3>
               <p class="fs-18 lh-16em ta-l">{{"aelf-Economy&Governance-content" | translate}}</p>
               <p class="lg-hidden ta-c"><a target="_blank" style="margin: 0 auto" class="ordinary-link fs-10" [href]="currentLanguage === '中文' ? 'https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf':'https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf'">{{"more" | translate}}</a></p>
             </div>
