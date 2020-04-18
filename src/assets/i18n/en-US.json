@@ -115,7 +115,7 @@
   "user-can-sel":"Users can select the production/candidate node to receive their vote in the voting module of the aelf Explorer. This can be switched between wallet voting or unexpired voting.",
   "redemption":"Redemption",
   "redemption-content":"Users can redeem a vote from a production/candidate node previously voted for in the aelf Explorer by selecting the desired node, followed by redeem vote.",
-  "int-of-pro": "Introduction of Production nodes OR Information of Production nodes",
+  "int-of-pro": "Information of Production nodes",
   "how-to-pur-res":"Purchasing Resources",
   "how-to-pur-res-sum":"Resource Tokens are used to consume resources when the developer payment chain or DApp is running.  The developer needs to ensure that there are enough resource tokens to keep the chain or DApp running. Users can use ELF to buy or sell Resource Tokens through the aelf Block Explorer.",
   "buy-sell-res-tok":"Buy / Sell Resource Tokens",
