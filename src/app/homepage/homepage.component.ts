@@ -2,6 +2,7 @@ import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
 import { SwiperService } from '../shared/swiper.service';
+import { ProductionNodesService } from '../shared/production-nodes.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
@@ -34,9 +35,11 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       "url": null
     }
   }];
+  public productionNodesList = [];
   constructor(
     private _languageService: LanguageService,
     private _swiperSercie: SwiperService,
+    private _productionNodesService: ProductionNodesService,
     private _cookieService: CookieService,
     public _fontFamlily: FontFamliyService,
     private _windowRef: WindowService,
@@ -64,9 +67,17 @@ export class HomepageComponent implements OnInit, AfterViewInit {
           });
 
         this.getSwiper();
+        this.getProductionNodes();
       });
+  }
 
-      
+  ngAfterViewInit() {
+    const perfectScrollbarContainer = $('.perfect-scrollbar-container');
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'border-radius': '6px' });
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css('cssText', 'width: 7px !important');
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
+    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
   }
 
   getSwiper() {
@@ -86,14 +97,10 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    const perfectScrollbarContainer = $('.perfect-scrollbar-container');
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'border-radius': '6px' });
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css('cssText', 'width: 7px !important');
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
-    perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
-
+  getProductionNodes() {
+    this._productionNodesService.getProductionNodes(this.currentLanguage, true).subscribe(data => {
+      this.productionNodesList = data;
+    });
   }
 
   toggleNotice(id) {
@@ -112,8 +119,8 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
     this.getSwiper();
+    this.getProductionNodes();
   }
-
 
   // nav bar change color when the scroll event happens.
   @HostListener('window:scroll', ['$event'])

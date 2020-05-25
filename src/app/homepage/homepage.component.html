@@ -271,7 +271,9 @@
           </div>
         </div>
         <div class="wrapper color-white clearfix mb30 pl40 pr40 mt20">
-          <div class="col12-sm-6 mb20 ptl22-item home-1-item"
+          <div 
+          *ngFor="let item of productionNodesList"
+          class="col12-sm-6 mb20 ptl22-item home-1-item"
           data-bottom="transform:translate(0%, 30%); opacity:0;"
           data-center="transform:translate(0%, 0%); opacity:1;">
             <div class="wrap">
@@ -280,70 +282,15 @@
               </div>
               <div class="txt-content">
                 <h3 class="fs-24 mb10 color-white">
-                  <strong>{{"成员名称" | translate}}</strong>
-                  <span class="ordinary-btn brow-f ml10 fs-14 mt-5">
-                    {{"website" | translate}}
-                  </span>
+                  <strong>{{item.title}}</strong>
+                  <!-- <span class="ordinary-btn brow-f ml10 fs-14 mt-5"> -->
+                    <a class="ordinary-btn brow-f ml10 fs-14 mt-5" target="_blank"
+                      [href]="item.website">{{"website" | translate}}</a>
+                    <!-- {{"website" | translate}} -->
+                  <!-- </span> -->
                 </h3>
-                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
-                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col12-sm-6 mb20 ptl22-item home-1-item"
-          data-bottom="transform:translate(0%, 30%); opacity:0;"
-          data-center="transform:translate(0%, 0%); opacity:1;">
-            <div class="wrap">
-              <div class="img-content">
-                <img style="max-width: 88px;margin-bottom: 22px" src="assets/images/home_icon2.png" alt="">
-              </div>
-              <div class="txt-content">
-                <h3 class="fs-24 mb10 color-white">
-                  <strong>{{"成员名称" | translate}}</strong>
-                  <span class="ordinary-btn brow-f ml10 fs-14 mt-5">
-                    {{"website" | translate}}
-                  </span>
-                </h3>
-                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
-                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col12-sm-6 mb20 ptl22-item home-1-item"
-          data-bottom="transform:translate(0%, 30%); opacity:0;"
-          data-center="transform:translate(0%, 0%); opacity:1;">
-            <div class="wrap">
-              <div class="img-content">
-                <img style="max-width: 88px;margin-bottom: 22px" src="assets/images/home_icon3.png" alt="">
-              </div>
-              <div class="txt-content">
-                <h3 class="fs-24 mb10 color-white">
-                  <strong>{{"成员名称" | translate}}</strong>
-                  <span class="ordinary-btn brow-f ml10 fs-14  mt-5">
-                    {{"website" | translate}}
-                  </span>
-                </h3>
-                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
-                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col12-sm-6 mb20 ptl22-item home-1-item"
-          data-bottom="transform:translate(0%, 30%); opacity:0;"
-          data-center="transform:translate(0%, 0%); opacity:1;">
-            <div class="wrap">
-              <div class="img-content">
-                <img style="max-width: 88px;margin-bottom: 22px;" src="assets/images/home_icon4.png" alt="">
-              </div>
-              <div class="txt-content">
-                <h3 class="fs-24 mb10 color-white">
-                  <strong>{{"成员名称" | translate}}</strong>
-                  <span class="ordinary-btn brow-f ml10 fs-14 mt-5">
-                    {{"website" | translate}}
-                  </span>
-                </h3>
-                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
-                <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p>
+                <!-- <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p> -->
+                <p class="lh-22em color-white pr20 fs-14">{{item.desc}}</p>
               </div>
             </div>
           </div>
