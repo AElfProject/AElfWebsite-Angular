@@ -444,7 +444,7 @@
       <div class="txt">
         <div class="wrapper news-list clearfix">
           <div
-            *ngFor="let item of (('news' | translate) === 'news' ? [] : ('news' | translate)).slice(0, 8)"
+            *ngFor="let item of newsList"
             class="col12-sm-3 news-item clearfix"
             data-bottom="transform:translate(0%, 30%); opacity:0;"
             data-center="transform:translate(0%, 0%); opacity:1;">
@@ -455,13 +455,13 @@
               <!--</div>-->
               <div class="pic mb30">
                 <a
-                  [href]="item.url"
+                  [href]="item.link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <div
                     class="bg-img"
-                    [ngStyle]="{'background-image': item.image}"
+                    [ngStyle]="{'background-image': 'url(' + item.img.url + ')'}"
                   >
                   </div>
                 </a>
@@ -469,7 +469,7 @@
               <div class="txt color-white mb35">
                 <h3 class="fs-14 lh-11em mb10">
                   <a
-                    [href]="item.url"
+                    [href]="item.link"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="link-2"

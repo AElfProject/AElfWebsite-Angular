@@ -130,136 +130,25 @@
       <div class="wrapper ta-c color-white clearfix vedio-size">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide ptl22-item">
+              <div 
+               *ngFor="let item of swiperList"
+                class="swiper-slide ptl22-item"
+              >
                 <div class=" ta-c color-white clearfix swiper-silde">
                   <div class="col12-sm-6 ptl22-item">
                     <div class="ptl22-box">
                       <div class="ptl22-txt aelf-white-paper-on">
-                        <h3 class="fs-36 mb20 pt220 ta-l"><strong>{{"aelf-white-paper-on1" | translate}}</strong></h3>
-                        <p class="fs-18 lh-16em ta-l">{{"models1" | translate}}</p>
-                        <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20"
-                             data-bottom="transform:translate(0%, 30%); opacity:0;"
-                             data-center="transform:translate(0%, 0%); opacity:1;">
-                          <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons" [ngSwitch]="currentLanguage">
-                            <ng-template [ngSwitchCase]="languageList[1]">
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "
-                                href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-                            <ng-template [ngSwitchCase]="languageList[6]">
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "
-                                href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_it_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-                            <ng-template [ngSwitchCase]="languageList[8]">
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "
-                                href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_es_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-                            <ng-template [ngSwitchCase]="languageList[9]">
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "
-                                href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_vn_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-                            <ng-template [ngSwitchCase]="languageList[10]">
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "
-                                href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-                            <ng-template [ngSwitchCase]="languageList[12]">
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "
-                                href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_arbic_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-                            <ng-template ngSwitchDefault>
-                               <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "
-                                 href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf"
-                                 rel="noreferrer noopener">
-                                 {{"click-enter" | translate}}
-                               </a>
-                            </ng-template>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col12-sm-6 ptl22-item">
-                    <div class="ptl22-box">
-                      <img style="max-height: 594px" src="assets/images/homep10.png" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide ptl22-item">
-                <div class=" ta-c color-white clearfix swiper-silde">
-                  <div class="col12-sm-6 ptl22-item">
-                    <div class="ptl22-box">
-                      <div class="ptl22-txt aelf-white-paper-on">
-                        <h3 class="fs-36 mb20 pt220 ta-l"><strong>{{"aelf-white-paper-on2" | translate}}</strong></h3>
-                        <p class="fs-18 lh-16em ta-l">{{"models2" | translate}}</p>
+                        <h3 class="fs-36 mb20 pt220 ta-l"><strong>{{item.title}}</strong></h3>
+                        <p class="fs-18 lh-16em ta-l">{{item.desc}}</p>
                         <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20"
                              data-bottom="transform:translate(0%, 30%); opacity:0;"
                              data-center="transform:translate(0%, 0%); opacity:1;">
                           <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons"
-                            [ngSwitch]="currentLanguage">
-                            <ng-template [ngSwitchCase]="languageList[1]">
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix"
-                                href="https://aelf.io/gridcn/aelf_public_testnet_and_supporting_features_introduction_zh_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-                            <ng-template [ngSwitchCase]="languageList[6]">
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix"
-                                href="https://aelf.io/gridcn/aelf_public_testnet_and_supporting_features_introduction_it_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-                            <ng-template ngSwitchDefault>
-                              <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix"
-                                href="https://aelf.io/gridcn/aelf_public_testnet_and_supporting_features_introduction_en_v1.0.pdf"
-                                rel="noreferrer noopener">
-                                {{"click-enter" | translate}}
-                              </a>
-                            </ng-template>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col12-sm-6 ptl22-item">
-                    <div class="ptl22-box">
-                      <img style="max-height: 594px" src="assets/images/homep10.png" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide ptl22-item">
-                <div class=" ta-c color-white clearfix swiper-silde">
-                  <div class="col12-sm-6 ptl22-item">
-                    <div class="ptl22-box">
-                      <div class="ptl22-txt aelf-white-paper-on">
-                        <h3 class="fs-36 mb20 pt220 ta-l"><strong>{{"aelf-white-paper-on3" | translate}}</strong></h3>
-                        <div class="col12-md-3 col12-sm-4 ta-c color-white skrollable skrollable-between mb30 mt20"
-                             data-bottom="transform:translate(0%, 30%); opacity:0;"
-                             data-center="transform:translate(0%, 0%); opacity:1;">
-                          <div class="fs-14 lh-28 clearfix skrollable skrollable-between test-net-buttons">
-                            <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "  rel="noreferrer noopener">
-                              {{"click-enter" | translate}}
+                            *ngIf="item.buttonText">
+                            <a target="_blank" class="col12-md-2 col12-sm-3 mb25 test-net-button clearfix "
+                              [href]="item.button"
+                              rel="noreferrer noopener">
+                              {{item.buttonText}}
                             </a>
                           </div>
                         </div>
@@ -268,7 +157,7 @@
                   </div>
                   <div class="col12-sm-6 ptl22-item">
                     <div class="ptl22-box">
-                      <img style="max-height: 594px" src="assets/images/homep10.png" alt="">
+                      <img style="max-height: 594px" [src]="item.leftImg ? item.leftImg.url : item.rightImg.url" alt="">
                     </div>
                   </div>
                 </div>

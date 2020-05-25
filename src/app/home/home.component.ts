@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
+import { NewsService } from '../shared/news.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
@@ -23,9 +24,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public currentLanguage = '';
   public languagesDic: any;
   public languageList = ['', ''];
+  public newsList = [];
   public VideoSrc: any;
   private resizeTime: any;
   constructor(private _languageService: LanguageService,
+              private _newsService: NewsService,
               private _cookieService: CookieService,
               public _fontFamlily: FontFamliyService,
               private _windowRef: WindowService,
@@ -47,6 +50,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.currentLanguage
         );
         this.setVideo();
+        this.getHotNews();
       });
 
     this.router.events
@@ -79,6 +83,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
     this.setVideo();
+    this.getHotNews();
+  }
+
+  getHotNews() {
+    this._newsService.getHotNews(this.currentLanguage).subscribe(data => {
+      this.newsList = data;
+    });
   }
 
   setVideo() {

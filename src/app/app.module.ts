@@ -8,6 +8,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import {CookieModule} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
+import {NewsService} from './shared/news.service';
+import {SwiperService} from './shared/swiper.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {WindowService} from './shared/window.service';
@@ -19,7 +21,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
-import {AboutComponent} from './about/about.component';
+import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EconomicComponent } from './economic/economic.component';
@@ -49,7 +51,7 @@ import { AfterStartComponent } from './after-start/after-start.component';
     PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG),
     AppRoutingModule
   ],
-  providers: [LanguageService, FontFamliyService, WindowService],
+  providers: [LanguageService, NewsService, SwiperService, FontFamliyService, WindowService],
   bootstrap: [AppComponent]
 })
 export class AppModule{
