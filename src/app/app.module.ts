@@ -10,6 +10,7 @@ import {LanguageService} from './shared/language.service';
 import {NewsService} from './shared/news.service';
 import {SwiperService} from './shared/swiper.service';
 import {ProductionNodesService} from './shared/production-nodes.service';
+import {DevCaseService} from './shared/dev-case.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {WindowService} from './shared/window.service';
@@ -51,7 +52,9 @@ import { AfterStartComponent } from './after-start/after-start.component';
     PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG),
     AppRoutingModule
   ],
-  providers: [LanguageService, NewsService, SwiperService, ProductionNodesService, FontFamliyService, WindowService],
+  providers: [
+    LanguageService, NewsService, SwiperService, ProductionNodesService, DevCaseService,
+    FontFamliyService, WindowService],
   bootstrap: [AppComponent]
 })
 export class AppModule{

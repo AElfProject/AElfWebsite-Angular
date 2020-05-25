@@ -294,20 +294,22 @@
       <div class="wrapper pic-txt-list-22 color-white clearfix vedio-size mb30 ttttt"
       data-bottom="transform:translate(0%, 30%); opacity:0;"
       data-center="transform:translate(0%, 0%); opacity:1;">
-        <div class="col12-sm-4 mt20 ptl22-item home-3-item">
+        <div 
+        *ngFor="let item of devCase"
+        class="col12-sm-4 mt20 ptl22-item home-3-item">
           <div class="ptl22-box">
             <div class="col12-sm-12">
-              <a target="_blank" href="https://github.com/AElfProject/aelf-boilerplate/">
-                <img src="assets/images/Boilerplate.png" alt="">
+              <a target="_blank" [href]="item.link">
+                <img [src]="item.img.url" alt="item.title">
               </a>
             </div>
           </div>
-          <a target="_blank" href="https://github.com/AElfProject/aelf-boilerplate/">
-            <p class="fs-24 mt10">{{"Boilerplate" | translate}}</p>
-            <p class="fs-14 mt10">{{"Boilerplate-sum" | translate}}</p>
+          <a target="_blank" [href]="item.link">
+            <p class="fs-24 mt10">{{item.title}}</p>
+            <p class="fs-14 mt10">{{item.desc}}</p>
           </a>
         </div>
-        <div class="col12-sm-4 mt20 ptl22-item home-3-item">
+        <!-- <div class="col12-sm-4 mt20 ptl22-item home-3-item">
           <div class="ptl22-box">
             <div class="col12-sm-12">
               <a target="_blank" href="https://github.com/AElfProject/aelf-boilerplate/tree/dev/chain/contract/AElf.Contracts.HelloWorldContract">
@@ -332,7 +334,7 @@
             <p class="fs-24 mt10">{{"Bingo Game" | translate}}</p>
             <p class="fs-14 mt10">{{"Bingo Game-sum" | translate}}</p>
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="cont pt80 pb80">

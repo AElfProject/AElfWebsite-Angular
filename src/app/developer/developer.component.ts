@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
+import { DevCaseService } from '../shared/dev-case.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
@@ -22,12 +23,17 @@ export class DeveloperComponent implements OnInit, AfterViewInit {
   public languagesDic: any;
   public languageList = ['', ''];
   public VideoSrc: any;
-  constructor(private _languageService: LanguageService,
-              private _cookieService: CookieService,
-              public _fontFamlily: FontFamliyService,
-              private _windowRef: WindowService,
-              private sanitizer: DomSanitizer,
-              public router: Router) {
+  public devCase: [{
+    img: {}
+  }];
+  constructor(
+    private _languageService: LanguageService,
+    private _devCaseService: DevCaseService,
+    private _cookieService: CookieService,
+    public _fontFamlily: FontFamliyService,
+    private _windowRef: WindowService,
+    private sanitizer: DomSanitizer,
+    public router: Router) {
   }
 
   ngOnInit() {
@@ -47,6 +53,8 @@ export class DeveloperComponent implements OnInit, AfterViewInit {
           .subscribe((event) => {
             $(window).scrollTop(0);
           });
+
+        this.getDevCase();
       });
   }
   ngAfterViewInit() {
@@ -56,8 +64,14 @@ export class DeveloperComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
-
   }
+
+  getDevCase() {
+    this._devCaseService.getDevCase(this.currentLanguage).subscribe(data => {
+      this.devCase = data;
+    });
+  }
+
   toggleNotice(id) {
     const $notice = document.getElementById(id);
     const display = $notice.style.display;
@@ -73,6 +87,7 @@ export class DeveloperComponent implements OnInit, AfterViewInit {
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+    this.getDevCase();
   }
 
   // nav bar change color when the scroll event happens.
