@@ -2,6 +2,8 @@ import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
+import { SwiperService } from '../shared/swiper.service';
+import { ProductionNodesService } from '../shared/production-nodes.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -24,14 +26,26 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
   public languagesDic: any;
   public languageList = ['', ''];
   public VideoSrc: any;
-  constructor(private _languageService: LanguageService,
-              private _cookieService: CookieService,
-              public _fontFamlily: FontFamliyService,
-              private _windowRef: WindowService,
-              private sanitizer: DomSanitizer,
-              public router: Router) {
+  public swiperList = [{
+    "title": "",
+    "desc": "",
+    "button": "",
+    "buttonText": "",
+    "leftImg": {
+      "url": null
+    }
+  }];
+  public productionNodesList = [];
+  constructor(
+    private _languageService: LanguageService,
+    private _swiperSercie: SwiperService,
+    private _productionNodesService: ProductionNodesService,
+    private _cookieService: CookieService,
+    public _fontFamlily: FontFamliyService,
+    private _windowRef: WindowService,
+    private sanitizer: DomSanitizer,
+    public router: Router) {
   }
-
 
   ngOnInit() {
     this._languageService
@@ -50,6 +64,9 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
           .subscribe((event) => {
             $(window).scrollTop(0);
           });
+
+        this.getSwiper();
+        this.getProductionNodes();
       });
 
     new Swiper('.swiper-container',{
@@ -69,7 +86,29 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
+  }
 
+  getSwiper() {
+    this._swiperSercie.getSwipers(this.currentLanguage, 'community').subscribe(data => {
+      this.swiperList = data;
+      setTimeout(() => {
+        new Swiper('.swiper-container', {
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          autoplay: {
+            delay: 3000,//1秒切换一次
+          },
+        })
+      }, 0);
+    });
+  }
+
+  getProductionNodes() {
+    this._productionNodesService.getProductionNodes(this.currentLanguage, false).subscribe(data => {
+      this.productionNodesList = data;
+    });
   }
 
   toggleNotice(id) {
@@ -87,6 +126,8 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+    this.getSwiper();
+    this.getProductionNodes();
   }
 
   // nav bar change color when the scroll event happens.

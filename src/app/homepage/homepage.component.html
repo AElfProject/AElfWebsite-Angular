@@ -278,18 +278,14 @@
           data-center="transform:translate(0%, 0%); opacity:1;">
             <div class="wrap">
               <div class="img-content">
-                <img style="max-width: 88px;margin-bottom: 22px" src="assets/images/home_icon1.png" alt="">
+                <img style="max-width: 88px;margin-bottom: 22px" [src]="item.img.url" [alt]="item.title">
               </div>
               <div class="txt-content">
                 <h3 class="fs-24 mb10 color-white">
                   <strong>{{item.title}}</strong>
-                  <!-- <span class="ordinary-btn brow-f ml10 fs-14 mt-5"> -->
-                    <a class="ordinary-btn brow-f ml10 fs-14 mt-5" target="_blank"
-                      [href]="item.website">{{"website" | translate}}</a>
-                    <!-- {{"website" | translate}} -->
-                  <!-- </span> -->
+                  <a class="ordinary-btn brow-f ml10 fs-14 mt-5" target="_blank"
+                    [href]="item.website">{{"website" | translate}}</a>
                 </h3>
-                <!-- <p class="lh-22em color-white pr20 fs-14">{{"直至主网产生真实的生产节点后，该组织将会自动解散直..." | translate}}</p> -->
                 <p class="lh-22em color-white pr20 fs-14">{{item.desc}}</p>
               </div>
             </div>
