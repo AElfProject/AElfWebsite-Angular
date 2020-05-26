@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
   }
   setEconomicPapers() {
     const currentLanguagePaper = this.economicPapers[this.currentLanguage];
-    const EnglishPaper = this.economicPapers['English'];
+    const EnglishPaper = this.economicPapers['English'] || { url: '' };
     this.currentWhitePaper = currentLanguagePaper ? currentLanguagePaper.url : EnglishPaper.url;
   }
 
@@ -83,7 +83,7 @@ export class HeaderComponent implements OnInit {
   }
   setWhitepapers() {
     const currentWhitePaper = this.whitePapers[this.currentLanguage];
-    const EnglishPaper = this.whitePapers['English'];
+    const EnglishPaper = this.whitePapers['English'] || { url: '' };
     this.currentEconomicPaper = currentWhitePaper ? currentWhitePaper.url : EnglishPaper.url;
   }
 

@@ -56,13 +56,14 @@ export class MobileHeaderComponent implements OnInit {
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+    menuToggle(true);
   }
 }
 
-function menuToggle() {
+function menuToggle(close = false) {
   const $this = $('.mobile-menu');
   let is_open = $this.hasClass('menu-open');
-  if (is_open) {
+  if (is_open || close) {
     $this.removeClass('menu-open')
     $('.mobile-nav').hide();
   } else {

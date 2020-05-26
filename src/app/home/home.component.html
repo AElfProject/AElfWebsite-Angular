@@ -12,38 +12,17 @@
         <h3 class="fs-18">{{"t-l-blo-a-s-com-app" | translate}}</h3>
       </div>
       <div class="color-white lg-hidden bvaipi-btn">
-        <div [ngClass]="_fontFamlily.ffMy" class="btns" [ngSwitch]="currentLanguage">
-          <ng-template [ngSwitchCase]="languageList[0]">
-            <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" class="fs-14 ordinary-btn">
-              <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p></a>
-          </ng-template>
-          <ng-template [ngSwitchCase]="languageList[1]">
-            <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_zh_v1.0.pdf" class="fs-14 ordinary-btn">
-              <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p></a>
-          </ng-template>
-          <ng-template [ngSwitchCase]="languageList[10]">
-            <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_TR_v1.0.pdf" class="fs-14 ordinary-btn">
-              <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p></a>
-          </ng-template>
-          <ng-template ngSwitchDefault>
-            <a target="_blank" href="https://aelf.io/gridcn/aelf_economic_system_whitepaper_en_v1.0.pdf" >
-              <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p></a>
-          </ng-template>
+        <div [ngClass]="_fontFamlily.ffMy" class="btns">
+          <a target="_blank" [href]="currentEconomicPaper"
+            class="fs-14 ordinary-btn">
+            <p class="fs-14 ordinary-btn">{{"economic&gover-w-p" | translate}}</p>
+          </a>
         </div>
 
         <div [ngClass]="_fontFamlily.ffMy" class="btns mt20" [ngSwitch]="currentLanguage">
-          <ng-template [ngSwitchCase]="languageList[0]">
-            <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1.6">
-              <p class="fs-14 ordinary-btn">{{"aelf-w-p" | translate}}</p></a>
-          </ng-template>
-          <ng-template [ngSwitchCase]="languageList[1]">
-            <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_ZH.pdf?v=1" >
-              <p class="fs-14 ordinary-btn">{{"aelf-w-p" | translate}}</p></a>
-          </ng-template>
-          <ng-template ngSwitchDefault>
-            <a target="_blank" href="https://aelf.io/gridcn/aelf_whitepaper_EN.pdf?v=1">
-              <p class="fs-14 ordinary-btn">{{"aelf-w-p" | translate}}</p></a>
-          </ng-template>
+          <a target="_blank" [href]="currentWhitePaper">
+            <p class="fs-14 ordinary-btn">{{"aelf-w-p" | translate}}</p>
+          </a>
         </div>
       </div>
 

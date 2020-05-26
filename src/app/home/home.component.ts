@@ -4,6 +4,7 @@ import { LanguageService } from '../shared/language.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NewsService } from '../shared/news.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
+import { PapersService } from '../shared/papers.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -29,9 +30,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public newsList = [];
   public VideoSrc: any;
   private resizeTime: any;
+
+  public currentEconomicPaper = '';
+  private economicPapers = {};
+  public currentWhitePaper = '';
+  private whitePapers = {};
   constructor(
     private _languageService: LanguageService,
     private _newsService: NewsService,
+    private _papersService: PapersService,
     private _translateService: TranslateService,
     private _cookieService: CookieService,
     public _fontFamlily: FontFamliyService,
@@ -56,6 +63,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         );
         this.setVideo();
         this.getHotNews();
+
+        this.getEconomicPapers();
+        this.getWhitepapers();
       });
 
     this.router.events
@@ -76,6 +86,35 @@ export class HomeComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
 
   }
+
+  getEconomicPapers() {
+    this._papersService.getPapers('economic').subscribe(data => {
+      data.forEach((paper: any) => {
+        this.economicPapers[paper.lang] = paper;
+      });
+      this.setEconomicPapers();
+    });
+  }
+  setEconomicPapers() {
+    const currentLanguagePaper = this.economicPapers[this.currentLanguage];
+    const EnglishPaper = this.economicPapers['English'] || { url: '' };
+    this.currentWhitePaper = currentLanguagePaper ? currentLanguagePaper.url : EnglishPaper.url;
+  }
+
+  getWhitepapers() {
+    this._papersService.getPapers('whitepaper').subscribe(data => {
+      data.forEach((paper: any) => {
+        this.whitePapers[paper.lang] = paper;
+      });
+      this.setEconomicPapers();
+    });
+  }
+  setWhitepapers() {
+    const currentWhitePaper = this.whitePapers[this.currentLanguage];
+    const EnglishPaper = this.whitePapers['English'] || {url: ''};
+    this.currentEconomicPaper = currentWhitePaper ? currentWhitePaper.url : EnglishPaper.url;
+  }
+
   toggleNotice(id) {
     const $notice = document.getElementById(id);
     const display = $notice.style.display;
@@ -93,6 +132,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
     this.setVideo();
     this.getHotNews();
+    this.setEconomicPapers();
+    this.setWhitepapers();
   }
 
   getHotNews() {
