@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header.component';
+import { MobileHeaderComponent } from './mobile-header.component';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-
 import { AppRoutingModule } from '../../app-routing.module';
 
 function HttpLoaderFactory(http: HttpClient) {
@@ -24,9 +23,9 @@ function HttpLoaderFactory(http: HttpClient) {
       }
     }),
   ],
-  declarations: [HeaderComponent],
+  declarations: [MobileHeaderComponent],
   exports: [
-    HeaderComponent
+    MobileHeaderComponent
   ]
 })
-export class HeaderModule { }
+export class MobileHeaderModule { }

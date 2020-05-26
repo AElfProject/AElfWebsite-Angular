@@ -19,6 +19,7 @@ import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfe
 
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './modules/header/header.module';
+import { MobileHeaderModule } from './modules/mobile-header/mobile-header.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -58,7 +59,8 @@ import { AfterStartComponent } from './after-start/after-start.component';
     CookieModule.forRoot(),
     PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG),
     AppRoutingModule,
-    HeaderModule
+    HeaderModule,
+    MobileHeaderModule
   ],
   providers: [
     LanguageService, NewsService, SwiperService, ProductionNodesService, DevCaseService, PapersService,

@@ -1,0 +1,41 @@
+<div class="lg-hidden mobile-nav">
+  <ul class="clearfix">
+    <li [ngClass]="pathname === '/' && 'mobile—active'"
+      data-link=""><a class="anchor-hd fs-16 lh-20em">{{"home" | translate}}</a></li>
+    <li [ngClass]="pathname === '/homepage' && 'mobile—active'"
+    routerLink="/homepage"><a class="anchor-hd fs-16 lh-20em">{{"mainnet-lauch" | translate}}</a></li>
+    <li [ngClass]="pathname === '/afterstart' && 'mobile—active'"
+    routerLink="/afterstart"><a class="anchor-hd fs-16 lh-20em">{{"Community" | translate}}</a></li>
+    <li [ngClass]="pathname === '/economic' && 'mobile—active'"
+    routerLink="/economic"><a class="anchor-hd fs-16 lh-20em">{{"economy&governance" | translate}}</a></li>
+    <li [ngClass]="pathname === '/developer' && 'mobile—active'"
+    routerLink="/developer"><a class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a></li>
+    <li [ngClass]="['/browser', '/wallet', '/webwallet', '/plug'].includes(pathname) && 'mobile—active'">
+      <div class="color-white mobile-tool-menu">
+        <span class="fs-16"><em>{{"tools" | translate}}</em><i class="fa fa-angle-down ml20"></i></span>
+        <ul class="fs-14 clearfix">
+          <li [ngClass]="pathname === '/browser' && 'mobile—active'"
+          style="width: inherit" routerLink="/browser">{{"explorer" | translate}}</li>
+          <li [ngClass]="pathname === '/wallet' && 'mobile—active'"
+          style="width: inherit" routerLink="/wallet">{{"wallet-APP" | translate}}</li>
+          <li [ngClass]="pathname === '/webwallet' && 'mobile—active'"
+          style="width: inherit" routerLink="/webwallet">{{"web-Wallet" | translate}}</li>
+          <li [ngClass]="pathname === '/plug' && 'mobile—active'"
+          style="width: inherit" routerLink="/plug">{{"explorer-extension" | translate}}</li>
+        </ul>
+      </div>
+    </li>
+    <li [ngClass]="pathname === '/facility' && 'mobile—active'"
+    routerLink="/facility"><a class="anchor-hd fs-16 lh-20em">{{"test&suppFac" | translate}}</a></li>
+    <li [ngClass]="pathname === '/app-about' && 'mobile—active'"
+    routerLink="/app-about"><a class="anchor-hd fs-16 lh-20em">{{"about-us" | translate}}</a></li>
+    <li>
+      <div class="color-white mobile-language-menu" [ngClass]="_fontFamlily.ffMy">
+        <span class="fs-16"><em>{{currentLanguage}}</em><i class="fa fa-angle-down ml20"></i></span>
+        <ul class="fs-14 clearfix">
+          <li style="width: inherit" *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

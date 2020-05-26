@@ -22,7 +22,6 @@
         <li [ngClass]="pathname === '/developer' && 'active'">
           <a routerLink="/developer" class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a>
         </li>
-        <!-- <li> -->
         <li
           [ngClass]="['/browser', '/wallet', '/webwallet', '/plug'].includes(pathname) && 'active'">
           <div class="lang color-white tool-menu">

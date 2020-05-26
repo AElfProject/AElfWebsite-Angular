@@ -1,36 +1,4 @@
 <div class="container index-step" id="skrollr-body">
-  <div class="lg-hidden mobile-nav">
-    <ul class="clearfix">
-      <li data-link=""><a class="anchor-hd fs-16 lh-20em">{{"home" | translate}}</a></li>
-      <li data-link="/homepage"><a class="anchor-hd fs-16 lh-20em">{{"mainnet-lauch" | translate}}</a></li>
-      <li data-link="/afterstart"><a class="anchor-hd fs-16 lh-20em">{{"Community" | translate}}</a></li>
-      <li data-link="/economic"><a class="anchor-hd fs-16 lh-20em">{{"economy&governance" | translate}}</a></li>
-      <li data-link="/developer"><a  class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a></li>
-      <li >
-        <div class="color-white mobile-tool-menu">
-            <span class="fs-16"><em>{{"tools" | translate}}</em><i
-              class="fa fa-angle-down ml20"></i></span>
-          <ul class="fs-14 clearfix">
-            <li style="width: inherit" data-link="/browser">{{"explorer" | translate}}</li>
-            <li style="width: inherit" data-link="/wallet">{{"wallet-APP" | translate}}</li>
-            <li style="width: inherit" data-link="/webwallet">{{"web-Wallet" | translate}}</li>
-            <li style="width: inherit" data-link="/plug">{{"explorer-extension" | translate}}</li>
-          </ul>
-        </div>
-      </li>
-      <li data-link="/facility"><a  class="anchor-hd fs-16 lh-20em">{{"test&suppFac" | translate}}</a></li>
-      <li data-link="/app-about"><a  class="anchor-hd fs-16 lh-20em">{{"about-us" | translate}}</a></li>
-      <li>
-        <div class="color-white mobile-language-menu" [ngClass]="_fontFamlily.ffMy">
-            <span class="fs-16"><em>{{currentLanguage}}</em><i
-              class="fa fa-angle-down ml20"></i></span>
-          <ul class="fs-14 clearfix">
-            <li style="width: inherit" *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
   <section class="section section-22 anchor-hd ec-bg1" id="test-net">
     <div class="cont pt80 pb80">
       <div class="wrapper ta-c color-white clearfix vedio-size">
