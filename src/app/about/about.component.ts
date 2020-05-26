@@ -43,7 +43,6 @@ export class AboutComponent implements OnInit, AfterViewInit {
         this._fontFamlily.changeFontFamily(
           this.currentLanguage
         );
-        this.setVideo();
       });
     this.router.events
       .subscribe((event) => {
@@ -74,20 +73,6 @@ export class AboutComponent implements OnInit, AfterViewInit {
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
-    this.setVideo();
-  }
-
-  setVideo() {
-    let videoSrcTemp = 'https://www.youtube.com/embed/qbIP1TEX33Q';
-    if (this.currentLanguage === '中文') {
-      videoSrcTemp = 'https://www.hoopox.com/aelf.mp4';
-    }
-    this.VideoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videoSrcTemp);
-    setTimeout(() => {
-      const videoWidth = parseInt($('#player').css('width'), 10);
-      const videoHeight = (videoWidth / 16) * 9;
-      $('#player').css('height', `${videoHeight}px`);
-    }, 200);
   }
 
   // nav bar change color when the scroll event happens.

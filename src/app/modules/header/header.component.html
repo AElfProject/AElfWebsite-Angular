@@ -1,0 +1,74 @@
+<div class="fix-top fix-top-temp">
+  <header class="header clearfix header-white" [ngClass]="headerActiveCssClass">
+    <h1 class="logo pt20">
+      <a href=""><img style="width: 65px" src="assets/images/logo.png" alt=""></a>
+    </h1>
+    <nav class="nav fs-16 sm-hidden index-pagination clearfix">
+      <ul class="clearfix">
+        <li [ngClass]="pathname === '/' && 'active'">
+          <a href=""
+            class="anchor-hd fs-16 lh-20em">{{"home" | translate}}</a>
+        </li>
+        <li [ngClass]="pathname === '/homepage' && 'active'">
+          <a routerLink="/homepage"
+            class="anchor-hd fs-16 lh-20em">{{"mainnet-lauch" | translate}}</a>
+        </li>
+        <li [ngClass]="pathname === '/afterstart' && 'active'">
+          <a routerLink="/afterstart" class="anchor-hd fs-16 lh-20em">{{"Community" | translate}}</a>
+        </li>
+        <li [ngClass]="pathname === '/economic' && 'active'">
+          <a routerLink="/economic" class="anchor-hd fs-16 lh-20em">{{"economy&governance" | translate}}</a>
+        </li>
+        <li [ngClass]="pathname === '/developer' && 'active'">
+          <a routerLink="/developer" class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a>
+        </li>
+        <!-- <li> -->
+        <li
+          [ngClass]="['/browser', '/wallet', '/webwallet', '/plug'].includes(pathname) && 'active'">
+          <div class="lang color-white tool-menu">
+            <span class="fs-16"
+              style="border: none;background: transparent;height: 40px;line-height: 40px"><em>{{"tools" | translate}}</em><i
+                class="fa fa-angle-down"></i></span>
+            <ul class="fs-14 clearfix">
+              <li [ngClass]="pathname === '/browser' && 'active'"
+              style="width: inherit" routerLink="/browser">{{"explorer" | translate}}</li>
+              <li [ngClass]="pathname === '/wallet' && 'active'"
+              style="width: inherit" routerLink="/wallet">{{"wallet-APP" | translate}}</li>
+              <li [ngClass]="pathname === '/webwallet' && 'active'"
+              style="width: inherit" routerLink="/webwallet">{{"web-Wallet" | translate}}</li>
+              <li [ngClass]="pathname === '/plug' && 'active'"
+              style="width: inherit" routerLink="/plug">{{"explorer-extension" | translate}}</li>
+            </ul>
+          </div>
+        </li>
+        <li [ngClass]="pathname === '/facility' && 'active'">
+          <a routerLink="facility" class="anchor-hd fs-16 lh-20em">{{"test&suppFac" | translate}}</a>
+        </li>
+        <li [ngClass]="pathname === '/app-about' && 'active'">
+          <a routerLink="app-about" class="anchor-hd fs-16 lh-20em">{{"about-us" | translate}}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="other sm-hidden white-book">
+      <div [ngClass]="_fontFamlily.ffMy" class="btns">
+        <a target="_blank" [href]="currentEconomicPaper"
+          class="fs-14 downbtn">
+          <span>{{"economic&gover-w-p" | translate}}</span></a>
+      </div>
+      <div [ngClass]="_fontFamlily.ffMy" class="btns">
+        <a target="_blank" [href]="currentWhitePaper" class="fs-14 downbtn">
+          <span>{{"aelf-w-p" | translate}}</span></a>
+      </div>
+      <div [ngClass]="_fontFamlily.ffMy" class="lang lang-menu color-white">
+        <span class="fs-14"><em>{{currentLanguage}}</em><i class="fa fa-caret-down ml5"></i></span>
+        <ul class="fs-14 clearfix">
+          <li *ngFor="let item of languageList" (click)="OnChange(item)">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lg-hidden other mobile-menu">
+      <i class="fa fa-navicon color-white fs-18"></i>
+    </div>
+  </header>
+</div>

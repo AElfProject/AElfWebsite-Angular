@@ -7,6 +7,7 @@ import { ProductionNodesService } from '../shared/production-nodes.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
 
 import { Router } from '@angular/router';
 
@@ -24,6 +25,7 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
   public config: PerfectScrollbarConfigInterface = {};
   public currentLanguage = '';
   public languagesDic: any;
+  public languagesDic2: any;
   public languageList = ['', ''];
   public VideoSrc: any;
   public swiperList = [{
@@ -39,6 +41,7 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
   constructor(
     private _languageService: LanguageService,
     private _swiperSercie: SwiperService,
+    private _translateService: TranslateService,
     private _productionNodesService: ProductionNodesService,
     private _cookieService: CookieService,
     public _fontFamlily: FontFamliyService,
@@ -52,6 +55,7 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
       .getLanguageConfig()
       .subscribe(data => {
         this.languagesDic = data["languagesDic1"];
+        this.languagesDic2 = data["languagesDic2"];
         this.languageList = data["languageOptions"];
         this.currentLanguage =
           data["languagesDic2"][
@@ -68,6 +72,10 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
         this.getSwiper();
         this.getProductionNodes();
       });
+
+    this._translateService.onLangChange.subscribe(data => {
+      this.OnChange(this.languagesDic2[data.lang] || 'English');
+    });
 
     new Swiper('.swiper-container',{
       pagination: {

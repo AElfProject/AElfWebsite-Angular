@@ -11,10 +11,14 @@ import {NewsService} from './shared/news.service';
 import {SwiperService} from './shared/swiper.service';
 import {ProductionNodesService} from './shared/production-nodes.service';
 import {DevCaseService} from './shared/dev-case.service';
+import {PapersService} from './shared/papers.service';
 import {FontFamliyService} from './shared/font-famliy.service';
+import { WindowService } from './shared/window.service';
+
 import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
-import {WindowService} from './shared/window.service';
+
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderModule } from './modules/header/header.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +40,10 @@ import { AfterStartComponent } from './after-start/after-start.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AboutComponent, HomeComponent, HomepageComponent, EconomicComponent, FacilityComponent, PlugComponent, WebwalletComponent, WalletComponent, BrowserComponent,  DeveloperComponent, AfterStartComponent
+    AppComponent, AboutComponent, HomeComponent, 
+    HomepageComponent, EconomicComponent, FacilityComponent, 
+    PlugComponent, WebwalletComponent, WalletComponent, BrowserComponent,  
+    DeveloperComponent, AfterStartComponent
   ],
   imports: [
     BrowserModule,
@@ -50,10 +57,11 @@ import { AfterStartComponent } from './after-start/after-start.component';
     }),
     CookieModule.forRoot(),
     PerfectScrollbarModule.forRoot(PERFECT_SCOROLLBAR_CONFIG),
-    AppRoutingModule
+    AppRoutingModule,
+    HeaderModule
   ],
   providers: [
-    LanguageService, NewsService, SwiperService, ProductionNodesService, DevCaseService,
+    LanguageService, NewsService, SwiperService, ProductionNodesService, DevCaseService, PapersService,
     FontFamliyService, WindowService],
   bootstrap: [AppComponent]
 })

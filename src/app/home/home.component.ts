@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
+import { TranslateService } from '@ngx-translate/core';
 import { NewsService } from '../shared/news.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -23,17 +24,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public currentLanguage = '';
   public languagesDic: any;
+  public languagesDic2: any;
   public languageList = ['', ''];
   public newsList = [];
   public VideoSrc: any;
   private resizeTime: any;
-  constructor(private _languageService: LanguageService,
-              private _newsService: NewsService,
-              private _cookieService: CookieService,
-              public _fontFamlily: FontFamliyService,
-              private _windowRef: WindowService,
-              private sanitizer: DomSanitizer,
-              public router: Router) {
+  constructor(
+    private _languageService: LanguageService,
+    private _newsService: NewsService,
+    private _translateService: TranslateService,
+    private _cookieService: CookieService,
+    public _fontFamlily: FontFamliyService,
+    private _windowRef: WindowService,
+    private sanitizer: DomSanitizer,
+    public router: Router) {
   }
 
   ngOnInit() {
@@ -41,6 +45,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       .getLanguageConfig()
       .subscribe(data => {
         this.languagesDic = data["languagesDic1"];
+        this.languagesDic2 = data["languagesDic2"];
         this.languageList = data["languageOptions"];
         this.currentLanguage =
           data["languagesDic2"][
@@ -57,6 +62,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       .subscribe((event) => {
         $(window).scrollTop(0);
       });
+
+    this._translateService.onLangChange.subscribe(data => {
+      this.OnChange(this.languagesDic2[data.lang] || 'English');
+    });
   }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
