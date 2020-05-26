@@ -41,7 +41,7 @@ export class MobileHeaderComponent implements OnInit {
         this.router.events
           .subscribe((event) => {
             this.setMenu();
-            menuToggle();
+            menuToggle(true);
             $(window).scrollTop(0);
           });
       });

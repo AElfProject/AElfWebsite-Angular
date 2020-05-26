@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from '../../app-routing.module';
 
-function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, '../../assets/i18n/', '.json');
 }
 
 @NgModule({

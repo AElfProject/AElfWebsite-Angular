@@ -98,7 +98,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   setEconomicPapers() {
     const currentLanguagePaper = this.economicPapers[this.currentLanguage];
     const EnglishPaper = this.economicPapers['English'] || { url: '' };
-    this.currentWhitePaper = currentLanguagePaper ? currentLanguagePaper.url : EnglishPaper.url;
+    this.currentEconomicPaper = currentLanguagePaper ? currentLanguagePaper.url : EnglishPaper.url;
   }
 
   getWhitepapers() {
@@ -112,7 +112,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   setWhitepapers() {
     const currentWhitePaper = this.whitePapers[this.currentLanguage];
     const EnglishPaper = this.whitePapers['English'] || {url: ''};
-    this.currentEconomicPaper = currentWhitePaper ? currentWhitePaper.url : EnglishPaper.url;
+    this.currentWhitePaper = currentWhitePaper ? currentWhitePaper.url : EnglishPaper.url;
   }
 
   toggleNotice(id) {

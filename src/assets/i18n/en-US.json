@@ -39,6 +39,8 @@
   "the-flex-mul-gover":"The flexible multi-governance model meets governance needs for any specific scenarios",
   "main-laun-int":"Mainnet Launch Node Invitation",
   "laun-int-content":"There are 29 member node positions in total and this invitation ends when all positions are filled. Participants will take part in the mainnet launch preparations and will be heavily involved in the ecosystem and governance development. We invite you to contribute to the smooth launch of the aelf mainnet. Participants will receive corresponding rights and incentives. Positions are limited.",
+  "aelf-dao": "aelf Community Development & Governance",
+  "aelf-dao-desc": "The aelf community envisions users to participate in aelf’s ecosystem construction, achieving progressive development through different governance methods such as the aelf DAO, Node Election, Resource Purchasing, and Proposals.",
   "start-exp-test": "Get started to experience the Public Testnet now",
   "start-exp-test-content":"Based on this public beta testnet, you can experience the core functions of the aelf main network, node construction and campaigns, mining rewards, side chain configuration, cross chain interaction, DApp deployment, and more. Experience it now!",
   "development-history":"Development Roadmap",
