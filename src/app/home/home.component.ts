@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private economicPapers = {};
   public currentWhitePaper = '';
   private whitePapers = {};
+  private getHotNewsRetryCount = 0;
   constructor(
     private _languageService: LanguageService,
     private _newsService: NewsService,
@@ -136,8 +137,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.setWhitepapers();
   }
 
-  getHotNews() {
-    this._newsService.getHotNews(this.currentLanguage).subscribe(data => {
+  getHotNews(language?: string) {
+    this._newsService.getHotNews(language || this.currentLanguage).subscribe(data => {
+      if (data.length <= 0 && this.getHotNewsRetryCount === 0) {
+        this.getHotNewsRetryCount++;
+        this.getHotNews('English');
+        return;
+      }
+      this.getHotNewsRetryCount = 0;
       this.newsList = data;
     });
   }

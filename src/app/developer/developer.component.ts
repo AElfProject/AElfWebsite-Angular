@@ -28,6 +28,8 @@ export class DeveloperComponent implements OnInit, AfterViewInit {
   public devCase: [{
     img: {}
   }];
+
+  private getDevCaseRetryCount = 0;
   constructor(
     private _languageService: LanguageService,
     private _devCaseService: DevCaseService,
@@ -73,8 +75,15 @@ export class DeveloperComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
   }
 
-  getDevCase() {
-    this._devCaseService.getDevCase(this.currentLanguage).subscribe(data => {
+  getDevCase(language?: string) {
+    this._devCaseService.getDevCase(language || this.currentLanguage).subscribe(data => {
+      if (data.length <= 0 && this.getDevCaseRetryCount === 0) {
+        this.getDevCaseRetryCount++;
+        this.getDevCase('English');
+        return;
+      }
+      this.getDevCaseRetryCount = 0;
+
       this.devCase = data;
     });
   }

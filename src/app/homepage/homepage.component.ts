@@ -38,6 +38,8 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     }
   }];
   public productionNodesList = [];
+  private getSwiperRetryCount = 0;
+  private getProductionNodesRetryCount = 0;
   constructor(
     private _languageService: LanguageService,
     private _swiperSercie: SwiperService,
@@ -87,8 +89,15 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
   }
 
-  getSwiper() {
-    this._swiperSercie.getSwipers(this.currentLanguage, 'main').subscribe(data => {
+  getSwiper(language?: string) {
+    this._swiperSercie.getSwipers(language || this.currentLanguage, 'main').subscribe(data => {
+      if (data.length <= 0 && this.getSwiperRetryCount === 0) {
+        this.getSwiperRetryCount++;
+        this.getSwiper('English');
+        return;
+      }
+      this.getSwiperRetryCount = 0;
+
       this.swiperList = data;
       setTimeout(() => {
         new Swiper('.swiper-container', {
@@ -104,8 +113,15 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     });
   }
 
-  getProductionNodes() {
-    this._productionNodesService.getProductionNodes(this.currentLanguage, true).subscribe(data => {
+  getProductionNodes(language?: string) {
+    this._productionNodesService.getProductionNodes(language || this.currentLanguage, true).subscribe(data => {
+      if (data.length <= 0 && this.getProductionNodesRetryCount === 0) {
+        this.getProductionNodesRetryCount++;
+        this.getProductionNodes('English');
+        return;
+      }
+      this.getProductionNodesRetryCount = 0;
+
       this.productionNodesList = data;
     });
   }
