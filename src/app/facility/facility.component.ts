@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FontFamliyService } from '../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
+import { PapersService } from '../shared/papers.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { Router } from '@angular/router';
@@ -23,11 +24,14 @@ export class FacilityComponent implements OnInit, AfterViewInit {
   public languagesDic: any;
   public languagesDic2: any;
   public languageList = ['', ''];
+  private onePage = {};
+  public currentOnePage = '';
   public VideoSrc: any;
   constructor(private _languageService: LanguageService,
               private _cookieService: CookieService,
               public _fontFamlily: FontFamliyService,
               private _translateService: TranslateService,
+              private _papersService: PapersService,
               private _windowRef: WindowService,
               private sanitizer: DomSanitizer,
               public router: Router) {
@@ -51,6 +55,8 @@ export class FacilityComponent implements OnInit, AfterViewInit {
           .subscribe((event) => {
             $(window).scrollTop(0);
           });
+
+        this.getOnePages();
       });
     this._translateService.onLangChange.subscribe(data => {
       this.OnChange(this.languagesDic2[data.lang] || 'English');
@@ -75,11 +81,27 @@ export class FacilityComponent implements OnInit, AfterViewInit {
     const displayNew = display === 'block' ? 'none' : 'block';
     $notice.style.display = displayNew;
   }
+
+  getOnePages() {
+    this._papersService.getPapers('onepage').subscribe(data => {
+      data.forEach((paper: any) => {
+        this.onePage[paper.lang] = paper;
+      });
+      this.setOnePages();
+    });
+  }
+  setOnePages() {
+    const currentOnePage = this.onePage[this.currentLanguage];
+    const EnglishPaper = this.onePage['English'] || { url: '' };
+    this.currentOnePage = currentOnePage ? currentOnePage.url : EnglishPaper.url;
+  }
+
   OnChange(languageSelection: string) {
     this._languageService.switchLanguage(this.languagesDic[languageSelection]);
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+    this.setOnePages();
   }
 
   // nav bar change color when the scroll event happens.

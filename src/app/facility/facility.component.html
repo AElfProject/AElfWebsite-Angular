@@ -8,7 +8,14 @@
               <h3 class="fs-36 mb40 mt40 ta-l" ><strong>{{"aelf Public Testnet" | translate}}</strong></h3>
               <p class="fs-18 lh-16em ta-l">{{"aelf Public Testnet-sum" | translate}}</p>
               <h3 class="mt20">
-                <ng-template [ngSwitchCase]="languageList[1]">
+
+                 <a target="_blank" class=" mb25 "
+                   [href]="currentOnePage"
+                   rel="noreferrer noopener">
+                   <p class="ordinary-btn">{{"click-enter" | translate}}</p>
+                 </a>
+
+                <!-- <ng-template [ngSwitchCase]="languageList[1]">
                   <a target="_blank" class=" mb25 "
                     href="https://aelf.io/gridcn/aelf_public_testnet_and_supporting_features_introduction_zh_v1.0.pdf"
                     rel="noreferrer noopener">
@@ -28,7 +35,7 @@
                     rel="noreferrer noopener">
                     <p class="ordinary-btn">{{"click-enter" | translate}}</p>
                   </a>
-                </ng-template>
+                </ng-template> -->
                 <!-- <a target="_blank" class=" mb25 " [href]="currentLanguage === '中文' ? 'https://aelf.io/gridcn/aelf_public_testnet_and_supporting_features_introduction_zh_v1.0.pdf':'https://aelf.io/gridcn/aelf_public_testnet_and_supporting_features_introduction_en_v1.0.pdf'" rel="noreferrer noopener">
                   <p  class="ordinary-btn">{{"click-enter" | translate}}</p>
                 </a> -->
@@ -163,12 +170,12 @@
                   </ul>
                 </a>
                 <a class="col12-lg-4 col12-md-4 col12-sm-6 mb25 test-net-button"
-                  href="http://d.firim.info/r5f9" target="_blank" rel="noreferrer noopener">
+                  href="http://d.alphaqr.com/aelfwalletandroid" target="_blank" rel="noreferrer noopener">
                   <i class="fa fa-android mr5"></i>
                   {{"Beta Android Wallet," | translate}}
                 </a>
                 <a class="col12-lg-4 col12-md-4 col12-sm-6 mb25 test-net-button"
-                  href="http://d.firim.info/1wxt" target="_blank"
+                  href="http://d.alphaqr.com/aelfwalletios" target="_blank"
                   rel="noreferrer noopener">
                   <i class="fa fa-apple mr5"></i>
                   {{"Beta iOS Wallet" | translate}}
