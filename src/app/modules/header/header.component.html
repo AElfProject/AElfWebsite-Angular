@@ -9,20 +9,21 @@
           <a href=""
             class="anchor-hd fs-16 lh-20em">{{"home" | translate}}</a>
         </li>
-        <li [ngClass]="pathname === '/homepage' && 'active'">
+        <li [ngClass]="pathname === '/homepage' && 'active'" *ngIf="!hiddenTabs.includes('mainnet')">
           <a routerLink="/homepage"
             class="anchor-hd fs-16 lh-20em">{{"mainnet-lauch" | translate}}</a>
         </li>
-        <li [ngClass]="pathname === '/afterstart' && 'active'">
+        <li [ngClass]="pathname === '/afterstart' && 'active'" *ngIf="!hiddenTabs.includes('community')">
           <a routerLink="/afterstart" class="anchor-hd fs-16 lh-20em">{{"Community" | translate}}</a>
         </li>
-        <li [ngClass]="pathname === '/economic' && 'active'">
+        <li [ngClass]="pathname === '/economic' && 'active'" *ngIf="!hiddenTabs.includes('economy')">
           <a routerLink="/economic" class="anchor-hd fs-16 lh-20em">{{"economy&governance" | translate}}</a>
         </li>
-        <li [ngClass]="pathname === '/developer' && 'active'">
+        <li [ngClass]="pathname === '/developer' && 'active'" *ngIf="!hiddenTabs.includes('developer')">
           <a routerLink="/developer" class="anchor-hd fs-16 lh-20em">{{"devel" | translate}}</a>
         </li>
         <li
+          *ngIf="!hiddenTabs.includes('tools')" 
           [ngClass]="['/browser', '/wallet', '/webwallet', '/plug'].includes(pathname) && 'active'">
           <div class="lang color-white tool-menu">
             <span class="fs-16"
@@ -40,10 +41,10 @@
             </ul>
           </div>
         </li>
-        <li [ngClass]="pathname === '/facility' && 'active'">
+        <li [ngClass]="pathname === '/facility' && 'active'" *ngIf="!hiddenTabs.includes('test')">
           <a routerLink="facility" class="anchor-hd fs-16 lh-20em">{{"test&suppFac" | translate}}</a>
         </li>
-        <li [ngClass]="pathname === '/app-about' && 'active'">
+        <li [ngClass]="pathname === '/app-about' && 'active'" *ngIf="!hiddenTabs.includes('about')">
           <a routerLink="app-about" class="anchor-hd fs-16 lh-20em">{{"about-us" | translate}}</a>
         </li>
       </ul>

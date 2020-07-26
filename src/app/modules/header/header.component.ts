@@ -3,6 +3,7 @@ import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../../shared/language.service';
 import { FontFamliyService } from '../../shared/font-famliy.service';
 import { PapersService } from '../../shared/papers.service';
+import { HeaderTabsService } from '../../shared/header-tabs.service';
 import { Router } from '@angular/router';
 
 declare let $: any;
@@ -22,8 +23,10 @@ export class HeaderComponent implements OnInit {
   public currentWhitePaper = '';
   private whitePapers = {};
   public pathname = '';
+  public hiddenTabs = '';
   constructor(
     private _languageService: LanguageService,
+    private _headerTabsService: HeaderTabsService,
     public _fontFamlily: FontFamliyService,
     public router: Router,
     private _cookieService: CookieService,
@@ -31,6 +34,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getHiddenTabs();
     this.setMenu();
     this._languageService
       .getLanguageConfig()
@@ -85,6 +89,15 @@ export class HeaderComponent implements OnInit {
     const currentWhitePaper = this.whitePapers[this.currentLanguage];
     const EnglishPaper = this.whitePapers['English'] || { url: '' };
     this.currentWhitePaper = currentWhitePaper ? currentWhitePaper.url : EnglishPaper.url;
+  }
+
+  getHiddenTabs() {
+    this._headerTabsService.getHiddenTabs().subscribe(data => {
+      console.log('data: ', data[0]);
+      if (data && data[0]) {
+        this.hiddenTabs = data[0].tabToHidden
+      }
+    });
   }
 
   OnChange(languageSelection: string) {

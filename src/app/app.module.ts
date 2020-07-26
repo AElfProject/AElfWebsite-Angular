@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import {CookieModule} from 'ngx-cookie';
 import {LanguageService} from './shared/language.service';
 import {NewsService} from './shared/news.service';
+import {HeaderTabsService} from './shared/header-tabs.service';
 import {SwiperService} from './shared/swiper.service';
 import {ProductionNodesService} from './shared/production-nodes.service';
 import {DevCaseService} from './shared/dev-case.service';
@@ -63,8 +64,8 @@ import { AfterStartComponent } from './after-start/after-start.component';
     MobileHeaderModule
   ],
   providers: [
-    LanguageService, NewsService, SwiperService, ProductionNodesService, DevCaseService, PapersService,
-    FontFamliyService, WindowService],
+    LanguageService, NewsService, SwiperService, HeaderTabsService,
+    ProductionNodesService, DevCaseService, PapersService, FontFamliyService, WindowService],
   bootstrap: [AppComponent]
 })
 export class AppModule{
