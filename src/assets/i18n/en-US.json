@@ -23,7 +23,7 @@
 
   "dec-cl-com-blo-net":"The public blockchain network for the future digital economy",
   "t-l-blo-a-s-com-app":"Our blockchain technology provides innovative solutions for enterprises facing real world problems",
-  "aelf-all-blo-to-em":"Decentralized Cloud Computing Blockchain Network",
+  "aelf-all-blo-to-em": "Decentralized cloud computing blockchain network",
   "pro-a-blo-pla-&-exc-per": "aelf is an innovative open-source blockchain network designed as a complete business solution. The structure of ‘one main chain + multiple side chains’ allows developers to independently deploy or run DApps (Distributed Applications) on individual side chains to achieve effective resource isolation. By adopting parallel processing and the unique AEDPoS consensus mechanism, aelf's technology made major breakthroughs in performance, achieving high throughput. Based on the cross-chain technology of the main chain index and verification mechanisms, aelf achieves efficient and secure communication between the main chain and all side chains, and as a result, allows direct interoperability between side chains.",
   "new-bus-tra": "Let blockchain easily reach traditional economy",
   "bre-th-tra-bus-mod": "aelf meets the governance needs of different applications by providing a range of models, including a Parliament Governance Model, an Association Governance Model, and a Referendum Governance Model. Through the extremely fine-tuned incentive model, the network is equipped with a self-sustainable system and supports self-evolution on a practical basis. Simultaneously, developers can debug, develop and deploy applications based on a well-developed IDE provided by aelf.",
@@ -49,7 +49,7 @@
   "develp-stage1-2":"• Launch ELF token ",
   "develp-stage1-3":"• Launch Candy System",
   "develp-stage2":"Stage Ⅱ : Basic Function Development",
-  "develp-stage2-1":"• Launch aelf Beta Network",
+  "develp-stage2-1": "• Launch aelf Testnet",
   "develp-stage2-2":"• Complete parallel processing function",
   "develp-stage2-3":"• Build AEDPoS consensus mechanism",
   "develp-stage3":"Stage Ⅲ : Core System Development",

@@ -3,7 +3,7 @@
     <div class=" pt180 pb80">
         <div class="wrapper ta-c color-white clearfix vedio-size">
         <div class="col12-sm-12 ptl22-item">
-          <div class="swiper-container">
+          <div class="swiper-container" id="swiper-container-after">
             <div class="swiper-wrapper pb130">
               <div 
               *ngFor="let item of swiperList"
@@ -25,7 +25,10 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination" style="margin-top: 70px"></div><!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
+            <div 
+            id="swiper-pagination-after"
+            class="swiper-pagination" style="margin-top: 70px"></div>
+            <!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
           </div>
         </div>
       </div>
@@ -112,7 +115,8 @@
               </div>
               <div class="txt-content">
                 <h3 class="fs-24 mb10 color-white"><strong>{{"voting" | translate}}</strong></h3>
-                <p class="lh-16emr color-white fs-14">{{"user-can-sel" | translate}} <a target="_blank" class="ordinary-link fs-14 ml10" [href]="currentLanguage === '中文' ? 'https://app.gitbook.com/@aelf-io/s/node-zh/wei-jie-dian-tou-piao' : 'https://aelf-io.gitbook.io/node-en-1/voting-for-members '">{{"tutorial" | translate}}</a></p>
+                <!-- <p class="lh-16emr color-white fs-14">{{"user-can-sel" | translate}} <a target="_blank" class="ordinary-link fs-14 ml10" [href]="currentLanguage === '中文' ? 'https://app.gitbook.com/@aelf-io/s/node-zh/wei-jie-dian-tou-piao' : 'https://aelf-io.gitbook.io/node-en-1/voting-for-members '">{{"tutorial" | translate}}</a></p> -->
+                <p class="lh-16em color-white fs-14">{{"user-can-sel" | translate}} <a target="_blank" class="ordinary-link fs-14 ml10" [href]="currentLanguage === '中文' ? 'https://app.gitbook.com/@aelf-io/s/node-zh/wei-jie-dian-tou-piao' : 'https://aelf-io.gitbook.io/node-en-1/voting-for-members '">{{"tutorial" | translate}}</a></p>
               </div>
             </div>
           </div>
@@ -206,8 +210,12 @@
       data-center="transform:translate(0%, 0%); opacity:1;">
         <div class=" clearfix">
           <div class="col12-tn-12 ta-l pt10 mb60 tn-show mb30 pro-init-imp">
-            <h3 class="fs-36 mb15 color-white  ta-l"><strong>{{"pro-init-imp" | translate}}</strong> <a class="ordinary-link fs-14 sm-hidden" href="https://explorer-test.aelf.io/proposal" >{{"more" | translate}}</a></h3>
-            <h3 class="fs-18 lh-16em color-white  ta-l">{{"pro-init-imp_sum" | translate}} <a class="ordinary-link fs-18 sm-hidden" href="https://explorer-test.aelf.io/proposal?#https%3A%2F%2Fexplorer-test.aelf.io%2Fviewer%2Fproposal.html%3Frandom%3D5f8cf4cf%23%2Fapply" >{{"Submit Proposal" | translate}}</a></h3>
+            <h3 class="fs-36 mb15 color-white  ta-l"><strong>{{"pro-init-imp" | translate}}</strong>
+              <a class="ordinary-link fs-14 sm-hidden" target="_blank" href="https://explorer-test.aelf.io/proposal" >{{"more" | translate}}</a></h3>
+            <h3 class="fs-18 lh-16em color-white  ta-l">{{"pro-init-imp_sum" | translate}}
+              <a class="ordinary-link fs-18 sm-hidden" target="_blank" 
+                href="https://explorer-test.aelf.io/proposal?#https%3A%2F%2Fexplorer-test.aelf.io%2Fviewer%2Fproposal.html%3Frandom%3D5f8cf4cf%23%2Fapply">{{"Submit Proposal" | translate}}</a>
+              </h3>
             <h3 class="lg-hidden ta-c pt10"><a class="fs-14" style="margin: 0 auto" href="https://explorer-test.aelf.io/proposal?#https%3A%2F%2Fexplorer-test.aelf.io%2Fviewer%2Fproposal.html%3Frandom%3D5f8cf4cf%23%2Fapply" ><p style="width: 250px;height: 28px;line-height: 28px;padding: 0;margin: 10px auto;border-radius: 1px;" class="ordinary-btn">{{"proposal now" | translate}}</p></a></h3>
             <h3 class="lg-hidden ta-c pt10"><a class="ordinary-link fs-14" style="margin: 0 auto" href="https://explorer-test.aelf.io/proposal" >{{"more" | translate}}</a></h3>
           </div>

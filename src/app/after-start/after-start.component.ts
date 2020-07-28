@@ -79,15 +79,15 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
       this.OnChange(this.languagesDic2[data.lang] || 'English');
     });
 
-    new Swiper('.swiper-container',{
-      pagination: {
-        el: '.swiper-pagination',
-        clickable :true,
-      },
-      autoplay: {
-        delay: 3000,//1秒切换一次
-      },
-    })
+    // new Swiper('.swiper-container',{
+    //   pagination: {
+    //     el: '.swiper-pagination',
+    //     clickable :true,
+    //   },
+    //   autoplay: {
+    //     delay: 3000,//1秒切换一次
+    //   },
+    // })
   }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
@@ -109,9 +109,9 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
       
       this.swiperList = data;
       setTimeout(() => {
-        new Swiper('.swiper-container', {
+        new Swiper('#swiper-container-after', {
           pagination: {
-            el: '.swiper-pagination',
+            el: '#swiper-pagination-after',
             clickable: true,
           },
           autoplay: {
