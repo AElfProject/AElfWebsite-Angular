@@ -2,6 +2,7 @@ import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
+import { TranslateService } from '@ngx-translate/core';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -20,11 +21,13 @@ export class EconomicComponent implements OnInit, AfterViewInit {
   public config: PerfectScrollbarConfigInterface = {};
   public currentLanguage = '';
   public languagesDic: any;
+  public languagesDic2: any;
   public languageList = ['', ''];
   public VideoSrc: any;
   constructor(private _languageService: LanguageService,
               private _cookieService: CookieService,
               public _fontFamlily: FontFamliyService,
+              private _translateService: TranslateService,
               private _windowRef: WindowService,
               private sanitizer: DomSanitizer,
               public router: Router) {
@@ -35,6 +38,7 @@ export class EconomicComponent implements OnInit, AfterViewInit {
       .getLanguageConfig()
       .subscribe(data => {
         this.languagesDic = data["languagesDic1"];
+        this.languagesDic2 = data["languagesDic2"];
         this.languageList = data["languageOptions"];
         this.currentLanguage =
           data["languagesDic2"][
@@ -48,6 +52,11 @@ export class EconomicComponent implements OnInit, AfterViewInit {
             $(window).scrollTop(0);
           });
       });
+
+    this._translateService.onLangChange.subscribe(data => {
+      this.OnChange(this.languagesDic2[data.lang] || 'English');
+    });
+
     const $title1 = $(".title1");
     $title1.show();
     if ($title1.show().arctext) {
