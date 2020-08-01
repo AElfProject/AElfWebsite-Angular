@@ -29,24 +29,13 @@ export function HttpLoaderFactory(http: HttpClient) {
 const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
-import { AboutComponent } from './about/about.component';
+
 import { HomeComponent } from './home/home.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { EconomicComponent } from './economic/economic.component';
-import { FacilityComponent } from './facility/facility.component';
-import { PlugComponent } from './plug/plug.component';
-import { WebwalletComponent } from './webwallet/webwallet.component';
-import { WalletComponent } from './wallet/wallet.component';
-import { BrowserComponent } from './browser/browser.component';
-import { DeveloperComponent } from './developer/developer.component';
-import { AfterStartComponent } from './after-start/after-start.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AboutComponent, HomeComponent, 
-    HomepageComponent, EconomicComponent, FacilityComponent, 
-    PlugComponent, WebwalletComponent, WalletComponent, BrowserComponent,  
-    DeveloperComponent, AfterStartComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
