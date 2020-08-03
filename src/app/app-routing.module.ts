@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent} from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', loadChildren: './home/home.module#HomeModule' },
   { path: 'app-about', loadChildren: './about/about.module#AboutModule' },
   { path: 'homepage', loadChildren: './homepage/homepage.module#HomePageModule' },
   { path: 'economic', loadChildren: './economic/economic.module#EconomicModule' },

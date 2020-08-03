@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
@@ -35,7 +34,6 @@ export class EconomicComponent implements OnInit, AfterViewInit {
               private _windowRef: WindowService,
               private _papersService: PapersService,
               private sanitizer: DomSanitizer,
-              private _translateService: TranslateService,
               public router: Router) {
   }
 

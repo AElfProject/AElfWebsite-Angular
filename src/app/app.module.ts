@@ -35,8 +35,7 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
