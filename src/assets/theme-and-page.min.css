@@ -5435,10 +5435,10 @@ body.en {
 
 @media only screen and (min-width: 1240px) {
   .foot-bat div:nth-child(4){
-    margin-right: 18%;
+    margin-right: 10%;
   }
   .foot-bat div:nth-child(3){
-    margin-right: 16%;
+    margin-right: 10%;
   }
   .foot-bat div:nth-child(2){
     margin-right: 10%;
@@ -5447,13 +5447,13 @@ body.en {
 
 @media screen and (min-width:1030px) and (max-width:1240px) {
   .foot-bat div:nth-child(4){
-    margin-right: 10%;
+    margin-right: 6%;
   }
   .foot-bat div:nth-child(3){
     margin-right: 6%;
   }
   .foot-bat div:nth-child(2){
-    margin-right: 2%;
+    margin-right: 6%;
   }
 }
 

@@ -44,12 +44,12 @@ export class Footer implements OnInit {
           this.currentLanguage
         );
 
+        this._translateService.onLangChange.subscribe(data => {
+          this.handleLangChange(this.languagesDic2[data.lang] || 'English');
+        });
+
         this.getEconomicPapers();
         this.getWhitepapers();
-      });
-
-      this._translateService.onLangChange.subscribe(data => {
-        this.handleLangChange(this.languagesDic2[data.lang] || 'English');
       });
   }
 

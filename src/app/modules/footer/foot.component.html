@@ -6,7 +6,7 @@
           <div class="ptl22-box">
             <p class="mb50 foot-icon"><img src="assets/images/logo.svg" alt=""></p>
             <div class="fs-20 clearfix shares ">
-              <span class="clearfix foot-bar">
+              <span class="clearfix foot-bar" [ngSwitch]="currentLanguage">
                 <a target="_blank" href="mailto:hr@aelf.io"><i class="fa fa-envelope-o"></i></a>
                 <a href="http://www.youtube.com/c/aelfblockchain" target="_blank"><i class="fa fa-youtube-play"></i></a>
                 <a href="https://www.facebook.com/aelfofficial/" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -14,8 +14,14 @@
                 <a href="https://github.com/aelfProject" target="_blank"><i class="fa fa-github"></i></a>
                 <a target="_blank" href="https://www.reddit.com/r/aelfofficial/"><i class="fa fa-reddit-alien"></i></a>
                 <a href="https://www.linkedin.com/company/aelfblockchain/" target="_blank"><i
-                    class="fa fa-linkedin"></i></a>
-                <a href="https://t.me/aelfblockchain" class="weixin-img" target="_blank"><i class="fa fa-send"></i></a>
+                  class="fa fa-linkedin"></i></a>  
+                <a target="_blank" href="https://www.reddit.com/r/aelfofficial/"><i class="fa fa-reddit-alien"></i></a>
+                <ng-template [ngSwitchCase]="languageList[1]">
+                  <a href="https://t.me/aelf_chs" class="weixin-img" target="_blank"><i class="fa fa-send"></i></a>
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                  <a href="https://t.me/aelfblockchain" class="weixin-img" target="_blank"><i class="fa fa-send"></i></a>
+                </ng-template>    
                 <a href="https://medium.com/aelfblockchain" target="_blank"><i class="fa fa-medium"></i></a>
                 <a href="https://0.plus/aelf_chs" target="_blank" id="biyong"></a>
               </span>

@@ -67,16 +67,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
         this.getEconomicPapers();
         this.getWhitepapers();
-      });
 
-    this.router.events
-      .subscribe((event) => {
-        $(window).scrollTop(0);
-      });
+        this.router.events
+          .subscribe((event) => {
+            $(window).scrollTop(0);
+          });
 
-    this._translateService.onLangChange.subscribe(data => {
-      this.OnChange(this.languagesDic2[data.lang] || 'English');
-    });
+        this._translateService.onLangChange.subscribe(data => {
+          this.OnChange(this.languagesDic2[data.lang] || 'English');
+        });
+      });
   }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');

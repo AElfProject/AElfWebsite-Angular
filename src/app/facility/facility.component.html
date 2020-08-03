@@ -5,15 +5,13 @@
         <div class="col12-sm-6 ptl22-item">
           <div class="ptl22-box">
             <div class="Testnet" [ngSwitch]="currentLanguage">
-              <h3 class="fs-36 mb40 mt40 ta-l" ><strong>{{"aelf Public Testnet" | translate}}</strong></h3>
+              <h3 class="fs-36 mb40 mt40 ta-l"><strong>{{"aelf Public Testnet" | translate}}</strong></h3>
               <p class="fs-18 lh-16em ta-l">{{"aelf Public Testnet-sum" | translate}}</p>
               <h3 class="mt20">
 
-                 <a target="_blank" class=" mb25 "
-                   [href]="currentOnePage"
-                   rel="noreferrer noopener">
-                   <p class="ordinary-btn">{{"click-enter" | translate}}</p>
-                 </a>
+                <a target="_blank" class=" mb25 " [href]="currentOnePage" rel="noreferrer noopener">
+                  <p class="ordinary-btn">{{"click-enter" | translate}}</p>
+                </a>
 
                 <!-- <ng-template [ngSwitchCase]="languageList[1]">
                   <a target="_blank" class=" mb25 "
@@ -53,9 +51,8 @@
     </div>
 
     <div class="wrapper pt50 pb50">
-      <div class="pic-txt-list-22 ta-c color-white clearfix"
-      data-bottom="transform:translate(0%, 30%); opacity:0;"
-      data-center="transform:translate(0%, 0%); opacity:1;">
+      <div class="pic-txt-list-22 ta-c color-white clearfix" data-bottom="transform:translate(0%, 30%); opacity:0;"
+        data-center="transform:translate(0%, 0%); opacity:1;">
 
         <div class="col12-sm-12 ptl22-item">
           <div class="ptl22-box">
@@ -77,8 +74,7 @@
     </div>
     <div class="wrapper pt50 pb50">
       <div class="pic-txt-list-22 ta-c color-white clearfix vedio-size"
-      data-bottom="transform:translate(0%, 30%); opacity:0;"
-      data-center="transform:translate(0%, 0%); opacity:1;">
+        data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
         <div class="col12-sm-6 ptl22-item sm-hidden">
           <div class="ptl22-box">
             <img src="assets/images/facility_ic.png" alt="">
@@ -126,43 +122,69 @@
       </div>
     </div>
     <div class="wrapper pt50 pb50">
-      <div class="txt"
-      data-bottom="transform:translate(0%, 30%); opacity:0;"
-      data-center="transform:translate(0%, 0%); opacity:1;">
+      <div class="txt" data-bottom="transform:translate(0%, 30%); opacity:0;"
+        data-center="transform:translate(0%, 0%); opacity:1;">
         <div class=" clearfix">
           <div class=" clearfix">
-            <div class="col12-lg-12 col12-md-12 col12-sm-12 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+            <div class="col12-lg-12 col12-md-12 col12-sm-12 ta-c color-white ta-c skrollable skrollable-between mb30"
+              data-bottom="transform:translate(0%, 30%); opacity:0;"
+              data-center="transform:translate(0%, 0%); opacity:1;">
               <h3 class="bigTitle ta-c mb40 color-white skrollable skrollable-between">
-               <b>{{"test-supp" | translate}}</b>
+                <b>{{"test-supp" | translate}}</b>
               </h3>
               <div class="fs-14 lh-38 clearfix skrollable skrollable-between test-net-buttons">
-                <a target="_blank" class="col12-lg-4 col12-md-4 col12-sm-6 mb25 test-net-button" href="https://docs.aelf.io/" target="_blank" rel="noreferrer noopener" style="overflow: hidden;">
+                <a target="_blank" class="col12-lg-4 col12-md-4 col12-sm-6 mb25 test-net-button"
+                  href="https://docs.aelf.io/" target="_blank" rel="noreferrer noopener" style="overflow: hidden;">
                   <i class="fa fa-file-text mr5"></i>
                   {{"Developer Documentation" | translate}}
                 </a>
-                <a class="col12-lg-4 meenu-btn meenu-btn1 col12-md-4 col12-sm-6  mb25 test-net-button" rel="noreferrer noopener">
-                  <span class="fs-14 brow s color-white" style="color: #fff"> <i class="fa fa-hand-stop-o color-white mr5"></i>{{"Apply for Test Token" | translate}}</span>
+                <a class="col12-lg-4 meenu-btn meenu-btn1 col12-md-4 col12-sm-6  mb25 test-net-button"
+                  rel="noreferrer noopener">
+                  <span class="fs-14 brow s color-white" style="color: #fff"> <i
+                      class="fa fa-hand-stop-o color-white mr5"></i>{{"Apply for Test Token" | translate}}</span>
                   <ul class="fs-14 clearfix">
-                    <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://blockchain-aelf.hk.mikecrm.com/vx5roeV':'https://docs.google.com/forms/d/e/1FAIpQLSehX3CnuZl9hht8aoCXdra5fREA7MlTls7lWBPDqH92G6-Iaw/viewform?usp=sf_link'"><p>{{"Application for aelf Node’s Test Token" | translate}}</p></a></li>
-                    <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://blockchain-aelf.hk.mikecrm.com/ZTTiwW4':'https://docs.google.com/forms/d/e/1FAIpQLSfwilEdP2C5hXTtKebsSx5LRq8w1Mihwh9lJV80QJfgGcNmoQ/viewform?usp=sf_link'"><p>{{"Application for aelf Test Token" | translate}}</p></a></li>
+                    <li style="width: inherit"><a target="_blank"
+                        [href]="currentLanguage === '中文' ? 'http://blockchain-aelf.hk.mikecrm.com/vx5roeV':'https://docs.google.com/forms/d/e/1FAIpQLSehX3CnuZl9hht8aoCXdra5fREA7MlTls7lWBPDqH92G6-Iaw/viewform?usp=sf_link'">
+                        <p>{{"Application for aelf Node’s Test Token" | translate}}</p>
+                      </a></li>
+                    <li style="width: inherit"><a target="_blank"
+                        [href]="currentLanguage === '中文' ? 'http://blockchain-aelf.hk.mikecrm.com/ZTTiwW4':'https://docs.google.com/forms/d/e/1FAIpQLSfwilEdP2C5hXTtKebsSx5LRq8w1Mihwh9lJV80QJfgGcNmoQ/viewform?usp=sf_link'">
+                        <p>{{"Application for aelf Test Token" | translate}}</p>
+                      </a></li>
                   </ul>
                 </a>
-                <a target="_blank" class="col12-lg-4 meenu-btn meenu-btn2 col12-md-4 col12-sm-6 mb25 test-net-button" rel="noreferrer noopener">
-                  <span class="fs-14 brow s color-white" style="color: #fff"> <i class="fa fa-chrome color-white mr5"></i>{{"Beta Web Explorer" | translate}}</span>
+                <a target="_blank" class="col12-lg-4 meenu-btn meenu-btn2 col12-md-4 col12-sm-6 mb25 test-net-button"
+                  rel="noreferrer noopener">
+                  <span class="fs-14 brow s color-white" style="color: #fff"> <i
+                      class="fa fa-chrome color-white mr5"></i>{{"Beta Web Explorer" | translate}}</span>
                   <ul class="fs-14 clearfix">
-                    <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://aelf-explorer-test.aelf.io/':'http://aelf-explorer-test.aelf.io/'"><p>{{"Main Chain AELF" | translate}}</p></a></li>
-                    <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://tdvv-explorer-test.aelf.io/':'http://tdvv-explorer-test.aelf.io/'"><p>{{"Side Chain tDVV" | translate}}</p></a></li>
+                    <li style="width: inherit"><a target="_blank"
+                        [href]="currentLanguage === '中文' ? 'http://aelf-explorer-test.aelf.io/':'http://aelf-explorer-test.aelf.io/'">
+                        <p>{{"Main Chain AELF" | translate}}</p>
+                      </a></li>
+                    <li style="width: inherit"><a target="_blank"
+                        [href]="currentLanguage === '中文' ? 'http://tdvv-explorer-test.aelf.io/':'http://tdvv-explorer-test.aelf.io/'">
+                        <p>{{"Side Chain tDVV" | translate}}</p>
+                      </a></li>
                     <!-- <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://tdvw-explorer-test.aelf.io/':'http://tdvw-explorer-test.aelf.io/'"><p>{{"Side Chain tDVW" | translate}}</p></a></li>
                     <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://tdvx-explorer-test.aelf.io/':'http://tdvx-explorer-test.aelf.io/'"><p>{{"Side Chain tDVX" | translate}}</p></a></li>
                     <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://tdvy-explorer-test.aelf.io/':'http://tdvy-explorer-test.aelf.io/'"><p>{{"Side Chain tDVY" | translate}}</p></a></li>
                     <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://tdvz-explorer-test.aelf.io/':'http://tdvz-explorer-test.aelf.io/'"><p>{{"Side Chain tDVZ" | translate}}</p></a></li> -->
                   </ul>
                 </a>
-                <a  class="col12-lg-4 meenu-btn meenu-btn3 col12-md-4 col12-sm-6  mb25 test-net-button" rel="noreferrer noopener">
-                  <span class="fs-14 brow s color-white" style="color: #fff"> <i class="fa fa-credit-card-alt color-white mr5"></i>{{"Beta Web Wallet" | translate}}</span>
+                <a class="col12-lg-4 meenu-btn meenu-btn3 col12-md-4 col12-sm-6  mb25 test-net-button"
+                  rel="noreferrer noopener">
+                  <span class="fs-14 brow s color-white" style="color: #fff"> <i
+                      class="fa fa-credit-card-alt color-white mr5"></i>{{"Beta Web Wallet" | translate}}</span>
                   <ul class="fs-14 clearfix">
-                    <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://aelf-wallet-test.aelf.io':'http://aelf-wallet-test.aelf.io'"><p>{{"Main Chain AELF" | translate}}</p></a></li>
-                    <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://tdvv-wallet-test.aelf.io':'http://tdvv-wallet-test.aelf.io'"><p>{{"Side Chain tDVV" | translate}}</p></a></li>
+                    <li style="width: inherit"><a target="_blank"
+                        [href]="currentLanguage === '中文' ? 'http://aelf-wallet-test.aelf.io':'http://aelf-wallet-test.aelf.io'">
+                        <p>{{"Main Chain AELF" | translate}}</p>
+                      </a></li>
+                    <li style="width: inherit"><a target="_blank"
+                        [href]="currentLanguage === '中文' ? 'http://tdvv-wallet-test.aelf.io':'http://tdvv-wallet-test.aelf.io'">
+                        <p>{{"Side Chain tDVV" | translate}}</p>
+                      </a></li>
                     <!-- <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://tdvw-wallet-test.aelf.io':'http://tdvw-wallet-test.aelf.io'"><p>{{"Side Chain tDVW" | translate}}</p></a></li>
                     <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? ' http://tdvx-wallet-test.aelf.io':' http://tdvx-wallet-test.aelf.io'"><p>{{"Side Chain tDVX" | translate}}</p></a></li>
                     <li style="width: inherit" ><a target="_blank" [href]="currentLanguage === '中文' ? 'http://tdvy-wallet-test.aelf.io':'http://tdvy-wallet-test.aelf.io'"><p>{{"Side Chain tDVY" | translate}}</p></a></li>
@@ -175,8 +197,7 @@
                   {{"Beta Android Wallet," | translate}}
                 </a>
                 <a class="col12-lg-4 col12-md-4 col12-sm-6 mb25 test-net-button"
-                  href="http://d.alphaqr.com/aelfwalletios" target="_blank"
-                  rel="noreferrer noopener">
+                  href="http://d.alphaqr.com/aelfwalletios" target="_blank" rel="noreferrer noopener">
                   <i class="fa fa-apple mr5"></i>
                   {{"Beta iOS Wallet" | translate}}
                 </a>
@@ -191,11 +212,13 @@
         <div class=" clearfix">
           <div class=" clearfix about-us">
             <div class="ta-c pt30 mb30 pb30">
-              <p class="fs-20 mb15 color-white"><a target="_blank" href="https://shimo.im/docs/3thGPdrCDDqwpQkV/ "><b>{{"Thanks for checking" | translate}}</b></a></p>
-              <p class="fs-10 mb15 color-white">{{"aelf Developer Community Staff Contact Information:" | translate}}</p>
-              <p class="fs-10 mb15 color-white">{{"QQ: 1373175449 (Dayu)" | translate}}</p>
-              <p class="fs-10 mb15 color-white">{{"WeChat: a439714 (Dayu)" | translate}}</p>
-              <p class="fs-10 mb15 color-white">Telegram: Doris Guo(@DorisYG)</p>
+              <p class="fs-20 mb15 color-white"><a target="_blank"
+                  href="https://shimo.im/docs/3thGPdrCDDqwpQkV/ "><b>{{"Thanks for checking" | translate}}</b></a></p>
+              <p class="fs-10 mb15 color-white">{{"aelf Developer Community Staff Contact Information:" | translate}}
+              </p>
+              <p class="fs-10 mb15 color-white">QQ：{{connectInfo.qq}}</p>
+              <p class="fs-10 mb15 color-white">WeChat：{{connectInfo.wechat}}</p>
+              <p class="fs-10 mb15 color-white">Telegram: {{connectInfo.telegram}}</p>
             </div>
           </div>
         </div>

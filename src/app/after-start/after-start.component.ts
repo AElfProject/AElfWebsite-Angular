@@ -71,13 +71,13 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
             $(window).scrollTop(0);
           });
 
+        this._translateService.onLangChange.subscribe(data => {
+          this.OnChange(this.languagesDic2[data.lang] || 'English');
+        });
+
         this.getSwiper();
         this.getProductionNodes();
       });
-
-    this._translateService.onLangChange.subscribe(data => {
-      this.OnChange(this.languagesDic2[data.lang] || 'English');
-    });
 
     new Swiper('.swiper-container',{
       pagination: {

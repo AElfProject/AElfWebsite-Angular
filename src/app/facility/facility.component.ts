@@ -6,6 +6,7 @@ import { FontFamliyService } from '../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { PapersService } from '../shared/papers.service';
+import { ConnectInfoService } from '../shared/connectInfo.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { Router } from '@angular/router';
@@ -27,12 +28,14 @@ export class FacilityComponent implements OnInit, AfterViewInit {
   private onePage = {};
   public currentOnePage = '';
   public VideoSrc: any;
+  public connectInfo = {};
   constructor(private _languageService: LanguageService,
               private _cookieService: CookieService,
               public _fontFamlily: FontFamliyService,
               private _translateService: TranslateService,
               private _papersService: PapersService,
               private _windowRef: WindowService,
+              private _connectInfoService: ConnectInfoService,
               private sanitizer: DomSanitizer,
               public router: Router) {
   }
@@ -56,11 +59,16 @@ export class FacilityComponent implements OnInit, AfterViewInit {
             $(window).scrollTop(0);
           });
 
+          this._translateService.onLangChange.subscribe(data => {
+            this.OnChange(this.languagesDic2[data.lang] || 'English');
+          });
+
         this.getOnePages();
       });
-    this._translateService.onLangChange.subscribe(data => {
-      this.OnChange(this.languagesDic2[data.lang] || 'English');
-    });
+
+      this._connectInfoService
+        .getConnectInfo()
+        .subscribe(data => this.connectInfo = data[0]);
   }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
