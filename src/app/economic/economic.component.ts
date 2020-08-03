@@ -1,9 +1,11 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
 import { FontFamliyService } from '../shared/font-famliy.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
+import { PapersService } from '../shared/papers.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { Router } from '@angular/router';
@@ -20,13 +22,18 @@ export class EconomicComponent implements OnInit, AfterViewInit {
   public config: PerfectScrollbarConfigInterface = {};
   public currentLanguage = '';
   public languagesDic: any;
+  public languagesDic2: any;
   public languageList = ['', ''];
   public VideoSrc: any;
+  public currentEconomicPaper = '';
+  private economicPapers = {};
   constructor(private _languageService: LanguageService,
               private _cookieService: CookieService,
               public _fontFamlily: FontFamliyService,
               private _windowRef: WindowService,
+              private _papersService: PapersService,
               private sanitizer: DomSanitizer,
+              private _translateService: TranslateService,
               public router: Router) {
   }
 
@@ -35,6 +42,7 @@ export class EconomicComponent implements OnInit, AfterViewInit {
       .getLanguageConfig()
       .subscribe(data => {
         this.languagesDic = data["languagesDic1"];
+        this.languagesDic2 = data["languagesDic2"];
         this.languageList = data["languageOptions"];
         this.currentLanguage =
           data["languagesDic2"][
@@ -43,11 +51,16 @@ export class EconomicComponent implements OnInit, AfterViewInit {
         this._fontFamlily.changeFontFamily(
           this.currentLanguage
         );
+        this.getEconomicPapers();
         this.router.events
           .subscribe((event) => {
             $(window).scrollTop(0);
           });
       });
+
+    this._translateService.onLangChange.subscribe(data => {
+      this.OnChange(this.languagesDic2[data.lang] || 'English');
+    });
     const $title1 = $(".title1");
     $title1.show();
     if ($title1.show().arctext) {
@@ -75,13 +88,29 @@ export class EconomicComponent implements OnInit, AfterViewInit {
     const displayNew = display === 'block' ? 'none' : 'block';
     $notice.style.display = displayNew;
   }
+
+  getEconomicPapers() {
+    this._papersService.getPapers('economic').subscribe(data => {
+      data.forEach((paper: any) => {
+        this.economicPapers[paper.lang] = paper;
+      });
+      this.setEconomicPapers();
+    });
+  }
+
+  setEconomicPapers() {
+    const currentLanguagePaper = this.economicPapers[this.currentLanguage];
+    const EnglishPaper = this.economicPapers['English'] || { url: '' };
+    this.currentEconomicPaper = currentLanguagePaper ? currentLanguagePaper.url : EnglishPaper.url;
+  }
+
   OnChange(languageSelection: string) {
     this._languageService.switchLanguage(this.languagesDic[languageSelection]);
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+    this.setEconomicPapers();
   }
-
 
   // nav bar change color when the scroll event happens.
   @HostListener('window:scroll', ['$event'])
