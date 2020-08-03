@@ -22,7 +22,7 @@
   "devel-center": "开发者中心",
 
   "dec-cl-com-blo-net":"专为新经济打造的区块链开放网络",
-  "t-l-blo-a-s-com-app":"面向真实应用场景需求以技术驱动新经济实现跨越式发展",
+  "t-l-blo-a-s-com-app":"面向真实应用场景需求  以技术驱动新经济  实现跨越式发展",
   "aelf-all-blo-to-em":"去中心化云计算区块链网络",
   "pro-a-blo-pla-&-exc-per":"aelf是专为新经济打造的区块链开放网络。aelf一主链+多侧链的结构可支持开发者基于一条侧链独立部署或运行分布式应用，实现资源的有效隔离；aelf通过采用并行运算以及AEDPos共识机制实现在性能上的极大突破，可承载高频交易需求；aelf基于主链索引和验证机制的跨链技术实现了主链与侧链、以及侧链之间的信息交互，方便价值的高效传递。",
   "new-bus-tra":"让区块链轻松触达传统经济业态",
@@ -170,9 +170,9 @@
   "Transaction fees payment scheme": "交易费付费方案",
   "sed on transaction parameters and contract": "按交易参数大小付费",
   "related-content-title": "资源token相关内容：",
-  "related-content-1": "资源Token交易费模型是一种按需付费方式。通过分析交易执行时对资源的使用情况来收取开发者交易费",
-  "related-content-2": "使用资源Token来度量DApp对资源的按需使用情况，这些资源Token包括：CPU、RAM、DISK、NET、READ、WRITE、STORAGE、TRAFFIC、TOKEN各5亿枚",
-  "related-content-3": "资源购买：资源Token购买需要支付千分之五作为手续费，其中50%销毁，50%进入分红池",
+  "related-content-1": "资源Token交易费模型是一种按需付费方式。通过分析交易执行时对资源的使用情况来收取开发者交易费。",
+  "related-content-2": "使用资源Token来度量DApp对资源的按需使用情况，这些资源Token包括：CPU、RAM、DISK、NET、READ、WRITE、STORAGE、TRAFFIC、TOKEN各5亿枚。",
+  "related-content-3": "资源购买：资源Token购买需要支付千分之五作为手续费，其中50%销毁，50%进入分红池。",
 
 
 
@@ -206,11 +206,11 @@
   "aelf Public Testnet-sum":"aelf公开测试网是一个支持多链多共识的高性能测试网络。可提供完备的模块化开发组件、智能合约开发工具及开发文档；基于多级主链-侧链体系的跨链协作机制可支持链与链之间的转账交互；完善的并行运算体系使其具有极强的事务处理能力；基于侧链的可扩展性和灵活性，开发人员可便捷地开发和部署具有独立经济系统的去中心化应用",
   "Join the Testnet":"加入测试网",
   "User-friendly":"可体验功能及配套应用工具：",
-  "Build-local":"• 构建本地测试环境、搭建测试节点及侧链；",
-  "Users-can-write":"• 支持用户编写、发布执行智能合约，快速搭建属于自己的区块链系统；",
-  "Use-the-development":"• 利用开发模板，基于aelf区块链系统创建DApp；",
-  "Apply-for-the":"• 申请创建及使用测试钱包，进行多种资产同链/跨链交易；",
-  "Query main/side":"• 通过浏览器查询主链/侧链区块及交易详细信息 ",
+  "Build-local":"构建本地测试环境、搭建测试节点及侧链；",
+  "Users-can-write":"支持用户编写、发布执行智能合约，快速搭建属于自己的区块链系统；",
+  "Use-the-development":"利用开发模板，基于aelf区块链系统创建DApp；",
+  "Apply-for-the":"申请创建及使用测试钱包，进行多种资产同链/跨链交易；",
+  "Query main/side":"通过浏览器查询主链/侧链区块及交易详细信息 ",
   "The-testnet-is-open":"该网络永远是开放的，任何人都可以不受限制地访问和加入，以及参加测试网生产节点竞选，竞选成功者可获得aelf基金会的认证和官方渠道优先推荐",
   "Node-Distribution":"节点分布",
   "Canada":"加拿大",
