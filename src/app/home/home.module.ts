@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
@@ -22,8 +23,9 @@ import { routes } from './home.routing';
     RouterModule.forChild(routes),
     CookieModule,
     PerfectScrollbarModule,
-    TranslateModule
-  ]
+    TranslateModule,
+    LazyLoadImageModule
+  ],
 })
 export class HomeModule{
 

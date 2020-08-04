@@ -3642,6 +3642,11 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "http://registry.npm.taobao.org/negotiator/download/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+ng-lazyload-image@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ng-lazyload-image/-/ng-lazyload-image-3.0.0.tgz#76025c9c35e3e68239f405ac8d2488eb06b1d3fb"
+  integrity sha1-dgJcnDXj5oI59AWsjSSI6wax0/s=
+
 ngx-cookie@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/ngx-cookie/download/ngx-cookie-1.0.1.tgz#87d9fa023fdab2c476d99f8a131d1b8a169c005e"
