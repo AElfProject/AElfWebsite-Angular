@@ -54,30 +54,27 @@ export class HomepageComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit() {
-    this._languageService
-      .getLanguageConfig()
-      .subscribe(data => {
-        this.languagesDic = data["languagesDic1"];
-        this.languagesDic2 = data["languagesDic2"];
-        this.languageList = data["languageOptions"];
-        this.currentLanguage =
-          data["languagesDic2"][
-            this._languageService.getWebPageCurrentLanguage()
-            ];
-        this._fontFamlily.changeFontFamily(
-          this.currentLanguage
-        );
-        this.router.events
-          .subscribe((event) => {
-            $(window).scrollTop(0);
-          });
-
-        this.getSwiper();
-        this.getProductionNodes();
-        this._translateService.onLangChange.subscribe(data => {
-          this.OnChange(this.languagesDic2[data.lang] || 'English');
-        });
+    const languageConfig = this._languageService.getLanguageConfig()
+    this.languagesDic = languageConfig["languagesDic1"];
+    this.languagesDic2 = languageConfig["languagesDic2"];
+    this.languageList = languageConfig["languageOptions"];
+    this.currentLanguage =
+      languageConfig["languagesDic2"][
+        this._languageService.getWebPageCurrentLanguage()
+        ];
+    this._fontFamlily.changeFontFamily(
+      this.currentLanguage
+    );
+    this.router.events
+      .subscribe((event) => {
+        $(window).scrollTop(0);
       });
+
+    this.getSwiper();
+    this.getProductionNodes();
+    this._translateService.onLangChange.subscribe(data => {
+      this.OnChange(this.languagesDic2[data.lang] || 'English');
+    });
   }
 
   ngAfterViewInit() {

@@ -36,9 +36,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.getHiddenTabs();
     this.setMenu();
-    this._languageService
-      .getLanguageConfig()
-      .subscribe(data => {
+    const data = this._languageService
+      .getLanguageConfig();
+      // .subscribe(data => {
         this.languagesDic = data["languagesDic1"];
         this.languageList = data["languageOptions"];
         this.currentLanguage =
@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
 
         this.getEconomicPapers();
         this.getWhitepapers();
-      });
+      // });
   }
 
   setMenu() {

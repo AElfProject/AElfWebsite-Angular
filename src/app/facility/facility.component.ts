@@ -45,34 +45,31 @@ export class FacilityComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this._languageService
-      .getLanguageConfig()
-      .subscribe(data => {
-        this.languagesDic = data["languagesDic1"];
-        this.languagesDic2 = data["languagesDic2"];
-        this.languageList = data["languageOptions"];
-        this.currentLanguage =
-          data["languagesDic2"][
-            this._languageService.getWebPageCurrentLanguage()
-            ];
-        this._fontFamlily.changeFontFamily(
-          this.currentLanguage
-        );
-        this.router.events
-          .subscribe((event) => {
-            $(window).scrollTop(0);
-          });
-
-          this._translateService.onLangChange.subscribe(data => {
-            this.OnChange(this.languagesDic2[data.lang] || 'English');
-          });
-
-        this.getOnePages();
+    const languageConfig = this._languageService.getLanguageConfig()
+    this.languagesDic = languageConfig["languagesDic1"];
+    this.languagesDic2 = languageConfig["languagesDic2"];
+    this.languageList = languageConfig["languageOptions"];
+    this.currentLanguage =
+      languageConfig["languagesDic2"][
+        this._languageService.getWebPageCurrentLanguage()
+        ];
+    this._fontFamlily.changeFontFamily(
+      this.currentLanguage
+    );
+    this.router.events
+      .subscribe((event) => {
+        $(window).scrollTop(0);
       });
 
-      this._connectInfoService
-        .getConnectInfo()
-        .subscribe(data => this.connectInfo = data[0]);
+      this._translateService.onLangChange.subscribe(data => {
+        this.OnChange(this.languagesDic2[data.lang] || 'English');
+      });
+
+    this.getOnePages();
+
+    this._connectInfoService
+      .getConnectInfo()
+      .subscribe(data => this.connectInfo = data[0]);
   }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
