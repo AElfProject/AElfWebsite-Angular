@@ -49,33 +49,58 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this._languageService
+    const data = this._languageService
       .getLanguageConfig()
-      .subscribe(data => {
-        this.languagesDic = data["languagesDic1"];
-        this.languagesDic2 = data["languagesDic2"];
-        this.languageList = data["languageOptions"];
-        this.currentLanguage =
-          data["languagesDic2"][
-            this._languageService.getWebPageCurrentLanguage()
-            ];
-        this._fontFamlily.changeFontFamily(
-          this.currentLanguage
-        );
-        this.setVideo();
-        this.getHotNews();
+      // .subscribe(data => {
+      //   this.languagesDic = data["languagesDic1"];
+      //   this.languagesDic2 = data["languagesDic2"];
+      //   this.languageList = data["languageOptions"];
+      //   this.currentLanguage =
+      //     data["languagesDic2"][
+      //       this._languageService.getWebPageCurrentLanguage()
+      //       ];
+      //   this._fontFamlily.changeFontFamily(
+      //     this.currentLanguage
+      //   );
+      //   this.setVideo();
+      //   this.getHotNews();
 
-        this.getEconomicPapers();
-        this.getWhitepapers();
+      //   this.getEconomicPapers();
+      //   this.getWhitepapers();
 
-        this.router.events
-          .subscribe((event) => {
-            $(window).scrollTop(0);
-          });
+      //   this.router.events
+      //     .subscribe((event) => {
+      //       $(window).scrollTop(0);
+      //     });
 
-        this._translateService.onLangChange.subscribe(data => {
-          this.OnChange(this.languagesDic2[data.lang] || 'English');
+      //   this._translateService.onLangChange.subscribe(data => {
+      //     this.OnChange(this.languagesDic2[data.lang] || 'English');
+      //   });
+      // });
+
+      this.languagesDic = data["languagesDic1"];
+      this.languagesDic2 = data["languagesDic2"];
+      this.languageList = data["languageOptions"];
+      this.currentLanguage =
+        data["languagesDic2"][
+          this._languageService.getWebPageCurrentLanguage()
+          ];
+      this._fontFamlily.changeFontFamily(
+        this.currentLanguage
+      );
+      this.setVideo();
+      this.getHotNews();
+
+      this.getEconomicPapers();
+      this.getWhitepapers();
+
+      this.router.events
+        .subscribe((event) => {
+          $(window).scrollTop(0);
         });
+
+      this._translateService.onLangChange.subscribe(data => {
+        this.OnChange(this.languagesDic2[data.lang] || 'English');
       });
   }
   ngAfterViewInit() {

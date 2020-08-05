@@ -38,24 +38,21 @@ export class EconomicComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this._languageService
-      .getLanguageConfig()
-      .subscribe(data => {
-        this.languagesDic = data["languagesDic1"];
-        this.languagesDic2 = data["languagesDic2"];
-        this.languageList = data["languageOptions"];
-        this.currentLanguage =
-          data["languagesDic2"][
-            this._languageService.getWebPageCurrentLanguage()
-            ];
-        this._fontFamlily.changeFontFamily(
-          this.currentLanguage
-        );
-        this.getEconomicPapers();
-        this.router.events
-          .subscribe((event) => {
-            $(window).scrollTop(0);
-          });
+    const languageConfig = this._languageService.getLanguageConfig()
+    this.languagesDic = languageConfig["languagesDic1"];
+    this.languagesDic2 = languageConfig["languagesDic2"];
+    this.languageList = languageConfig["languageOptions"];
+    this.currentLanguage =
+      languageConfig["languagesDic2"][
+        this._languageService.getWebPageCurrentLanguage()
+        ];
+    this._fontFamlily.changeFontFamily(
+      this.currentLanguage
+    );
+    this.getEconomicPapers();
+    this.router.events
+      .subscribe((event) => {
+        $(window).scrollTop(0);
       });
 
     this._translateService.onLangChange.subscribe(data => {

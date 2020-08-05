@@ -26,9 +26,9 @@ export class MobileHeaderComponent implements OnInit {
 
   ngOnInit() {
     this.setMenu();
-    this._languageService
+    const data = this._languageService
       .getLanguageConfig()
-      .subscribe(data => {
+      // .subscribe(data => {
         this.languagesDic = data["languagesDic1"];
         this.languageList = data["languageOptions"];
         this.currentLanguage =
@@ -44,7 +44,7 @@ export class MobileHeaderComponent implements OnInit {
             menuToggle(true);
             $(window).scrollTop(0);
           });
-      });
+      // });
   }
 
   setMenu() {

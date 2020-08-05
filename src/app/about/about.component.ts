@@ -31,19 +31,19 @@ export class AboutComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this._languageService
+    const data = this._languageService
       .getLanguageConfig()
-      .subscribe(data => {
-        this.languagesDic = data["languagesDic1"];
-        this.languageList = data["languageOptions"];
-        this.currentLanguage =
-          data["languagesDic2"][
-            this._languageService.getWebPageCurrentLanguage()
-            ];
-        this._fontFamlily.changeFontFamily(
-          this.currentLanguage
-        );
-      });
+
+    this.languagesDic = data["languagesDic1"];
+    this.languageList = data["languageOptions"];
+    this.currentLanguage =
+      data["languagesDic2"][
+        this._languageService.getWebPageCurrentLanguage()
+        ];
+    this._fontFamlily.changeFontFamily(
+      this.currentLanguage
+    );
+
     this.router.events
       .subscribe((event) => {
         $(window).scrollTop(0);

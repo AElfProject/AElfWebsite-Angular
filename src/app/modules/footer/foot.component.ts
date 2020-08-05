@@ -29,28 +29,24 @@ export class Footer implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('nginit')
-    this._languageService
-      .getLanguageConfig()
-      .subscribe(data => {
-        this.languagesDic = data["languagesDic1"];
-        this.languagesDic2 = data['languagesDic2']
-        this.languageList = data["languageOptions"];
-        this.currentLanguage =
-          this.languagesDic2[
-            this._languageService.getWebPageCurrentLanguage()
-          ];
-        this._fontFamlily.changeFontFamily(
-          this.currentLanguage
-        );
+    const languageConfig = this._languageService.getLanguageConfig();
+    this.languagesDic = languageConfig["languagesDic1"];
+    this.languagesDic2 = languageConfig['languagesDic2']
+    this.languageList = languageConfig["languageOptions"];
+    this.currentLanguage =
+      this.languagesDic2[
+        this._languageService.getWebPageCurrentLanguage()
+      ];
+    this._fontFamlily.changeFontFamily(
+      this.currentLanguage
+    );
 
-        this._translateService.onLangChange.subscribe(data => {
-          this.handleLangChange(this.languagesDic2[data.lang] || 'English');
-        });
+    this._translateService.onLangChange.subscribe(data => {
+      this.handleLangChange(this.languagesDic2[data.lang] || 'English');
+    });
 
-        this.getEconomicPapers();
-        this.getWhitepapers();
-      });
+    this.getEconomicPapers();
+    this.getWhitepapers();
   }
 
   getEconomicPapers() {
