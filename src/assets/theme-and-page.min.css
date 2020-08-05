@@ -5581,11 +5581,11 @@ body.en {
 
 .loading-dot-item {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
     background: #5c28a9;
     border-radius: 100%;
-    margin: 5px;
+    margin: 3px;
     opacity: .3;
     -webkit-animation: loadingMove 1s infinite linear alternate;
     animation: loadingMove 1s infinite linear alternate;
