@@ -42,7 +42,7 @@
         </div>
         <div class="col12-sm-6 ptl22-item">
           <div class="ptl22-box">
-            <img [lazyLoad]="'assets/images/home1.png'" alt="">
+            <img [lazyLoad]="'assets/images/home1.png'" alt="" [offset]="200">
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
       data-center="transform:translate(0%, 0%); opacity:1;">
         <div class="col12-sm-6 ptl22-item">
           <div class="ptl22-box">
-            <img [lazyLoad]="'assets/images/home2.png'" alt="">
+            <img [lazyLoad]="'assets/images/home2.png'" alt="" [offset]="200">
           </div>
         </div>
         <div class="col12-sm-6 ptl22-item">
@@ -76,7 +76,7 @@
         </div>
         <div class="col12-sm-6 ptl22-item">
           <div class="ptl22-box">
-            <img [lazyLoad]="'assets/images/home3.png'" alt="">
+            <img [lazyLoad]="'assets/images/home3.png'" alt="" [offset]="200">
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@
             <video id="player" width="90%" style="margin: 0 auto" [src]="VideoSrc" controls></video>
           </ng-template>
           <ng-template ngSwitchDefault>
-            <iframe id="player" width="90%" type="text/html" [src]="VideoSrc" frameborder="0" scrolling="no" border="0"
+            <iframe webkit-playsinline id="player" width="90%" type="text/html" [src]="VideoSrc" frameborder="0" scrolling="no" border="0"
                     frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
           </ng-template>
         </div>
@@ -102,7 +102,7 @@
         <div class="home-1-item">
           <div class="wrap">
             <div class="img-content">
-              <img  [lazyLoad]="'assets/images/home_icon1.png'" alt="">
+              <img  [lazyLoad]="'assets/images/home_icon1.png'" alt="" [offset]="200">
             </div>
             <div class="txt-content">
               <h3 class="fs-24 mb10 color-white"><strong>{{"un-perf" | translate}}</strong></h3>
@@ -113,7 +113,7 @@
         <div class="home-1-item">
           <div class="wrap">
             <div class="img-content">
-              <img  [lazyLoad]="'assets/images/home_icon2.png'" alt="">
+              <img  [lazyLoad]="'assets/images/home_icon2.png'" alt="" [offset]="200">
             </div>
             <div class="txt-content">
               <h3 class="fs-24 mb10 color-white"><strong>{{"res-isolation" | translate}}</strong></h3>
@@ -124,7 +124,7 @@
         <div class="home-1-item">
           <div class="wrap">
             <div class="img-content">
-              <img  [lazyLoad]="'assets/images/home_icon3.png'" alt="">
+              <img  [lazyLoad]="'assets/images/home_icon3.png'" alt="" [offset]="200">
             </div>
             <div class="txt-content">
               <h3 class="fs-24 mb10 color-white"><strong>{{"sta&sim-imp" | translate}}</strong></h3>
@@ -135,7 +135,7 @@
         <div class="home-1-item">
           <div class="wrap">
             <div class="img-content">
-              <img  [lazyLoad]="'assets/images/home_icon4.png'" alt="">
+              <img  [lazyLoad]="'assets/images/home_icon4.png'" [offset]="200" alt="">
             </div>
             <div class="txt-content">
               <h3 class="fs-24 mb10 color-white"><strong>{{"mul-gover" | translate}}</strong></h3>
@@ -357,134 +357,134 @@
           <div class="team3 clearfix">
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.fbg.capital/" target="_blank"><img [lazyLoad]="'assets/images/partner-fbg.png'" alt=""></a>
+                <a href="https://www.fbg.capital/" target="_blank"><img [lazyLoad]="'assets/images/partner-fbg.png'" [offset]="200" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://www.alphabit.fund/" target="_blank"><img [lazyLoad]="'assets/images/partner-alphabit.jpg'" alt=""></a>
+                <a href="http://www.alphabit.fund/" target="_blank"><img [lazyLoad]="'assets/images/partner-alphabit.jpg'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-galaxy.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-galaxy.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://www.nodecap.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-node.png'" alt=""></a>
+                <a href="http://www.nodecap.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-node.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://www.bven.co/" target="_blank"><img [lazyLoad]="'assets/images/partner-blockchain-ventures.png'" alt=""></a>
+                <a href="http://www.bven.co/" target="_blank"><img [lazyLoad]="'assets/images/partner-blockchain-ventures.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://blocktower.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-blocktower.png'" alt=""></a>
+                <a href="https://blocktower.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-blocktower.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-chain-funder.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-chain-funder.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://www.collinstar.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-collinstar.png'" alt=""></a>
+                <a href="http://www.collinstar.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-collinstar.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://www.danhuacap.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-dhvc.png'" alt=""></a>
+                <a href="http://www.danhuacap.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-dhvc.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://draperdragon.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-dragon.jpg'" alt=""></a>
+                <a href="http://draperdragon.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-dragon.jpg'" [offset]="200" alt=""></a>
               </div>
             </div>
 
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.hashed.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-hashed.png'" alt=""></a>
+                <a href="https://www.hashed.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-hashed.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://hyperchain.capital/" target="_blank"><img [lazyLoad]="'assets/images/partner-hyperchain.png'" alt=""></a>
+                <a href="http://hyperchain.capital/" target="_blank"><img [lazyLoad]="'assets/images/partner-hyperchain.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-d.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-d.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-1kx.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-1kx.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://www.linkvc.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-linkvc.png'" alt=""></a>
+                <a href="http://www.linkvc.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-linkvc.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="http://www.signum.capital/" target="_blank"><img [lazyLoad]="'assets/images/partner-signum.png'" alt=""></a>
+                <a href="http://www.signum.capital/" target="_blank"><img [lazyLoad]="'assets/images/partner-signum.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-liaode.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-liaode.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-ha.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-ha.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-jlab.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-jlab.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-as.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-as.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-cc.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-cc.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-gbic.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-gbic.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-bixin.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-bixin.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://bitmain.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bitman.png'" alt=""></a>
+                <a href="https://bitmain.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bitman.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.huobi.com/capital" target="_blank"><img [lazyLoad]="'assets/images/partner-huobi-capital.png'" alt=""></a>
+                <a href="https://www.huobi.com/capital" target="_blank"><img [lazyLoad]="'assets/images/partner-huobi-capital.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
                 <a href="https://www.cgs.group/" target="_blank">
-                  <img [lazyLoad]="'assets/images/partner-cgs.png'" alt="">
+                  <img [lazyLoad]="'assets/images/partner-cgs.png'" [offset]="200" alt="">
                 </a>
               </div>
             </div>
@@ -501,137 +501,137 @@
           <div class="team3 clearfix">
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.bitfinex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bitfinex.png'" alt=""></a>
+                <a href="https://www.bitfinex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bitfinex.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.binance.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-binance.png'" alt=""></a>
+                <a href="https://www.binance.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-binance.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.bithumb.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bithumb.png'" alt=""></a>
+                <a href="https://www.bithumb.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bithumb.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://upbit.com" target="_blank"><img [lazyLoad]="'assets/images/partner-upbit.png'" alt=""></a>
+                <a href="https://upbit.com" target="_blank"><img [lazyLoad]="'assets/images/partner-upbit.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.okex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-okcoin.png'" alt=""></a>
+                <a href="https://www.okex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-okcoin.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.hbg.com" target="_blank"><img [lazyLoad]="'assets/images/partner-huobi.png'" alt=""></a>
+                <a href="https://www.hbg.com" target="_blank"><img [lazyLoad]="'assets/images/partner-huobi.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://cex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-cex.png'" alt=""></a>
+                <a href="https://cex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-cex.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.bcex.ca/coins" target="_blank"><img [lazyLoad]="'assets/images/partner-bcex.png'" alt=""></a>
+                <a href="https://www.bcex.ca/coins" target="_blank"><img [lazyLoad]="'assets/images/partner-bcex.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.bibox.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bibox.png'" alt=""></a>
+                <a href="https://www.bibox.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bibox.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://gate.io/" target="_blank"><img [lazyLoad]="'assets/images/partner-gate.png'" alt=""></a>
+                <a href="https://gate.io/" target="_blank"><img [lazyLoad]="'assets/images/partner-gate.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://kkex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-kkex.png'" alt=""></a>
+                <a href="https://kkex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-kkex.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://big.one/" target="_blank"><img [lazyLoad]="'assets/images/partner-bigone.png'" alt=""></a>
+                <a href="https://big.one/" target="_blank"><img [lazyLoad]="'assets/images/partner-bigone.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://otcbtc.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-otcbtc.png'" alt=""></a>
+                <a href="https://otcbtc.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-otcbtc.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.hypex.io/" target="_blank"><img [lazyLoad]="'assets/images/partner-hypex.jpg'" alt=""></a>
+                <a href="https://www.hypex.io/" target="_blank"><img [lazyLoad]="'assets/images/partner-hypex.jpg'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.gopax.co.kr/" target="_blank"><img [lazyLoad]="'assets/images/partner-gopax.png'" alt=""></a>
+                <a href="https://www.gopax.co.kr/" target="_blank"><img [lazyLoad]="'assets/images/partner-gopax.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.bancor.network/" target="_blank"><img [lazyLoad]="'assets/images/partner-bancor.png'" alt=""></a>
+                <a href="https://www.bancor.network/" target="_blank"><img [lazyLoad]="'assets/images/partner-bancor.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.kucoin.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-kucoin.png'" alt=""></a>
+                <a href="https://www.kucoin.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-kucoin.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://radarrelay.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-Radar-Relay.png'" alt=""></a>
+                <a href="https://radarrelay.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-Radar-Relay.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.cointiger.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-cointiger.png'" alt=""></a>
+                <a href="https://www.cointiger.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-cointiger.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://kyber.network/" target="_blank"><img [lazyLoad]="'assets/images/partner-kyber.png'" alt=""></a>
+                <a href="https://kyber.network/" target="_blank"><img [lazyLoad]="'assets/images/partner-kyber.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.airswap.io/" target="_blank"><img [lazyLoad]="'assets/images/partner-airswap.png'" alt=""></a>
+                <a href="https://www.airswap.io/" target="_blank"><img [lazyLoad]="'assets/images/partner-airswap.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://hitbtc.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-hitbtc.png'" alt=""></a>
+                <a href="https://hitbtc.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-hitbtc.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://www.bitforex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bitforex.png'" alt=""></a>
+                <a href="https://www.bitforex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bitforex.png'" [offset]="200" alt=""></a>
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/partner-tbox.png'" alt="">
+                <img [lazyLoad]="'assets/images/partner-tbox.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/exchange-abcc.png'" alt="">
+                <img [lazyLoad]="'assets/images/exchange-abcc.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <img [lazyLoad]="'assets/images/exchange-bitcloud.png'" alt="">
+                <img [lazyLoad]="'assets/images/exchange-bitcloud.png'" [offset]="200" alt="">
               </div>
             </div>
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
-                <a href="https://international.bittrex.com/" target="_blank"><img [lazyLoad]="'assets/images/exchange-bittrex.png'" alt="exchange-bittrex"></a>
+                <a href="https://international.bittrex.com/" target="_blank"><img [lazyLoad]="'assets/images/exchange-bittrex.png'" [offset]="200" alt="exchange-bittrex"></a>
               </div>
             </div>
           </div>
@@ -652,7 +652,7 @@
                 data-center="transform:translate(0%, 0%); opacity:1;">
                 <div class="team-pic">
                   <a href="https://marketplace.huaweicloud.com/intl/product/00301-183003-0--0" target="_blank"><img
-                      [lazyLoad]="'assets/images/partnership/huawei_cloud@1,5x.png'" alt=""></a>
+                      [lazyLoad]="'assets/images/partnership/huawei_cloud@1,5x.png'" [offset]="200" alt=""></a>
                 </div>
               </div>
               <div class="col12-lg-6 col12-sm-6 col12-tn-6 ta-c color-white ta-c skrollable skrollable-between mb30"
@@ -660,7 +660,7 @@
                 data-center="transform:translate(0%, 0%); opacity:1;">
                 <div class="team-pic">
                   <a href="https://console.cloud.google.com/marketplace/details/aelf-public/aelf-enterprise?q=aelf&id=b90de7d1-e0a2-30fc-92c3-6feed581ef7d&pli=1"
-                    target="_blank"><img [lazyLoad]="'assets/images/partnership/google_cloud@1,5x.png'" alt=""></a>
+                    target="_blank"><img [lazyLoad]="'assets/images/partnership/google_cloud@1,5x.png'" [offset]="200" alt=""></a>
                 </div>
               </div>
             </div>
@@ -670,7 +670,7 @@
                 data-center="transform:translate(0%, 0%); opacity:1;">
                 <div class="team-pic">
                   <a href="https://azuremarketplace.microsoft.com/zh-cn/marketplace/apps/aelf.aelf-enterprise"
-                    target="_blank"><img [lazyLoad]="'assets/images/partnership/microsoft_azure@1,5x.png'" alt=""></a>
+                    target="_blank"><img [lazyLoad]="'assets/images/partnership/microsoft_azure@1,5x.png'" [offset]="200" alt=""></a>
                 </div>
               </div>
               <div class="col12-lg-6 col12-sm-6 col12-tn-6 ta-c color-white ta-c skrollable skrollable-between mb30"
@@ -678,7 +678,7 @@
                 data-center="transform:translate(0%, 0%); opacity:1;">
                 <div class="team-pic">
                   <a href="https://aws.amazon.com/marketplace/pp/B07S2DT928" target="_blank"><img
-                      [lazyLoad]="'assets/images/partnership/amazon@1,5x.png'" alt=""></a>
+                      [lazyLoad]="'assets/images/partnership/amazon@1,5x.png'" [offset]="200" alt=""></a>
                 </div>
               </div>
             </div>

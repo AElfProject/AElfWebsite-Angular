@@ -88,6 +88,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // init section height
     setTimeout(() => {
       this._windowRef.nativeWindow.renderEarthCanvas();
+      this._windowRef.nativeWindow.loadingClose();
     }, 500)
     if(this._windowRef.nativeWindow.device.landscape() && $(window).width() <= 768){
       $('.section-1').height($(window).height() * 1.4);

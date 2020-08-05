@@ -59,6 +59,10 @@ export class WebwalletComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
 
+    
+    this._windowRef.nativeWindow.loadingClose();
+    
+
   }
   toggleNotice(id) {
     const $notice = document.getElementById(id);
