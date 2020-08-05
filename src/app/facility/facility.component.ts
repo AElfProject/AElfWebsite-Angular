@@ -28,7 +28,11 @@ export class FacilityComponent implements OnInit, AfterViewInit {
   private onePage = {};
   public currentOnePage = '';
   public VideoSrc: any;
-  public connectInfo = {};
+  public connectInfo = {
+    qq: '',
+    wechat: '',
+    telegram: ''
+  };
   constructor(private _languageService: LanguageService,
               private _cookieService: CookieService,
               public _fontFamlily: FontFamliyService,
