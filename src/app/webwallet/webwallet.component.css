@@ -197,7 +197,6 @@
     width: 250px;
     height: 28px;
     text-align: center;
-    border-radius: 1px;
     padding: 0;
     line-height: 28px;
     margin: 0 auto;
@@ -262,7 +261,6 @@
   .brow-f{
     width: 250px;
     height: 28px;
-    border-radius: 1px;
     margin: 0 auto;
   }
   .meenu span{

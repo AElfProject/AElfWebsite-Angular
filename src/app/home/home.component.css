@@ -69,6 +69,7 @@
   margin-left: auto;
   width: fit-content;
   padding: 0 16px;
+  border-radius: 3px;
 }
 
 #test-net .test-net-button:hover {
@@ -435,6 +436,9 @@
     padding: 0 10px!important;
     text-align: center;
     margin-bottom: 0;
+  }
+  .partner-img {
+    max-height: 71%;
   }
 }
 .col12-1, .col12-10, .col12-11, .col12-12, .col12-2, .col12-3, .col12-4, .col12-5, .col12-6, .col12-7, .col12-8, .col12-9, .col12-gt-1, .col12-gt-10, .col12-gt-11, .col12-gt-12, .col12-gt-2, .col12-gt-3, .col12-gt-4, .col12-gt-5, .col12-gt-6, .col12-gt-7, .col12-gt-8, .col12-gt-9, .col12-lg-1, .col12-lg-10, .col12-lg-11, .col12-lg-12, .col12-lg-2, .col12-lg-3, .col12-lg-4, .col12-lg-5, .col12-lg-6, .col12-lg-7, .col12-lg-8, .col12-lg-9, .col12-md-1, .col12-md-10, .col12-md-11, .col12-md-12, .col12-md-2, .col12-md-3, .col12-md-4, .col12-md-5, .col12-md-6, .col12-md-7, .col12-md-8, .col12-md-9, .col12-sm-1, .col12-sm-10, .col12-sm-11, .col12-sm-12, .col12-sm-2, .col12-sm-3, .col12-sm-4, .col12-sm-5, .col12-sm-6, .col12-sm-7, .col12-sm-8, .col12-sm-9, .col12-tn-1, .col12-tn-10, .col12-tn-11, .col12-tn-12, .col12-tn-2,  .col12-tn-4, .col12-tn-5, .col12-tn-6, .col12-tn-7, .col12-tn-8, .col12-tn-9{

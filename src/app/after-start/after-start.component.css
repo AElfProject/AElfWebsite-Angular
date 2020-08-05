@@ -68,6 +68,7 @@
   margin-right: auto;
   margin-left: auto;
   min-width: 30%;
+  border-radius: 3px;
 }
 #test-net .test-net-button:hover {
   background-color: #5fbdf9;
@@ -168,8 +169,8 @@
     line-height: 20px;
     text-align: center;
   }
-  .pro-init-imp h3{
-    /*padding-bottom: 20px;*/
+  .pro-node-of-node h3{
+    padding-top: 20px;
   }
 
   .home-1-item {
