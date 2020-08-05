@@ -51,32 +51,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     const data = this._languageService
       .getLanguageConfig()
-      // .subscribe(data => {
-      //   this.languagesDic = data["languagesDic1"];
-      //   this.languagesDic2 = data["languagesDic2"];
-      //   this.languageList = data["languageOptions"];
-      //   this.currentLanguage =
-      //     data["languagesDic2"][
-      //       this._languageService.getWebPageCurrentLanguage()
-      //       ];
-      //   this._fontFamlily.changeFontFamily(
-      //     this.currentLanguage
-      //   );
-      //   this.setVideo();
-      //   this.getHotNews();
-
-      //   this.getEconomicPapers();
-      //   this.getWhitepapers();
-
-      //   this.router.events
-      //     .subscribe((event) => {
-      //       $(window).scrollTop(0);
-      //     });
-
-      //   this._translateService.onLangChange.subscribe(data => {
-      //     this.OnChange(this.languagesDic2[data.lang] || 'English');
-      //   });
-      // });
 
       this.languagesDic = data["languagesDic1"];
       this.languagesDic2 = data["languagesDic2"];
@@ -114,7 +88,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this._windowRef.nativeWindow.renderEarthCanvas();
       this._windowRef.nativeWindow.loadingClose();
-    }, 500)
+    }, 800)
+
     if(this._windowRef.nativeWindow.device.landscape() && $(window).width() <= 768){
       $('.section-1').height($(window).height() * 1.4);
       $('.section-2').height($(window).height() * 1.4);
