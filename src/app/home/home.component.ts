@@ -67,16 +67,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
         this.getEconomicPapers();
         this.getWhitepapers();
-      });
 
-    this.router.events
-      .subscribe((event) => {
-        $(window).scrollTop(0);
-      });
+        this.router.events
+          .subscribe((event) => {
+            $(window).scrollTop(0);
+          });
 
-    this._translateService.onLangChange.subscribe(data => {
-      this.OnChange(this.languagesDic2[data.lang] || 'English');
-    });
+        this._translateService.onLangChange.subscribe(data => {
+          this.OnChange(this.languagesDic2[data.lang] || 'English');
+        });
+      });
   }
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
@@ -85,7 +85,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
-
+    // init section height
+    setTimeout(() => {
+      this._windowRef.nativeWindow.renderEarthCanvas();
+      this._windowRef.nativeWindow.loadingClose();
+    }, 500)
+    if(this._windowRef.nativeWindow.device.landscape() && $(window).width() <= 768){
+      $('.section-1').height($(window).height() * 1.4);
+      $('.section-2').height($(window).height() * 1.4);
+    }else{
+      $('.section-1').height($(window).height());
+      $('.section-2').height($(window).height());
+    }
   }
 
   getEconomicPapers() {

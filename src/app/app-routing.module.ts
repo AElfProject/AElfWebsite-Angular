@@ -2,30 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AboutComponent} from './about/about.component';
 import { HomeComponent} from './home/home.component';
-import { HomepageComponent} from './homepage/homepage.component';
-import { EconomicComponent} from './economic/economic.component';
-import { FacilityComponent} from './facility/facility.component';
-import { BrowserComponent} from './browser/browser.component';
-import { DeveloperComponent} from './developer/developer.component';
-import { PlugComponent} from './plug/plug.component';
-import { WalletComponent} from './wallet/wallet.component';
-import { WebwalletComponent} from './webwallet/webwallet.component';
-import { AfterStartComponent} from './after-start/after-start.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'app-about', component: AboutComponent },
-  { path: 'homepage', component: HomepageComponent },
-  { path: 'economic', component: EconomicComponent },
-  { path: 'facility', component: FacilityComponent },
-  { path: 'browser', component: BrowserComponent },
-  { path: 'developer', component: DeveloperComponent },
-  { path: 'plug', component: PlugComponent },
-  { path: 'wallet', component: WalletComponent },
-  { path: 'webwallet', component: WebwalletComponent },
-  { path: 'afterstart', component: AfterStartComponent },
+  { path: '', loadChildren: './home/home.module#HomeModule' },
+  { path: 'app-about', loadChildren: './about/about.module#AboutModule' },
+  { path: 'homepage', loadChildren: './homepage/homepage.module#HomePageModule' },
+  { path: 'economic', loadChildren: './economic/economic.module#EconomicModule' },
+  { path: 'facility', loadChildren: './facility/facility.module#FacilityModule' },
+  { path: 'browser', loadChildren: './browser/browser.module#BrowserModule' },
+  { path: 'developer', loadChildren: './developer/developer.module#DeveloperModule' },
+  { path: 'plug', loadChildren: './plug/plug.module#PlugModule' },
+  { path: 'wallet', loadChildren: './wallet/wallet.module#WalletModule' },
+  { path: 'webwallet', loadChildren: './webwallet/webwallet.module#WebwalletModule' },
+  { path: 'afterstart', loadChildren: './after-start/after-start.module#AferStartModule' },
 ];
 
 @NgModule({

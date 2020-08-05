@@ -71,13 +71,13 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
             $(window).scrollTop(0);
           });
 
+        this._translateService.onLangChange.subscribe(data => {
+          this.OnChange(this.languagesDic2[data.lang] || 'English');
+        });
+
         this.getSwiper();
         this.getProductionNodes();
       });
-
-    this._translateService.onLangChange.subscribe(data => {
-      this.OnChange(this.languagesDic2[data.lang] || 'English');
-    });
 
     // new Swiper('.swiper-container',{
     //   pagination: {
@@ -96,6 +96,10 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
+
+    setTimeout(() => {
+      this._windowRef.nativeWindow.loadingClose();
+    }, 500)
   }
 
   getSwiper(language?: string) {

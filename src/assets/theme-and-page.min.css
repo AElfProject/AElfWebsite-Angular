@@ -5435,10 +5435,10 @@ body.en {
 
 @media only screen and (min-width: 1240px) {
   .foot-bat div:nth-child(4){
-    margin-right: 18%;
+    margin-right: 10%;
   }
   .foot-bat div:nth-child(3){
-    margin-right: 16%;
+    margin-right: 10%;
   }
   .foot-bat div:nth-child(2){
     margin-right: 10%;
@@ -5447,13 +5447,13 @@ body.en {
 
 @media screen and (min-width:1030px) and (max-width:1240px) {
   .foot-bat div:nth-child(4){
-    margin-right: 10%;
+    margin-right: 6%;
   }
   .foot-bat div:nth-child(3){
     margin-right: 6%;
   }
   .foot-bat div:nth-child(2){
-    margin-right: 2%;
+    margin-right: 6%;
   }
 }
 
@@ -5552,4 +5552,93 @@ body.en {
   background: #096dd9!important;
   color: #fff!important;
   border-radius: 4px;
+}
+
+.init-loading {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    background: #ffffff;
+
+    display: flex;
+}
+
+.loading-dot {
+    position: relative;
+    margin: auto;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+    transition: all;
+
+    -webkit-animation: lodingRotate 1.2s infinite linear;
+    animation: lodingRotate 1.2s infinite linear;
+}
+
+.loading-dot-item {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #5c28a9;
+    border-radius: 100%;
+    margin: 5px;
+    opacity: .3;
+    -webkit-animation: loadingMove 1s infinite linear alternate;
+    animation: loadingMove 1s infinite linear alternate;
+}
+
+.loading-dot-item:first-child {
+    left: 0;
+    top: 0;
+}
+
+.loading-dot-item:nth-child(2) {
+    right: 0;
+    top: 0;
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+.loading-dot-item:nth-child(3) {
+    right: 0;
+    bottom: 0;
+    -webkit-animation-delay: .8s;
+    animation-delay: .8s;
+}
+
+.loading-dot-item:nth-child(4) {
+    left: 0;
+    bottom: 0;
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+
+@-webkit-keyframes lodingRotate {
+    100% {
+        -webkit-transform:rotate(405deg);
+        transform:rotate(405deg)
+    }
+}
+
+@keyframes lodingRotate{
+    100% {
+        -webkit-transform:rotate(405deg);
+        transform:rotate(405deg)
+    }
+}
+
+@-webkit-keyframes loadingMove {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes loadingMove{
+    100% {
+        opacity: 1;
+    }
 }

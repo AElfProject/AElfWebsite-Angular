@@ -5,6 +5,7 @@ import { FontFamliyService } from '../shared/font-famliy.service';
 import { TranslateService } from '@ngx-translate/core';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
+import { PapersService } from '../shared/papers.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { Router } from '@angular/router';
@@ -24,11 +25,14 @@ export class EconomicComponent implements OnInit, AfterViewInit {
   public languagesDic2: any;
   public languageList = ['', ''];
   public VideoSrc: any;
+  public currentEconomicPaper = '';
+  private economicPapers = {};
   constructor(private _languageService: LanguageService,
               private _cookieService: CookieService,
               public _fontFamlily: FontFamliyService,
               private _translateService: TranslateService,
               private _windowRef: WindowService,
+              private _papersService: PapersService,
               private sanitizer: DomSanitizer,
               public router: Router) {
   }
@@ -47,6 +51,7 @@ export class EconomicComponent implements OnInit, AfterViewInit {
         this._fontFamlily.changeFontFamily(
           this.currentLanguage
         );
+        this.getEconomicPapers();
         this.router.events
           .subscribe((event) => {
             $(window).scrollTop(0);
@@ -73,6 +78,9 @@ export class EconomicComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
 
+    setTimeout(() => {
+      this._windowRef.nativeWindow.loadingClose();
+    }, 500)
   }
   toggleNotice(id) {
     const $notice = document.getElementById(id);
@@ -84,13 +92,29 @@ export class EconomicComponent implements OnInit, AfterViewInit {
     const displayNew = display === 'block' ? 'none' : 'block';
     $notice.style.display = displayNew;
   }
+
+  getEconomicPapers() {
+    this._papersService.getPapers('economic').subscribe(data => {
+      data.forEach((paper: any) => {
+        this.economicPapers[paper.lang] = paper;
+      });
+      this.setEconomicPapers();
+    });
+  }
+
+  setEconomicPapers() {
+    const currentLanguagePaper = this.economicPapers[this.currentLanguage];
+    const EnglishPaper = this.economicPapers['English'] || { url: '' };
+    this.currentEconomicPaper = currentLanguagePaper ? currentLanguagePaper.url : EnglishPaper.url;
+  }
+
   OnChange(languageSelection: string) {
     this._languageService.switchLanguage(this.languagesDic[languageSelection]);
     this.currentLanguage = languageSelection;
     this._fontFamlily.changeFontFamily(this.currentLanguage);
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
+    this.setEconomicPapers();
   }
-
 
   // nav bar change color when the scroll event happens.
   @HostListener('window:scroll', ['$event'])

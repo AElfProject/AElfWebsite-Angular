@@ -71,6 +71,7 @@
   display: inline-block;
   width: fit-content;
   padding: 0 16px;
+  border-radius: 3px;
 }
 
 #test-net .test-net-button:hover {
