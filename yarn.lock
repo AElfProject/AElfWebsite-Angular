@@ -4906,10 +4906,10 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "http://registry.npm.taobao.org/negotiator/download/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ng-lazyload-image@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/ng-lazyload-image/-/ng-lazyload-image-4.0.0.tgz#2d0cf0f95c66417c14c2c27211a879820bae71b3"
-  integrity sha512-D2d+kfVRoapP1arFnResQGcQgYs2zrMmQTY46kBeuCvXYOvnZFCTZDItW/ub7UDcaUgRtT1yQbeqy3mmqb+ssg==
+ng-lazyload-image@^3.0.0:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/ng-lazyload-image/-/ng-lazyload-image-3.4.2.tgz#0654d750185105045111b089a3f9ee2d3044f1bc"
+  integrity sha512-Cukdq+lSDzWfvMAAvbi6aDv4cCJWX0dwqDJUZ5LmEUGHA+9+ajGInQ/lbxH1UsPgVo+pL4LvjJrJoHPq4S6aIQ==
 
 ngx-cookie@^1.0.0:
   version "1.0.1"
