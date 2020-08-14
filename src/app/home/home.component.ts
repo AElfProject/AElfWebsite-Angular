@@ -148,15 +148,38 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.setWhitepapers();
   }
 
-  getHotNews(language?: string) {
-    this._newsService.getHotNews(language || this.currentLanguage).subscribe(data => {
+  getHotNews(languageType?: number) {
+    console.log(this.currentLanguage);
+    const languageMap = {
+      '中文': 5,
+      '英文': 4
+    }
+    this._newsService.getHotNews( languageType || languageMap[this.currentLanguage] || 4).subscribe(data => {
       if (data.length <= 0 && this.getHotNewsRetryCount === 0) {
         this.getHotNewsRetryCount++;
-        this.getHotNews('English');
+        this.getHotNews(4);
         return;
       }
       this.getHotNewsRetryCount = 0;
-      this.newsList = data;
+      this.newsList = data.map(item => {
+        const newItem = {
+          time: '',
+          title: '',
+          link: '',
+          img: {
+            url: ''
+          }
+        };
+
+        newItem.link = item.link;
+        newItem.time = item.modified_gmt.split('T')[0]; // 2020-2-12T12:20 => 2020-2-12
+        newItem.title = item.title.rendered;
+        //匹配图片
+        const imgReg = /<img(?<prepend>[^>]+?)src=(['"])?(?<src>(?:(?!\2)[^>])+)\2?(?<append>[^>]*)>/;
+        newItem.img.url = item.content.rendered.match(imgReg)['groups'].src
+
+        return newItem;
+      });
     });
   }
 

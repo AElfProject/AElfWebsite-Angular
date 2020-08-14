@@ -7,7 +7,8 @@ export class NewsService {
   // en-US, zh-CN
   constructor(private http: HttpClient) {}
 
-  getHotNews(currentLang: string): Observable<any> {
-    return this.http.get(`/api/hot-news?_limit=6&_sort=id%3ADESC&lang=${currentLang}&open=true`);
+  // 4 => en-US  5 => zh-CN
+  getHotNews(currentLangType: number): Observable<any> {
+    return this.http.get(`/wp-json/wp/v2/posts?categories=${currentLangType}&page=1&per_page=6`);
   }
 }
