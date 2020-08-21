@@ -9,6 +9,6 @@ export class NewsService {
 
   // 4 => en-US  5 => zh-CN
   getHotNews(currentLangType: number): Observable<any> {
-    return this.http.get(`/wp-json/wp/v2/posts?categories=${currentLangType}&page=1&per_page=6`);
+    return this.http.get(`/wp-json/wp/v2/posts?categories=${currentLangType}&page=1&per_page=8`);
   }
 }
