@@ -5,6 +5,7 @@ var minifyCss = require('gulp-minify-css'); //- 压缩CSS为一行；
 var uglify = require('gulp-uglify') // - 压缩JS
 var rev = require('gulp-rev'); //- 对文件名加MD5后缀
 var revCollector = require('gulp-rev-collector'); //- 路径替换
+var replace = require('gulp-replace');
 
 function cssConcat() {
   return gulp.src(
@@ -40,7 +41,7 @@ function jsConcat() {
     .pipe(gulp.dest('./gulp/js')); //- 将 rev-manifest.json 保存到 rev 目录内
 }
 
-function replace() {
+function replaceConcatFiles() {
   return gulp.src(['./gulp/**/*.json', './src/index.html'])
     .pipe(revCollector({
       replaceReved: true,
@@ -55,6 +56,22 @@ function replace() {
     .pipe(gulp.dest('./src'));
 }
 
-exports.default = gulp.series(cssConcat, jsConcat, replace);
-exports.replace = gulp.series(replace);
+function changeTimeOfSourceLink() {
+  const timeNow = (new Date()).getTime();
+  return gulp.src(['./src/index.html'])
+    .pipe(replace(/aelfS\d*E/g, `aelfS${timeNow}E`))
+    .pipe(gulp.dest('./src'));
+}
+
+function initCssJSToBeConcat() {
+  return gulp.src(['./src/index.html'])
+    .pipe(replace(/\/assets\/concat-[\d|\w]*.min.js/g, '/js/concat.min.js'))
+    .pipe(replace(/\/assets\/concat-[\d|\w]*.min.css/g, '/css/concat.min.css'))
+    .pipe(gulp.dest('./src'));
+}
+
+exports.default = gulp.series(changeTimeOfSourceLink, initCssJSToBeConcat, cssConcat, jsConcat, replaceConcatFiles);
+exports.replaceConcatFiles = gulp.series(replaceConcatFiles);
+exports.changeTimeOfSourceLink = gulp.series(changeTimeOfSourceLink);
+exports.initCssJSToBeConcat = gulp.series(initCssJSToBeConcat);
 exports.js = gulp.series(jsConcat);
