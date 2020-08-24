@@ -85,10 +85,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
     // init section height
-    setTimeout(() => {
-      this._windowRef.nativeWindow.renderEarthCanvas();
-      this._windowRef.nativeWindow.loadingClose();
-    }, 800)
+    this.initEarthCanvas();
 
     if(this._windowRef.nativeWindow.device.landscape() && $(window).width() <= 768){
       $('.section-1').height($(window).height() * 1.4);
@@ -96,6 +93,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }else{
       $('.section-1').height($(window).height());
       $('.section-2').height($(window).height());
+    }
+  }
+
+  initEarthCanvas() {
+    if (this._windowRef.nativeWindow.renderEarthCanvas) {
+      this._windowRef.nativeWindow.renderEarthCanvas();
+      this._windowRef.nativeWindow.loadingClose();
+    } else {
+      setTimeout(() => {
+        this.initEarthCanvas();
+      }, 1000);
     }
   }
 

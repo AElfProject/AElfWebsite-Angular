@@ -79,10 +79,19 @@ export class FacilityComponent implements OnInit, AfterViewInit {
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'background-color': 'rgba(255, 255, 255, 0.1)' });
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'opacity': 0.6 });
 
-    setTimeout(() => {
-      this._windowRef.nativeWindow.loadingClose();
-    }, 500)
+    this.closeLoading();
   }
+
+  closeLoading() {
+    if (this._windowRef.nativeWindow.loadingClose) {
+      this._windowRef.nativeWindow.loadingClose();
+    } else {
+      setTimeout(() => {
+        this.closeLoading();
+      }, 1000)
+    }
+  }
+
   toggleNotice(id) {
     const $notice = document.getElementById(id);
     const display = $notice.style.display;

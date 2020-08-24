@@ -25,7 +25,7 @@ import { MobileHeaderModule } from './modules/mobile-header/mobile-header.module
 import { FooterModule } from './modules/footer/foot.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', `.json?${(new Date()).getTime()}`);
 }
 const PERFECT_SCOROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
