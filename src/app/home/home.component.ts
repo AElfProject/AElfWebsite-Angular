@@ -36,6 +36,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public currentWhitePaper = '';
   private whitePapers = {};
   private getHotNewsRetryCount = 0;
+
+  public currentLandscape = '';
   constructor(
     private _languageService: LanguageService,
     private _newsService: NewsService,
@@ -67,6 +69,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
       this.getEconomicPapers();
       this.getWhitepapers();
+      this.setLandscape();
 
       this.router.events
         .subscribe((event) => {
@@ -121,6 +124,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.currentEconomicPaper = currentLanguagePaper ? currentLanguagePaper.url : EnglishPaper.url;
   }
 
+  setLandscape() {
+    this.currentLandscape = this.currentLanguage === 'English'
+      ? 'https://docs.qq.com/slide/DUGdzZVJrRnhHYUhJ' : 'https://docs.qq.com/slide/DUFVjTkJXRG1CY0Ry';
+  }
+
   getWhitepapers() {
     this._papersService.getPapers('whitepaper').subscribe(data => {
       data.forEach((paper: any) => {
@@ -154,6 +162,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.getHotNews();
     this.setEconomicPapers();
     this.setWhitepapers();
+    this.setLandscape();
   }
 
   getHotNews(languageType?: number) {

@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   public currentEconomicPaper = '';
   private economicPapers = {};
   public currentWhitePaper = '';
+  public currentLandscape = '';
   private whitePapers = {};
   public pathname = '';
   public hiddenTabs = '';
@@ -56,6 +57,7 @@ export class HeaderComponent implements OnInit {
 
         this.getEconomicPapers();
         this.getWhitepapers();
+        this.setLandscape();
       // });
   }
 
@@ -75,6 +77,11 @@ export class HeaderComponent implements OnInit {
     const currentLanguagePaper = this.economicPapers[this.currentLanguage];
     const EnglishPaper = this.economicPapers['English'] || { url: '' };
     this.currentEconomicPaper = currentLanguagePaper ? currentLanguagePaper.url : EnglishPaper.url;
+  }
+
+  setLandscape() {
+    this.currentLandscape = this.currentLanguage === 'English'
+      ? 'https://docs.qq.com/slide/DUGdzZVJrRnhHYUhJ' : 'https://docs.qq.com/slide/DUFVjTkJXRG1CY0Ry';
   }
 
   getWhitepapers() {
@@ -107,5 +114,6 @@ export class HeaderComponent implements OnInit {
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
     this.setEconomicPapers();
     this.setWhitepapers();
+    this.setLandscape();
   }
 }
