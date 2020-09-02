@@ -126,7 +126,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   setLandscape() {
     this.currentLandscape = this.currentLanguage === 'English'
-      ? 'https://docs.qq.com/slide/DUGdzZVJrRnhHYUhJ' : 'https://docs.qq.com/slide/DUFVjTkJXRG1CY0Ry';
+      ? 'https://docs.qq.com/slide/DUElyYUd2Y3Rpbk5p' : 'https://docs.qq.com/slide/DUHhrcG5lemdIY3dX';
   }
 
   getWhitepapers() {
