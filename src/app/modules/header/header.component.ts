@@ -81,7 +81,7 @@ export class HeaderComponent implements OnInit {
 
   setLandscape() {
     this.currentLandscape = this.currentLanguage === 'English'
-      ? 'https://docs.qq.com/slide/DUG90T0RPWWhQR1JD' : 'https://docs.qq.com/slide/DUFJGcHZGdXhvb3pp';
+      ? 'https://aelf.io/gridcn/aelf_product_landscape.pdf' : 'https://aelf.io/gridcn/aelf_product_landscape_zh.pdf';
   }
 
   getWhitepapers() {
