@@ -19,6 +19,7 @@ export class Footer implements OnInit {
   public currentEconomicPaper = '';
   private economicPapers = {};
   public currentWhitePaper = '';
+  public currentAuditReport = '';
   private whitePapers = {};
   constructor(
     private _languageService: LanguageService,
@@ -47,6 +48,7 @@ export class Footer implements OnInit {
 
     this.getEconomicPapers();
     this.getWhitepapers();
+    this.setAuditReport();
   }
 
   getEconomicPapers() {
@@ -77,9 +79,22 @@ export class Footer implements OnInit {
     this.currentWhitePaper = currentWhitePaper ? currentWhitePaper.url : EnglishPaper.url;
   }
 
+  setAuditReport() {
+    const auditReport = {
+      'English': 'https://aelf.io/gridcn/aelf_Security_Audit_Report_en.pdf',
+      '中文': 'https://aelf.io/gridcn/aelf_Security_Audit_Report_zh.pdf'
+    };
+    // currentAuditReport
+    const currentAuditReport = auditReport[this.currentLanguage];
+    const EnglishPaper = auditReport['English'] || '';
+    this.currentAuditReport = currentAuditReport ? currentAuditReport : EnglishPaper;
+    console.log('this.currentLanguage', this.currentLanguage, this.currentAuditReport);
+  }
+
   handleLangChange(data) {
     this.currentLanguage = data;
     this.setEconomicPapers();
     this.setWhitepapers();
+    this.setAuditReport();
   }
 }
