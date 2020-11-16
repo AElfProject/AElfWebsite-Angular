@@ -21,6 +21,7 @@ export class Footer implements OnInit {
   public currentWhitePaper = '';
   public currentAuditReport = '';
   private whitePapers = {};
+  private auditReport = {};
   constructor(
     private _languageService: LanguageService,
     public _fontFamlily: FontFamliyService,
@@ -48,7 +49,7 @@ export class Footer implements OnInit {
 
     this.getEconomicPapers();
     this.getWhitepapers();
-    this.setAuditReport();
+    this.getAuditReport();
   }
 
   getEconomicPapers() {
@@ -79,16 +80,18 @@ export class Footer implements OnInit {
     this.currentWhitePaper = currentWhitePaper ? currentWhitePaper.url : EnglishPaper.url;
   }
 
+  getAuditReport(){
+    this._papersService.getPapers('audit').subscribe(data => {
+      data.forEach((report: any) => {
+        this.auditReport[report.lang] = report;
+      });
+      this.setAuditReport();
+    });
+  }
   setAuditReport() {
-    const auditReport = {
-      'English': 'https://aelf.io/gridcn/aelf_Security_Audit_Report_en.pdf',
-      '中文': 'https://aelf.io/gridcn/aelf_Security_Audit_Report_zh.pdf'
-    };
-    // currentAuditReport
-    const currentAuditReport = auditReport[this.currentLanguage];
-    const EnglishPaper = auditReport['English'] || '';
-    this.currentAuditReport = currentAuditReport ? currentAuditReport : EnglishPaper;
-    console.log('this.currentLanguage', this.currentLanguage, this.currentAuditReport);
+    const currentAuditReport = this.auditReport[this.currentLanguage];
+    const EnglishPaper = this.auditReport['English'] || '';
+    this.currentAuditReport = currentAuditReport ? currentAuditReport.url : EnglishPaper.url;
   }
 
   handleLangChange(data) {
