@@ -274,3 +274,32 @@
 #test-net .test-net-buttons{
   display: unset;
 }
+
+.meenu,
+.meenu a {
+  position: relative
+}
+
+.meenu {
+  z-index: 2
+}
+
+.meenu a,
+.meenu ul li {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #fff
+}
+
+.meenu a {
+  /*width: 120px;*/
+  height: 30px;
+  line-height: 30px;
+}
+
+.brow-f{
+  background:rgba(38,183,255,1);
+  width: fit-content;
+  border-radius: 3px;
+  color: #fff!important;
+}
