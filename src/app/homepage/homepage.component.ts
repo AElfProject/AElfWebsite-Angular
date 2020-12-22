@@ -41,8 +41,8 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   public productionNodesList = [];
   private getSwiperRetryCount = 0;
   private getProductionNodesRetryCount = 0;
-  private hiddenElementList= {};
-  private mainnetRoadmap = [
+  public hiddenElementList= {};
+  public mainnetRoadmap = [
     {
       node: "monitoring",
       details:['launch-monitoring-content-1','launch-monitoring-content-2','launch-monitoring-content-3']

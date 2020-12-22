@@ -39,9 +39,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private whitePapers = {};
   private getHotNewsRetryCount = 0;
 
-  private mainnetSource = {};
-  private mainnetEcosystem = [];
-  private hiddenElementList= {};
+  public mainnetSource = {
+    height: '',
+    count: '',
+    accountNumber: '',
+    totalTxs: ''
+  };
+  public mainnetEcosystem = [];
+  public hiddenElementList= {};
 
   public currentLandscape = '';
   constructor(
