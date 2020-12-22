@@ -81,8 +81,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.setVideo();
       this.getHotNews();
       this.getAllMainnet();
-      this.getMainnetEcosystem(this.currentLanguage === "中文" ? this.currentLanguage : 'English');
-      this.getPageHiddenElement(this.currentLanguage === "中文" ? this.currentLanguage : 'English');
+      this.getMainnetEcosystem(this.currentLanguage);
+      this.getPageHiddenElement(this.currentLanguage);
 
       this.getEconomicPapers();
       this.getWhitepapers();
@@ -180,8 +180,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.setEconomicPapers();
     this.setWhitepapers();
     this.setLandscape();
-    this.getMainnetEcosystem(this.currentLanguage === "中文" ? this.currentLanguage : 'English');
-    this.getPageHiddenElement(this.currentLanguage === "中文" ? this.currentLanguage : 'English');
+    this.getMainnetEcosystem(this.currentLanguage);
+    this.getPageHiddenElement(this.currentLanguage);
   }
 
   getHotNews(languageType?: number) {
