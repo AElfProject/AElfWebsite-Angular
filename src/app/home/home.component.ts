@@ -40,10 +40,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private getHotNewsRetryCount = 0;
 
   public mainnetSource = {
-    height: '',
-    count: '',
-    accountNumber: '',
-    totalTxs: ''
+    height: 0,
+    count: 0,
+    accountNumber: 0,
+    totalTxs: 0
   };
   public mainnetEcosystem = [];
   public hiddenElementList= {};
