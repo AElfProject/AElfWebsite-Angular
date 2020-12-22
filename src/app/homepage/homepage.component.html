@@ -37,7 +37,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div><!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
+            <div class="swiper-pagination"></div>
+            <!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
           </div>
 
       </div>
@@ -47,10 +48,10 @@
 
   <section class="section section-22 anchor-hd ec-bg1" id="test-net">
     <div class="wrapper cont pt60">
-      <div class=" ta-c color-white clearfix block-reverse"
+      <div class=" ta-c color-white clearfix block-reverse mainnet-list-container"
       data-bottom="transform:translate(0%, 30%); opacity:0;"
       data-center="transform:translate(0%, 0%); opacity:1;">
-        <div class="col12-sm-6 ptl22-item home-launch-sum">
+        <!-- <div class="col12-sm-6 ptl22-item home-launch-sum">
           <div class="ptl22-box">
             <div class="ptl22-txt main-launch-com">
               <h3 class="fs-36  pt140 pb30 ta-l" ><strong>{{"main-launch-com" | translate}}</strong></h3>
@@ -71,67 +72,91 @@
           <div class="ptl22-box">
             <img src="assets/images/homep1.png" alt="">
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
-    <div class="cont pt10 pb20">
+    <div class="cont pt10 pb20 mainnet-plan">
       <div class="wrapper  clearfix"
-      data-bottom="transform:translate(0%, 30%); opacity:0;"
-      data-center="transform:translate(0%, 0%); opacity:1;">
-        <div class=" clearfix">
-          <div class="col12-tn-12 pt10 tn-show mb10 master-plan">
-            <h3 class="fs-36 lh-16em color-white ta-l pb40"><strong>{{"master-plan" | translate}}</strong></h3>
+        data-bottom="transform:translate(0%, 30%); opacity:0;"
+        data-center="transform:translate(0%, 0%); opacity:1;"
+      >
+        <div class="clearfix">
+          <div class="col12-tn-12 master-plan dis-flex-col">
+            <h3 class="fs-36 color-white ta-c miannet-article" ><strong>{{"master-plan" | translate}}</strong></h3>
+            <div *ngIf="!hiddenElementList['mainnet-plan']" class="mb65 ta-c link-bottom-line">
+              <a class="fs-14 ordinary-link net-button">{{"master-plan-detail" | translate}}</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="color-white wrapper clearfix ta-c mb30 ec-1-container inline-block flex-wrap"
-      data-bottom="transform:translate(0%, 30%); opacity:0;"
-      data-center="transform:translate(0%, 0%); opacity:1;">
-
-        <div class="ec-1-item">
-            <div class="">
-              <img style="width: 32px;margin-bottom: 22px" class="ta-c" src="assets/images/home_p1.png" alt="">
-              <h3 class="fs-24 mb10 color-white ta-c"><strong>{{"plan-mainnet" | translate}}</strong></h3>
-              <p class="lh-16em color-white fs-14 ta-c">{{"plan-mainnet-content-1" | translate}}</p>
-              <p class="lh-16em color-white fs-14 ta-c">{{"plan-mainnet-content-2" | translate}}</p>
-              <p class="lh-16em color-white fs-14 ta-c">{{"plan-mainnet-content-3" | translate}}<i style="color: #096dd9;margin-left: 2px">*</i></p>
-              <p class="lh-16em color-white fs-14 ta-c">{{"plan-mainnet-content-4" | translate}}</p>
-            </div>
+      <div style="padding: 0 43px;" class="mainnet-node-container">
+        <div style="width: 100%;max-width: 1434px">
+          <img [src]="'assets/images/m-p-'+ (currentLanguage === '中文' ?'zh' : 'en') + '.png'" style="width:100%"/>
         </div>
-
-        <div class="ec-1-item -align-center">
-            <div class="">
-              <img style="width: 32px;margin-bottom: 22px" src="assets/images/home_p11.png" alt="">
-              <h3 class="fs-24 mb10 color-white ta-c"><strong>{{"pre-main" | translate}}</strong></h3>
-              <p class="fs-14 lh-16em color-white ta-c">{{"pre-main-content-1" | translate}}</p>
-              <p class="fs-14 lh-16em color-white ta-c">{{"pre-main-content-2" | translate}}</p>
-              <p class="fs-14 lh-16em color-white ta-c">{{"pre-main-content-3" | translate}}</p>
-            </div>
-        </div>
-        <div class="ec-1-item -align-center">
-            <div class="">
-              <img style="width: 32px;margin-bottom: 22px" src="assets/images/home_p12.png" alt="">
-              <h3 class="fs-24 mb10 color-white ta-c"><strong>{{"launch-main" | translate}}</strong></h3>
-              <p class="fs24 lh-16em color-white ta-c">{{"launch-main-content-1" | translate}}</p>
-              <p class="fs24 lh-16em color-white ta-c">{{"launch-main-content-2" | translate}}</p>
-              <p class="fs24 lh-16em color-white ta-c">{{"launch-main-content-3" | translate}}</p>
-              <p class="fs24 lh-16em color-white ta-c">{{"launch-main-content-4" | translate}}</p>
-            </div>
-        </div>
-        <div class="ec-1-item -align-right">
-            <div class="">
-              <img style="width: 32px;margin-bottom: 22px" src="assets/images/home_p13.png" alt="">
-              <h3 class="fs-24 mb10 color-white ta-c"><strong>{{"stabilize-mainnet" | translate}}</strong></h3>
-              <p class="fs-14 lh-16em color-white ta-c">{{"stabilize-mainnet-content" | translate}}</p>
-            </div>
-        </div>
-        <p class="lh-16em color-white mt35 fs-14 ta-l"><i style="color: #096dd9;margin-right: 2px">*</i>{{"contan" | translate}} {{"contan-sum" | translate}}</p>
       </div>
+
+      <div class="col12-sm-6 text-1 f-w-500">
+        <div class="home-3-item" *ngFor="let item of mainnetRoadmap; let i = index">
+          <div class="dis-flex">
+            <div class="img-content-wrap" style="align-self:center;">
+              <img  [src]="'assets/images/'+ item.node + '-node.png' "  alt="" class="img-content-icon" />
+            </div>
+            <div class="home-3-item-right ta-l">
+              <h3 class="fs-24 color-white txt-link-title">
+                <strong class="unclick-able">{{(i+1) + '. '}}{{ 'mainnet-launch-' + item.node | translate}}</strong>
+              </h3>
+              <p class="lh-20em color-white fs-12" *ngFor="let detail of item.details">
+                <span class="dot"></span>
+                <span>{{ detail | translate }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+     </div>
     </div>
+    <!-- 新增 -->
+    <div class="cont pt10 pb20 mainnet-plan">
+      <!-- <div class="wrapper  clearfix mainnet-plan"
+      data-bottom="transform:translate(0%, 30%); opacity:0;"
+      data-center="transform:translate(0%, 0%); opacity:1;"> -->
+        <div class="clearfix">
+          <div class="col12-tn-12 master-plan dis-flex-col">
+            <h3 class="fs-36 color-white ta-c miannet-article" ><strong>{{"release-plan" | translate}}</strong></h3>
+            <div *ngIf="!hiddenElementList['mainnet-release']" class="mb30 ta-c link-bottom-line">
+              <a class="fs-14 ordinary-link net-button">{{"release-plan-detail" | translate}}</a>
+            </div>
+          </div>
+        </div>
+        <p class="fs-18 color-white plan-subtitle">{{"release-plan-subtitle" | translate}}</p>
+      
+        <div class="ec-2-item mb45 release-node-flex">
+            <div class="fs-31 ta-r link-color fw600 rel-ob-n"> <strong> {{"release-observe-node" | translate}} </strong> </div>
+            <div class="middle-line"></div>
+            <div class="">
+              <ul class="node-content">
+                <li class="ta-l fs-18 color-white pr70 retract" *ngFor="let item of ['content-1','content-2','content-3','content-4']">
+                  <span class="dot"></span>
+                  <span>{{"release-observe-node-" + item | translate }}</span>
+                  </li>
+              </ul>
+            </div>    
+        </div>
+        <div class="ec-2-item mb45 release-node-flex">
+          <div class="fs-31 ta-r link-color fw600 rel-ob-n"> <strong> {{"release-swap-node" | translate}} </strong>  </div>
+          <div class="middle-line"></div>
+          <div class="ta-l fs-18 color-white pr70 ml-43 reset-padding al-self-site"> {{"release-swap-node-content" | translate}} </div>    
+        </div>
+        <div class="ec-2-item mb139 release-node-flex">
+          <div class="fs-31 ta-r link-color fw600 rel-ob-n"> <strong> {{"release-complete-node" | translate}} </strong>  </div>
+          <div class="middle-line"></div>
+          <div class="ta-l fs-18 color-white pr70 ml-43 reset-padding al-self-center"> {{"release-complete-node-content" | translate}} </div>    
+        </div>  
+      </div>
+    <!-- </div> -->
   </section>
 
-  <section class="section section-13 anchor-bd ec-bg1">
+  <!-- <section class="section section-13 anchor-bd ec-bg1">
     <div class="cont" *ngIf="productionNodesList.length">
       <div class="txt">
         <div class="wrapper clearfix"
@@ -139,7 +164,6 @@
         data-center="transform:translate(0%, 0%); opacity:1;">
           <div class="clearfix txt">
             <div class="col12-tn-12 ta-l pt10 tn-show mb10">
-              <!-- <h3 class="ff-cgb fs-100 color-white lh-9em mb5">Adviser</h3> -->
               <p class="fs-36 mb15 color-white"><b>{{"Committee Members" | translate}}</b></p>
             </div>
           </div>
@@ -174,16 +198,14 @@
         <div class="wrapper clearfix">
           <div class="team2 clearfix">
             <div class="col12-tn-12 ta-l pt30 mb40 tn-show mode">
-              <!-- <h3 class="ff-cgb fs-100 color-white lh-9em mb5">Adviser</h3> -->
               <p class="fs-36 mb15 color-white"><b>{{"Committee Member Incentive Model" | translate}}</b></p>
             </div>
           </div>
         </div>
-        <!--<div class="data-chart-parent"><div class="bd"><div class="chart" id="data-chart"></div></div></div>-->
         <div class="chart fs-18 ff-arial wrapper model-ec">
           <div style="text-align: center"><img src="assets/images/data_ec0.png" alt=""></div>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </div>

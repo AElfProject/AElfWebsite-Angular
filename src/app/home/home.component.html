@@ -1,4 +1,4 @@
-<div class="container index-step" id="skrollr-body">
+<div class="container index-step font-title" id="skrollr-body">
   <section class="section section-1 anchor-bd ec-bg1" id="index">
     <div class="wrapper">
       <div class="earth">
@@ -31,6 +31,97 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+  <section class="section section-22 anchor-hd ec-bg1" id="test-net">
+    <div class="cont pb20 pt40 pb40">
+      <div class="wrapper ta-c color-white clearfix mainnet-list-container"
+      data-bottom="transform:translate(0%, 30%); opacity:0;"
+      data-center="transform:translate(0%, 0%); opacity:1;">
+        <div class="col12-sm-12 ptl22-item">
+          <div class="font-title miannet-article fs-36 ta-c">
+            <strong>{{"aelf-mainnet-overview" | translate}}</strong>
+          </div>
+          <div class="home-2-item home-2-mb-20">
+            <div class="home-item-wrap">
+                <p class="fs-18 color-white m-b-17">{{"block-height" | translate}}</p>
+                <span class="color-white fs-24 font-weight">{{mainnetSource.height | number }}</span>
+            </div>
+          </div>
+          <div class="home-2-item home-2-mb-20">
+            <div class="home-item-wrap">
+                <p class="fs-18 color-white m-b-17">TPM</p>
+                <span class="color-white fs-24 font-weight">{{mainnetSource.count | number }}</span>
+            </div>
+          </div>
+          <div class="home-2-item">
+            <div class="home-item-wrap">
+                <p class="fs-18 color-white m-b-17">{{"accounts" | translate}}</p>
+                <span class="color-white fs-24 font-weight">{{mainnetSource.accountNumber | number }}</span>
+            </div>
+          </div>
+          <div class="home-2-item">
+            <div class="home-item-wrap">
+              <p class="fs-18 color-white m-b-17">{{"transactions" | translate}}</p>
+              <span class="color-white fs-24 font-weight">{{mainnetSource.totalTxs | number}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="wrapper ta-c color-white clearfix"
+      data-bottom="transform:translate(0%, 30%); opacity:0;"
+      data-center="transform:translate(0%, 0%); opacity:1;"
+      >
+        <h2 class="font-title ta-c fs-36 miannet-article"> <strong>{{"aelf-mainnet-ecosystem" | translate}} </strong> </h2>
+        <div class="ptl22-item">
+          <h3 class="mt58 fs-18 ta-l m-b-17">{{"aelf-mainnet-ecosystem-detail" | translate}}</h3>
+          <div *ngIf="!hiddenElementList['mainnet-progress']" class="mb65 mt15 ecosystem-detail-link">
+            <a class="fs-14 pt10 ordinary-link special-color net-button">{{"check-out-more-about-mainnet" | translate}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper ta-c color-white clearfix"
+      data-bottom="transform:translate(0%, 30%); opacity:0;"
+      data-center="transform:translate(0%, 0%); opacity:1;"
+      >
+        <div class="col12-sm-6 text-1 f-w-500" *ngFor="let item of mainnetEcosystem">
+          <div class="home-3-item">
+            <div class="wrap">
+              <div class="img-content-wrap" style="align-self:center;position: relative;">
+                <img  src={{item.icon[0].url}}  alt="" class="img-content-icon vertical-middle" />
+              </div>
+            <div class="home-3-item-right ta-l">
+                <a *ngIf="item.clickable" [href]="item.website"  class="fs-24 txt-link-title">
+                  <strong>{{item.title}}</strong>
+                </a>
+                <div *ngIf="!item.clickable" class="txt-link-title" style="display: flex;">
+                  <h3 class="fs-24 color-white"><strong class="unclick-able">{{item.title}}</strong></h3>
+                  <span class="unclick-able-content fs-14">{{"coming-soon" | translate}}</span>
+                </div>
+                <p class="lh-16em color-white fs-14 mt15 f-w-400">{{item.desc}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="wrapper ta-c color-white clearfix pt90"
+      data-bottom="transform:translate(0%, 30%); opacity:0;"
+      data-center="transform:translate(0%, 0%); opacity:1;">
+        <div class="col12-sm- ptl22-item">
+          <div class="ptl22-box">
+            <div class="ptl22-txt">
+              <h3 class="fs-36 mb20 ta-l pt40"><strong>{{"aelf-an-open-blo-net" | translate}}</strong></h3>
+              <p class="fs-18 lh-16em  ta-l">{{"fac-re-world-pro" | translate}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col12-sm-6 ptl22-item">
+          <div class="ptl22-box">
+            <img [lazyLoad]="'assets/images/home3.png'" alt="" [offset]="1080">
+          </div>
+        </div>
+      </div> -->
     </div>
   </section>
   <section class="section section-22 anchor-hd ec-bg1" id="test-net">

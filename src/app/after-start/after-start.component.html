@@ -13,7 +13,10 @@
                     <div class="ptl22-box">
                       <div class="ptl22-txt pro-node-of-node">
                         <h3 class="fs-36 mb20 pt220 ta-l"><strong>{{item.title}}</strong></h3>
-                        <p class="fs-18 lh-16em-3over mb40 ta-l">{{item.desc}}</p>
+                        <p class="fs-18 lh-16em-3over mb40 ta-l" *ngIf="item.desc">{{item.desc}}</p>
+                        <div class="meenu brow-f" *ngIf="item.buttonText">
+                          <a class="fs-14 brow" [href]="item.button" target="_blank">{{item.buttonText}}</a>
+                        </div>
                       </div>
                     </div>
                   </div>
