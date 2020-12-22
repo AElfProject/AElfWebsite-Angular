@@ -8,7 +8,6 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
-import dataArray from './2.js'
 import { Router } from '@angular/router';
 
 declare let $: any;
@@ -112,30 +111,22 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
   }
 
   getSwiper(language?: string) {
-    console.log(language,this.currentLanguage,'this.currentLanguage====')
     this._swiperSercie.getSwipers(language || this.currentLanguage, 'community').subscribe(data => {
-      console.log()
-      // if (data.length <= 0 && this.getSwiperRetryCount === 0) {
-      //   this.getSwiperRetryCount++;
-      //   this.getSwiper('English');
-      //   return;
-      // }
+      if (data.length <= 0 && this.getSwiperRetryCount === 0) {
+        this.getSwiperRetryCount++;
+        this.getSwiper('English');
+        return;
+      }
       this.getSwiperRetryCount = 0;
-      console.log(dataArray,"data-----")
-      this.swiperList = dataArray;
-      console.log(this.swiperList,"0000")
+      this.swiperList = data;
       setTimeout(() => {
         new Swiper('#swiper-container-after', {
           pagination: {
             el: '#swiper-pagination-after',
             clickable: true,
           },
-          // autoplay: {
-          //   delay: 3000,//1秒切换一次
-          // },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+          autoplay: {
+            delay: 3000,//1秒切换一次
           },
         })
       }, 0);
