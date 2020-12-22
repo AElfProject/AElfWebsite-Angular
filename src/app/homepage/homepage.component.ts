@@ -101,7 +101,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     this._translateService.onLangChange.subscribe(data => {
       this.OnChange(this.languagesDic2[data.lang] || 'English');
     });
-    this.getPageHiddenElement(this.currentLanguage);
+    this.getPageHiddenElement(this.currentLanguage === "中文" ? this.currentLanguage : "English");
   }
 
   ngAfterViewInit() {
@@ -192,7 +192,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
     this.getSwiper();
     this.getProductionNodes();
-    this.getPageHiddenElement(this.currentLanguage);
+    this.getPageHiddenElement(this.currentLanguage === "中文" ? this.currentLanguage : "English");
   }
 
   // nav bar change color when the scroll event happens.

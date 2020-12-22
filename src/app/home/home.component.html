@@ -84,6 +84,7 @@
       <div class="wrapper ta-c color-white clearfix"
       data-bottom="transform:translate(0%, 30%); opacity:0;"
       data-center="transform:translate(0%, 0%); opacity:1;"
+      *ngIf="mainnetEcosystem.length"
       >
         <div class="col12-sm-6 text-1 f-w-500" *ngFor="let item of mainnetEcosystem">
           <div class="home-3-item">
@@ -92,14 +93,14 @@
                 <img  src={{item.icon[0].url}}  alt="" class="img-content-icon vertical-middle" />
               </div>
             <div class="home-3-item-right ta-l">
-                <a *ngIf="item.clickable" [href]="item.website"  class="fs-24 txt-link-title">
-                  <strong>{{item.title}}</strong>
+                <a *ngIf="item.clickable" [href]="item.website || '/' "  class="fs-24 txt-link-title">
+                  <strong>{{item.title || ""}}</strong>
                 </a>
                 <div *ngIf="!item.clickable" class="txt-link-title" style="display: flex;">
-                  <h3 class="fs-24 color-white"><strong class="unclick-able">{{item.title}}</strong></h3>
+                  <h3 class="fs-24 color-white"><strong class="unclick-able">{{item.title || ""}}</strong></h3>
                   <span class="unclick-able-content fs-14">{{"coming-soon" | translate}}</span>
                 </div>
-                <p class="lh-16em color-white fs-14 mt15 f-w-400">{{item.desc}}</p>
+                <p class="lh-16em color-white fs-14 mt15 f-w-400">{{item.desc || ""}}</p>
               </div>
             </div>
           </div>
