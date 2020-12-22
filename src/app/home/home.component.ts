@@ -8,6 +8,8 @@ import { PapersService } from '../shared/papers.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MainnetSourceService } from '../shared/mainnet-source.service';
+import { ConfigHiddenService } from '../shared/config-hidden.service';
 
 import { Router } from '@angular/router';
 
@@ -37,6 +39,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private whitePapers = {};
   private getHotNewsRetryCount = 0;
 
+  private mainnetSource = {};
+  private mainnetEcosystem = [];
+  private hiddenElementList= {};
+
   public currentLandscape = '';
   constructor(
     private _languageService: LanguageService,
@@ -47,7 +53,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     public _fontFamlily: FontFamliyService,
     private _windowRef: WindowService,
     private sanitizer: DomSanitizer,
-    public router: Router) {
+    public router: Router,
+    private _mainnetSourceService:  MainnetSourceService,
+    private _configHiddenService: ConfigHiddenService
+    ) {
   }
 
   ngOnInit() {
@@ -66,6 +75,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       );
       this.setVideo();
       this.getHotNews();
+      this.getAllMainnet();
+      this.getMainnetEcosystem(this.currentLanguage);
+      this.getPageHiddenElement(this.currentLanguage);
 
       this.getEconomicPapers();
       this.getWhitepapers();
@@ -163,6 +175,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.setEconomicPapers();
     this.setWhitepapers();
     this.setLandscape();
+    this.getMainnetEcosystem(this.currentLanguage);
+    this.getPageHiddenElement(this.currentLanguage);
   }
 
   getHotNews(languageType?: number) {
@@ -198,6 +212,33 @@ export class HomeComponent implements OnInit, AfterViewInit {
         return newItem;
       });
     });
+  }
+
+
+// numstr.replace(/\d{1,3}(?=(\d{3})+(.\d*)?$)/g, '$&,')
+  getAllMainnet(){
+    this._mainnetSourceService.getMainnetSource()
+      .subscribe(data => Object.assign(this.mainnetSource, data));
+      this._mainnetSourceService.getTPMSource(Date.now())
+      .subscribe(data => this.mainnetSource ={...this.mainnetSource,...data.all.slice(-1)[0]} );
+  }
+
+  getPageHiddenElement(lang:string){
+    this._configHiddenService.getConfigHidden(lang, 'home').
+    subscribe(data=>{
+      if (data.length < 1) {
+        return
+      }
+      this.hiddenElementList = data.reduce((origin, value) => {
+        origin[value.filed] = value.hidden;
+       return origin;
+      },{});
+    })
+  }
+
+  getMainnetEcosystem(lang:string){
+    this._mainnetSourceService.getMainnetEcosystem(lang)
+      .subscribe(data => this.mainnetEcosystem = data);
   }
 
   setVideo() {

@@ -16,6 +16,8 @@ import {PapersService} from './shared/papers.service';
 import {FontFamliyService} from './shared/font-famliy.service';
 import { WindowService } from './shared/window.service';
 import { ConnectInfoService } from './shared/connectInfo.service';
+import { MainnetSourceService } from './shared/mainnet-source.service';
+import { ConfigHiddenService } from './shared/config-hidden.service';
 
 import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 
@@ -56,7 +58,8 @@ import { HomeComponent } from './home/home.component';
   ],
   providers: [
     LanguageService, NewsService, SwiperService, HeaderTabsService, ConnectInfoService,
-    ProductionNodesService, DevCaseService, PapersService, FontFamliyService, WindowService],
+    ProductionNodesService, DevCaseService, PapersService, FontFamliyService, WindowService,
+    MainnetSourceService, ConfigHiddenService],
   bootstrap: [AppComponent]
 })
 export class AppModule{

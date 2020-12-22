@@ -1,0 +1,10 @@
+{
+  "/explorer": {
+    "target": "https://explorer.aelf.io/",
+    "pathRewrite": {
+      "^/explorer": ""
+    },
+    "changeOrigin": true,
+    "secure": true
+  }
+}
