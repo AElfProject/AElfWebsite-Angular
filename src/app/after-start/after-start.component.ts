@@ -8,7 +8,6 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
-import dataArray from './2.js'
 import { Router } from '@angular/router';
 
 declare let $: any;
