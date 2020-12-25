@@ -104,7 +104,7 @@
   "launch-stabilization-content-1":"Achieve the auto-governance of the aelf ecosystem.",
 
   "release-plan":"ELF (mainnet token) Distribution Plan",
-  "release-plan-detail":"View Mor",
+  "release-plan-detail":"View More",
   "release-plan-subtitle":"ELF is the main token in the aelf network. The total amount of issuance is 1 billion. After the mainnet goes online, the Genesis Block will release 88% of the ELF (880 million), which will be used for the token swap in the future. The remaining 12% (120 million) will be the mining rewards. In other words, the ELF-ERC 20 Token currently owned by the holder will not be affected.Regarding the whereabouts of the 88% of total ELF, we have the following plans:",
   "release-observe-node":"Mainnet Security Monitoring",
   "release-observe-node-content-1":"Genesis: During week 1, there was no operation on the chain except for block generation. 88% of the ELF issued from the Genesis Block is temporarily held by the first BP (Genesis Node) .",

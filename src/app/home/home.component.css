@@ -203,6 +203,9 @@ color: #26B7FF;
 .f-w-600{
   font-weight: 600;
 }
+.m-b-45 {
+  margin-bottom: 45px;
+}
 .home-item-wrap{
   display: flex;
   line-height: 2;
@@ -239,6 +242,35 @@ color: #26B7FF;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.home-mainnet-monitoring {
+  height: 450px;
+  max-height: 550px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.mainnet-stage-title {
+  display: block;
+  color: #22DFFF;
+}
+
+.view-evolve-button {
+  height: 40px;
+  line-height: 40px;
+  border-radius: 1px;
+  background: #26b7ff;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
+  padding: 0 16px;
+  border-radius: 3px;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -310,10 +342,21 @@ color: #26B7FF;
   .mt15 {
     margin-top: 10px;
   }
+  .mb30 {
+    margin-bottom: 20px;
+  }
+  .m-b-45 {
+    margin-bottom: 30px;
+  }
   .unclick-able-content {
     height: 20px;
     padding: 0 9px;
     margin-left: 15px;
+  }
+  .view-evolve-button{
+    height: 27px;
+    width: 133px;
+    line-height: 27px;
   }
 }
 
@@ -690,7 +733,7 @@ text-1 {
     font-size: 13px;
   }
 
-  #test-net .net-button {
+  #test-net .net-button, #test-net .view-evolve-button {
     height: 29px;
     line-height: 29px;
     border-radius: 1px;
@@ -704,7 +747,7 @@ text-1 {
     padding: 0 16px;
     border-radius: 3px;
   }
-  #test-net .net-button:hover {
+  #test-net .net-button:hover, #test-net .view-evolve-button {
     background: #096dd9;
   }
   .special-color{
@@ -750,6 +793,20 @@ text-1 {
     margin-left: auto;
     padding: 0 16px;
     border-radius: 3px;
+  }
+  #mainnet-monitoring .mainnet-list-container{
+    padding-bottom: 0;
+  }
+  .home-mainnet-monitoring {
+    height: 250px;
+  }
+  .home-mainnet-monitoring .fs-36 {
+    font-size: 17px;
+  }
+  .view-evolve-button{
+    height: 45px;
+    width: 80%;
+    line-height: 45px;
   }
 
 }

@@ -8,7 +8,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
-import { ConfigHiddenService } from '../shared/config-hidden.service'
+import { ConfigHiddenService } from '../shared/config-hidden.service';
+import { MainnetStageService } from '../shared/mainnet-stage.service'
 
 import { Router } from '@angular/router';
 
@@ -42,6 +43,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   private getSwiperRetryCount = 0;
   private getProductionNodesRetryCount = 0;
   public hiddenElementList= {};
+  public currentStage = ''
   public mainnetRoadmap = [
     {
       node: "monitoring",
@@ -74,7 +76,8 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     private _windowRef: WindowService,
     private sanitizer: DomSanitizer,
     public router: Router,
-    private _configHiddenService: ConfigHiddenService
+    private _configHiddenService: ConfigHiddenService,
+    private _mainnetStageService: MainnetStageService
     ) {
   }
 
@@ -102,6 +105,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       this.OnChange(this.languagesDic2[data.lang] || 'English');
     });
     this.getPageHiddenElement(this.currentLanguage);
+    this.getHighLightNode();
   }
 
   ngAfterViewInit() {
@@ -160,6 +164,16 @@ export class HomepageComponent implements OnInit, AfterViewInit {
        return origin;
       },{});
     })
+  }
+
+  getHighLightNode(){
+    this._mainnetStageService.getMainnetStage('homepage')
+      .subscribe(data => {
+        if (data.length < 1) {
+          return
+        }
+        this.currentStage = data[0].highLightNode;
+      });
   }
 
   getProductionNodes(language?: string) {

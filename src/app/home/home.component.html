@@ -33,6 +33,29 @@
       </div>
     </div>
   </section>
+  <section 
+    class="section section-22 anchor-bd ec-bg1" 
+    id="mainnet-monitoring"
+    *ngIf="mainnetStageInfo.stage"
+  >
+    <div class="cont">
+      <div class="wrapper ta-c color-white clearfix mainnet-list-container"
+      data-bottom="transform:translate(0%, 30%); opacity:0;"
+      data-center="transform:translate(0%, 0%); opacity:1;">
+
+        <div class="home-mainnet-monitoring" [ngStyle]="{'background-image': 'url(' + mainnetStageInfo.url + ')'}">
+          <h2 class="fs-45 mb30 mainnet-stage-title">
+            <strong>{{mainnetStageInfo.stage}}</strong>
+          </h2>
+          <h3 *ngIf="mainnetStageInfo.desc" class="m-b-45 fs-36">
+            {{mainnetStageInfo.desc}}
+          </h3>
+          <a *ngIf="mainnetStageInfo.linkContent" [href]="mainnetStageInfo.linkSite" class="fs-14 pt10 ordinary-link special-color view-evolve-button">{{mainnetStageInfo.linkContent}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-22 anchor-hd ec-bg1" id="test-net">
     <div class="cont pb20 pt40 pb40">
       <div class="wrapper ta-c color-white clearfix mainnet-list-container"
