@@ -105,6 +105,9 @@
   .al-self-center{
     align-self: center;
   }
+  .al-self-site {
+    align-self: center;
+  }
 
   .text-1 {
     display: none;
@@ -403,7 +406,6 @@
     padding: 35px 0;
   }
   .middle-line {
-
     padding-right: 3px;
     border-left: 3px;
 

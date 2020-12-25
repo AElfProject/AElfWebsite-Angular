@@ -237,6 +237,9 @@ color: #26B7FF;
 .m-b-67{
   margin-bottom: 67px;
 }
+.m-b-17 {
+  margin-bottom: 17px;
+}
 .vertical-middle {
   position: absolute;
   left: 50%;
@@ -709,7 +712,6 @@ text-1 {
     background: rgba(255, 255, 255, .05);
     border-radius: 4px;
     position: relative;
-    
     float: left;
   }
   .home-2-item:nth-child(2n){
