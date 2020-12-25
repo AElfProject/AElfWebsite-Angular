@@ -10,6 +10,7 @@ import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MainnetSourceService } from '../shared/mainnet-source.service';
 import { ConfigHiddenService } from '../shared/config-hidden.service';
+import { MainnetStageService } from '../shared/mainnet-stage.service'
 
 import { Router } from '@angular/router';
 
@@ -47,6 +48,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   };
   public mainnetEcosystem = [];
   public hiddenElementList= {};
+  public mainnetStageInfo = {
+    stage: '',
+    desc: '',
+    linkContent: '',
+    linkSite: '/',
+    url: null
+  };
 
   public currentLandscape = '';
   constructor(
@@ -60,7 +68,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private sanitizer: DomSanitizer,
     public router: Router,
     private _mainnetSourceService:  MainnetSourceService,
-    private _configHiddenService: ConfigHiddenService
+    private _configHiddenService: ConfigHiddenService,
+    private _mainnetStageService: MainnetStageService
     ) {
   }
 
@@ -83,6 +92,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.getAllMainnet();
       this.getMainnetEcosystem(this.currentLanguage);
       this.getPageHiddenElement(this.currentLanguage);
+      this.getMainnetStage(this.currentLanguage);
 
       this.getEconomicPapers();
       this.getWhitepapers();
@@ -182,6 +192,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.setLandscape();
     this.getMainnetEcosystem(this.currentLanguage);
     this.getPageHiddenElement(this.currentLanguage);
+    this.getMainnetStage(this.currentLanguage);
   }
 
   getHotNews(languageType?: number) {
@@ -244,6 +255,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
   getMainnetEcosystem(lang:string){
     this._mainnetSourceService.getMainnetEcosystem(lang)
       .subscribe(data => this.mainnetEcosystem = data);
+  }
+
+  getMainnetStage(lang:string){
+    this._mainnetStageService.getMainnetStage('home', lang)
+    .subscribe((data)=>{
+      if (data.length < 1) {
+        return
+      }
+      const newData = data[0];
+      Object.assign(this.mainnetStageInfo,{
+        stage: newData.stage,
+        desc: newData.desc,
+        linkContent: newData.linkContent,
+        linkSite: newData.linkSite || '/',
+        url: newData.backgroundImg.length ? newData.backgroundImg[0].url : null
+      })
+    })
   }
 
   setVideo() {
