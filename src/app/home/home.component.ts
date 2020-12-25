@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -22,7 +22,7 @@ declare let $: any;
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   public headerActiveCssClass = '';
   public config: PerfectScrollbarConfigInterface = {};
 
@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public currentWhitePaper = '';
   private whitePapers = {};
   private getHotNewsRetryCount = 0;
+  private timer = null;
 
   public mainnetSource = {
     height: 0,
@@ -105,8 +106,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
       this._translateService.onLangChange.subscribe(data => {
         this.OnChange(this.languagesDic2[data.lang] || 'English');
-      });
+      });  
   }
+
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'border-radius': '6px' });
@@ -124,6 +126,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       $('.section-1').height($(window).height());
       $('.section-2').height($(window).height());
     }
+  }
+
+  ngOnDestroy(){
+    clearTimeout(this.timer)
   }
 
   initEarthCanvas() {
@@ -235,8 +241,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   getAllMainnet(){
     this._mainnetSourceService.getMainnetSource()
       .subscribe(data => Object.assign(this.mainnetSource, data));
-      this._mainnetSourceService.getTPMSource(Date.now())
+    this._mainnetSourceService.getTPMSource(Date.now())
       .subscribe(data => this.mainnetSource ={...this.mainnetSource,...data.all.slice(-1)[0]} );
+
+    new Promise<void>((resolve, reject) => {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        resolve(this.getAllMainnet());
+      }, 3000);
+    }) 
   }
 
   getPageHiddenElement(lang:string){
