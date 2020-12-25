@@ -98,8 +98,8 @@
       >
         <h2 class="font-title ta-c fs-36 miannet-article"> <strong>{{"aelf-mainnet-ecosystem" | translate}} </strong> </h2>
         <div class="ptl22-item">
-          <h3 class="mt58 fs-18 ta-l m-b-17">{{"aelf-mainnet-ecosystem-detail" | translate}}</h3>
-          <div *ngIf="!hiddenElementList['mainnet-progress']" class="mb65 mt15 ecosystem-detail-link">
+          <h3 class="mt58 fs-18 ta-l mb30">{{"aelf-mainnet-ecosystem-detail" | translate}}</h3>
+          <div *ngIf="!hiddenElementList['mainnet-progress']" class="mb65 ecosystem-detail-link">
             <a class="fs-14 pt10 ordinary-link special-color net-button">{{"check-out-more-about-mainnet" | translate}}</a>
           </div>
         </div>
@@ -113,7 +113,7 @@
           <div class="home-3-item">
             <div class="wrap">
               <div class="img-content-wrap" style="align-self:center;position: relative;">
-                <img  src={{item.icon[0].url}}  alt="" class="img-content-icon vertical-middle" />
+                <img [src]="item.icon[0] ? item.icon[0].url : null"  alt="" class="img-content-icon vertical-middle" />
               </div>
             <div class="home-3-item-right ta-l">
                 <a *ngIf="item.clickable" [href]="item.website || '/' "  class="fs-24 txt-link-title">
