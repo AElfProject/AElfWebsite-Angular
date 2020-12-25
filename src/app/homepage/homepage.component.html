@@ -90,13 +90,50 @@
           </div>
         </div>
       </div>
-      <div style="padding: 0 43px;" class="mainnet-node-container">
-        <div style="width: 100%;max-width: 1434px">
+      <div class="mainnet-node-container" style="padding: 0 43px;">
+        <!-- <div style="width: 100%;max-width: 1434px">
           <img [src]="'assets/images/m-p-'+ (currentLanguage === '中文' ?'zh' : 'en') + '.png'" style="width:100%"/>
+        </div> -->
+        <div class="mainnet-node-wrap" *ngFor="let item of mainnetRoadmap; let i = index">
+          <div [ngClass]="{'fs-31': true,'node-list-title':true,'f-w-800 color-white': currentStage === item.node}">{{'mainnet-launch-' + item.node | translate}}</div>
+          <div [ngClass]="{'node-list-key': true,'node-list-key-select': currentStage === item.node}">{{i + 1}}</div>
+          <div [ngClass] = "{ 'node-list-detail': true ,'list-light-high' : currentStage === item.node }">
+            <div class="al-self-center test-force-left">
+              <p class="lh-20em color-white fs-18 ta-l" [ngStyle]="{'margin-left': (i%2) === 1 ? '35px': '0px'}" *ngFor="let detail of item.details">
+                <span class="dot"></span>
+                <span>{{ detail | translate }}</span>
+              </p>
+            </div>
+            <div class="img-content-wrap" style="align-self:center;">
+              <img  [src]="'assets/images/'+ item.node + '-node.png' "  alt="" class="img-content-icon" />
+            </div>
+          </div>
         </div>
       </div>
 
+
       <div class="col12-sm-6 text-1 f-w-500">
+        <div *ngFor="let item of mainnetRoadmap; let i = index">
+          <div [ngClass] = "{ 'home-3-item': true, 'home-3-item-select' : currentStage === item.node }" >
+            <div class="dis-flex">
+              <div class="img-content-wrap" style="align-self:center;">
+                <img  [src]="'assets/images/'+ item.node + '-node.png' "  alt="" class="img-content-icon" />
+              </div>
+              <div class="home-3-item-right ta-l">
+                <h3 [ngClass] = "{ 'fs-24' : true, 'txt-link-title':true, 'txt-link-title-select': currentStage === item.node }">
+                  <strong class="unclick-able">{{(i+1) + '. '}}{{ 'mainnet-launch-' + item.node | translate}}</strong>
+                </h3>
+                <p class="lh-20em color-white fs-12" *ngFor="let detail of item.details">
+                  <span class="dot"></span>
+                  <span>{{ detail | translate }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col12-sm-6 text-1 f-w-500">
         <div class="home-3-item" *ngFor="let item of mainnetRoadmap; let i = index">
           <div class="dis-flex">
             <div class="img-content-wrap" style="align-self:center;">
@@ -113,7 +150,7 @@
             </div>
           </div>
         </div>
-     </div>
+     </div> -->
     </div>
     <!-- 新增 -->
     <div class="cont pt10 pb20 mainnet-plan">

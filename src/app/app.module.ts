@@ -18,6 +18,7 @@ import { WindowService } from './shared/window.service';
 import { ConnectInfoService } from './shared/connectInfo.service';
 import { MainnetSourceService } from './shared/mainnet-source.service';
 import { ConfigHiddenService } from './shared/config-hidden.service';
+import { MainnetStageService } from './shared/mainnet-stage.service'
 
 import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 
@@ -59,7 +60,7 @@ import { HomeComponent } from './home/home.component';
   providers: [
     LanguageService, NewsService, SwiperService, HeaderTabsService, ConnectInfoService,
     ProductionNodesService, DevCaseService, PapersService, FontFamliyService, WindowService,
-    MainnetSourceService, ConfigHiddenService],
+    MainnetSourceService, ConfigHiddenService, MainnetStageService],
   bootstrap: [AppComponent]
 })
 export class AppModule{
