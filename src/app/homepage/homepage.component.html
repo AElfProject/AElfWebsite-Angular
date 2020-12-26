@@ -77,10 +77,10 @@
     </div>
 
     <div class="cont pt10 pb20 mainnet-plan">
-      <div class="wrapper  clearfix"
+      <!-- <div class="wrapper  clearfix"
         data-bottom="transform:translate(0%, 30%); opacity:0;"
         data-center="transform:translate(0%, 0%); opacity:1;"
-      >
+      > -->
         <div class="clearfix">
           <div class="col12-tn-12 master-plan dis-flex-col">
             <h3 class="fs-36 color-white ta-c miannet-article" ><strong>{{"master-plan" | translate}}</strong></h3>
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-
+    
 
       <div class="col12-sm-6 text-1 f-w-500">
         <div *ngFor="let item of mainnetRoadmap; let i = index">
@@ -131,26 +131,7 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- <div class="col12-sm-6 text-1 f-w-500">
-        <div class="home-3-item" *ngFor="let item of mainnetRoadmap; let i = index">
-          <div class="dis-flex">
-            <div class="img-content-wrap" style="align-self:center;">
-              <img  [src]="'assets/images/'+ item.node + '-node.png' "  alt="" class="img-content-icon" />
-            </div>
-            <div class="home-3-item-right ta-l">
-              <h3 class="fs-24 color-white txt-link-title">
-                <strong class="unclick-able">{{(i+1) + '. '}}{{ 'mainnet-launch-' + item.node | translate}}</strong>
-              </h3>
-              <p class="lh-20em color-white fs-12" *ngFor="let detail of item.details">
-                <span class="dot"></span>
-                <span>{{ detail | translate }}</span>
-              </p>
-            </div>
-          </div>
-        </div>
-     </div> -->
+      <!-- </div> -->
     </div>
     <!-- 新增 -->
     <div class="cont pt10 pb20 mainnet-plan">
@@ -165,7 +146,7 @@
             </div>
           </div>
         </div>
-        <p class="fs-18 color-white plan-subtitle">{{"release-plan-subtitle" | translate}}</p>
+        <p class="fs-18 mb30 color-white">{{"release-plan-subtitle" | translate}}</p>
       
         <div class="ec-2-item mb45 release-node-flex">
             <div class="fs-31 ta-r link-color fw600 rel-ob-n"> <strong> {{"release-observe-node" | translate}} </strong> </div>
