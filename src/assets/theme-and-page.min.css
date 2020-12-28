@@ -1315,6 +1315,9 @@ input.btn {
 .fs-36 {
     font-size: 36px
 }
+.fs-31 {
+  font-size: 31px;
+}
 
 @media screen and (max-width:1480px) {
     .fs-36 {

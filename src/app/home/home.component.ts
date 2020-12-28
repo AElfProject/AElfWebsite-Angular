@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -8,6 +8,9 @@ import { PapersService } from '../shared/papers.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MainnetSourceService } from '../shared/mainnet-source.service';
+import { ConfigHiddenService } from '../shared/config-hidden.service';
+import { MainnetStageService } from '../shared/mainnet-stage.service'
 
 import { Router } from '@angular/router';
 
@@ -19,7 +22,7 @@ declare let $: any;
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   public headerActiveCssClass = '';
   public config: PerfectScrollbarConfigInterface = {};
 
@@ -36,6 +39,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public currentWhitePaper = '';
   private whitePapers = {};
   private getHotNewsRetryCount = 0;
+  private timer = null;
+
+  public mainnetSource = {
+    height: 0,
+    count: 0,
+    accountNumber: 0,
+    totalTxs: 0
+  };
+  public mainnetEcosystem = [];
+  public hiddenElementList= {};
+  public mainnetStageInfo = {
+    stage: '',
+    desc: '',
+    linkContent: '',
+    linkSite: '/',
+    url: null
+  };
 
   public currentLandscape = '';
   constructor(
@@ -47,7 +67,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     public _fontFamlily: FontFamliyService,
     private _windowRef: WindowService,
     private sanitizer: DomSanitizer,
-    public router: Router) {
+    public router: Router,
+    private _mainnetSourceService:  MainnetSourceService,
+    private _configHiddenService: ConfigHiddenService,
+    private _mainnetStageService: MainnetStageService
+    ) {
   }
 
   ngOnInit() {
@@ -66,6 +90,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       );
       this.setVideo();
       this.getHotNews();
+      this.getAllMainnet();
+      this.getMainnetEcosystem(this.currentLanguage);
+      this.getPageHiddenElement(this.currentLanguage);
+      this.getMainnetStage(this.currentLanguage);
 
       this.getEconomicPapers();
       this.getWhitepapers();
@@ -78,8 +106,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
       this._translateService.onLangChange.subscribe(data => {
         this.OnChange(this.languagesDic2[data.lang] || 'English');
-      });
+      });  
   }
+
   ngAfterViewInit() {
     const perfectScrollbarContainer = $('.perfect-scrollbar-container');
     perfectScrollbarContainer.find('.ps__scrollbar-y-rail').css({ 'border-radius': '6px' });
@@ -97,6 +126,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       $('.section-1').height($(window).height());
       $('.section-2').height($(window).height());
     }
+  }
+
+  ngOnDestroy(){
+    clearTimeout(this.timer)
   }
 
   initEarthCanvas() {
@@ -163,6 +196,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.setEconomicPapers();
     this.setWhitepapers();
     this.setLandscape();
+    this.getMainnetEcosystem(this.currentLanguage);
+    this.getPageHiddenElement(this.currentLanguage);
+    this.getMainnetStage(this.currentLanguage);
   }
 
   getHotNews(languageType?: number) {
@@ -198,6 +234,57 @@ export class HomeComponent implements OnInit, AfterViewInit {
         return newItem;
       });
     });
+  }
+
+
+// numstr.replace(/\d{1,3}(?=(\d{3})+(.\d*)?$)/g, '$&,')
+  getAllMainnet(){
+    this._mainnetSourceService.getMainnetSource()
+      .subscribe(data => Object.assign(this.mainnetSource, data));
+    this._mainnetSourceService.getTPMSource(Date.now())
+      .subscribe(data => this.mainnetSource ={...this.mainnetSource,...data.all.slice(-1)[0]} );
+
+    new Promise<void>((resolve, reject) => {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        resolve(this.getAllMainnet());
+      }, 3000);
+    }) 
+  }
+
+  getPageHiddenElement(lang:string){
+    this._configHiddenService.getConfigHidden(lang, 'home').
+    subscribe(data=>{
+      if (data.length < 1) {
+        return
+      }
+      this.hiddenElementList = data.reduce((origin, value) => {
+        origin[value.filed] = value.hidden;
+       return origin;
+      },{});
+    })
+  }
+
+  getMainnetEcosystem(lang:string){
+    this._mainnetSourceService.getMainnetEcosystem(lang)
+      .subscribe(data => this.mainnetEcosystem = data);
+  }
+
+  getMainnetStage(lang:string){
+    this._mainnetStageService.getMainnetStage('home', lang)
+    .subscribe((data)=>{
+      if (data.length < 1) {
+        return
+      }
+      const newData = data[0];
+      Object.assign(this.mainnetStageInfo,{
+        stage: newData.stage,
+        desc: newData.desc,
+        linkContent: newData.linkContent,
+        linkSite: newData.linkSite || '/',
+        url: newData.backgroundImg.length ? newData.backgroundImg[0].url : null
+      })
+    })
   }
 
   setVideo() {
