@@ -3,7 +3,7 @@
   "version": "1.6.0",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve --host 0.0.0.0 --disable-host-check --hmr false --live-reload false",
+    "start": "ng serve --host 0.0.0.0 --disable-host-check --hmr false --live-reload false --proxy-config proxy.conf.json",
     "serve": "ng serve --host 0.0.0.0 --disable-host-check",
     "build": "gulp && ng build && npm run copy",
     "serve:prod": "ng serve --prod",

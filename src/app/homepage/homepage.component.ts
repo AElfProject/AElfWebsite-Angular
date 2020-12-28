@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../shared/language.service';
 import { SwiperService } from '../shared/swiper.service';
@@ -8,6 +8,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
+import { ConfigHiddenService } from '../shared/config-hidden.service';
+import { MainnetStageService } from '../shared/mainnet-stage.service'
 
 import { Router } from '@angular/router';
 
@@ -40,6 +42,30 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   public productionNodesList = [];
   private getSwiperRetryCount = 0;
   private getProductionNodesRetryCount = 0;
+  public hiddenElementList= {};
+  public currentStage = ''
+  public mainnetRoadmap = [
+    {
+      node: "monitoring",
+      details:['launch-monitoring-content-1','launch-monitoring-content-2','launch-monitoring-content-3']
+    },
+    {
+      node: "swap",
+      details: ['launch-swap-content-1','launch-swap-content-2','launch-swap-content-3']
+    },
+    {
+      node:'election',
+      details: ['launch-election-content-1','launch-election-content-2']
+    },
+    {
+      node:'improvement',
+      details: ['launch-improvement-content-1','launch-improvement-content-2','launch-improvement-content-3']
+    },
+    {
+      node:'stabilization',
+      details: ['launch-stabilization-content-1']
+    },
+  ];
   constructor(
     private _languageService: LanguageService,
     private _swiperSercie: SwiperService,
@@ -49,7 +75,10 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     public _fontFamlily: FontFamliyService,
     private _windowRef: WindowService,
     private sanitizer: DomSanitizer,
-    public router: Router) {
+    public router: Router,
+    private _configHiddenService: ConfigHiddenService,
+    private _mainnetStageService: MainnetStageService
+    ) {
   }
 
 
@@ -75,6 +104,8 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     this._translateService.onLangChange.subscribe(data => {
       this.OnChange(this.languagesDic2[data.lang] || 'English');
     });
+    this.getPageHiddenElement(this.currentLanguage);
+    this.getHighLightNode();
   }
 
   ngAfterViewInit() {
@@ -122,6 +153,29 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     });
   }
 
+  getPageHiddenElement(lang:string){
+    this._configHiddenService.getConfigHidden(lang, 'homepage').
+    subscribe(data=>{
+      if (data.length < 1) {
+        return
+      }
+      this.hiddenElementList = data.reduce((origin, value) => {
+        origin[value.filed] = value.hidden;
+       return origin;
+      },{});
+    })
+  }
+
+  getHighLightNode(){
+    this._mainnetStageService.getMainnetStage('homepage')
+      .subscribe(data => {
+        if (data.length < 1) {
+          return
+        }
+        this.currentStage = data[0].highLightNode;
+      });
+  }
+
   getProductionNodes(language?: string) {
     this._productionNodesService.getProductionNodes(language || this.currentLanguage, true).subscribe(data => {
       if (data.length <= 0 && this.getProductionNodesRetryCount === 0) {
@@ -152,6 +206,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     this._cookieService.put('SelectedLanguage', this.languagesDic[languageSelection]);
     this.getSwiper();
     this.getProductionNodes();
+    this.getPageHiddenElement(this.currentLanguage);
   }
 
   // nav bar change color when the scroll event happens.

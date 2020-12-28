@@ -8,7 +8,6 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { WindowService } from '../shared/window.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
-
 import { Router } from '@angular/router';
 
 declare let $: any;
@@ -34,6 +33,9 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
     "button": "",
     "buttonText": "",
     "leftImg": {
+      "url": null
+    },
+    "rightImg":{
       "url": null
     }
   }];
@@ -116,7 +118,6 @@ export class AfterStartComponent implements OnInit, AfterViewInit {
         return;
       }
       this.getSwiperRetryCount = 0;
-      
       this.swiperList = data;
       setTimeout(() => {
         new Swiper('#swiper-container-after', {
