@@ -123,7 +123,7 @@
 .home-2-item {
   /* width: 20%; */
   width: 22%;
-  height: 160px;
+  height: 144px;
   background: rgba(255, 255, 255, .05);
   border-radius: 4px;
   position: relative;
@@ -163,11 +163,11 @@
 }
 
 .img-content-wrap {
-  min-width: 88px;
-  width: 88px;
-  height: 88px;
-  background: #340154;
-  border-radius: 3px;
+  min-width: 67px;
+  width: 67px;
+  height: 67px;
+  /* background: #340154; */
+  /* border-radius: 3px; */
 }
 .img-content-icon {
   width: 59px;
@@ -177,6 +177,9 @@
 /* font-size: 16px; */
 font-weight: 600;
 color: #26B7FF;
+}
+.txt-link-title-white {
+  color: #fff;
 }
 .home-3-item-right{
   margin-left: 28px;
@@ -193,7 +196,81 @@ color: #26B7FF;
   font-family: Arial, "Times New Roman", "Microsoft Yahei", arial, Helvetica !important;
 }
 .miannet-article{
-  margin: 95px 0 37px;
+  margin: 95px 0 105px;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.brow-f {
+  background: #26B7FF;;
+  width: fit-content;
+  border-radius: 4px;
+  color: #fff;
+  margin-left: 20px;
+  font-size: 14px;
+  line-height: 2;
+  position: relative;
+  min-width: 111px;
+}
+.brow-f:hover {
+  background: #096dd9;
+}
+.brow-f span,
+.brow-f ul li {
+  padding-left: 13px;
+  padding-right: 5px;
+  color: #fff;
+}
+.brow-f ul, .brow-f ul li{
+  width: 100%;
+}
+.brow-f ul {
+  padding-top: 2px;
+  background-color: rgba(255, 255, 255, .05);       
+}
+
+.brow-f ul li {
+  line-height: 30px;
+  margin-bottom: 1px;
+}
+
+
+.brow-f ul {
+  position: absolute;
+}
+.mainnet-list-wrap .home-2-item::before {
+  display: block;
+  content: "";
+  width: 61px;
+  height: 61px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mainnet-list-wrap .home-2-item:nth-of-type(2)::before{
+  background: url('../../assets/images/block-height.svg');
+}
+.mainnet-list-wrap .home-2-item:nth-of-type(3)::before{
+  background: url('../../assets/images/tpm.svg');
+}
+.mainnet-list-wrap .home-2-item:nth-of-type(4)::before{
+  background: url('../../assets/images/accounts.svg');
+}
+.mainnet-list-wrap .home-2-item:nth-of-type(5)::before{
+  background: url('../../assets/images/transactions.svg');
+}
+
+.triangle-icon {
+  width: 12px;
+  height: 12px;
+  transform: rotate(90deg);
+  margin-right: 13px;
+}
+.jump-icon {
+  width: 24px;
 }
 .f-w-400 {
   font-weight: 400;
@@ -207,11 +284,11 @@ color: #26B7FF;
 .m-b-45 {
   margin-bottom: 45px;
 }
-.home-item-wrap{
+.home-item-wrap{ 
+  margin-top: 19px;
   display: flex;
   line-height: 2;
   flex-direction: column;
-  margin: auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -279,12 +356,11 @@ color: #26B7FF;
 
 @media only screen and (max-width: 1280px) {
   .miannet-article{
-    margin: 63px 0 25px;
+    margin: 63px 0 69px;
   }
   .home-2-item {
-    width: 213px;
     height: 107px;
-    margin-right: 27px;
+    /* margin-right: 27px; */
     /* line-height: 107px; */
   }
 
@@ -357,10 +433,43 @@ color: #26B7FF;
     padding: 0 9px;
     margin-left: 15px;
   }
-  .view-evolve-button{
+  .view-evolve-button {
     height: 27px;
     width: 133px;
     line-height: 27px;
+  }
+  .home-item-wrap {
+    margin-top: 12px;
+  }
+
+  .brow-f {
+    border-radius: 3px;
+    margin-left: 13px;
+    font-size: 12px;
+    min-width: 72px;
+  }
+  .brow-f span,
+  .brow-f ul li {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  .brow-f ul li {
+    line-height: 24px;
+    margin-bottom: 1px;
+  }
+  
+  .mainnet-list-wrap .home-2-item::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+  }
+  .triangle-icon {
+    width: 9px;
+    height: 9px;
+    margin-right: 9px;
+  }
+  .jump-icon {
+    width: 18px;
   }
 }
 
@@ -758,7 +867,9 @@ text-1 {
   }
 
   .text-1:nth-child(n) {
+    min-height: auto;
     padding: 0;
+    margin-bottom: 0;
   }
   .home-3-item {
     width: 98%;
@@ -807,9 +918,35 @@ text-1 {
     font-size: 17px;
   }
   .view-evolve-button{
-    height: 45px;
-    width: 80%;
-    line-height: 45px;
+    height: 28px;
+    line-height: 28px;
+    width: 250px;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+  .home-2-mb-20 {
+    margin-bottom: 37px;
+  }
+  .home-item-wrap {
+    margin-top: 12px;
+  }
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brow-f {
+    height: 28px;
+    line-height: 28px;
+    width: 250px;
+    margin: 30px auto;
+  }
+  .brow-f ul{
+    z-index: 10;
+  }
+  .jump-icon {
+    width: 20px;
   }
 
 }

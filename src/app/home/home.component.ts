@@ -47,6 +47,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     accountNumber: 0,
     totalTxs: 0
   };
+
+  public mainnetSourceType = [ 
+    {
+      key: "Main Chain AELF",
+      urlBegin: "explorer"
+    },{
+      key: "Side Chain tDVV",
+      urlBegin: "tdvv-explorer"
+    }];
+  public currentSourceChain = 0;
+  public show = false;
   public mainnetEcosystem = [];
   public hiddenElementList= {};
   public mainnetStageInfo = {
@@ -106,7 +117,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
       this._translateService.onLangChange.subscribe(data => {
         this.OnChange(this.languagesDic2[data.lang] || 'English');
-      });  
+      }); 
+
+      this.addEventForDocument();
   }
 
   ngAfterViewInit() {
@@ -129,7 +142,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    clearTimeout(this.timer)
+    clearTimeout(this.timer);
+    this.removeEventForDocument();
   }
 
   initEarthCanvas() {
@@ -201,6 +215,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.getMainnetStage(this.currentLanguage);
   }
 
+  public chainChange () {
+    this.show = !this.show;
+  }
+  public choseChain (index:number) {
+    if (index !== this.currentSourceChain) {
+      this.getAllMainnet(this.mainnetSourceType[index].urlBegin as ('explorer' | "tdvv-explorer"));
+      this.currentSourceChain = index;
+    }
+  }
   getHotNews(languageType?: number) {
     console.log(this.currentLanguage);
     const languageMap = {
@@ -238,16 +261,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
 // numstr.replace(/\d{1,3}(?=(\d{3})+(.\d*)?$)/g, '$&,')
-  getAllMainnet(){
-    this._mainnetSourceService.getMainnetSource()
+  getAllMainnet(type?:'explorer' | "tdvv-explorer"){
+    const currentType = type || "explorer"
+    clearTimeout(this.timer);
+    this._mainnetSourceService.getMainnetSource(currentType)
       .subscribe(data => Object.assign(this.mainnetSource, data));
-    this._mainnetSourceService.getTPMSource(Date.now())
+    this._mainnetSourceService.getTPMSource(Date.now(), currentType)
       .subscribe(data => this.mainnetSource ={...this.mainnetSource,...data.all.slice(-1)[0]} );
 
     new Promise<void>((resolve, reject) => {
-      clearTimeout(this.timer);
       this.timer = setTimeout(() => {
-        resolve(this.getAllMainnet());
+        resolve(this.getAllMainnet(currentType));
       }, 3000);
     }) 
   }
@@ -328,6 +352,24 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.resizeTime = setTimeout(() => {
       $('#player').css('height', `${videoHeight}px`);
     }, 100);
+  }
+  
+  addEventForDocument(){
+    document.addEventListener('click', (e:any)=>{
+      this.bindEventMethod(e)
+    })
+  }
+  bindEventMethod(e:any){
+    e.stopPropagation();
+    let targetElement = document.querySelector('.brow-f');
+    if (e && !e.path.includes(targetElement)) {
+      this.show = false;
+    }
+  }
+  removeEventForDocument(){
+    document.removeEventListener("click", (e:any)=>{
+      this.bindEventMethod(e);
+    });
   }
 }
 $('body').on('click', '.lang-menu span', function(e){

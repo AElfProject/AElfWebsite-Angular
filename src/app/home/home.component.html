@@ -61,32 +61,41 @@
       <div class="wrapper ta-c color-white clearfix mainnet-list-container"
       data-bottom="transform:translate(0%, 30%); opacity:0;"
       data-center="transform:translate(0%, 0%); opacity:1;">
-        <div class="col12-sm-12 ptl22-item">
-          <div class="font-title miannet-article fs-36 ta-c">
+        <div class="col12-sm-12 ptl22-item mainnet-list-wrap">
+          <div class="font-title miannet-article fs-36 ta-c flex">
             <strong>{{"aelf-mainnet-overview" | translate}}</strong>
-          </div>
+            <div class="brow-f" (click)="chainChange(); $event.stopPropagation();">
+              <span class="brow">{{mainnetSourceType[currentSourceChain].key | translate}}</span>
+              <img src="assets/images/triangle.svg" class="triangle-icon"/>
+              <ul class="clearfix" *ngIf="show">
+                <li *ngFor="let item of mainnetSourceType;let i = index" (click)="choseChain(i)">
+                  <p>{{item.key | translate}}</p>
+                </li>
+              </ul>
+            </div>
+          </div> 
           <div class="home-2-item home-2-mb-20">
             <div class="home-item-wrap">
-                <p class="fs-18 color-white m-b-17">{{"block-height" | translate}}</p>
-                <span class="color-white fs-24 font-weight">{{mainnetSource.height | number }}</span>
+              <span class="color-white fs-24 font-weight">{{mainnetSource.height | number }}</span>
+              <p class="fs-18 color-white">{{"block-height" | translate}}</p>
             </div>
           </div>
           <div class="home-2-item home-2-mb-20">
             <div class="home-item-wrap">
-                <p class="fs-18 color-white m-b-17">TPM</p>
-                <span class="color-white fs-24 font-weight">{{mainnetSource.count | number }}</span>
+              <span class="color-white fs-24 font-weight">{{mainnetSource.count | number }}</span>
+              <p class="fs-18 color-white">TPM</p>
             </div>
           </div>
           <div class="home-2-item">
             <div class="home-item-wrap">
-                <p class="fs-18 color-white m-b-17">{{"accounts" | translate}}</p>
-                <span class="color-white fs-24 font-weight">{{mainnetSource.accountNumber | number }}</span>
+              <span class="color-white fs-24 font-weight">{{mainnetSource.accountNumber | number }}</span>
+              <p class="fs-18 color-white">{{"accounts" | translate}}</p>
             </div>
           </div>
           <div class="home-2-item">
             <div class="home-item-wrap">
-              <p class="fs-18 color-white m-b-17">{{"transactions" | translate}}</p>
               <span class="color-white fs-24 font-weight">{{mainnetSource.totalTxs | number}}</span>
+              <p class="fs-18 color-white">{{"transactions" | translate}}</p>
             </div>
           </div>
         </div>
@@ -107,15 +116,16 @@
       <div class="wrapper ta-c color-white clearfix"
       *ngIf="mainnetEcosystem.length"
       >
-        <div class="col12-sm-6 text-1 f-w-500" *ngFor="let item of mainnetEcosystem">
+        <div class="col12-sm-6 text-1 f-w-500 clearfix" *ngFor="let item of mainnetEcosystem">
           <div class="home-3-item">
             <div class="wrap">
               <div class="img-content-wrap" style="align-self:center;position: relative;">
                 <img [src]="item.icon[0] ? item.icon[0].url : null"  alt="" class="img-content-icon vertical-middle" />
               </div>
             <div class="home-3-item-right ta-l">
-                <a *ngIf="item.clickable" [href]="item.website || '/' "  class="fs-24 txt-link-title">
+                <a *ngIf="item.clickable" [href]="item.website || '/' "  class="fs-24 txt-link-title txt-link-title-white" style="display: block;">
                   <strong>{{item.title || ""}}</strong>
+                  <img src="assets/images/jump-icon.svg" class="jump-icon"/>
                 </a>
                 <div *ngIf="!item.clickable" class="txt-link-title" style="display: flex;">
                   <h3 class="fs-24 color-white"><strong class="unclick-able">{{item.title || ""}}</strong></h3>
@@ -618,11 +628,11 @@
       <div class="txt">
         <div class="wrapper clearfix">
           <div class="team3 clearfix">
-            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+            <!-- <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
                 <a href="https://www.bitfinex.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-bitfinex.png'" [offset]="1080" alt=""></a>
               </div>
-            </div>
+            </div> -->
             <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
                 <a href="https://www.binance.com/" target="_blank"><img [lazyLoad]="'assets/images/partner-binance.png'" [offset]="1080" alt=""></a>
@@ -748,11 +758,11 @@
                 <img [lazyLoad]="'assets/images/exchange-bitcloud.png'" [offset]="1080" alt="">
               </div>
             </div>
-            <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
+            <!-- <div class="col12-lg-2 col12-sm-4 col12-tn-3 ta-c color-white ta-c skrollable skrollable-between mb30" data-bottom="transform:translate(0%, 30%); opacity:0;" data-center="transform:translate(0%, 0%); opacity:1;">
               <div class="team-pic">
                 <a href="https://international.bittrex.com/" target="_blank"><img [lazyLoad]="'assets/images/exchange-bittrex.png'" [offset]="1080" alt="exchange-bittrex"></a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
