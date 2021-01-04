@@ -244,16 +244,16 @@ color: #26B7FF;
   transform: translateX(-50%);
 }
 .mainnet-list-wrap .home-2-item:nth-of-type(2)::before{
-  background: url('assets/images/block-height.svg');
+  background: url('../../assets/images/block-height.svg');
 }
 .mainnet-list-wrap .home-2-item:nth-of-type(3)::before{
-  background: url('assets/images/tpm.svg');
+  background: url('../../assets/images/tpm.svg');
 }
 .mainnet-list-wrap .home-2-item:nth-of-type(4)::before{
-  background: url('assets/images/accounts.svg');
+  background: url('../../assets/images/accounts.svg');
 }
 .mainnet-list-wrap .home-2-item:nth-of-type(5)::before{
-  background: url('assets/images/transactions.svg');
+  background: url('../../assets/images/transactions.svg');
 }
 
 .triangle-icon {
