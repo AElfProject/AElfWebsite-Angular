@@ -64,7 +64,7 @@
         <div class="col12-sm-12 ptl22-item mainnet-list-wrap">
           <div class="font-title miannet-article fs-36 ta-c flex">
             <strong>{{"aelf-mainnet-overview" | translate}}</strong>
-            <div class="brow-f" (click)="chainChange($event); $event.stopPropagation();">
+            <div class="brow-f" (click)="chainChange(); $event.stopPropagation();">
               <span class="brow">{{mainnetSourceType[currentSourceChain].key | translate}}</span>
               <img src="assets/images/triangle.svg" class="triangle-icon"/>
               <ul class="clearfix" *ngIf="show">
