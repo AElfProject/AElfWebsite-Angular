@@ -360,8 +360,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     })
   }
   bindEventMethod(e:any){
-    let targetElement = $('.brow-f');
     e.stopPropagation();
+    let targetElement = document.querySelector('.brow-f');
     if (e && !e.path.includes(targetElement)) {
       this.show = false;
     }
