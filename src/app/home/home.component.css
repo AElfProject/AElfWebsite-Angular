@@ -359,9 +359,8 @@ color: #26B7FF;
     margin: 63px 0 69px;
   }
   .home-2-item {
-    width: 213px;
     height: 107px;
-    margin-right: 27px;
+    /* margin-right: 27px; */
     /* line-height: 107px; */
   }
 
