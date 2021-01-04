@@ -214,6 +214,9 @@ color: #26B7FF;
   position: relative;
   min-width: 111px;
 }
+.brow-f:hover {
+  background: #096dd9;
+}
 .brow-f span,
 .brow-f ul li {
   padding-left: 13px;
@@ -221,9 +224,13 @@ color: #26B7FF;
   color: #fff;
 }
 .brow-f ul, .brow-f ul li{
-  background: rgba(21,7,81,1);
   width: 100%;
 }
+.brow-f ul {
+  padding-top: 2px;
+  background-color: rgba(255, 255, 255, .05);       
+}
+
 .brow-f ul li {
   line-height: 30px;
   margin-bottom: 1px;
@@ -929,7 +936,7 @@ text-1 {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .brow-f {
     height: 28px;
     line-height: 28px;

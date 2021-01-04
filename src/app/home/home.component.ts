@@ -117,7 +117,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
       this._translateService.onLangChange.subscribe(data => {
         this.OnChange(this.languagesDic2[data.lang] || 'English');
-      });  
+      }); 
+
+      this.addEventForDocument();
   }
 
   ngAfterViewInit() {
@@ -140,7 +142,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    clearTimeout(this.timer)
+    clearTimeout(this.timer);
+    this.removeEventForDocument();
   }
 
   initEarthCanvas() {
@@ -349,6 +352,24 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.resizeTime = setTimeout(() => {
       $('#player').css('height', `${videoHeight}px`);
     }, 100);
+  }
+  
+  addEventForDocument(){
+    document.addEventListener('click', (e:any)=>{
+      this.bindEventMethod(e)
+    })
+  }
+  bindEventMethod(e:any){
+    let targetElement = $('.brow-f');
+    e.stopPropagation();
+    if (e && !e.path.includes(targetElement)) {
+      this.show = false;
+    }
+  }
+  removeEventForDocument(){
+    document.removeEventListener("click", (e:any)=>{
+      this.bindEventMethod(e);
+    });
   }
 }
 $('body').on('click', '.lang-menu span', function(e){
