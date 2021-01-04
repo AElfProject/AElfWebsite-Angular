@@ -210,22 +210,22 @@ color: #26B7FF;
   color: #fff;
   margin-left: 20px;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 2;
   position: relative;
   min-width: 111px;
 }
 .brow-f span,
 .brow-f ul li {
   padding-left: 13px;
-  padding-right: 13px;
+  padding-right: 5px;
   color: #fff;
 }
 .brow-f ul, .brow-f ul li{
+  background: rgba(21,7,81,1);
   width: 100%;
 }
 .brow-f ul li {
   line-height: 30px;
-  background: rgba(21,7,81,1);
   margin-bottom: 1px;
 }
 
@@ -912,9 +912,11 @@ text-1 {
     font-size: 17px;
   }
   .view-evolve-button{
-    height: 45px;
-    width: 80%;
-    line-height: 45px;
+    height: 28px;
+    line-height: 28px;
+    width: 250px;
+    margin: 0 auto;
+    border-radius: 4px;
   }
   .home-2-mb-20 {
     margin-bottom: 37px;
@@ -927,16 +929,15 @@ text-1 {
     flex-direction: column;
     align-items: center;
   }
-
+  
   .brow-f {
-    border-radius: 1px;
-    height: 45px;
-    width: 150px;
-    line-height: 45px;
-    border-radius: 3px;
-    border-radius: 3px;
-    font-size: 13px;
-    margin: 30px 0;
+    height: 28px;
+    line-height: 28px;
+    width: 250px;
+    margin: 30px auto;
+  }
+  .brow-f ul{
+    z-index: 10;
   }
   .jump-icon {
     width: 20px;
