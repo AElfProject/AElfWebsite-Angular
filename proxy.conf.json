@@ -6,5 +6,13 @@
     },
     "changeOrigin": true,
     "secure": true
+  },
+  "/tdvv-explorer": {
+    "target": "https://tdvv-explorer.aelf.io/",
+    "pathRewrite": {
+      "^/tdvv-explorer": ""
+    },
+    "changeOrigin": true,
+    "secure": true
   }
 }

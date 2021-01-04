@@ -5,18 +5,18 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class MainnetSourceService {
   constructor(private http: HttpClient) {}
-  getMainnetSource(): Observable<any> {
+  getMainnetSource(type:"tdvv-explorer" | "explorer"): Observable<any> {
     // return this.http.get(`https://explorer.aelf.io/api/chain-info`);
-    return this.http.get(`/explorer/api/chain-info`);
+    return this.http.get(`/${type}/api/chain-info`);
   }
 
-  getTPMSource(endTime: number): Observable<any> {
+  getTPMSource(endTime: number, type:"tdvv-explorer" | "explorer"): Observable<any> {
     const startTime = endTime  - 5 * 60 * 1000;
     // return this.http.get(
     //   `https://explorer.aelf.io/api/tps/all?start=${startTime}&end=${endTime}&interval=60000`
     // );
     return this.http.get(
-      `/explorer/api/tps/all?start=${startTime}&end=${endTime}&interval=60000`
+      `/${type}/api/tps/all?start=${startTime}&end=${endTime}&interval=60000`
     );
   }
 
