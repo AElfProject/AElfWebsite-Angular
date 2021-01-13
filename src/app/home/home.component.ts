@@ -57,7 +57,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       urlBegin: "tdvv-explorer"
     }];
   public currentSourceChain = 0;
-  public show = false;
   public mainnetEcosystem = [];
   public hiddenElementList= {};
   public mainnetStageInfo = {
@@ -119,7 +118,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.OnChange(this.languagesDic2[data.lang] || 'English');
       }); 
 
-      this.addEventForDocument();
   }
 
   ngAfterViewInit() {
@@ -143,7 +141,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy(){
     clearTimeout(this.timer);
-    this.removeEventForDocument();
+    // this.removeEventForDocument();
   }
 
   initEarthCanvas() {
@@ -215,12 +213,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.getMainnetStage(this.currentLanguage);
   }
 
-  public chainChange () {
-    this.show = !this.show;
-  }
-  public choseChain (index:number) {
+  public choseChain(index: number) {
     if (index !== this.currentSourceChain) {
-      this.getAllMainnet(this.mainnetSourceType[index].urlBegin as ('explorer' | "tdvv-explorer"));
+      this.getAllMainnet(this.mainnetSourceType[index].urlBegin);
       this.currentSourceChain = index;
     }
   }
@@ -261,19 +256,20 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
 // numstr.replace(/\d{1,3}(?=(\d{3})+(.\d*)?$)/g, '$&,')
-  getAllMainnet(type?:'explorer' | "tdvv-explorer"){
-    const currentType = type || "explorer"
+  async getAllMainnet(type?: string) {
+    const currentType = type || this.mainnetSourceType[this.currentSourceChain].urlBegin;
     clearTimeout(this.timer);
-    this._mainnetSourceService.getMainnetSource(currentType)
-      .subscribe(data => Object.assign(this.mainnetSource, data));
-    this._mainnetSourceService.getTPMSource(Date.now(), currentType)
-      .subscribe(data => this.mainnetSource ={...this.mainnetSource,...data.all.slice(-1)[0]} );
-
-    new Promise<void>((resolve, reject) => {
-      this.timer = setTimeout(() => {
-        resolve(this.getAllMainnet(currentType));
-      }, 3000);
-    }) 
+    await Promise.all([
+      this._mainnetSourceService.getMainnetSource(currentType).toPromise()
+      .then((res)=>Object.assign(this.mainnetSource, res)),
+      this._mainnetSourceService.getTPMSource(Date.now(), currentType).toPromise()
+      .then((res)=> this.mainnetSource = {...this.mainnetSource,...res.all.slice(-1)[0]})
+    ]).catch((err)=>{
+      console.log(err)
+    })
+    this.timer = setTimeout(() => {
+      this.getAllMainnet();
+     }, 3000);
   }
 
   getPageHiddenElement(lang:string){
@@ -289,9 +285,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     })
   }
 
-  getMainnetEcosystem(lang:string){
+  getMainnetEcosystem(lang: string){
+    this.mainnetEcosystem = [];
     this._mainnetSourceService.getMainnetEcosystem(lang)
-      .subscribe(data => this.mainnetEcosystem = data);
+      .subscribe(data => {
+        const len = Array.isArray(data) ? data.length : 0;
+        for (let i = 0; i < len;) {
+          this.mainnetEcosystem.push(data.slice(i, i + 2));
+          i+=2;
+        }
+      });
   }
 
   getMainnetStage(lang:string){
@@ -354,23 +357,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }, 100);
   }
   
-  addEventForDocument(){
-    document.addEventListener('click', (e:any)=>{
-      this.bindEventMethod(e)
-    })
-  }
-  bindEventMethod(e:any){
-    e.stopPropagation();
-    let targetElement = document.querySelector('.brow-f');
-    if (e && !e.path.includes(targetElement)) {
-      this.show = false;
-    }
-  }
-  removeEventForDocument(){
-    document.removeEventListener("click", (e:any)=>{
-      this.bindEventMethod(e);
-    });
-  }
 }
 $('body').on('click', '.lang-menu span', function(e){
   e.stopPropagation();
@@ -380,6 +366,11 @@ $('body').on('click', '.lang-menu span', function(e){
 $('body').on('click', '.tool-menu span', function(e){
   e.stopPropagation();
   $('.tool-menu').addClass('active2');
+});
+
+$('body').on('click', '.meenu span', function(e){
+  e.stopPropagation();
+  $('.meenu').addClass('active2');
 });
 
 window.onresize = function(){

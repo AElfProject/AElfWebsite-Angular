@@ -64,10 +64,11 @@
         <div class="col12-sm-12 ptl22-item mainnet-list-wrap">
           <div class="font-title miannet-article fs-36 ta-c flex">
             <strong>{{"aelf-mainnet-overview" | translate}}</strong>
-            <div class="brow-f" (click)="chainChange(); $event.stopPropagation();">
-              <span class="brow">{{mainnetSourceType[currentSourceChain].key | translate}}</span>
-              <img src="assets/images/triangle.svg" class="triangle-icon"/>
-              <ul class="clearfix" *ngIf="show">
+            <div class="meenu brow-f">
+              <span class="brow">{{mainnetSourceType[currentSourceChain].key | translate}}
+                <img src="assets/images/triangle.svg" class="triangle-icon"/>
+              </span>
+              <ul class="clearfix">
                 <li *ngFor="let item of mainnetSourceType;let i = index" (click)="choseChain(i)">
                   <p>{{item.key | translate}}</p>
                 </li>
@@ -116,18 +117,18 @@
       <div class="wrapper ta-c color-white clearfix"
       *ngIf="mainnetEcosystem.length"
       >
-        <div class="col12-sm-6 text-1 f-w-500 clearfix" *ngFor="let item of mainnetEcosystem">
-          <div class="home-3-item">
-            <div class="wrap">
+        <div class="wrap flex-col clearfix" *ngFor="let details of mainnetEcosystem">
+          <div class="col12-sm-6 text-1 f-w-500" *ngFor="let item of details">
+            <div class="home-3-item">
               <div class="img-content-wrap" style="align-self:center;position: relative;">
                 <img [src]="item.icon[0] ? item.icon[0].url : null"  alt="" class="img-content-icon vertical-middle" />
               </div>
-            <div class="home-3-item-right ta-l">
+              <div class="home-3-item-right ta-l">
                 <a *ngIf="item.clickable" [href]="item.website || '/' "  class="fs-24 txt-link-title txt-link-title-white" style="display: block;">
                   <strong>{{item.title || ""}}</strong>
                   <img src="assets/images/jump-icon.svg" class="jump-icon"/>
                 </a>
-                <div *ngIf="!item.clickable" class="txt-link-title" style="display: flex;">
+                <div *ngIf="!item.clickable" class="txt-link-title wrap">
                   <h3 class="fs-24 color-white"><strong class="unclick-able">{{item.title || ""}}</strong></h3>
                   <span class="unclick-able-content fs-14">{{"coming-soon" | translate}}</span>
                 </div>
