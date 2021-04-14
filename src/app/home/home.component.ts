@@ -179,7 +179,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       data.forEach((paper: any) => {
         this.whitePapers[paper.lang] = paper;
       });
-      this.setEconomicPapers();
+      // this.setEconomicPapers();
+      this.setWhitepapers();
     });
   }
   setWhitepapers() {
