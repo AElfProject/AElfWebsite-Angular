@@ -130,7 +130,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   countDown() {
     if (this.timer > 0) {
       this.counter = setTimeout(() => {
-        console.log("counter")
         this.timer--;
         this.countDown();
       }, 1000);

@@ -76,16 +76,16 @@
       <i class="fa fa-navicon color-white fs-18"></i>
     </div>
   </header>
-  <div [ngClass]="jumpModal ? 'popup-jump-modal' : 'popup-jump-modal-hidden'">
-    <div class="modal-mask"></div>
-    <div class="modal-wrapper">
-      <div class="modal-content" [ngStyle]="{width: currentLanguage === 'English' ? '448px': '370px'}">
-        <h1 class="main-title">{{"new-website-upgrade" | translate}}</h1>
-        <em class="ass-title">{{"experiencing-the-brand-new-aelf" | translate}}</em>
-        <div class="btn-wrapper">
-          <button class="cancel-btn" (click)="hiddenPopupJump()">{{"remind-me-next-time" | translate}}</button>
-          <a class="jump-btn" target="_blank" [href]="jumpLink" (click)="hiddenPopupJump()">{{"jumping-into-now" | translate}} ({{timer}})</a>
-        </div>
+</div>
+<div [ngClass]="jumpModal ? 'popup-jump-modal' : 'popup-jump-modal-hidden'">
+  <div class="modal-mask"></div>
+  <div class="modal-wrapper">
+    <div [class]="currentLanguage === 'English'? 'modal-content width-448': 'modal-content width-370'">
+      <h1 class="main-title">{{"new-website-upgrade" | translate}}</h1>
+      <em class="ass-title">{{"experiencing-the-brand-new-aelf" | translate}}</em>
+      <div class="btn-wrapper">
+        <button class="cancel-btn" (click)="hiddenPopupJump()">{{"remind-me-next-time" | translate}}</button>
+        <a class="jump-btn" target="_blank" [href]="jumpLink" (click)="hiddenPopupJump()">{{"jumping-into-now" | translate}} ({{timer}})</a>
       </div>
     </div>
   </div>

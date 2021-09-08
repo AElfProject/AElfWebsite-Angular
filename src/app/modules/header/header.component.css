@@ -21,6 +21,7 @@
 .modal-content {
   position: relative;
   top: 200px;
+  
   margin: 0 auto;
   height: 210px;
   background-color: #fff;
@@ -28,6 +29,13 @@
   padding: 40px 30px 28px;
   display: flex;
   flex-direction: column;
+}
+
+.width-448 {
+  width: 448px;
+}
+.width-370 {
+  width: 370px;
 }
 
 .main-title, .ass-title {
@@ -86,4 +94,37 @@
 }
 .popup-jump-modal-hidden {
   display: none;
+}
+
+@media (max-width: 767px) {
+  .modal-content {
+    padding: 26px 20px;
+  }
+  .main-title {
+    font-size: 18px; 
+    line-height: 25px;
+  }
+  .ass-title {
+    font-size: 12px;
+    line-height: 17px;
+    margin-top: 12px;
+  }
+  .btn-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .cancel-btn, .jump-btn {
+    height: 34px;
+    padding: 9px 18px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+  .cancel-btn {
+    margin-right: 0;
+    margin-top: 12px;
+  }
+  .width-448, .width-370  {
+    width: 290px;
+  }
 }
