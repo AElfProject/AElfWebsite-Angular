@@ -1,0 +1,89 @@
+.popup-jump-modal {
+  display: block;
+}
+.modal-mask, .modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.modal-mask {
+  z-index: 999;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+.modal-wrapper {
+  overflow: auto;
+  outline: 0;
+  z-index: 1000;
+}
+.modal-content {
+  position: relative;
+  top: 200px;
+  margin: 0 auto;
+  height: 210px;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 40px 30px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title, .ass-title {
+  font-family: "PingFangSC-Regular", "PingFang SC";
+}
+
+.main-title {
+  font-size: 20px; 
+  color: #7548f4;
+  line-height: 28px;
+}
+.ass-title {
+  font-size: 14px;
+  color: #929292;
+  line-height: 20px;
+  margin-top: 12px;
+  margin-bottom: auto;
+}
+.btn-wrapper {
+  display: flex;
+}
+.cancel-btn, .jump-btn {
+  height: 40px;
+  padding: 10px 18px;
+  border-radius: 2px;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.cancel-btn {
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+  color: #858585;
+  margin-right: 12px;
+}
+.jump-btn {
+  background: #7548f4;
+  flex: 1;
+  text-align: center;
+  border: none;
+  color: #fff;
+}
+.cancel-btn:active {
+  border-color: #929292;
+}
+.jump-btn:active {
+  background-color: #693CE7;
+}
+
+.cancel-btn:hover {
+  border-color: #D0D0D0;
+}
+.jump-btn:hover {
+  background-color: #8B62FF;
+}
+.popup-jump-modal-hidden {
+  display: none;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { LanguageService } from '../../shared/language.service';
 import { FontFamliyService } from '../../shared/font-famliy.service';
@@ -13,7 +13,7 @@ declare let $: any;
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   public languageList = ['', ''];
   public languagesDic: any;
@@ -25,6 +25,10 @@ export class HeaderComponent implements OnInit {
   private whitePapers = {};
   public pathname = '';
   public hiddenTabs = '';
+  public jumpModal = false;
+  public timer = 5;
+  public jumpLink = 'https://www.runoob.com';
+  private counter = null;
   constructor(
     private _languageService: LanguageService,
     private _headerTabsService: HeaderTabsService,
@@ -33,6 +37,9 @@ export class HeaderComponent implements OnInit {
     private _cookieService: CookieService,
     private _papersService: PapersService,
   ) { }
+  ngOnDestroy(): void {
+    this.hiddenPopupJump();
+  }
 
   ngOnInit() {
     this.getHiddenTabs();
@@ -59,6 +66,7 @@ export class HeaderComponent implements OnInit {
         this.getWhitepapers();
         this.setLandscape();
       // });
+    this.popupJump();
   }
 
   setMenu() {
@@ -105,6 +113,31 @@ export class HeaderComponent implements OnInit {
         this.hiddenTabs = data[0].tabToHidden
       }
     });
+  }
+  popupJump() {
+    setTimeout(() => {
+      this.jumpModal = true;
+      this.countDown();
+    }, 500);
+  }
+  hiddenPopupJump() {
+    if (this.counter) {
+      clearTimeout(this.counter)
+    }
+    this.jumpModal = false;
+  }
+
+  countDown() {
+    if (this.timer > 0) {
+      this.counter = setTimeout(() => {
+        console.log("counter")
+        this.timer--;
+        this.countDown();
+      }, 1000);
+    } else {
+      window.location.href = this.jumpLink;
+      this.hiddenPopupJump();
+    }
   }
 
   OnChange(languageSelection: string) {
