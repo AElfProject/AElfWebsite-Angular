@@ -390,5 +390,10 @@
       "image":"url(assets/images/news/en/hwc.jpg)",
       "time":"2019.10.30"
     }
-  ]
+  ],
+
+  "remind-me-next-time": "Remind me next time",
+  "new-website-upgrade": "New Website Upgrade",
+  "experiencing-the-brand-new-aelf": "Experiencing the brand new aelf",
+  "jumping-into-now": "Jumping into now"
 }
