@@ -349,5 +349,10 @@
   "Application Authorization Management-sum":"可对多个应用进行授权信息查看、权限删除等操作管理",
 
 
-  "token领取地址": "http://aelf-elf.mikecrm.com/YZG77IT"
+  "token领取地址": "http://aelf-elf.mikecrm.com/YZG77IT",
+
+  "remind-me-next-time": "下次提醒",
+  "new-website-upgrade": "新版官网升级",
+  "experiencing-the-brand-new-aelf": "aelf全新改版，给你不一样的体验！",
+  "jumping-into-now": "立即跳转"
 }
