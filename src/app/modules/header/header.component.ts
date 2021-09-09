@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public hiddenTabs = '';
   public jumpModal = false;
   public timer = 5;
-  public jumpLink = 'https://www.runoob.com';
+  public jumpLink = 'https://aelf.com';
   private counter = null;
   constructor(
     private _languageService: LanguageService,
